@@ -33,6 +33,14 @@
       "question": "YouTube",
       "why": "Eight prospective chapters with eleven inspected studies and three open directions; nine bulk-exported run receipts.",
       "url": "https://github.com/JadanPoll/FKEN_REA_CaseStudies/blob/main/Software/YouTube/investigation.json"
+    },
+    {
+      "id": "REA-catalog-chatgpt",
+      "parent_id": "REA-software",
+      "kind": "subdomain",
+      "question": "ChatGPT",
+      "why": "9 prospective chapters, 7 inspected studies, 6 open directions and nine retained runs.",
+      "url": "https://github.com/JadanPoll/FKEN_REA_CaseStudies/blob/main/Software/ChatGPT/investigation.json"
     }
   ],
   "connections": [],
@@ -60,6 +68,22 @@
       "why": "Native compression APIs and alternative execution paths",
       "from_file": "Software/YouTube/investigation.json",
       "to_file": "Software/Claude/investigation.json"
+    },
+    {
+      "from": "REA-G-intent",
+      "to": "REA-C-persist",
+      "type": "related",
+      "why": "Guard asynchronous actions against stale ownership and changed user intent.",
+      "from_file": "Software/ChatGPT/investigation.json",
+      "to_file": "Software/Claude/investigation.json"
+    },
+    {
+      "from": "REA-G-polling",
+      "to": "REA-D-backoff",
+      "type": "related",
+      "why": "Bounded recovery and lifecycle-specific retry state.",
+      "from_file": "Software/ChatGPT/investigation.json",
+      "to_file": "Software/Discord/investigation.json"
     }
   ]
 }
