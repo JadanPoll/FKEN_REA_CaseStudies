@@ -17,8 +17,10 @@
       "short_title": "Claude",
       "file": "Software/Claude/investigation.json",
       "projection": {
-        "shape": "flat"
-      }
+        "shape": "curiosities"
+      },
+      "glossary_file": "glossary.json",
+      "shared_reader_id": "REA-claude"
     },
     {
       "id": "discord",
@@ -26,8 +28,10 @@
       "short_title": "Discord",
       "file": "Software/Discord/investigation.json",
       "projection": {
-        "shape": "flat"
-      }
+        "shape": "curiosities"
+      },
+      "glossary_file": "glossary.json",
+      "shared_reader_id": "REA-discord"
     }
   ]
 }
