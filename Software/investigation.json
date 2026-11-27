@@ -15,7 +15,7 @@
       "parent_id": "REA-software",
       "kind": "subdomain",
       "question": "Claude",
-      "why": "Explore 7 initial mechanism studies and their original investigation plans. This product's research evolves independently.",
+      "why": "Nine evolving chapters, seven inspected studies and nine open directions, with a chapter-aligned glossary and recoverable source evidence.",
       "url": "https://github.com/JadanPoll/FKEN_REA_CaseStudies/blob/main/Software/Claude/investigation.json"
     },
     {
@@ -23,7 +23,7 @@
       "parent_id": "REA-software",
       "kind": "subdomain",
       "question": "Discord",
-      "why": "Explore 5 initial mechanism studies and their original investigation plans. This product's research evolves independently.",
+      "why": "Eight evolving chapters, five inspected studies and nine open directions, with a chapter-aligned glossary and recoverable source evidence.",
       "url": "https://github.com/JadanPoll/FKEN_REA_CaseStudies/blob/main/Software/Discord/investigation.json"
     }
   ],
