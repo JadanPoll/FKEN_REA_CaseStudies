@@ -25,3 +25,7 @@ Note: the idea of htmlets is similar to the kind of thing LLs do where they can 
 
 This is of course an overly ambitious version of what an htmlets could be. to be sure, htmlets should in general not be this ambitious
 https://github.com/JadanPoll/Tacit_Virtual_Lab
+
+## Initial educational population
+
+[Explore software case studies](https://raw.githack.com/JadanPoll/Learning_Visualizations_Taxonomy/main/RSM_Tree_Viewer.html?repo=https%3A%2F%2Fgithub.com%2FJadanPoll%2FFKEN_REA_CaseStudies&view=software) · [Persistence and HTMlet contract](Software/README.md)
