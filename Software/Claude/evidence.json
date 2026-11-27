@@ -1,0 +1,301 @@
+{
+  "schema": "rea-evidence/v1",
+  "scope": "Static browser assets, original archive retained in AI Pill; public repo contains receipts and interpretations, not proprietary source dumps or personal state. Replays require matching retained files; a new deployment may differ.",
+  "runs": [
+    {
+      "id": "C-acquire",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Map application source and capabilities",
+        "operations": [
+          {
+            "op": "snapshotSources"
+          }
+        ]
+      },
+      "receipt": {
+        "run_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f",
+        "version": "0.4.32",
+        "at": "2026-11-27T07:08:09.573Z",
+        "collected": 370,
+        "observed": 371,
+        "excluded": 1,
+        "failed": 0,
+        "bytes": 23315443
+      },
+      "interpretation": "All eligible assets collected; one CDN script excluded. Earlier v0.4.31 excluded all 384 assets because of origin policy. v0.4.33 adds local approval; not tested by this run."
+    },
+    {
+      "id": "C-discover",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Discover transferable engineering mechanisms in Claude",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "completionGzipWorker-Q_JtDKxH.js",
+            "start": 0,
+            "length": 1000
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "openFenceTailGrafted",
+              "openTableTailGrafted"
+            ],
+            "scope": "region",
+            "limit": 4
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "getCrossTabWriteEpoch",
+              "writeWouldChangeRecord"
+            ],
+            "scope": "region",
+            "limit": 4
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "_flushIosDeferredIfReady",
+              "_iosTouchEndTimerId"
+            ],
+            "scope": "region",
+            "limit": 4
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "draftHeldForSessionMismatch",
+              "mirrorDraftLiveSessionMarkerAtSwap"
+            ],
+            "scope": "region",
+            "limit": 4
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "voice_web_no_mic_preconnect_bail",
+              "capture_clock_mismatch_deliveries_per_sec"
+            ],
+            "scope": "region",
+            "limit": 4
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "loaf_post_handler_script_ms"
+            ],
+            "scope": "region",
+            "limit": 3
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "provisionalIds",
+              "writeSeq"
+            ],
+            "scope": "region",
+            "limit": 4
+          }
+        ]
+      },
+      "receipt": {
+        "run_id": "0781955c-99e2-4f20-a528-76bca29fa72c",
+        "version": "0.4.33",
+        "elapsed_ms": 405,
+        "passed": 8,
+        "files_searched": 370,
+        "regions_searched": 15281,
+        "new_bytes": 0,
+        "region_totals": [
+          2,
+          4,
+          2,
+          4,
+          3,
+          1,
+          12
+        ]
+      },
+      "interpretation": "Full worker recovered; seven region searches locate candidate mechanisms. Search results are lexical, not implementation proofs."
+    },
+    {
+      "id": "C-read",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Recover algorithms for incremental rendering, consistency and reconciliation",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "shared-31-k46qfpBX.js",
+            "start": 173000,
+            "length": 6000
+          },
+          {
+            "op": "readSource",
+            "file": "shared-31-k46qfpBX.js",
+            "start": 183500,
+            "length": 6000
+          },
+          {
+            "op": "readSource",
+            "file": "vendor-frame-BVlhyxBh.js",
+            "start": 259000,
+            "length": 6500
+          },
+          {
+            "op": "readSource",
+            "file": "shared-l-p-m-w-8-CFELbFb2.js",
+            "start": 173000,
+            "length": 8000
+          },
+          {
+            "op": "readSource",
+            "file": "shared-l-p-m-w-8-CFELbFb2.js",
+            "start": 185000,
+            "length": 7000
+          },
+          {
+            "op": "readSource",
+            "file": "shared-l-p-m-w-3-Ba6-SV97.js",
+            "start": 258000,
+            "length": 6000
+          },
+          {
+            "op": "readSource",
+            "file": "shared-l-p-m-w-3-Ba6-SV97.js",
+            "start": 105500,
+            "length": 5000
+          },
+          {
+            "op": "readSource",
+            "file": "cca471d3a-C4dKEi_-.js",
+            "start": 31000,
+            "length": 4500
+          }
+        ]
+      },
+      "receipt": {
+        "run_id": "de0729b0-183c-4a0b-9a1f-ceedd2228b42",
+        "version": "0.4.33",
+        "elapsed_ms": 116,
+        "passed": 8,
+        "source_characters": 49000,
+        "new_bytes": 0
+      },
+      "interpretation": "Static implementation evidence for guarded parsing, iOS deferred scroll correction, asynchronous draft persistence, optimistic mutation reconciliation, provisional session IDs and latency attribution. Runtime behavior not independently tested."
+    }
+  ],
+  "sources": [
+    {
+      "id": "C-worker",
+      "file": "completionGzipWorker-Q_JtDKxH.js",
+      "sha256": "ae8faf6861cddd9dcf510dce849db404d56ae67a4b9c73d7214e5de6b1236360",
+      "origin": "https://claude.ai",
+      "run_id": "C-discover",
+      "ranges": [
+        {
+          "start": 0,
+          "end": 591,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "C-markdown",
+      "file": "shared-31-k46qfpBX.js",
+      "sha256": "a2c12d89719d78b0ffe3f2618b4faf4170c10db2530198e6fcd9b52536eada96",
+      "origin": "https://claude.ai",
+      "run_id": "C-read",
+      "ranges": [
+        {
+          "start": 173000,
+          "end": 179000,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        },
+        {
+          "start": 183500,
+          "end": 189500,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "C-scroll",
+      "file": "vendor-frame-BVlhyxBh.js",
+      "sha256": "a66780ee845c39d753f6494b716d716bfcf9927b289d91996e90a85453b76ae4",
+      "origin": "https://claude.ai",
+      "run_id": "C-read",
+      "ranges": [
+        {
+          "start": 259000,
+          "end": 265500,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "C-store",
+      "file": "shared-l-p-m-w-8-CFELbFb2.js",
+      "sha256": "f7d3b6fb4596775f3011d71ec12a94ac437fb07d361782ee550e520ad0de2dfd",
+      "origin": "https://claude.ai",
+      "run_id": "C-read",
+      "ranges": [
+        {
+          "start": 173000,
+          "end": 181000,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        },
+        {
+          "start": 185000,
+          "end": 192000,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "C-settings",
+      "file": "shared-l-p-m-w-3-Ba6-SV97.js",
+      "sha256": "2009cc979eca1824b489d47d796375c501776ca3e12459dfa6c995b7aa407ab7",
+      "origin": "https://claude.ai",
+      "run_id": "C-read",
+      "ranges": [
+        {
+          "start": 258000,
+          "end": 264000,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        },
+        {
+          "start": 105500,
+          "end": 110500,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "C-perf",
+      "file": "cca471d3a-C4dKEi_-.js",
+      "sha256": "070b5f5794124a4c7f27a5a9c3c4dcd01ddec44f2841b12afba51f466d3cf802",
+      "origin": "https://claude.ai",
+      "run_id": "C-read",
+      "ranges": [
+        {
+          "start": 31000,
+          "end": 35500,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    }
+  ]
+}
