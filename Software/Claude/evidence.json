@@ -24,7 +24,8 @@
         "bytes": 23315443,
         "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
       },
-      "interpretation": "All eligible assets collected; one CDN script excluded. Earlier v0.4.31 excluded all 384 assets because of origin policy. v0.4.33 adds local approval; not tested by this run."
+      "interpretation": "All eligible assets collected; one CDN script excluded. Earlier v0.4.31 excluded all 384 assets because of origin policy. v0.4.33 adds local approval; not tested by this run.",
+      "plan_status": "Replay plan reconstructed from earlier recorded investigation and returned evidence; original input JSON not independently reverified in this pass."
     },
     {
       "id": "C-discover",
@@ -121,7 +122,8 @@
         ],
         "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
       },
-      "interpretation": "Full worker recovered; seven region searches locate candidate mechanisms. Search results are lexical, not implementation proofs."
+      "interpretation": "Full worker recovered; seven region searches locate candidate mechanisms. Search results are lexical, not implementation proofs.",
+      "plan_status": "Replay plan reconstructed from earlier recorded investigation and returned evidence; original input JSON not independently reverified in this pass."
     },
     {
       "id": "C-read",
@@ -229,17 +231,10 @@
               "shared-22-CcK0_IAI.js"
             ],
             "limit": 5
-          },
-          {
-            "op": "readSource",
-            "file": "shared-22-CcK0_IAI.js",
-            "sha256": "9d14b22941c97298b78ba1bb97246342d2d040cb5f9415681ccab0c12450630e",
-            "start": 32768,
-            "length": 6000
           }
         ]
       },
-      "interpretation": "current_leaf_message_uuid and LATEST_ASSISTANT_OUTPUT_KIND_ occur in the discovery atlas. Investigate identity, parent/child relationships, editing and regeneration; the representation itself has not been inspected.",
+      "interpretation": "current_leaf_message_uuid and LATEST_ASSISTANT_OUTPUT_KIND_ occur in the discovery atlas. Investigate identity, parent/child relationships, editing and regeneration; the representation itself has not been inspected. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "shared-22-CcK0_IAI.js",
@@ -275,17 +270,10 @@
               "shared-l-p-m-w-4-DGaFS2sw.js"
             ],
             "limit": 5
-          },
-          {
-            "op": "readSource",
-            "file": "shared-l-p-m-w-4-DGaFS2sw.js",
-            "sha256": "1c4581ae68b20a3cf56a0f63f272c7b369e50f13f2828b56572c152414a3a321",
-            "start": 98304,
-            "length": 6000
           }
         ]
       },
-      "interpretation": "The atlas contains first_online_change_after_failure_type, first_online_change_after_failure_ms and AbortController near fetch. These are clues to client-side failure classification, cancellation and recovery—not a proven streaming resume protocol.",
+      "interpretation": "The atlas contains first_online_change_after_failure_type, first_online_change_after_failure_ms and AbortController near fetch. These are clues to client-side failure classification, cancellation and recovery—not a proven streaming resume protocol. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "shared-l-p-m-w-4-DGaFS2sw.js",
@@ -328,11 +316,11 @@
             "file": "shared-100-BPBydDLA.js",
             "sha256": "ef3e1c5634390724396c9903b3148d227f16a289b33051e32c21f0dbd16af1e1",
             "start": 29184,
-            "length": 6000
+            "length": 2048
           }
         ]
       },
-      "interpretation": "Search found voice_web_no_mic_preconnect_bail alongside webRtcRedialAfterSilence, webRtcSessionRolloverOff and media/socket silence limits. Distinguish microphone permission/track readiness, transport setup and media liveness before interpreting these names.",
+      "interpretation": "Search found voice_web_no_mic_preconnect_bail alongside webRtcRedialAfterSilence, webRtcSessionRolloverOff and media/socket silence limits. Distinguish microphone permission/track readiness, transport setup and media liveness before interpreting these names. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "shared-100-BPBydDLA.js",
@@ -375,11 +363,11 @@
             "file": "shared-m-10-Nr75je2I.js",
             "sha256": "a92e4dba05485df73f99a327779d53df087cfb1abdcaefd0700e2d3a51d4d094",
             "start": 84480,
-            "length": 6000
+            "length": 3584
           }
         ]
       },
-      "interpretation": "Search found capture_clock_mismatch_deliveries_per_sec, sample-rate changes, frames per delivery, output latency and playback underrun metrics. The actual clock model and corrective policy remain open.",
+      "interpretation": "Search found capture_clock_mismatch_deliveries_per_sec, sample-rate changes, frames per delivery, output latency and playback underrun metrics. The actual clock model and corrective policy remain open. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "shared-m-10-Nr75je2I.js",
@@ -415,17 +403,10 @@
               "shared-3-fop4DWOk.js"
             ],
             "limit": 5
-          },
-          {
-            "op": "readSource",
-            "file": "shared-3-fop4DWOk.js",
-            "sha256": "eecbb16e2b7c5f5876fc58d917dfc1911c3cbe0b6b4cdd74ea5dcc7fe24f339b",
-            "start": 131072,
-            "length": 6000
           }
         ]
       },
-      "interpretation": "The discovery atlas exposes file_kept_over_page_limit_direct, file_kept_after_conversion_page_limit and file_kept_after_blank_text. These are clues to admission/conversion decisions; inspect their callers and distinguish local policy from server validation.",
+      "interpretation": "The discovery atlas exposes file_kept_over_page_limit_direct, file_kept_after_conversion_page_limit and file_kept_after_blank_text. These are clues to admission/conversion decisions; inspect their callers and distinguish local policy from server validation. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "shared-3-fop4DWOk.js",
@@ -462,13 +443,6 @@
             "limit": 5
           },
           {
-            "op": "readSource",
-            "file": "shared-12-BRV-ODbY.js",
-            "sha256": "db23eb3ee8c9a97b37a3e875e4ed00de6b4a5ec78b314573b668743324ccf4d1",
-            "start": 131072,
-            "length": 6000
-          },
-          {
             "op": "searchIndex",
             "any": [
               "sensitive_mcps_per_call_consent",
@@ -479,17 +453,10 @@
               "shared-36-BGCbBDsB.js"
             ],
             "limit": 5
-          },
-          {
-            "op": "readSource",
-            "file": "shared-36-BGCbBDsB.js",
-            "sha256": "0150466491d0b89ebebbbd76eb806b4a45f31a9f040eeb56210f6d5944cc3a21",
-            "start": 98304,
-            "length": 6000
           }
         ]
       },
-      "interpretation": "Atlas identifiers include toolUseResultPresent, preceding_tool_use_ids, submitToolApproval, sensitive_mcps_per_call_consent and tool_approval_default_always_allow. Inspect the presentation of tool lifecycle and the approval boundary; no server-side enforcement claim.",
+      "interpretation": "Atlas identifiers include toolUseResultPresent, preceding_tool_use_ids, submitToolApproval, sensitive_mcps_per_call_consent and tool_approval_default_always_allow. Inspect the presentation of tool lifecycle and the approval boundary; no server-side enforcement claim. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "shared-12-BRV-ODbY.js",
@@ -535,17 +502,10 @@
               "shared-12-BRV-ODbY.js"
             ],
             "limit": 5
-          },
-          {
-            "op": "readSource",
-            "file": "shared-12-BRV-ODbY.js",
-            "sha256": "db23eb3ee8c9a97b37a3e875e4ed00de6b4a5ec78b314573b668743324ccf4d1",
-            "start": 622592,
-            "length": 6000
           }
         ]
       },
-      "interpretation": "Atlas contains tool_cell_artifact_designed_approval, McpAppViewAskPrompt and anyConsentPromptLive. These indicate candidate UI boundaries, not a verified sandbox contract. Investigate how content is handed off and how interaction/permission state is represented.",
+      "interpretation": "Atlas contains tool_cell_artifact_designed_approval, McpAppViewAskPrompt and anyConsentPromptLive. These indicate candidate UI boundaries, not a verified sandbox contract. Investigate how content is handed off and how interaction/permission state is represented. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "shared-12-BRV-ODbY.js",
@@ -583,13 +543,6 @@
             "limit": 5
           },
           {
-            "op": "readSource",
-            "file": "shared-37-D_gdwzN7.js",
-            "sha256": "1757fac25f79bcff76c6a7e3419575bb81d6fa6402b6770ef99f2a9404a3cd5c",
-            "start": 105984,
-            "length": 6000
-          },
-          {
             "op": "searchIndex",
             "any": [
               "disableWritesUntilReload",
@@ -603,14 +556,14 @@
           },
           {
             "op": "readSource",
-            "file": "shared-l-p-m-w-8-CFELbFb2.js",
-            "sha256": "f7d3b6fb4596775f3011d71ec12a94ac437fb07d361782ee550e520ad0de2dfd",
-            "start": 32768,
-            "length": 6000
+            "file": "shared-37-D_gdwzN7.js",
+            "sha256": "1757fac25f79bcff76c6a7e3419575bb81d6fa6402b6770ef99f2a9404a3cd5c",
+            "start": 105984,
+            "length": 2048
           }
         ]
       },
-      "interpretation": "Search found draftHeldForSessionMismatch with accountSwitchGen, crossedAccount and isIncognitoDraftIsolated. The atlas additionally exposes disableWritesUntilReload and bootstrap_eager_stale_identity. Determine what data is cleared, retained or write-blocked; do not infer actual privacy guarantees from names.",
+      "interpretation": "Search found draftHeldForSessionMismatch with accountSwitchGen, crossedAccount and isIncognitoDraftIsolated. The atlas additionally exposes disableWritesUntilReload and bootstrap_eager_stale_identity. Determine what data is cleared, retained or write-blocked; do not infer actual privacy guarantees from names. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "shared-37-D_gdwzN7.js",
@@ -658,13 +611,6 @@
             "limit": 5
           },
           {
-            "op": "readSource",
-            "file": "shared-38-DpZI2bXF.js",
-            "sha256": "a8807f306bf0bbc86da30b7e4545ff308dc70fe761c6c1c71f479a833eecdeb1",
-            "start": 32768,
-            "length": 6000
-          },
-          {
             "op": "searchIndex",
             "any": [
               "creditsOnlyModelOff",
@@ -675,17 +621,10 @@
               "shared-3-fop4DWOk.js"
             ],
             "limit": 5
-          },
-          {
-            "op": "readSource",
-            "file": "shared-3-fop4DWOk.js",
-            "sha256": "eecbb16e2b7c5f5876fc58d917dfc1911c3cbe0b6b4cdd74ea5dcc7fe24f339b",
-            "start": 655360,
-            "length": 6000
           }
         ]
       },
-      "interpretation": "The atlas contains claudified_extra_usage_no_default_spend_limit, creditsOnlyModelOff, askAdminHigherLimit and MobileOveragesPaymentSetupModal. These are leads to UI and policy distinctions, not a statement of pricing, current entitlement, or billing enforcement.",
+      "interpretation": "The atlas contains claudified_extra_usage_no_default_spend_limit, creditsOnlyModelOff, askAdminHigherLimit and MobileOveragesPaymentSetupModal. These are leads to UI and policy distinctions, not a statement of pricing, current entitlement, or billing enforcement. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "shared-38-DpZI2bXF.js",
