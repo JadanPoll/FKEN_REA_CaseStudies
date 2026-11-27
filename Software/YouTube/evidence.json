@@ -1,0 +1,736 @@
+{
+  "schema": "rea-evidence/v1",
+  "origin": "https://www.youtube.com",
+  "export": {
+    "schema": "ai_pill_os.recent_runs.v1",
+    "version": "0.4.34",
+    "exportedAt": "2026-11-27T09:30:53.921Z",
+    "count": 9,
+    "order": "newest first",
+    "scope": "Retained recent outcomes only, not a complete history."
+  },
+  "sources": [
+    {
+      "id": "Y-kevlar",
+      "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+      "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.O2ombKKCIBU.2021.O/am=AAAAAEAAAACAAEgJ/d=1/br=1/rs=AGKMywFuDJl4EqsN9g4eDlASwzAsGTVtbA/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+      "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+      "characters": 9849016,
+      "bytes": 9849017,
+      "origin": "https://www.youtube.com",
+      "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+      "run_id": "Y-acquire",
+      "ranges": [
+        {
+          "start": 1468500,
+          "end": 1473000,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-platform"
+        },
+        {
+          "start": 6354000,
+          "end": 6357600,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-media"
+        },
+        {
+          "start": 554200,
+          "end": 557000,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-media"
+        },
+        {
+          "start": 578000,
+          "end": 582000,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-classification"
+        },
+        {
+          "start": 574000,
+          "end": 578050,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-validation"
+        },
+        {
+          "start": 5991500,
+          "end": 5994000,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-validation"
+        },
+        {
+          "start": 5999500,
+          "end": 6001000,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-attestation"
+        },
+        {
+          "start": 6700800,
+          "end": 6702300,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-attestation"
+        },
+        {
+          "start": 915200,
+          "end": 916700,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-integrity"
+        }
+      ]
+    },
+    {
+      "id": "Y-player",
+      "file": "base.js",
+      "url": "https://www.youtube.com/s/player/b485e332/player_es6.vflset/en_US/base.js",
+      "sha256": "6fb3b876821b6f9737119baa78dbfb79fb53e881f212ee421fd3a20b3167e109",
+      "characters": 2721418,
+      "bytes": 2721418,
+      "origin": "https://www.youtube.com",
+      "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+      "run_id": "Y-acquire",
+      "ranges": [
+        {
+          "start": 819200,
+          "end": 823200,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-platform"
+        },
+        {
+          "start": 2248800,
+          "end": 2250300,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-platform"
+        },
+        {
+          "start": 785800,
+          "end": 789300,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-media"
+        },
+        {
+          "start": 702000,
+          "end": 704200,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-response"
+        },
+        {
+          "start": 1486500,
+          "end": 1489000,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "Y-response"
+        }
+      ]
+    },
+    {
+      "id": "Y-annotations",
+      "file": "annotations_module.js",
+      "url": "https://www.youtube.com/s/player/b485e332/player_es6.vflset/en_US/annotations_module.js",
+      "sha256": "93d1569d7d39193fd58f3052e4ad07fc90b67bf3c09028c160a4964e01cebe03",
+      "characters": 70191,
+      "bytes": 70191,
+      "origin": "https://www.youtube.com",
+      "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+      "run_id": "Y-platform",
+      "ranges": []
+    }
+  ],
+  "runs": [
+    {
+      "id": "Y-acquire",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Map application source and capabilities",
+        "operations": [
+          {
+            "op": "snapshotSources"
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned operation parameters and source windows. Exact original plan, limits and optional expectations were not retained; not an exact input receipt.",
+      "receipt": {
+        "run_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+        "version": "0.4.19",
+        "at": "2026-11-27T05:15:52.032Z",
+        "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+        "elapsed_ms": 1782,
+        "passed": 1,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "observed": 17,
+        "eligible": 14,
+        "collected": 14,
+        "excluded": 3,
+        "deferred": 0,
+        "tiles": 414,
+        "bytes": 13236893
+      },
+      "interpretation": "14 of 14 eligible sources collected from 17 observed; 3 excluded. 414 tiles, 13,236,893 bytes, persisted archive."
+    },
+    {
+      "id": "Y-search",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Search retained index for SABR streaming and Kevlar module loader symbols",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "all": [
+              "enableSabrProbeBounceLogging"
+            ]
+          },
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "all": [
+              "moduleInfoMap"
+            ],
+            "any": [
+              "ModuleLoadFailure",
+              "getModuleInfo"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned operation parameters and source windows. Exact original plan, limits and optional expectations were not retained; not an exact input receipt.",
+      "receipt": {
+        "run_id": "211a3712-1679-408e-bbad-c8679a02fa94",
+        "version": "0.4.21",
+        "at": "2026-11-27T05:30:44.940Z",
+        "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+        "elapsed_ms": 314,
+        "passed": 2,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "search_unique_occurrences": [
+          3,
+          53
+        ],
+        "files_searched": 14
+      },
+      "interpretation": "SABR-related configuration and module-loader names located across the retained 14-file corpus. Lexical hits do not establish an adaptive bitrate algorithm."
+    },
+    {
+      "id": "Y-platform",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Inspect player decompression, module loading and feature chunks",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "base.js",
+            "sha256": "6fb3b876821b6f9737119baa78dbfb79fb53e881f212ee421fd3a20b3167e109",
+            "start": 819200,
+            "length": 4000
+          },
+          {
+            "op": "readSource",
+            "file": "base.js",
+            "sha256": "6fb3b876821b6f9737119baa78dbfb79fb53e881f212ee421fd3a20b3167e109",
+            "start": 2248800,
+            "length": 1500
+          },
+          {
+            "op": "readSource",
+            "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+            "start": 1468500,
+            "length": 4500
+          },
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "all": [
+              "innertubeCommand"
+            ],
+            "files": [
+              "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk"
+            ]
+          },
+          {
+            "op": "collectDependency",
+            "parent": "base.js",
+            "path": "annotations_module.js"
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned operation parameters and source windows. Exact original plan, limits and optional expectations were not retained; not an exact input receipt.",
+      "receipt": {
+        "run_id": "2018ebfc-b544-4acb-a57a-4be07a27ecc1",
+        "version": "0.4.23",
+        "at": "2026-11-27T05:43:25.360Z",
+        "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+        "elapsed_ms": 320,
+        "passed": 5,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "search_unique_occurrences": [
+          54
+        ],
+        "dependency_bytes": 70191,
+        "dependency_status": "collected",
+        "dependency_basis": "Exact quoted literal; inferred sibling URL, not proof of runtime import."
+      },
+      "interpretation": "Observed native/Wasm/JavaScript gzip fallback, explicit player feature mapping, dynamic module dependency loading and a collected annotation sibling. The original description mentioned MediaSource limits, but these windows do not establish them."
+    },
+    {
+      "id": "Y-media",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Inspect error classification, ad placement data, media timestamp handling and integrity-related landmarks",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+            "start": 6354000,
+            "length": 3600
+          },
+          {
+            "op": "readSource",
+            "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+            "start": 554200,
+            "length": 2800
+          },
+          {
+            "op": "readSource",
+            "file": "base.js",
+            "sha256": "6fb3b876821b6f9737119baa78dbfb79fb53e881f212ee421fd3a20b3167e109",
+            "start": 785800,
+            "length": 3500
+          },
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "any": [
+              "po_token",
+              "poToken",
+              "botguard",
+              "BotGuard"
+            ],
+            "files": [
+              "base.js"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned operation parameters and source windows. Exact original plan, limits and optional expectations were not retained; not an exact input receipt.",
+      "receipt": {
+        "run_id": "821c2049-6f5b-481d-ac1a-6e7ed190d2f4",
+        "version": "0.4.23",
+        "at": "2026-11-27T05:45:39.126Z",
+        "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+        "elapsed_ms": 231,
+        "passed": 4,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "search_unique_occurrences": [
+          16
+        ]
+      },
+      "interpretation": "Error sampling uses stack and browser-specific heuristics. Ad placement structures describe millisecond cue positions and prefetch. Player source shows media-container handling and timeline drift logic, not the Wasm bridge claimed in the original description."
+    },
+    {
+      "id": "Y-response",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Inspect player request construction and response processing",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "base.js",
+            "sha256": "6fb3b876821b6f9737119baa78dbfb79fb53e881f212ee421fd3a20b3167e109",
+            "start": 702000,
+            "length": 2200
+          },
+          {
+            "op": "readSource",
+            "file": "base.js",
+            "sha256": "6fb3b876821b6f9737119baa78dbfb79fb53e881f212ee421fd3a20b3167e109",
+            "start": 1486500,
+            "length": 2500
+          },
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "all": [
+              "BISCOTTI_BASED_DETECTION_RESULT_NOT_DETECTED"
+            ],
+            "files": [
+              "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned operation parameters and source windows. Exact original plan, limits and optional expectations were not retained; not an exact input receipt.",
+      "receipt": {
+        "run_id": "97082405-f6ef-4c04-8d6a-95eb8a4aeafb",
+        "version": "0.4.23",
+        "at": "2026-11-27T05:46:45.695Z",
+        "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+        "elapsed_ms": 285,
+        "passed": 3,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "search_unique_occurrences": [
+          1
+        ]
+      },
+      "interpretation": "Request-building source includes playback capability and service-integrity fields. Response processing extracts variant envelopes and routes errors separately. This is not evidence of the internal attestation algorithm."
+    },
+    {
+      "id": "Y-classification",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Inspect detection outcome classification and player response metadata",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+            "start": 578000,
+            "length": 4000
+          },
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "any": [
+              "FLOW_TYPE_ADBLOCK_ENFORCEMENT",
+              "bkaEnforcementMessageViewModel"
+            ],
+            "files": [
+              "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned operation parameters and source windows. Exact original plan, limits and optional expectations were not retained; not an exact input receipt.",
+      "receipt": {
+        "run_id": "75ff5930-a4bb-4312-9f98-dc098fc09a67",
+        "version": "0.4.23",
+        "at": "2026-11-27T05:47:42.399Z",
+        "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+        "elapsed_ms": 231,
+        "passed": 2,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "search_unique_occurrences": [
+          6
+        ]
+      },
+      "interpretation": "Observed categorical detector outcomes, compact aggregation, flow logging and a separate Polymer lifecycle exception wrapper. Does not establish detector accuracy or server behavior."
+    },
+    {
+      "id": "Y-validation",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Inspect differential observations and playback response validation",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+            "start": 574000,
+            "length": 4050
+          },
+          {
+            "op": "readSource",
+            "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+            "start": 5991500,
+            "length": 2500
+          },
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "all": [
+              "CATSTAT"
+            ],
+            "files": [
+              "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned operation parameters and source windows. Exact original plan, limits and optional expectations were not retained; not an exact input receipt.",
+      "receipt": {
+        "run_id": "715cc78c-d6a5-4db4-acda-12667910713d",
+        "version": "0.4.23",
+        "at": "2026-11-27T05:48:53.597Z",
+        "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+        "elapsed_ms": 292,
+        "passed": 3,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "search_unique_occurrences": [
+          5
+        ]
+      },
+      "interpretation": "Controlled browser observations are classified using repeated trials and uncertainty. A response handler distinguishes playability/error states and integrity failures. No live trial, false-positive measurement or bypass experiment performed."
+    },
+    {
+      "id": "Y-attestation",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Inspect response-integrity references and attestation reporting",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "all": [
+              "JKt"
+            ],
+            "files": [
+              "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk"
+            ]
+          },
+          {
+            "op": "readSource",
+            "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+            "start": 5999500,
+            "length": 1500
+          },
+          {
+            "op": "readSource",
+            "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+            "start": 6700800,
+            "length": 1500
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned operation parameters and source windows. Exact original plan, limits and optional expectations were not retained; not an exact input receipt.",
+      "receipt": {
+        "run_id": "de2820c3-1611-455a-9bef-ca7d942b0237",
+        "version": "0.4.23",
+        "at": "2026-11-27T05:50:11.794Z",
+        "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+        "elapsed_ms": 251,
+        "passed": 3,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "search_unique_occurrences": [
+          3
+        ]
+      },
+      "interpretation": "An async challenge/snapshot flow has bounded waiting and differentiated VM errors; a feedback path includes client diagnostic fields. The excerpt alone does not establish actual network transmission, purpose of every field, or server-side interpretation."
+    },
+    {
+      "id": "Y-integrity",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Inspect response-integrity check and reporting-state references",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+            "start": 915200,
+            "length": 1500
+          },
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "all": [
+              "DCLKSTAT"
+            ],
+            "files": [
+              "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned operation parameters and source windows. Exact original plan, limits and optional expectations were not retained; not an exact input receipt.",
+      "receipt": {
+        "run_id": "4de73567-dc2c-42ff-95e5-22cef902a4ea",
+        "version": "0.4.23",
+        "at": "2026-11-27T05:51:03.018Z",
+        "archive_id": "ccc501cf-fb29-4a0b-8cb0-d4e057419f15",
+        "elapsed_ms": 261,
+        "passed": 2,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "search_unique_occurrences": [
+          4
+        ]
+      },
+      "interpretation": "The response checker compares selected response values with decoded reference values and distinguishes missing data, decoding/parsing errors and mismatches. It does not establish cryptographic authenticity or all writers of the reporting state."
+    },
+    {
+      "id": "Y-next-sabr",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Investigate sabr",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "all": [
+              "enableSabrProbeBounceLogging"
+            ],
+            "files": [
+              "base.js"
+            ]
+          },
+          {
+            "op": "readSource",
+            "file": "base.js",
+            "sha256": "6fb3b876821b6f9737119baa78dbfb79fb53e881f212ee421fd3a20b3167e109",
+            "start": 2010000,
+            "length": 4000
+          }
+        ]
+      },
+      "interpretation": "Locate surrounding configuration and implementation boundaries for adaptive delivery; not yet run."
+    },
+    {
+      "id": "Y-next-viewing",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Investigate viewing",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "captionTracks",
+              "offlineState",
+              "miniplayer"
+            ],
+            "scope": "region",
+            "limit": 12
+          }
+        ]
+      },
+      "interpretation": "Find distinct feature territories; no implementation claim."
+    },
+    {
+      "id": "Y-next-commands",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://www.youtube.com",
+        "description": "Investigate commands",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "all": [
+              "innertubeCommand"
+            ],
+            "files": [
+              "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk"
+            ]
+          },
+          {
+            "op": "readSource",
+            "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+            "start": 464000,
+            "length": 3500
+          }
+        ]
+      },
+      "interpretation": "Locate response/command handling around observed lexical hits; verify actual callers before inferring behavior."
+    }
+  ],
+  "acquisition_manifest": [
+    {
+      "file": "m=yTIahe",
+      "bytes": 282,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "m=QlbBce,De8mUc",
+      "bytes": 509,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "network.js",
+      "bytes": 14351,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "lottie-light.js",
+      "bytes": 210087,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "scheduler.js",
+      "bytes": 8197,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+      "bytes": 9849017,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "spf.js",
+      "bytes": 38482,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "webcomponents-sd.js",
+      "bytes": 78940,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "www-i18n-constants.js",
+      "bytes": 5817,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "captions.js",
+      "bytes": 78296,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "base.js",
+      "bytes": 2721418,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "miniplayer.js",
+      "bytes": 7580,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "offline.js",
+      "bytes": 103488,
+      "observation": "collected, not necessarily executed"
+    },
+    {
+      "file": "remote.js",
+      "bytes": 120429,
+      "observation": "collected, not necessarily executed"
+    }
+  ]
+}
