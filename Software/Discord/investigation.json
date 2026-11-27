@@ -321,7 +321,6 @@
       "question": "Gateway messages and recovery",
       "status": "pending_investigation",
       "why": "Prospective chapter: separate gateway event delivery, resume, REST reconciliation and connection state. No specific gateway implementation recovered in the available discovery excerpts; use candidate lexical queries and official gateway documentation to orient a client-side investigation.",
-      "mechanisms_to_investigate": "Prospective chapter: separate gateway event delivery, resume, REST reconciliation and connection state. No specific gateway implementation recovered in the available discovery excerpts; use candidate lexical queries and official gateway documentation to orient a client-side investigation.",
       "qualification": "Prospective question. No implementation evidence or completed experiment yet.",
       "term_ids": [
         "rea-discord-t-0051",
@@ -343,7 +342,6 @@
       "question": "Media decoding and browser fallback",
       "status": "pending_investigation",
       "why": "The explored region exposes ogvjsVideoFrameRate, ogvjsAudioSampleRate, _lastFrameDecodeTime, MEDIA_ERR_SRC_NOT_SUPPORTED and WebAssembly. This is likely media-library code; inspect whether and when Discord invokes it. Do not conflate media playback with live call transport.",
-      "mechanisms_to_investigate": "The explored region exposes ogvjsVideoFrameRate, ogvjsAudioSampleRate, _lastFrameDecodeTime, MEDIA_ERR_SRC_NOT_SUPPORTED and WebAssembly. This is likely media-library code; inspect whether and when Discord invokes it. Do not conflate media playback with live call transport.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-discord-t-0058",
@@ -365,7 +363,6 @@
       "question": "Live media transport",
       "status": "pending_investigation",
       "why": "Prospective territory, not an inspected implementation. Distinguish microphone and camera capture, signaling, transport, codec negotiation and display capture; do not infer voice behavior from the discovered playback library.",
-      "mechanisms_to_investigate": "Prospective territory, not an inspected implementation. Distinguish microphone and camera capture, signaling, transport, codec negotiation and display capture; do not infer voice behavior from the discovered playback library.",
       "qualification": "Prospective question. No implementation evidence or completed experiment yet.",
       "term_ids": [
         "rea-discord-t-0064",
@@ -387,7 +384,6 @@
       "question": "Moderation and server membership",
       "status": "pending_investigation",
       "why": "Discovery found AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME and getSubmittedGuildJoinRequestTotal in separate regions. They are possible moderation and join-request UI/state leads, not evidence of how permissions are enforced.",
-      "mechanisms_to_investigate": "Discovery found AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME and getSubmittedGuildJoinRequestTotal in separate regions. They are possible moderation and join-request UI/state leads, not evidence of how permissions are enforced.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-discord-t-0071",
@@ -409,7 +405,6 @@
       "question": "Thread archiving and channel activity",
       "status": "pending_investigation",
       "why": "The discovered autoArchiveDurationHook and CHANNEL_FOLLOWER_STATS_FETCH_* identifiers point toward distinct lifecycle and following mechanisms. Trace actual definitions and separate client controls from server policy.",
-      "mechanisms_to_investigate": "The discovered autoArchiveDurationHook and CHANNEL_FOLLOWER_STATS_FETCH_* identifiers point toward distinct lifecycle and following mechanisms. Trace actual definitions and separate client controls from server policy.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-discord-t-0077",
@@ -430,7 +425,6 @@
       "question": "Embedded activity discovery and presentation",
       "status": "pending_investigation",
       "why": "The atlas reveals getEmbeddedActivitiesForLocationIncludingHidden, getSelfEmbeddedActivityForLocation, ACTIVITY_POPOUT_POP_OUT_BUTTON_CLICKED and getAnyStreamForUser. Explore activity discovery, placement and pop-out behavior, without assuming an authorization or sandbox model.",
-      "mechanisms_to_investigate": "The atlas reveals getEmbeddedActivitiesForLocationIncludingHidden, getSelfEmbeddedActivityForLocation, ACTIVITY_POPOUT_POP_OUT_BUTTON_CLICKED and getAnyStreamForUser. Explore activity discovery, placement and pop-out behavior, without assuming an authorization or sandbox model.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-discord-t-0082",
@@ -451,7 +445,6 @@
       "question": "Animation scheduling and workers",
       "status": "pending_investigation",
       "why": "A discovered region contains setCurrentRawFrameValue, waitForFontsLoaded, _useWebWorker and Worker/Blob lexical motifs. Identify the animation library, rendering scheduler and whether Discord uses worker execution.",
-      "mechanisms_to_investigate": "A discovered region contains setCurrentRawFrameValue, waitForFontsLoaded, _useWebWorker and Worker/Blob lexical motifs. Identify the animation library, rendering scheduler and whether Discord uses worker execution.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-discord-t-0087",
@@ -472,7 +465,6 @@
       "question": "Checkout state and payment-source selection",
       "status": "pending_investigation",
       "why": "The observed region contains hasAddedPaymentSourceThisSession, hasPaymentSourcesFromCheckoutStore, hasCheckedInitialPaymentSourceRef and checkAndResolveInitialPaymentSourceId. Recover the UI state machine, not payment credentials or private account information. Server-side transaction correctness is outside this evidence.",
-      "mechanisms_to_investigate": "The observed region contains hasAddedPaymentSourceThisSession, hasPaymentSourcesFromCheckoutStore, hasCheckedInitialPaymentSourceRef and checkAndResolveInitialPaymentSourceId. Recover the UI state machine, not payment credentials or private account information. Server-side transaction correctness is outside this evidence.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-discord-t-0092",
@@ -494,7 +486,6 @@
       "question": "Webpack registries and dependency resolution",
       "status": "pending_investigation",
       "why": "AI Pill's parsed registry recovered 13,976 factories across 1,429 retained assets; the observed consumer 674658, store 590180 and backoff 158390 are useful examples of direct module candidates. Distinguish registry recognition, actual imports and runtime execution. The locale chunk is another example.",
-      "mechanisms_to_investigate": "AI Pill's parsed registry recovered 13,976 factories across 1,429 retained assets; the observed consumer 674658, store 590180 and backoff 158390 are useful examples of direct module candidates. Distinguish registry recognition, actual imports and runtime execution. The locale chunk is another example.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-discord-t-0020",
