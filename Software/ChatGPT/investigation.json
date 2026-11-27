@@ -1,0 +1,1604 @@
+{
+  "id": "REA-chatgpt",
+  "title": "ChatGPT — Anatomy of an AI conversation client",
+  "root": "REA-chatgpt",
+  "nodes": [
+    {
+      "id": "REA-chatgpt",
+      "parent_id": null,
+      "kind": "question",
+      "question": "ChatGPT — Anatomy of an AI conversation client",
+      "why": "A prospective book of client-side engineering, with observed mechanisms and explicitly open directions."
+    },
+    {
+      "id": "REA-chatgpt-compose",
+      "parent_id": "REA-chatgpt",
+      "kind": "question",
+      "question": "The conversation composer",
+      "why": "How a message becomes a valid, current submission rather than an arbitrary text string."
+    },
+    {
+      "id": "REA-chatgpt-delivery",
+      "parent_id": "REA-chatgpt",
+      "kind": "question",
+      "question": "Conversation delivery and continuity",
+      "why": "Maintaining the conversation through stream interruptions, background recovery and changing client identities."
+    },
+    {
+      "id": "REA-chatgpt-representation",
+      "parent_id": "REA-chatgpt",
+      "kind": "question",
+      "question": "From conversation data to readable messages",
+      "why": "Message ancestry, visible turns, structured data and efficient view construction."
+    },
+    {
+      "id": "REA-chatgpt-drafts",
+      "parent_id": "REA-chatgpt",
+      "kind": "question",
+      "question": "Drafts, prediction and local persistence",
+      "why": "Managing user-owned text across navigation, suggestions and asynchronous restoration."
+    },
+    {
+      "id": "REA-chatgpt-files",
+      "parent_id": "REA-chatgpt",
+      "kind": "question",
+      "question": "Files, attachments and external resources",
+      "why": "Admission, upload readiness, ownership and failure handling."
+    },
+    {
+      "id": "REA-chatgpt-interaction",
+      "parent_id": "REA-chatgpt",
+      "kind": "question",
+      "question": "Copying, sharing and interacting with responses",
+      "why": "Clipboard formats, selection, export and user-visible action boundaries."
+    },
+    {
+      "id": "REA-chatgpt-voice",
+      "parent_id": "REA-chatgpt",
+      "kind": "question",
+      "question": "Voice and audio processing",
+      "why": "Media capture, audio processing, playback and transport lifecycle."
+    },
+    {
+      "id": "REA-chatgpt-work",
+      "parent_id": "REA-chatgpt",
+      "kind": "question",
+      "question": "Connected tools and longer-running work",
+      "why": "Independent directions for external resources and asynchronous tasks."
+    },
+    {
+      "id": "REA-chatgpt-diagnostics",
+      "parent_id": "REA-chatgpt",
+      "kind": "question",
+      "question": "Reliability and operational evidence",
+      "why": "Network transitions, client failures and meaningful instrumentation."
+    },
+    {
+      "id": "REA-G-intent",
+      "parent_id": "REA-chatgpt-compose",
+      "kind": "question",
+      "question": "Guarded deferred submission",
+      "status": "source_inspected",
+      "mechanism_explanation": "A deferred send carries a currentness predicate. Callers retain editor document identity and relevant account/navigation state; when readiness changes, the pending action is accepted only if those captured conditions remain true. The guarded send path combines multiple currentness checks rather than treating readiness as blanket permission.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "G-src-home",
+            "section": "7078.55b4a92118.js",
+            "offsets": {
+              "start": 686000,
+              "end": 693200,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static excerpt, not runtime proof"
+          },
+          {
+            "source_id": "G-src-composer",
+            "section": "646436.55f1254c7f.js",
+            "offsets": {
+              "start": 185000,
+              "end": 195000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "A queued action should carry a functional intent and a validity predicate. Capture identity at the beginning of an operation, then revalidate at the side-effect boundary.",
+      "qualification": "Observed client call sites and guard checks, not the complete controller implementation or live behavior.",
+      "evidence_run_ids": [
+        "G-continuity",
+        "G-discover",
+        "G-copy"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0001",
+        "rea-chatgpt-t-0002",
+        "rea-chatgpt-t-0003",
+        "rea-chatgpt-t-0004",
+        "rea-chatgpt-t-0005",
+        "rea-chatgpt-t-0006",
+        "rea-chatgpt-t-0007"
+      ]
+    },
+    {
+      "id": "REA-G-submission",
+      "parent_id": "REA-chatgpt-compose",
+      "kind": "question",
+      "question": "Authored prompt and submission snapshot",
+      "status": "source_inspected",
+      "mechanism_explanation": "The submit path distinguishes original editor content, text to be restored, submitted editor document, selected uploads and whether to preserve the draft. It assembles the intended prompt and attachment state separately from transient interface state.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "G-src-composer",
+            "section": "646436.55f1254c7f.js",
+            "offsets": {
+              "start": 194500,
+              "end": 204500,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Treat a submission as a snapshot of user-authored content and associated resources; restoration requires knowing what was submitted, not merely retaining whatever text happens to be in the editor.",
+      "qualification": "Partial client preparation path; no complete transport request or rejection recovery implementation established.",
+      "evidence_run_ids": [
+        "G-continuity"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0008",
+        "rea-chatgpt-t-0009",
+        "rea-chatgpt-t-0010",
+        "rea-chatgpt-t-0011",
+        "rea-chatgpt-t-0012",
+        "rea-chatgpt-t-0013"
+      ]
+    },
+    {
+      "id": "REA-G-polling",
+      "parent_id": "REA-chatgpt-delivery",
+      "kind": "question",
+      "question": "Bounded background conversation recovery",
+      "status": "source_inspected",
+      "mechanism_explanation": "A recovery loop is bound to the account, conversation and active message/request identity. It monitors inactivity and pauses, uses bounded requests and a deadline, limits repeated unsuccessful attempts, and reconciles a refreshed conversation snapshot. A state change can cancel obsolete requests or reset recovery timing.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "G-src-recover",
+            "section": "420899.fa79bc2158.js",
+            "offsets": {
+              "start": 11232,
+              "end": 18385,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "A live stream and an independently recoverable authoritative snapshot are complementary. Recovery should be gated by inactivity, identity and a finite retry budget, not an unconditional polling timer.",
+      "qualification": "Static recovery loop only; no test of transport delivery, exact server state transitions or behavior in a suspended Safari tab.",
+      "evidence_run_ids": [
+        "G-continuity",
+        "G-discover"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0014",
+        "rea-chatgpt-t-0015",
+        "rea-chatgpt-t-0016",
+        "rea-chatgpt-t-0017",
+        "rea-chatgpt-t-0018",
+        "rea-chatgpt-t-0019",
+        "rea-chatgpt-t-0020"
+      ]
+    },
+    {
+      "id": "REA-G-events",
+      "parent_id": "REA-chatgpt-delivery",
+      "kind": "question",
+      "question": "Turn completion and conversation event boundaries",
+      "status": "pending_investigation",
+      "why": "The module index finds turn-completion listener names, conversation-state callbacks, history attachment and stream-delta listeners. This provides evidence of candidate event-oriented boundaries, not a demonstrated event dispatch contract.",
+      "transferable_insight": "Distinguish lifecycle events from DOM changes and from persisted message state; use stable event semantics only after confirming their actual contract.",
+      "qualification": "Lexical evidence only. No callback implementation or public automation API established.",
+      "evidence_run_ids": [
+        "G-discover",
+        "G-initial",
+        "G-next-events"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0021",
+        "rea-chatgpt-t-0022",
+        "rea-chatgpt-t-0023",
+        "rea-chatgpt-t-0024",
+        "rea-chatgpt-t-0025",
+        "rea-chatgpt-t-0026"
+      ]
+    },
+    {
+      "id": "REA-G-projection",
+      "parent_id": "REA-chatgpt-representation",
+      "kind": "question",
+      "question": "Message projection and cached derived views",
+      "status": "source_inspected",
+      "mechanism_explanation": "The inspected code derives display items and turns from message records, distinguishes source records from derived representations, gathers content references and reuses derived results when the relevant inputs and identities have not changed. A WeakMap caches one derived representation by message object.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "G-src-composer",
+            "section": "646436.55f1254c7f.js",
+            "offsets": {
+              "start": 698000,
+              "end": 710000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Separate canonical data from its projections. A rich application can construct multiple views without duplicating or mutating the source representation. Invalidation must follow meaningful input changes.",
+      "qualification": "Only client conversion excerpts; no full conversation schema or internal rendering protocol established.",
+      "evidence_run_ids": [
+        "G-continuity",
+        "G-discover"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0027",
+        "rea-chatgpt-t-0028",
+        "rea-chatgpt-t-0029",
+        "rea-chatgpt-t-0030",
+        "rea-chatgpt-t-0031",
+        "rea-chatgpt-t-0032",
+        "rea-chatgpt-t-0033",
+        "rea-chatgpt-t-0034"
+      ]
+    },
+    {
+      "id": "REA-G-prefill",
+      "parent_id": "REA-chatgpt-drafts",
+      "kind": "question",
+      "question": "Prediction ownership and conditional draft cleanup",
+      "status": "source_inspected",
+      "mechanism_explanation": "A suggested-text path records the document and persisted text it introduced. Input, paste, drop, composition and submit events retire its ownership. Cleanup clears text only while the tracked document and persisted content remain current; it avoids active composition. A separate route-prefill path consumes a location key once.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "G-src-draft",
+            "section": "453940.5f37051ce9.js",
+            "offsets": {
+              "start": 128000,
+              "end": 134500,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Treat machine-suggested text as a revocable contribution to a user-owned document. Cleanup must check ownership, not merely whether the suggestion previously existed.",
+      "qualification": "No claim that all suggestions follow the same path or that every navigation scenario is covered.",
+      "evidence_run_ids": [
+        "G-continuity"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0035",
+        "rea-chatgpt-t-0036",
+        "rea-chatgpt-t-0037",
+        "rea-chatgpt-t-0038",
+        "rea-chatgpt-t-0039",
+        "rea-chatgpt-t-0040",
+        "rea-chatgpt-t-0041"
+      ]
+    },
+    {
+      "id": "REA-G-storage",
+      "parent_id": "REA-chatgpt-drafts",
+      "kind": "question",
+      "question": "Browser storage and page lifecycle",
+      "status": "pending_investigation",
+      "why": "The module index eventually recovers IndexedDB and visibility-change references in one parsed module. This is a direction for inspecting persistence and lifecycle coordination, not evidence of a particular write-on-hide algorithm.",
+      "transferable_insight": "Investigate storage ownership, flush timing, recovery and browser lifecycle as separate dimensions.",
+      "qualification": "No implementation excerpt returned for this module; corrected index boundaries do not establish causal relationships.",
+      "evidence_run_ids": [
+        "G-boundary-localize",
+        "G-boundary-fixed",
+        "G-next-storage"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0042",
+        "rea-chatgpt-t-0043",
+        "rea-chatgpt-t-0044",
+        "rea-chatgpt-t-0045",
+        "rea-chatgpt-t-0046",
+        "rea-chatgpt-t-0047"
+      ]
+    },
+    {
+      "id": "REA-G-uploads",
+      "parent_id": "REA-chatgpt-files",
+      "kind": "question",
+      "question": "Attachment readiness and post-await revalidation",
+      "status": "source_inspected",
+      "mechanism_explanation": "The composer distinguishes pending drops, uploading attachments, prepared files and loading admission information. A path waits for upload-limit data and subsequently verifies cancellation, editor survival, original text, account/navigation state, currentness and continued presence of the intended upload IDs.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "G-src-composer",
+            "section": "646436.55f1254c7f.js",
+            "offsets": {
+              "start": 185000,
+              "end": 195000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static excerpt, not runtime proof"
+          },
+          {
+            "source_id": "G-src-composer",
+            "section": "646436.55f1254c7f.js",
+            "offsets": {
+              "start": 194500,
+              "end": 204500,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "An attachment becoming ready is not sufficient to authorize its use. Validate the relationship between the resource and the still-current user action after asynchronous work.",
+      "qualification": "Upload transport and server-side validation not inspected. No claim that all submissions follow this exact path.",
+      "evidence_run_ids": [
+        "G-continuity",
+        "G-discover"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0048",
+        "rea-chatgpt-t-0049",
+        "rea-chatgpt-t-0050",
+        "rea-chatgpt-t-0051",
+        "rea-chatgpt-t-0052",
+        "rea-chatgpt-t-0053",
+        "rea-chatgpt-t-0054"
+      ]
+    },
+    {
+      "id": "REA-G-copy",
+      "parent_id": "REA-chatgpt-interaction",
+      "kind": "question",
+      "question": "Copy actions and selection feedback",
+      "status": "source_inspected",
+      "mechanism_explanation": "One callback associates a successful copy with message context and reports selected-text length and action source. Another path observes a copy event only for an eligible noncollapsed selection inside the relevant message and excludes editable fields and temporary chats in that path. The listener has paired cleanup; event deduplication is present.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "G-src-copy",
+            "section": "464146.5d4546dfcd.js",
+            "offsets": {
+              "start": 63500,
+              "end": 75500,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static excerpt, not runtime proof"
+          },
+          {
+            "source_id": "G-src-selection",
+            "section": "681678.28a09074e0.js",
+            "offsets": {
+              "start": 19900,
+              "end": 26400,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Separate the actual clipboard operation from instrumentation of the user's action. Scope feedback to the right document and message; do not infer copied contents from a length metric.",
+      "qualification": "These excerpts concern feedback and event handling, not the exact complete-response serialization, all data collection or privacy policy.",
+      "evidence_run_ids": [
+        "G-copy"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0055",
+        "rea-chatgpt-t-0056",
+        "rea-chatgpt-t-0057",
+        "rea-chatgpt-t-0058",
+        "rea-chatgpt-t-0059",
+        "rea-chatgpt-t-0060"
+      ]
+    },
+    {
+      "id": "REA-G-formats",
+      "parent_id": "REA-chatgpt-interaction",
+      "kind": "question",
+      "question": "Clipboard representations and rich text transfer",
+      "status": "pending_investigation",
+      "why": "The search returned candidate clipboard paths for Markdown, text, HTML and rich-editor fragments, plus a shared clipboard helper. Native response copying was the original research goal, but the exact whole-turn serializer remains open.",
+      "transferable_insight": "Separate content representation, selection extraction and clipboard delivery; each may have different failure conditions.",
+      "qualification": "Lexical leads only for these format paths; not proof of MIME support for every copy action.",
+      "evidence_run_ids": [
+        "G-copy",
+        "G-continuity",
+        "G-next-formats"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0061",
+        "rea-chatgpt-t-0062",
+        "rea-chatgpt-t-0063",
+        "rea-chatgpt-t-0064",
+        "rea-chatgpt-t-0065",
+        "rea-chatgpt-t-0066"
+      ]
+    },
+    {
+      "id": "REA-G-audio",
+      "parent_id": "REA-chatgpt-voice",
+      "kind": "question",
+      "question": "Browser audio worklets and media lifecycle",
+      "status": "pending_investigation",
+      "why": "A positive-control search found an AudioWorkletNode construction candidate within an identified module. This establishes a specific source landmark for future audio investigations, not the implemented processing graph.",
+      "transferable_insight": "Separate capture permissions, audio processing, transport and playback; they fail independently.",
+      "qualification": "No inspected audio implementation, background microphone behavior or WebRTC details established.",
+      "evidence_run_ids": [
+        "G-boundary-first",
+        "G-boundary-fixed",
+        "G-next-audio"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0067",
+        "rea-chatgpt-t-0068",
+        "rea-chatgpt-t-0069",
+        "rea-chatgpt-t-0070",
+        "rea-chatgpt-t-0071",
+        "rea-chatgpt-t-0072",
+        "rea-chatgpt-t-0073"
+      ]
+    },
+    {
+      "id": "REA-G-resources",
+      "parent_id": "REA-chatgpt-work",
+      "kind": "question",
+      "question": "Connected resources and contextual attachments",
+      "status": "pending_investigation",
+      "why": "Discovery includes external resource references, connector-related payload names and resource/template vocabulary. These are leads toward resource identity and the boundary between an attachment and a live reference.",
+      "transferable_insight": "Preserve resource provenance, access scope and identity separately from visible text; don't infer authorization from a client representation.",
+      "qualification": "Prospective territory informed by lexical discovery. No underlying tool execution or access control implementation established.",
+      "evidence_run_ids": [
+        "G-discover",
+        "G-continuity",
+        "G-next-resources"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0074",
+        "rea-chatgpt-t-0050",
+        "rea-chatgpt-t-0075",
+        "rea-chatgpt-t-0076",
+        "rea-chatgpt-t-0077",
+        "rea-chatgpt-t-0078"
+      ]
+    },
+    {
+      "id": "REA-G-network",
+      "parent_id": "REA-chatgpt-diagnostics",
+      "kind": "question",
+      "question": "Network transitions and recovery observability",
+      "status": "pending_investigation",
+      "why": "The discovery index contains network-state change and restart-disconnect counters alongside visibility-related references. They offer a direction for examining diagnostic state transitions distinct from actual response recovery.",
+      "transferable_insight": "Instrument lifecycle transitions and failure classes rather than merely logging exceptions; correlate signals with user-visible outcomes before claiming causality.",
+      "qualification": "Lexical leads only for this diagnostic module; no measured failure rates or complete instrumentation semantics.",
+      "evidence_run_ids": [
+        "G-discover",
+        "G-next-network"
+      ],
+      "term_ids": [
+        "rea-chatgpt-t-0079",
+        "rea-chatgpt-t-0080",
+        "rea-chatgpt-t-0081",
+        "rea-chatgpt-t-0082",
+        "rea-chatgpt-t-0083",
+        "rea-chatgpt-t-0084"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "G-src-copy",
+      "title": "464146.5d4546dfcd.js",
+      "sha256": "9a15b2db8c0e8a0d8f17d5bd0914d9fc7c466ff6f0617483d17ac0f8be0c5e23",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/464146.5d4546dfcd.js"
+    },
+    {
+      "id": "G-src-selection",
+      "title": "681678.28a09074e0.js",
+      "sha256": "4381384857222116de31ef13cdb0e5ba26981fc9d304c4046bb4a91184295108",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/681678.28a09074e0.js"
+    },
+    {
+      "id": "G-src-recover",
+      "title": "420899.fa79bc2158.js",
+      "sha256": "0112529555af4562605c7f30fdca15eb0dd566bc54b31e130e4774238c55b6f6",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/420899.fa79bc2158.js"
+    },
+    {
+      "id": "G-src-home",
+      "title": "7078.55b4a92118.js",
+      "sha256": "a3dad5823fcef5854479ff69c0804efd44c91d6d0e1dc12c79bc9b517bc2c19f",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/7078.55b4a92118.js"
+    },
+    {
+      "id": "G-src-composer",
+      "title": "646436.55f1254c7f.js",
+      "sha256": "fc68805e04f00c9a5353d37d3757d93859c92191b53811b43a13d82b201c34c1",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/646436.55f1254c7f.js"
+    },
+    {
+      "id": "G-src-draft",
+      "title": "453940.5f37051ce9.js",
+      "sha256": "de991bc1579fb7270284058d1fce3b10c87a7747502e2445751fc35821df77e9",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/453940.5f37051ce9.js"
+    },
+    {
+      "id": "G-src-storage",
+      "title": "717351.2ca6861a56.js",
+      "sha256": "918db4d02a5ca08786fcd3fe0d2c08fe8b5fe6b53b997f692c69a3eba95350ab",
+      "origin": "https://chatgpt.com"
+    },
+    {
+      "id": "G-src-audio",
+      "title": "112332.486135f5c3.js",
+      "sha256": "477d5be6d31f8ca15dd6a94622cf19f72b9942eeea4e3cb69b7ab6b21e69d61b",
+      "origin": "https://chatgpt.com"
+    },
+    {
+      "id": "G-src-events",
+      "title": "418851.4535c67f63.js",
+      "sha256": "c766d76e8c8803907bd8e99bc8dd83c592be5d92fc54148ad24f5424a57e8d9f",
+      "origin": "https://chatgpt.com"
+    },
+    {
+      "id": "G-src-editor",
+      "title": "200429.0df43ecbf7.js",
+      "sha256": "329133bc12ac088bc6b363031a2d4afdc751eccc380b514982cbea0615f51b74",
+      "origin": "https://chatgpt.com"
+    },
+    {
+      "id": "G-src-clipboard",
+      "title": "76629.d1877612e5.js",
+      "sha256": "707cadde8ec106df4270c61a851c34e4d1803255cff20374447ca2967f98a7f0",
+      "origin": "https://chatgpt.com"
+    },
+    {
+      "id": "G-src-media",
+      "title": "653143.bce956a316.js",
+      "sha256": "b631fbd778c2c8dd89a30bdc450065f84387bd688705c87b894ced463e69efe4",
+      "origin": "https://chatgpt.com"
+    },
+    {
+      "id": "G-src-network",
+      "title": "155568.92a58aa405.js",
+      "sha256": "3a4800837656afd37c25935d38e10f7b7c11404d2bfad16a5104ecefdf2c8319",
+      "origin": "https://chatgpt.com"
+    }
+  ],
+  "evidence_file": "Software/ChatGPT/evidence.json",
+  "connections": [],
+  "curiosity_atlas": {
+    "purpose": "Navigate by ordinary descriptions of user-facing behavior, concepts and source evidence.",
+    "families": [
+      {
+        "id": "compose",
+        "label": "The conversation composer",
+        "description": "How a message becomes a valid, current submission rather than an arbitrary text string."
+      },
+      {
+        "id": "delivery",
+        "label": "Conversation delivery and continuity",
+        "description": "Maintaining the conversation through stream interruptions, background recovery and changing client identities."
+      },
+      {
+        "id": "representation",
+        "label": "From conversation data to readable messages",
+        "description": "Message ancestry, visible turns, structured data and efficient view construction."
+      },
+      {
+        "id": "drafts",
+        "label": "Drafts, prediction and local persistence",
+        "description": "Managing user-owned text across navigation, suggestions and asynchronous restoration."
+      },
+      {
+        "id": "files",
+        "label": "Files, attachments and external resources",
+        "description": "Admission, upload readiness, ownership and failure handling."
+      },
+      {
+        "id": "interaction",
+        "label": "Copying, sharing and interacting with responses",
+        "description": "Clipboard formats, selection, export and user-visible action boundaries."
+      },
+      {
+        "id": "voice",
+        "label": "Voice and audio processing",
+        "description": "Media capture, audio processing, playback and transport lifecycle."
+      },
+      {
+        "id": "work",
+        "label": "Connected tools and longer-running work",
+        "description": "Independent directions for external resources and asynchronous tasks."
+      },
+      {
+        "id": "diagnostics",
+        "label": "Reliability and operational evidence",
+        "description": "Network transitions, client failures and meaningful instrumentation."
+      }
+    ],
+    "entries": [
+      {
+        "id": "REA-G-CURI-intent",
+        "family_id": "compose",
+        "question": "How does ChatGPT send a message only while the user's original intent is still current?",
+        "aliases": [
+          "send when ready",
+          "changed my mind before send",
+          "delayed send uses old prompt",
+          "navigate while waiting"
+        ],
+        "context": "A deferred send carries a currentness predicate. Callers retain editor document identity and relevant account/navigation state; when readiness changes, the pending action is accepted only if those captured conditions remain true. The guarded send path combines multiple currentness checks rather than treating readiness as blanket permission.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-intent"
+        ],
+        "target_ids": [
+          "REA-G-intent"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0001",
+          "rea-chatgpt-t-0002",
+          "rea-chatgpt-t-0003",
+          "rea-chatgpt-t-0004",
+          "rea-chatgpt-t-0005",
+          "rea-chatgpt-t-0006",
+          "rea-chatgpt-t-0007"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-submission",
+        "family_id": "compose",
+        "question": "How does ChatGPT assemble a submitted conversation turn?",
+        "aliases": [
+          "what happens to typed text after send",
+          "restore a failed message",
+          "keep draft while submitting"
+        ],
+        "context": "The submit path distinguishes original editor content, text to be restored, submitted editor document, selected uploads and whether to preserve the draft. It assembles the intended prompt and attachment state separately from transient interface state.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-submission"
+        ],
+        "target_ids": [
+          "REA-G-submission"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0008",
+          "rea-chatgpt-t-0009",
+          "rea-chatgpt-t-0010",
+          "rea-chatgpt-t-0011",
+          "rea-chatgpt-t-0012",
+          "rea-chatgpt-t-0013"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-polling",
+        "family_id": "delivery",
+        "question": "How does ChatGPT recover a conversation when the live response stops arriving?",
+        "aliases": [
+          "response stops streaming",
+          "lost connection during reply",
+          "message finishes while away",
+          "recover after interruption"
+        ],
+        "context": "A recovery loop is bound to the account, conversation and active message/request identity. It monitors inactivity and pauses, uses bounded requests and a deadline, limits repeated unsuccessful attempts, and reconciles a refreshed conversation snapshot. A state change can cancel obsolete requests or reset recovery timing.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-polling"
+        ],
+        "target_ids": [
+          "REA-G-polling"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0014",
+          "rea-chatgpt-t-0015",
+          "rea-chatgpt-t-0016",
+          "rea-chatgpt-t-0017",
+          "rea-chatgpt-t-0018",
+          "rea-chatgpt-t-0019",
+          "rea-chatgpt-t-0020"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-events",
+        "family_id": "delivery",
+        "question": "How does ChatGPT represent conversation and turn lifecycle events?",
+        "aliases": [
+          "know when answer finished",
+          "message completion",
+          "new thread history",
+          "stream events"
+        ],
+        "context": "The module index finds turn-completion listener names, conversation-state callbacks, history attachment and stream-delta listeners. This provides evidence of candidate event-oriented boundaries, not a demonstrated event dispatch contract.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-events"
+        ],
+        "target_ids": [
+          "REA-G-events"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0021",
+          "rea-chatgpt-t-0022",
+          "rea-chatgpt-t-0023",
+          "rea-chatgpt-t-0024",
+          "rea-chatgpt-t-0025",
+          "rea-chatgpt-t-0026"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-projection",
+        "family_id": "representation",
+        "question": "How does ChatGPT turn conversation records into a coherent readable history?",
+        "aliases": [
+          "multiple messages become one turn",
+          "display history from records",
+          "reuse parsed message",
+          "alternate views of conversation"
+        ],
+        "context": "The inspected code derives display items and turns from message records, distinguishes source records from derived representations, gathers content references and reuses derived results when the relevant inputs and identities have not changed. A WeakMap caches one derived representation by message object.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-projection"
+        ],
+        "target_ids": [
+          "REA-G-projection"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0027",
+          "rea-chatgpt-t-0028",
+          "rea-chatgpt-t-0029",
+          "rea-chatgpt-t-0030",
+          "rea-chatgpt-t-0031",
+          "rea-chatgpt-t-0032",
+          "rea-chatgpt-t-0033",
+          "rea-chatgpt-t-0034"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-prefill",
+        "family_id": "drafts",
+        "question": "How does ChatGPT offer suggested text without overwriting what I am typing?",
+        "aliases": [
+          "suggested prompt overwrites text",
+          "remove suggestion without deleting typing",
+          "prefill repeats on navigation"
+        ],
+        "context": "A suggested-text path records the document and persisted text it introduced. Input, paste, drop, composition and submit events retire its ownership. Cleanup clears text only while the tracked document and persisted content remain current; it avoids active composition. A separate route-prefill path consumes a location key once.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-prefill"
+        ],
+        "target_ids": [
+          "REA-G-prefill"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0035",
+          "rea-chatgpt-t-0036",
+          "rea-chatgpt-t-0037",
+          "rea-chatgpt-t-0038",
+          "rea-chatgpt-t-0039",
+          "rea-chatgpt-t-0040",
+          "rea-chatgpt-t-0041"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-storage",
+        "family_id": "drafts",
+        "question": "How does ChatGPT retain local state when a tab becomes hidden or is reopened?",
+        "aliases": [
+          "draft after reload",
+          "tab hidden saves state",
+          "browser local storage"
+        ],
+        "context": "The module index eventually recovers IndexedDB and visibility-change references in one parsed module. This is a direction for inspecting persistence and lifecycle coordination, not evidence of a particular write-on-hide algorithm.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-storage"
+        ],
+        "target_ids": [
+          "REA-G-storage"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0042",
+          "rea-chatgpt-t-0043",
+          "rea-chatgpt-t-0044",
+          "rea-chatgpt-t-0045",
+          "rea-chatgpt-t-0046",
+          "rea-chatgpt-t-0047"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-uploads",
+        "family_id": "files",
+        "question": "How does ChatGPT coordinate attachment preparation with sending a message?",
+        "aliases": [
+          "attach file then send",
+          "remove upload while waiting",
+          "send before file ready",
+          "upload limit loading"
+        ],
+        "context": "The composer distinguishes pending drops, uploading attachments, prepared files and loading admission information. A path waits for upload-limit data and subsequently verifies cancellation, editor survival, original text, account/navigation state, currentness and continued presence of the intended upload IDs.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-uploads"
+        ],
+        "target_ids": [
+          "REA-G-uploads"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0048",
+          "rea-chatgpt-t-0049",
+          "rea-chatgpt-t-0050",
+          "rea-chatgpt-t-0051",
+          "rea-chatgpt-t-0052",
+          "rea-chatgpt-t-0053",
+          "rea-chatgpt-t-0054"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-copy",
+        "family_id": "interaction",
+        "question": "How does ChatGPT distinguish copying a response from selecting part of its text?",
+        "aliases": [
+          "copy one paragraph",
+          "copy entire answer",
+          "selection copy differs from button",
+          "copy action telemetry"
+        ],
+        "context": "One callback associates a successful copy with message context and reports selected-text length and action source. Another path observes a copy event only for an eligible noncollapsed selection inside the relevant message and excludes editable fields and temporary chats in that path. The listener has paired cleanup; event deduplication is present.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-copy"
+        ],
+        "target_ids": [
+          "REA-G-copy"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0055",
+          "rea-chatgpt-t-0056",
+          "rea-chatgpt-t-0057",
+          "rea-chatgpt-t-0058",
+          "rea-chatgpt-t-0059",
+          "rea-chatgpt-t-0060"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-formats",
+        "family_id": "interaction",
+        "question": "How does ChatGPT preserve formatting when text moves between the chat and other apps?",
+        "aliases": [
+          "copy markdown with formatting",
+          "paste rich text",
+          "clipboard works in one browser not another"
+        ],
+        "context": "The search returned candidate clipboard paths for Markdown, text, HTML and rich-editor fragments, plus a shared clipboard helper. Native response copying was the original research goal, but the exact whole-turn serializer remains open.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-formats"
+        ],
+        "target_ids": [
+          "REA-G-formats"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0061",
+          "rea-chatgpt-t-0062",
+          "rea-chatgpt-t-0063",
+          "rea-chatgpt-t-0064",
+          "rea-chatgpt-t-0065",
+          "rea-chatgpt-t-0066"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-audio",
+        "family_id": "voice",
+        "question": "How does ChatGPT process audio in a browser independently of its interface?",
+        "aliases": [
+          "mic processing",
+          "voice recording",
+          "audio glitches",
+          "browser audio thread"
+        ],
+        "context": "A positive-control search found an AudioWorkletNode construction candidate within an identified module. This establishes a specific source landmark for future audio investigations, not the implemented processing graph.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-audio"
+        ],
+        "target_ids": [
+          "REA-G-audio"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0067",
+          "rea-chatgpt-t-0068",
+          "rea-chatgpt-t-0069",
+          "rea-chatgpt-t-0070",
+          "rea-chatgpt-t-0071",
+          "rea-chatgpt-t-0072",
+          "rea-chatgpt-t-0073"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-resources",
+        "family_id": "work",
+        "question": "How does ChatGPT represent external resources in a conversation?",
+        "aliases": [
+          "external file in chat",
+          "connected app resource",
+          "reference instead of uploading"
+        ],
+        "context": "Discovery includes external resource references, connector-related payload names and resource/template vocabulary. These are leads toward resource identity and the boundary between an attachment and a live reference.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-resources"
+        ],
+        "target_ids": [
+          "REA-G-resources"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0074",
+          "rea-chatgpt-t-0050",
+          "rea-chatgpt-t-0075",
+          "rea-chatgpt-t-0076",
+          "rea-chatgpt-t-0077",
+          "rea-chatgpt-t-0078"
+        ]
+      },
+      {
+        "id": "REA-G-CURI-network",
+        "family_id": "diagnostics",
+        "question": "How does ChatGPT distinguish network interruption from other client failures?",
+        "aliases": [
+          "internet disconnects",
+          "connection restarts",
+          "client error while tab hidden"
+        ],
+        "context": "The discovery index contains network-state change and restart-disconnect counters alongside visibility-related references. They offer a direction for examining diagnostic state transitions distinct from actual response recovery.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-G-BRG-network"
+        ],
+        "target_ids": [
+          "REA-G-network"
+        ],
+        "term_ids": [
+          "rea-chatgpt-t-0079",
+          "rea-chatgpt-t-0080",
+          "rea-chatgpt-t-0081",
+          "rea-chatgpt-t-0082",
+          "rea-chatgpt-t-0083",
+          "rea-chatgpt-t-0084"
+        ]
+      }
+    ]
+  },
+  "navigation_bridges": [
+    {
+      "id": "REA-G-BRG-intent",
+      "question": "How does ChatGPT send a message only while the user's original intent is still current?",
+      "choices": [
+        {
+          "label": "Guarded deferred submission",
+          "technical_title": "Guarded deferred submission",
+          "distinguishing_question": "Observed client call sites and guard checks, not the complete controller implementation or live behavior.",
+          "why": "A queued action should carry a functional intent and a validity predicate. Capture identity at the beginning of an operation, then revalidate at the side-effect boundary.",
+          "targets": [
+            "REA-G-intent"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0001",
+            "rea-chatgpt-t-0002",
+            "rea-chatgpt-t-0003",
+            "rea-chatgpt-t-0004",
+            "rea-chatgpt-t-0005",
+            "rea-chatgpt-t-0006",
+            "rea-chatgpt-t-0007"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-submission",
+      "question": "How does ChatGPT assemble a submitted conversation turn?",
+      "choices": [
+        {
+          "label": "Authored prompt and submission snapshot",
+          "technical_title": "Authored prompt and submission snapshot",
+          "distinguishing_question": "Partial client preparation path; no complete transport request or rejection recovery implementation established.",
+          "why": "Treat a submission as a snapshot of user-authored content and associated resources; restoration requires knowing what was submitted, not merely retaining whatever text happens to be in the editor.",
+          "targets": [
+            "REA-G-submission"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0008",
+            "rea-chatgpt-t-0009",
+            "rea-chatgpt-t-0010",
+            "rea-chatgpt-t-0011",
+            "rea-chatgpt-t-0012",
+            "rea-chatgpt-t-0013"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-polling",
+      "question": "How does ChatGPT recover a conversation when the live response stops arriving?",
+      "choices": [
+        {
+          "label": "Bounded background conversation recovery",
+          "technical_title": "Bounded background conversation recovery",
+          "distinguishing_question": "Static recovery loop only; no test of transport delivery, exact server state transitions or behavior in a suspended Safari tab.",
+          "why": "A live stream and an independently recoverable authoritative snapshot are complementary. Recovery should be gated by inactivity, identity and a finite retry budget, not an unconditional polling timer.",
+          "targets": [
+            "REA-G-polling"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0014",
+            "rea-chatgpt-t-0015",
+            "rea-chatgpt-t-0016",
+            "rea-chatgpt-t-0017",
+            "rea-chatgpt-t-0018",
+            "rea-chatgpt-t-0019",
+            "rea-chatgpt-t-0020"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-events",
+      "question": "How does ChatGPT represent conversation and turn lifecycle events?",
+      "choices": [
+        {
+          "label": "Turn completion and conversation event boundaries",
+          "technical_title": "Turn completion and conversation event boundaries",
+          "distinguishing_question": "Lexical evidence only. No callback implementation or public automation API established.",
+          "why": "Distinguish lifecycle events from DOM changes and from persisted message state; use stable event semantics only after confirming their actual contract.",
+          "targets": [
+            "REA-G-events"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0021",
+            "rea-chatgpt-t-0022",
+            "rea-chatgpt-t-0023",
+            "rea-chatgpt-t-0024",
+            "rea-chatgpt-t-0025",
+            "rea-chatgpt-t-0026"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-projection",
+      "question": "How does ChatGPT turn conversation records into a coherent readable history?",
+      "choices": [
+        {
+          "label": "Message projection and cached derived views",
+          "technical_title": "Message projection and cached derived views",
+          "distinguishing_question": "Only client conversion excerpts; no full conversation schema or internal rendering protocol established.",
+          "why": "Separate canonical data from its projections. A rich application can construct multiple views without duplicating or mutating the source representation. Invalidation must follow meaningful input changes.",
+          "targets": [
+            "REA-G-projection"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0027",
+            "rea-chatgpt-t-0028",
+            "rea-chatgpt-t-0029",
+            "rea-chatgpt-t-0030",
+            "rea-chatgpt-t-0031",
+            "rea-chatgpt-t-0032",
+            "rea-chatgpt-t-0033",
+            "rea-chatgpt-t-0034"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-prefill",
+      "question": "How does ChatGPT offer suggested text without overwriting what I am typing?",
+      "choices": [
+        {
+          "label": "Prediction ownership and conditional draft cleanup",
+          "technical_title": "Prediction ownership and conditional draft cleanup",
+          "distinguishing_question": "No claim that all suggestions follow the same path or that every navigation scenario is covered.",
+          "why": "Treat machine-suggested text as a revocable contribution to a user-owned document. Cleanup must check ownership, not merely whether the suggestion previously existed.",
+          "targets": [
+            "REA-G-prefill"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0035",
+            "rea-chatgpt-t-0036",
+            "rea-chatgpt-t-0037",
+            "rea-chatgpt-t-0038",
+            "rea-chatgpt-t-0039",
+            "rea-chatgpt-t-0040",
+            "rea-chatgpt-t-0041"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-storage",
+      "question": "How does ChatGPT retain local state when a tab becomes hidden or is reopened?",
+      "choices": [
+        {
+          "label": "Browser storage and page lifecycle",
+          "technical_title": "Browser storage and page lifecycle",
+          "distinguishing_question": "No implementation excerpt returned for this module; corrected index boundaries do not establish causal relationships.",
+          "why": "Investigate storage ownership, flush timing, recovery and browser lifecycle as separate dimensions.",
+          "targets": [
+            "REA-G-storage"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0042",
+            "rea-chatgpt-t-0043",
+            "rea-chatgpt-t-0044",
+            "rea-chatgpt-t-0045",
+            "rea-chatgpt-t-0046",
+            "rea-chatgpt-t-0047"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-uploads",
+      "question": "How does ChatGPT coordinate attachment preparation with sending a message?",
+      "choices": [
+        {
+          "label": "Attachment readiness and post-await revalidation",
+          "technical_title": "Attachment readiness and post-await revalidation",
+          "distinguishing_question": "Upload transport and server-side validation not inspected. No claim that all submissions follow this exact path.",
+          "why": "An attachment becoming ready is not sufficient to authorize its use. Validate the relationship between the resource and the still-current user action after asynchronous work.",
+          "targets": [
+            "REA-G-uploads"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0048",
+            "rea-chatgpt-t-0049",
+            "rea-chatgpt-t-0050",
+            "rea-chatgpt-t-0051",
+            "rea-chatgpt-t-0052",
+            "rea-chatgpt-t-0053",
+            "rea-chatgpt-t-0054"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-copy",
+      "question": "How does ChatGPT distinguish copying a response from selecting part of its text?",
+      "choices": [
+        {
+          "label": "Copy actions and selection feedback",
+          "technical_title": "Copy actions and selection feedback",
+          "distinguishing_question": "These excerpts concern feedback and event handling, not the exact complete-response serialization, all data collection or privacy policy.",
+          "why": "Separate the actual clipboard operation from instrumentation of the user's action. Scope feedback to the right document and message; do not infer copied contents from a length metric.",
+          "targets": [
+            "REA-G-copy"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0055",
+            "rea-chatgpt-t-0056",
+            "rea-chatgpt-t-0057",
+            "rea-chatgpt-t-0058",
+            "rea-chatgpt-t-0059",
+            "rea-chatgpt-t-0060"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-formats",
+      "question": "How does ChatGPT preserve formatting when text moves between the chat and other apps?",
+      "choices": [
+        {
+          "label": "Clipboard representations and rich text transfer",
+          "technical_title": "Clipboard representations and rich text transfer",
+          "distinguishing_question": "Lexical leads only for these format paths; not proof of MIME support for every copy action.",
+          "why": "Separate content representation, selection extraction and clipboard delivery; each may have different failure conditions.",
+          "targets": [
+            "REA-G-formats"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0061",
+            "rea-chatgpt-t-0062",
+            "rea-chatgpt-t-0063",
+            "rea-chatgpt-t-0064",
+            "rea-chatgpt-t-0065",
+            "rea-chatgpt-t-0066"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-audio",
+      "question": "How does ChatGPT process audio in a browser independently of its interface?",
+      "choices": [
+        {
+          "label": "Browser audio worklets and media lifecycle",
+          "technical_title": "Browser audio worklets and media lifecycle",
+          "distinguishing_question": "No inspected audio implementation, background microphone behavior or WebRTC details established.",
+          "why": "Separate capture permissions, audio processing, transport and playback; they fail independently.",
+          "targets": [
+            "REA-G-audio"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0067",
+            "rea-chatgpt-t-0068",
+            "rea-chatgpt-t-0069",
+            "rea-chatgpt-t-0070",
+            "rea-chatgpt-t-0071",
+            "rea-chatgpt-t-0072",
+            "rea-chatgpt-t-0073"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-resources",
+      "question": "How does ChatGPT represent external resources in a conversation?",
+      "choices": [
+        {
+          "label": "Connected resources and contextual attachments",
+          "technical_title": "Connected resources and contextual attachments",
+          "distinguishing_question": "Prospective territory informed by lexical discovery. No underlying tool execution or access control implementation established.",
+          "why": "Preserve resource provenance, access scope and identity separately from visible text; don't infer authorization from a client representation.",
+          "targets": [
+            "REA-G-resources"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0074",
+            "rea-chatgpt-t-0050",
+            "rea-chatgpt-t-0075",
+            "rea-chatgpt-t-0076",
+            "rea-chatgpt-t-0077",
+            "rea-chatgpt-t-0078"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-G-BRG-network",
+      "question": "How does ChatGPT distinguish network interruption from other client failures?",
+      "choices": [
+        {
+          "label": "Network transitions and recovery observability",
+          "technical_title": "Network transitions and recovery observability",
+          "distinguishing_question": "Lexical leads only for this diagnostic module; no measured failure rates or complete instrumentation semantics.",
+          "why": "Instrument lifecycle transitions and failure classes rather than merely logging exceptions; correlate signals with user-visible outcomes before claiming causality.",
+          "targets": [
+            "REA-G-network"
+          ],
+          "term_ids": [
+            "rea-chatgpt-t-0079",
+            "rea-chatgpt-t-0080",
+            "rea-chatgpt-t-0081",
+            "rea-chatgpt-t-0082",
+            "rea-chatgpt-t-0083",
+            "rea-chatgpt-t-0084"
+          ]
+        }
+      ]
+    }
+  ],
+  "landscape_views": [
+    {
+      "id": "compose",
+      "title": "The conversation composer",
+      "short_label": "The conversation composer",
+      "root_id": "REA-chatgpt-compose",
+      "node_ids": [
+        "REA-chatgpt-compose",
+        "REA-G-intent",
+        "REA-G-submission"
+      ],
+      "parent_overrides": {
+        "REA-G-intent": "REA-chatgpt-compose",
+        "REA-G-submission": "REA-chatgpt-compose"
+      },
+      "entry_ids": [
+        "REA-G-CURI-intent",
+        "REA-G-CURI-submission"
+      ],
+      "rationale": "How a message becomes a valid, current submission rather than an arbitrary text string.",
+      "term_ids": [
+        "rea-chatgpt-t-0001",
+        "rea-chatgpt-t-0002",
+        "rea-chatgpt-t-0003",
+        "rea-chatgpt-t-0004",
+        "rea-chatgpt-t-0005",
+        "rea-chatgpt-t-0006",
+        "rea-chatgpt-t-0007",
+        "rea-chatgpt-t-0008",
+        "rea-chatgpt-t-0009",
+        "rea-chatgpt-t-0010",
+        "rea-chatgpt-t-0011",
+        "rea-chatgpt-t-0012",
+        "rea-chatgpt-t-0013"
+      ]
+    },
+    {
+      "id": "delivery",
+      "title": "Conversation delivery and continuity",
+      "short_label": "Conversation delivery and continuity",
+      "root_id": "REA-chatgpt-delivery",
+      "node_ids": [
+        "REA-chatgpt-delivery",
+        "REA-G-polling",
+        "REA-G-events"
+      ],
+      "parent_overrides": {
+        "REA-G-polling": "REA-chatgpt-delivery",
+        "REA-G-events": "REA-chatgpt-delivery"
+      },
+      "entry_ids": [
+        "REA-G-CURI-polling",
+        "REA-G-CURI-events"
+      ],
+      "rationale": "Maintaining the conversation through stream interruptions, background recovery and changing client identities.",
+      "term_ids": [
+        "rea-chatgpt-t-0014",
+        "rea-chatgpt-t-0015",
+        "rea-chatgpt-t-0016",
+        "rea-chatgpt-t-0017",
+        "rea-chatgpt-t-0018",
+        "rea-chatgpt-t-0019",
+        "rea-chatgpt-t-0020",
+        "rea-chatgpt-t-0021",
+        "rea-chatgpt-t-0022",
+        "rea-chatgpt-t-0023",
+        "rea-chatgpt-t-0024",
+        "rea-chatgpt-t-0025",
+        "rea-chatgpt-t-0026"
+      ]
+    },
+    {
+      "id": "representation",
+      "title": "From conversation data to readable messages",
+      "short_label": "From conversation data to readable messages",
+      "root_id": "REA-chatgpt-representation",
+      "node_ids": [
+        "REA-chatgpt-representation",
+        "REA-G-projection"
+      ],
+      "parent_overrides": {
+        "REA-G-projection": "REA-chatgpt-representation"
+      },
+      "entry_ids": [
+        "REA-G-CURI-projection"
+      ],
+      "rationale": "Message ancestry, visible turns, structured data and efficient view construction.",
+      "term_ids": [
+        "rea-chatgpt-t-0027",
+        "rea-chatgpt-t-0028",
+        "rea-chatgpt-t-0029",
+        "rea-chatgpt-t-0030",
+        "rea-chatgpt-t-0031",
+        "rea-chatgpt-t-0032",
+        "rea-chatgpt-t-0033",
+        "rea-chatgpt-t-0034"
+      ]
+    },
+    {
+      "id": "drafts",
+      "title": "Drafts, prediction and local persistence",
+      "short_label": "Drafts, prediction and local persistence",
+      "root_id": "REA-chatgpt-drafts",
+      "node_ids": [
+        "REA-chatgpt-drafts",
+        "REA-G-prefill",
+        "REA-G-storage"
+      ],
+      "parent_overrides": {
+        "REA-G-prefill": "REA-chatgpt-drafts",
+        "REA-G-storage": "REA-chatgpt-drafts"
+      },
+      "entry_ids": [
+        "REA-G-CURI-prefill",
+        "REA-G-CURI-storage"
+      ],
+      "rationale": "Managing user-owned text across navigation, suggestions and asynchronous restoration.",
+      "term_ids": [
+        "rea-chatgpt-t-0035",
+        "rea-chatgpt-t-0036",
+        "rea-chatgpt-t-0037",
+        "rea-chatgpt-t-0038",
+        "rea-chatgpt-t-0039",
+        "rea-chatgpt-t-0040",
+        "rea-chatgpt-t-0041",
+        "rea-chatgpt-t-0042",
+        "rea-chatgpt-t-0043",
+        "rea-chatgpt-t-0044",
+        "rea-chatgpt-t-0045",
+        "rea-chatgpt-t-0046",
+        "rea-chatgpt-t-0047"
+      ]
+    },
+    {
+      "id": "files",
+      "title": "Files, attachments and external resources",
+      "short_label": "Files, attachments and external resources",
+      "root_id": "REA-chatgpt-files",
+      "node_ids": [
+        "REA-chatgpt-files",
+        "REA-G-uploads"
+      ],
+      "parent_overrides": {
+        "REA-G-uploads": "REA-chatgpt-files"
+      },
+      "entry_ids": [
+        "REA-G-CURI-uploads"
+      ],
+      "rationale": "Admission, upload readiness, ownership and failure handling.",
+      "term_ids": [
+        "rea-chatgpt-t-0048",
+        "rea-chatgpt-t-0049",
+        "rea-chatgpt-t-0050",
+        "rea-chatgpt-t-0051",
+        "rea-chatgpt-t-0052",
+        "rea-chatgpt-t-0053",
+        "rea-chatgpt-t-0054"
+      ]
+    },
+    {
+      "id": "interaction",
+      "title": "Copying, sharing and interacting with responses",
+      "short_label": "Copying, sharing and interacting with responses",
+      "root_id": "REA-chatgpt-interaction",
+      "node_ids": [
+        "REA-chatgpt-interaction",
+        "REA-G-copy",
+        "REA-G-formats"
+      ],
+      "parent_overrides": {
+        "REA-G-copy": "REA-chatgpt-interaction",
+        "REA-G-formats": "REA-chatgpt-interaction"
+      },
+      "entry_ids": [
+        "REA-G-CURI-copy",
+        "REA-G-CURI-formats"
+      ],
+      "rationale": "Clipboard formats, selection, export and user-visible action boundaries.",
+      "term_ids": [
+        "rea-chatgpt-t-0055",
+        "rea-chatgpt-t-0056",
+        "rea-chatgpt-t-0057",
+        "rea-chatgpt-t-0058",
+        "rea-chatgpt-t-0059",
+        "rea-chatgpt-t-0060",
+        "rea-chatgpt-t-0061",
+        "rea-chatgpt-t-0062",
+        "rea-chatgpt-t-0063",
+        "rea-chatgpt-t-0064",
+        "rea-chatgpt-t-0065",
+        "rea-chatgpt-t-0066"
+      ]
+    },
+    {
+      "id": "voice",
+      "title": "Voice and audio processing",
+      "short_label": "Voice and audio processing",
+      "root_id": "REA-chatgpt-voice",
+      "node_ids": [
+        "REA-chatgpt-voice",
+        "REA-G-audio"
+      ],
+      "parent_overrides": {
+        "REA-G-audio": "REA-chatgpt-voice"
+      },
+      "entry_ids": [
+        "REA-G-CURI-audio"
+      ],
+      "rationale": "Media capture, audio processing, playback and transport lifecycle.",
+      "term_ids": [
+        "rea-chatgpt-t-0067",
+        "rea-chatgpt-t-0068",
+        "rea-chatgpt-t-0069",
+        "rea-chatgpt-t-0070",
+        "rea-chatgpt-t-0071",
+        "rea-chatgpt-t-0072",
+        "rea-chatgpt-t-0073"
+      ]
+    },
+    {
+      "id": "work",
+      "title": "Connected tools and longer-running work",
+      "short_label": "Connected tools and longer-running work",
+      "root_id": "REA-chatgpt-work",
+      "node_ids": [
+        "REA-chatgpt-work",
+        "REA-G-resources"
+      ],
+      "parent_overrides": {
+        "REA-G-resources": "REA-chatgpt-work"
+      },
+      "entry_ids": [
+        "REA-G-CURI-resources"
+      ],
+      "rationale": "Independent directions for external resources and asynchronous tasks.",
+      "term_ids": [
+        "rea-chatgpt-t-0074",
+        "rea-chatgpt-t-0050",
+        "rea-chatgpt-t-0075",
+        "rea-chatgpt-t-0076",
+        "rea-chatgpt-t-0077",
+        "rea-chatgpt-t-0078"
+      ]
+    },
+    {
+      "id": "diagnostics",
+      "title": "Reliability and operational evidence",
+      "short_label": "Reliability and operational evidence",
+      "root_id": "REA-chatgpt-diagnostics",
+      "node_ids": [
+        "REA-chatgpt-diagnostics",
+        "REA-G-network"
+      ],
+      "parent_overrides": {
+        "REA-G-network": "REA-chatgpt-diagnostics"
+      },
+      "entry_ids": [
+        "REA-G-CURI-network"
+      ],
+      "rationale": "Network transitions, client failures and meaningful instrumentation.",
+      "term_ids": [
+        "rea-chatgpt-t-0079",
+        "rea-chatgpt-t-0080",
+        "rea-chatgpt-t-0081",
+        "rea-chatgpt-t-0082",
+        "rea-chatgpt-t-0083",
+        "rea-chatgpt-t-0084"
+      ]
+    }
+  ],
+  "glossary_path": "glossary.json",
+  "glossary_schema": "1.0",
+  "search_profile": "descriptive"
+}
