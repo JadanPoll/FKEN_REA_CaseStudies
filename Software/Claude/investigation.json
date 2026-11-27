@@ -74,7 +74,15 @@
         "title": "Stable prefix versus unstable tail",
         "height": 300,
         "html": "<p>Append rows to a growing table. Compare idealized row visits, not real execution time.</p><div class=\"controls\"><button id=\"add\">Append row</button><button id=\"reset\">Reset</button></div><div class=\"metrics\"><span>Full <b id=\"f\">0</b></span><span>Incremental <b id=\"i\">0</b></span></div><div id=\"rows\"></div><script>let n=0,f=0,i=0;const $=id=>document.getElementById(id);function draw(){$('f').textContent=f;$('i').textContent=i;$('rows').replaceChildren();for(let j=0;j<n;j++){let r=document.createElement('span');r.className='tile';r.textContent='Row '+(j+1);if(j===n-1)r.style.background='#fef3c7';$('rows').append(r)}$('add').disabled=n>=24}$('add').onclick=()=>{n++;f+=n;i+=n===1?1:2;draw()};$('reset').onclick=()=>{n=f=i=0;draw()}</script>"
-      }
+      },
+      "term_ids": [
+        "rea-claude-t-0001",
+        "rea-claude-t-0002",
+        "rea-claude-t-0003",
+        "rea-claude-t-0004",
+        "rea-claude-t-0005",
+        "rea-claude-t-0033"
+      ]
     },
     {
       "id": "REA-C-scroll",
@@ -111,7 +119,14 @@
         "title": "Gesture ownership",
         "height": 345,
         "html": "<p>Grow an item above the viewport while a gesture is active. Compare immediate and deferred correction.</p><label><input type=\"checkbox\" id=\"defer\" checked> Defer corrections</label><div class=\"controls\"><button id=\"start\">Begin gesture</button><button id=\"grow\">Grow +20 px</button><button id=\"end\">Settle</button><button id=\"reset\">Reset</button></div><div class=\"metrics\"><span>Applied <b id=\"a\">0</b> px</span><span>Pending <b id=\"p\">0</b> px</span></div><p id=\"state\" aria-live=\"polite\">Settled.</p><script>let held=false,a=0,p=0;const $=id=>document.getElementById(id);function draw(t){$('a').textContent=a;$('p').textContent=p;$('state').textContent=t}$('start').onclick=()=>{held=true;draw('Gesture owns scroll position.')};$('grow').onclick=()=>{if(held&&$('defer').checked){p+=20;draw('Correction queued; momentum not interrupted.')}else{a+=20;draw(held?'Correction issued during gesture; may disrupt momentum.':'Applied while settled.')}};$('end').onclick=()=>{held=false;a+=p;p=0;draw('Settled; pending adjustment applied.')};$('reset').onclick=()=>{held=false;a=p=0;draw('Settled.')}</script>"
-      }
+      },
+      "term_ids": [
+        "rea-claude-t-0006",
+        "rea-claude-t-0007",
+        "rea-claude-t-0008",
+        "rea-claude-t-0009",
+        "rea-claude-t-0010"
+      ]
     },
     {
       "id": "REA-C-persist",
@@ -154,6 +169,14 @@
       },
       "evidence_run_ids": [
         "C-read"
+      ],
+      "term_ids": [
+        "rea-claude-t-0011",
+        "rea-claude-t-0012",
+        "rea-claude-t-0013",
+        "rea-claude-t-0030",
+        "rea-claude-t-0034",
+        "rea-claude-t-0035"
       ]
     },
     {
@@ -202,7 +225,13 @@
         "title": "Two writes, one late failure",
         "height": 300,
         "html": "<p>Two optimistic writes affect independent fields in the same record.</p><label><input id=\"selective\" type=\"checkbox\" checked> Selective rollback</label><div class=\"controls\"><button id=\"next\">Next step</button><button id=\"reset\">Reset</button></div><div class=\"metrics\"><span>A <b id=\"a\">OFF</b></span><span>B <b id=\"b\">OFF</b></span></div><p id=\"note\" aria-live=\"polite\">Initial state.</p><script>let step=0,a=false,b=false;const $=id=>document.getElementById(id);function draw(t){$('a').textContent=a?'ON':'OFF';$('b').textContent=b?'ON':'OFF';$('note').textContent=t;$('next').disabled=step===3}$('next').onclick=()=>{step++;if(step===1){a=true;draw('Write 1: A on, pending.')}if(step===2){b=true;draw('Write 2: B on, acknowledged.')}if(step===3){a=false;if(!$('selective').checked)b=false;draw($('selective').checked?'Write 1 fails; only A restored.':'Whole snapshot restored; successful B erased.')}};$('reset').onclick=()=>{step=0;a=b=false;draw('Initial state.')}</script>"
-      }
+      },
+      "term_ids": [
+        "rea-claude-t-0014",
+        "rea-claude-t-0015",
+        "rea-claude-t-0016",
+        "rea-claude-t-0036"
+      ]
     },
     {
       "id": "REA-C-provisional",
@@ -245,6 +274,11 @@
       },
       "evidence_run_ids": [
         "C-read"
+      ],
+      "term_ids": [
+        "rea-claude-t-0017",
+        "rea-claude-t-0018",
+        "rea-claude-t-0019"
       ]
     },
     {
@@ -277,6 +311,13 @@
       },
       "evidence_run_ids": [
         "C-discover"
+      ],
+      "term_ids": [
+        "rea-claude-t-0020",
+        "rea-claude-t-0021",
+        "rea-claude-t-0022",
+        "rea-claude-t-0031",
+        "rea-claude-t-0032"
       ]
     },
     {
@@ -309,6 +350,11 @@
       },
       "evidence_run_ids": [
         "C-read"
+      ],
+      "term_ids": [
+        "rea-claude-t-0023",
+        "rea-claude-t-0024",
+        "rea-claude-t-0025"
       ]
     }
   ],
@@ -364,5 +410,459 @@
       "type": "related",
       "why": "Unknown is not absent"
     }
-  ]
+  ],
+  "curiosity_atlas": {
+    "purpose": "Enter through an ordinary question or browse vocabulary independently. Each technical mechanism has one canonical record.",
+    "families": [
+      {
+        "id": "render",
+        "label": "Visual continuity and input"
+      },
+      {
+        "id": "state",
+        "label": "Asynchronous state and identity"
+      },
+      {
+        "id": "work",
+        "label": "Execution, recovery and observability"
+      }
+    ],
+    "entries": [
+      {
+        "id": "REA-C-CURI-markdown",
+        "family_id": "render",
+        "question": "Why does a long streamed response not need to be rendered from scratch every time?",
+        "aliases": [
+          "streaming table",
+          "growing code block",
+          "markdown rendering"
+        ],
+        "context": "Earlier syntax may be stable while the last block is not. Inspect the guarded AST reuse path.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-markdown"
+        ],
+        "target_ids": [
+          "REA-C-markdown"
+        ],
+        "term_ids": [
+          "rea-claude-t-0001",
+          "rea-claude-t-0002",
+          "rea-claude-t-0003",
+          "rea-claude-t-0004",
+          "rea-claude-t-0005",
+          "rea-claude-t-0033"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-scroll",
+        "family_id": "render",
+        "question": "Why does my list jump or stop moving when new content arrives during a swipe?",
+        "aliases": [
+          "iPad scroll interruption",
+          "changing row height",
+          "momentum scrolling"
+        ],
+        "context": "Does the viewport shift because the geometry changed while a gesture owned the position?",
+        "question_type": "diagnosis",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-scroll"
+        ],
+        "target_ids": [
+          "REA-C-scroll"
+        ],
+        "term_ids": [
+          "rea-claude-t-0006",
+          "rea-claude-t-0007",
+          "rea-claude-t-0008",
+          "rea-claude-t-0009",
+          "rea-claude-t-0010"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-persist",
+        "family_id": "state",
+        "question": "How do I stop a late restored draft from overwriting what I just typed?",
+        "aliases": [
+          "stale draft",
+          "multiple tabs",
+          "failed save retry"
+        ],
+        "context": "Can an older storage operation finish after newer user intent? Inspect read barriers and write ownership.",
+        "question_type": "design",
+        "task_scope": "open_goal",
+        "bridge_ids": [
+          "REA-C-BRG-persist"
+        ],
+        "target_ids": [
+          "REA-C-persist"
+        ],
+        "term_ids": [
+          "rea-claude-t-0011",
+          "rea-claude-t-0012",
+          "rea-claude-t-0013",
+          "rea-claude-t-0030",
+          "rea-claude-t-0034",
+          "rea-claude-t-0035"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-optimistic",
+        "family_id": "state",
+        "question": "How can settings feel instant without a failed save undoing newer changes?",
+        "aliases": [
+          "optimistic UI",
+          "concurrent saves"
+        ],
+        "context": "Do failures roll back a whole snapshot or only fields still owned by the failed change?",
+        "question_type": "design",
+        "task_scope": "open_goal",
+        "bridge_ids": [
+          "REA-C-BRG-optimistic"
+        ],
+        "target_ids": [
+          "REA-C-optimistic"
+        ],
+        "term_ids": [
+          "rea-claude-t-0014",
+          "rea-claude-t-0015",
+          "rea-claude-t-0016",
+          "rea-claude-t-0036"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-provisional",
+        "family_id": "state",
+        "question": "Why might a previously known session temporarily disappear?",
+        "aliases": [
+          "missing device",
+          "session listing",
+          "not found"
+        ],
+        "context": "Is absence a confirmed deletion, an incomplete listing, or a stale result?",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-provisional"
+        ],
+        "target_ids": [
+          "REA-C-provisional"
+        ],
+        "term_ids": [
+          "rea-claude-t-0017",
+          "rea-claude-t-0018",
+          "rea-claude-t-0019"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-worker",
+        "family_id": "work",
+        "question": "How can I move compression work off the main thread cheaply?",
+        "aliases": [
+          "compress bytes",
+          "worker communication"
+        ],
+        "context": "Inspect the native compression worker and its minimal message contract.",
+        "question_type": "design",
+        "task_scope": "open_goal",
+        "bridge_ids": [
+          "REA-C-BRG-worker"
+        ],
+        "target_ids": [
+          "REA-C-worker"
+        ],
+        "term_ids": [
+          "rea-claude-t-0020",
+          "rea-claude-t-0021",
+          "rea-claude-t-0022",
+          "rea-claude-t-0031",
+          "rea-claude-t-0032"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-latency",
+        "family_id": "work",
+        "question": "What is actually making a click feel slow?",
+        "aliases": [
+          "slow interaction",
+          "paint delay",
+          "long animation frame"
+        ],
+        "context": "Distinguish script activity, waiting for a frame and rendering delay.",
+        "question_type": "diagnosis",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-latency"
+        ],
+        "target_ids": [
+          "REA-C-latency"
+        ],
+        "term_ids": [
+          "rea-claude-t-0023",
+          "rea-claude-t-0024",
+          "rea-claude-t-0025"
+        ]
+      }
+    ]
+  },
+  "navigation_bridges": [
+    {
+      "id": "REA-C-BRG-markdown",
+      "question": "Why does a long streamed response not need to be rendered from scratch every time?",
+      "choices": [
+        {
+          "label": "Can streaming Markdown grow without reparsing everything?",
+          "technical_title": "Can streaming Markdown grow without reparsing everything?",
+          "distinguishing_question": "Earlier syntax may be stable while the last block is not. Inspect the guarded AST reuse path.",
+          "why": "Guarded fast paths preserve stable constituents without replacing the general parser.",
+          "targets": [
+            "REA-C-markdown"
+          ],
+          "term_ids": [
+            "rea-claude-t-0001",
+            "rea-claude-t-0002",
+            "rea-claude-t-0003",
+            "rea-claude-t-0004",
+            "rea-claude-t-0005",
+            "rea-claude-t-0033"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-scroll",
+      "question": "Why does my list jump or stop moving when new content arrives during a swipe?",
+      "choices": [
+        {
+          "label": "Why can correcting scroll position during a gesture make scrolling worse?",
+          "technical_title": "Why can correcting scroll position during a gesture make scrolling worse?",
+          "distinguishing_question": "Does the viewport shift because the geometry changed while a gesture owned the position?",
+          "why": "A gesture temporarily owns scroll state; defer conflicting mutations and reconcile afterwards.",
+          "targets": [
+            "REA-C-scroll"
+          ],
+          "term_ids": [
+            "rea-claude-t-0006",
+            "rea-claude-t-0007",
+            "rea-claude-t-0008",
+            "rea-claude-t-0009",
+            "rea-claude-t-0010"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-persist",
+      "question": "How do I stop a late restored draft from overwriting what I just typed?",
+      "choices": [
+        {
+          "label": "What if a delayed storage read arrives after a user has edited a draft?",
+          "technical_title": "What if a delayed storage read arrives after a user has edited a draft?",
+          "distinguishing_question": "Can an older storage operation finish after newer user intent? Inspect read barriers and write ownership.",
+          "why": "Unknown is not empty; a failed write does not imply its original intent remains valid.",
+          "targets": [
+            "REA-C-persist"
+          ],
+          "term_ids": [
+            "rea-claude-t-0011",
+            "rea-claude-t-0012",
+            "rea-claude-t-0013",
+            "rea-claude-t-0030",
+            "rea-claude-t-0034",
+            "rea-claude-t-0035"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-optimistic",
+      "question": "How can settings feel instant without a failed save undoing newer changes?",
+      "choices": [
+        {
+          "label": "Can an earlier failed save undo a later successful edit?",
+          "technical_title": "Can an earlier failed save undo a later successful edit?",
+          "distinguishing_question": "Do failures roll back a whole snapshot or only fields still owned by the failed change?",
+          "why": "Consistency granularity need not equal storage granularity.",
+          "targets": [
+            "REA-C-optimistic"
+          ],
+          "term_ids": [
+            "rea-claude-t-0014",
+            "rea-claude-t-0015",
+            "rea-claude-t-0016",
+            "rea-claude-t-0036"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-provisional",
+      "question": "Why might a previously known session temporarily disappear?",
+      "choices": [
+        {
+          "label": "If a remembered session is missing from a listing, does it no longer exist?",
+          "technical_title": "If a remembered session is missing from a listing, does it no longer exist?",
+          "distinguishing_question": "Is absence a confirmed deletion, an incomplete listing, or a stale result?",
+          "why": "Represent evidence about existence rather than a Boolean.",
+          "targets": [
+            "REA-C-provisional"
+          ],
+          "term_ids": [
+            "rea-claude-t-0017",
+            "rea-claude-t-0018",
+            "rea-claude-t-0019"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-worker",
+      "question": "How can I move compression work off the main thread cheaply?",
+      "choices": [
+        {
+          "label": "Can a worker compress bytes without copying its output?",
+          "technical_title": "Can a worker compress bytes without copying its output?",
+          "distinguishing_question": "Inspect the native compression worker and its minimal message contract.",
+          "why": "Capability handshake, correlation ID, transferable ownership and intrinsic timing.",
+          "targets": [
+            "REA-C-worker"
+          ],
+          "term_ids": [
+            "rea-claude-t-0020",
+            "rea-claude-t-0021",
+            "rea-claude-t-0022",
+            "rea-claude-t-0031",
+            "rea-claude-t-0032"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-latency",
+      "question": "What is actually making a click feel slow?",
+      "choices": [
+        {
+          "label": "How can we distinguish slow JavaScript from waiting for paint?",
+          "technical_title": "How can we distinguish slow JavaScript from waiting for paint?",
+          "distinguishing_question": "Distinguish script activity, waiting for a frame and rendering delay.",
+          "why": "Measure actionable contributing phases rather than total latency alone.",
+          "targets": [
+            "REA-C-latency"
+          ],
+          "term_ids": [
+            "rea-claude-t-0023",
+            "rea-claude-t-0024",
+            "rea-claude-t-0025"
+          ]
+        }
+      ]
+    }
+  ],
+  "landscape_views": [
+    {
+      "id": "render",
+      "title": "How can changing data preserve visual continuity?",
+      "short_label": "Visual continuity and input",
+      "root_id": "REA-claude-render",
+      "node_ids": [
+        "REA-claude-render",
+        "REA-C-markdown",
+        "REA-C-scroll"
+      ],
+      "parent_overrides": {
+        "REA-C-markdown": "REA-claude-render",
+        "REA-C-scroll": "REA-claude-render"
+      },
+      "entry_ids": [
+        "REA-C-CURI-markdown",
+        "REA-C-CURI-scroll"
+      ],
+      "rationale": "Explore a family of mechanisms using the same canonical technical studies.",
+      "term_ids": [
+        "rea-claude-t-0001",
+        "rea-claude-t-0002",
+        "rea-claude-t-0003",
+        "rea-claude-t-0004",
+        "rea-claude-t-0005",
+        "rea-claude-t-0033",
+        "rea-claude-t-0006",
+        "rea-claude-t-0007",
+        "rea-claude-t-0008",
+        "rea-claude-t-0009",
+        "rea-claude-t-0010"
+      ]
+    },
+    {
+      "id": "state",
+      "title": "How can asynchronous systems preserve intent and identity?",
+      "short_label": "Asynchronous state and identity",
+      "root_id": "REA-claude-state",
+      "node_ids": [
+        "REA-claude-state",
+        "REA-C-persist",
+        "REA-C-optimistic",
+        "REA-C-provisional"
+      ],
+      "parent_overrides": {
+        "REA-C-persist": "REA-claude-state",
+        "REA-C-optimistic": "REA-claude-state",
+        "REA-C-provisional": "REA-claude-state"
+      },
+      "entry_ids": [
+        "REA-C-CURI-persist",
+        "REA-C-CURI-optimistic",
+        "REA-C-CURI-provisional"
+      ],
+      "rationale": "Explore a family of mechanisms using the same canonical technical studies.",
+      "term_ids": [
+        "rea-claude-t-0011",
+        "rea-claude-t-0012",
+        "rea-claude-t-0013",
+        "rea-claude-t-0030",
+        "rea-claude-t-0034",
+        "rea-claude-t-0035",
+        "rea-claude-t-0014",
+        "rea-claude-t-0015",
+        "rea-claude-t-0016",
+        "rea-claude-t-0036",
+        "rea-claude-t-0017",
+        "rea-claude-t-0018",
+        "rea-claude-t-0019"
+      ]
+    },
+    {
+      "id": "work",
+      "title": "How can computation be scheduled, recovered and observed economically?",
+      "short_label": "Execution, recovery and observability",
+      "root_id": "REA-claude-work",
+      "node_ids": [
+        "REA-claude-work",
+        "REA-C-worker",
+        "REA-C-latency"
+      ],
+      "parent_overrides": {
+        "REA-C-worker": "REA-claude-work",
+        "REA-C-latency": "REA-claude-work"
+      },
+      "entry_ids": [
+        "REA-C-CURI-worker",
+        "REA-C-CURI-latency"
+      ],
+      "rationale": "Explore a family of mechanisms using the same canonical technical studies.",
+      "term_ids": [
+        "rea-claude-t-0020",
+        "rea-claude-t-0021",
+        "rea-claude-t-0022",
+        "rea-claude-t-0031",
+        "rea-claude-t-0032",
+        "rea-claude-t-0023",
+        "rea-claude-t-0024",
+        "rea-claude-t-0025"
+      ]
+    }
+  ],
+  "glossary_path": "glossary.json",
+  "glossary_schema": "1.0"
 }
