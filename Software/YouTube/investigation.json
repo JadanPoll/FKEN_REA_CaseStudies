@@ -1,0 +1,1676 @@
+{
+  "id": "REA-youtube",
+  "title": "YouTube — Anatomy of a video platform",
+  "root": "REA-youtube",
+  "nodes": [
+    {
+      "id": "REA-youtube",
+      "parent_id": null,
+      "kind": "question",
+      "question": "YouTube — Anatomy of a video platform",
+      "why": "A prospective educational book grounded in retained client source; uninvestigated territory remains explicit."
+    },
+    {
+      "id": "REA-youtube-delivery",
+      "parent_id": "REA-youtube",
+      "kind": "question",
+      "question": "How YouTube delivers video",
+      "why": "Adaptive delivery, response formats, decompression and media fetch recovery."
+    },
+    {
+      "id": "REA-youtube-timeline",
+      "parent_id": "REA-youtube",
+      "kind": "question",
+      "question": "The video player's media timeline",
+      "why": "Container formats, segment timing, audio/video synchronization and discontinuities."
+    },
+    {
+      "id": "REA-youtube-architecture",
+      "parent_id": "REA-youtube",
+      "kind": "question",
+      "question": "YouTube's modular web client",
+      "why": "Dependency resolution, feature loading, framework lifecycle and resource scheduling."
+    },
+    {
+      "id": "REA-youtube-experience",
+      "parent_id": "REA-youtube",
+      "kind": "question",
+      "question": "The viewing experience beyond playback",
+      "why": "Captions, remote playback, offline viewing, miniplayer and interactive features."
+    },
+    {
+      "id": "REA-youtube-ads",
+      "parent_id": "REA-youtube",
+      "kind": "question",
+      "question": "Advertising as part of the playback timeline",
+      "why": "Cue positions, prefetching and the distinction between content and advertising state."
+    },
+    {
+      "id": "REA-youtube-integrity",
+      "parent_id": "REA-youtube",
+      "kind": "question",
+      "question": "Playback integrity and client attestation",
+      "why": "Validation, trust boundaries, bounded failures, browser compatibility and diagnostic observations."
+    },
+    {
+      "id": "REA-youtube-observability",
+      "parent_id": "REA-youtube",
+      "kind": "question",
+      "question": "Diagnosing failures at YouTube scale",
+      "why": "Classifying external exceptions, instrumentation and managing noisy signals."
+    },
+    {
+      "id": "REA-youtube-navigation",
+      "parent_id": "REA-youtube",
+      "kind": "question",
+      "question": "Server-driven navigation and recommendations",
+      "why": "Response shapes, commands and the distinction between received data and UI actions."
+    },
+    {
+      "id": "REA-Y-gzip",
+      "parent_id": "REA-youtube-delivery",
+      "kind": "question",
+      "question": "Native, Wasm and JavaScript decompression",
+      "status": "source_inspected",
+      "mechanism_explanation": "An observed player routine tries browser-native gzip decompression, then a supplied accelerated implementation (Wasm/asm.js in one variant), then pure JavaScript. Each path records timing or failure. A later variant logs which implementation succeeded. Native availability does not eliminate the need for error recovery.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-player",
+            "section": "base.js",
+            "offsets": {
+              "start": 819200,
+              "end": 823200,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Choose a capability ladder whose tiers share one functional contract; measure actual fallback rates and distinguish unsupported APIs from failure at runtime.",
+      "qualification": "The implementation of the accelerated module is not included; no throughput comparison or live fallback test.",
+      "evidence_run_ids": [
+        "Y-platform"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0001",
+        "rea-youtube-t-0002",
+        "rea-youtube-t-0003",
+        "rea-youtube-t-0004",
+        "rea-youtube-t-0005",
+        "rea-youtube-t-0006",
+        "rea-youtube-t-0007"
+      ]
+    },
+    {
+      "id": "REA-Y-sabr",
+      "parent_id": "REA-youtube-delivery",
+      "kind": "question",
+      "question": "Adaptive streaming and host recovery",
+      "status": "pending_investigation",
+      "why": "The retained index contains SABR-related names and nearby configuration for Safari format selection, timestamp rewriting and host fallback. This establishes a promising investigation direction, not the selection algorithm.",
+      "transferable_insight": "Separate bitrate choice, request scheduling, server-directed host changes and the media timeline.",
+      "qualification": "Lexical lead only; no actual adaptation policy or network trace has been inspected.",
+      "evidence_run_ids": [
+        "Y-search",
+        "Y-next-sabr"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0008",
+        "rea-youtube-t-0009",
+        "rea-youtube-t-0010",
+        "rea-youtube-t-0011",
+        "rea-youtube-t-0012",
+        "rea-youtube-t-0013"
+      ]
+    },
+    {
+      "id": "REA-Y-timeline",
+      "parent_id": "REA-youtube-timeline",
+      "kind": "question",
+      "question": "Segment timing and discontinuity reconciliation",
+      "status": "source_inspected",
+      "mechanism_explanation": "The player parses and conditionally rewrites media-container metadata, compares expected and actual segment timing, reports drift and can reset after repeated rewrites. It includes separate paths for WebM and MP4-family data.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-player",
+            "section": "base.js",
+            "offsets": {
+              "start": 785800,
+              "end": 789300,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "A media timeline is not just wall-clock time: keep source segment timing, accumulated duration and effective playback position distinct; treat corrections as guarded operations.",
+      "qualification": "No complete container specification, runtime A/V drift measurement or DRM implementation established. The original run description calling this a Wasm bridge is inaccurate.",
+      "evidence_run_ids": [
+        "Y-media"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0014",
+        "rea-youtube-t-0015",
+        "rea-youtube-t-0016",
+        "rea-youtube-t-0017",
+        "rea-youtube-t-0018",
+        "rea-youtube-t-0019",
+        "rea-youtube-t-0020",
+        "rea-youtube-t-0021"
+      ]
+    },
+    {
+      "id": "REA-Y-modules",
+      "parent_id": "REA-youtube-architecture",
+      "kind": "question",
+      "question": "Module dependency closure and graph refresh",
+      "status": "source_inspected",
+      "mechanism_explanation": "The observed Closure-style module loader walks dependencies with a visited map, tracks requested and loaded modules, partitions requests by URL length, and has a graph-refresh fallback when a request representation cannot fit. A successful script response can still be rejected if required modules did not initialize.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-kevlar",
+            "section": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "offsets": {
+              "start": 1468500,
+              "end": 1473000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Distinguish network success from semantic readiness; maintain requested, in-flight and loaded sets independently and account for graph revisions.",
+      "qualification": "The full loader and server protocol are outside the excerpt; no actual module reload experiment.",
+      "evidence_run_ids": [
+        "Y-search",
+        "Y-platform"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0022",
+        "rea-youtube-t-0023",
+        "rea-youtube-t-0024",
+        "rea-youtube-t-0025",
+        "rea-youtube-t-0026",
+        "rea-youtube-t-0027",
+        "rea-youtube-t-0028",
+        "rea-youtube-t-0029",
+        "rea-youtube-t-0030"
+      ]
+    },
+    {
+      "id": "REA-Y-features",
+      "parent_id": "REA-youtube-architecture",
+      "kind": "question",
+      "question": "Player feature module boundaries",
+      "status": "source_inspected",
+      "mechanism_explanation": "A map associates features including annotations, captions, offline, remote, miniplayer and WebGL with script names. AI Pill successfully acquired the annotation sibling from the observed literal.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-player",
+            "section": "base.js",
+            "offsets": {
+              "start": 2248800,
+              "end": 2250300,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Module naming is useful for economical code navigation; verify fetch, registration and use separately rather than treating a bundle name as a feature implementation.",
+      "qualification": "The successful dependency collection establishes asset existence, not runtime import or execution. No annotation implementation inspected.",
+      "evidence_run_ids": [
+        "Y-platform",
+        "Y-acquire"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0031",
+        "rea-youtube-t-0032",
+        "rea-youtube-t-0033",
+        "rea-youtube-t-0034",
+        "rea-youtube-t-0035",
+        "rea-youtube-t-0036"
+      ]
+    },
+    {
+      "id": "REA-Y-lifecycle",
+      "parent_id": "REA-youtube-architecture",
+      "kind": "question",
+      "question": "Framework lifecycle exception boundaries",
+      "status": "source_inspected",
+      "mechanism_explanation": "A Polymer wrapper catches exceptions in lifecycle callbacks and event listeners and routes them to an error handler. A WeakMap retains wrapped listener identity for removal. Asynchronous callbacks also receive error handling.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-kevlar",
+            "section": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "offsets": {
+              "start": 578000,
+              "end": 582000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "When wrapping a callback, preserve identity-dependent cleanup and the original call context; exception containment must not make listeners impossible to remove.",
+      "qualification": "Scope and installation conditions only partially visible; not evidence of a React error boundary or full framework behavior.",
+      "evidence_run_ids": [
+        "Y-classification"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0037",
+        "rea-youtube-t-0038",
+        "rea-youtube-t-0039",
+        "rea-youtube-t-0040",
+        "rea-youtube-t-0041",
+        "rea-youtube-t-0042",
+        "rea-youtube-t-0043"
+      ]
+    },
+    {
+      "id": "REA-Y-viewing",
+      "parent_id": "REA-youtube-experience",
+      "kind": "question",
+      "question": "Independent viewing capabilities",
+      "status": "pending_investigation",
+      "why": "The captured asset inventory and player module map expose separate captions, offline, remote and miniplayer resources. These are starting points for independent investigations of rendering, local media persistence and playback control.",
+      "transferable_insight": "A feature landscape should distinguish UI, data persistence and device control rather than treat all as playback variants.",
+      "qualification": "Asset names are evidence of collected code, not detailed functionality. No feature internals inspected.",
+      "evidence_run_ids": [
+        "Y-acquire",
+        "Y-platform",
+        "Y-next-viewing"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0044",
+        "rea-youtube-t-0045",
+        "rea-youtube-t-0046",
+        "rea-youtube-t-0047",
+        "rea-youtube-t-0048",
+        "rea-youtube-t-0049",
+        "rea-youtube-t-0050"
+      ]
+    },
+    {
+      "id": "REA-Y-ads",
+      "parent_id": "REA-youtube-ads",
+      "kind": "question",
+      "question": "Ad placement and prefetch",
+      "status": "source_inspected",
+      "mechanism_explanation": "Observed response construction contains millisecond placement offsets, cue-range visibility and advance-fetch configuration, together with serialized placement/logging metadata.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-kevlar",
+            "section": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "offsets": {
+              "start": 554200,
+              "end": 557000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Model scheduled interruptions as timeline data with explicit boundaries and preparation windows; separate schedule, fetch and rendered state.",
+      "qualification": "This does not establish ad-selection policy, real-time scheduling behavior, revenue or user-specific decisions.",
+      "evidence_run_ids": [
+        "Y-media"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0051",
+        "rea-youtube-t-0052",
+        "rea-youtube-t-0053",
+        "rea-youtube-t-0054",
+        "rea-youtube-t-0055",
+        "rea-youtube-t-0056"
+      ]
+    },
+    {
+      "id": "REA-Y-response",
+      "parent_id": "REA-youtube-integrity",
+      "kind": "question",
+      "question": "Response envelopes and validation",
+      "status": "source_inspected",
+      "mechanism_explanation": "Player response processing unwraps array or streaming response variants and directs an embedded error to a separate error-processing state. Another observed handler distinguishes unsuccessful playability responses from validation failures and converts certain failures into a user-facing error state.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-player",
+            "section": "base.js",
+            "offsets": {
+              "start": 1486500,
+              "end": 1489000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          },
+          {
+            "source_id": "Y-kevlar",
+            "section": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "offsets": {
+              "start": 5991500,
+              "end": 5994000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Transport, structural decoding, domain validation and user-visible failure are separate layers; keep their outcomes legible.",
+      "qualification": "Only client-side branches observed, not complete protocol or server enforcement. No response modification experiment.",
+      "evidence_run_ids": [
+        "Y-response",
+        "Y-validation"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0057",
+        "rea-youtube-t-0058",
+        "rea-youtube-t-0059",
+        "rea-youtube-t-0060",
+        "rea-youtube-t-0061",
+        "rea-youtube-t-0062"
+      ]
+    },
+    {
+      "id": "REA-Y-integrity",
+      "parent_id": "REA-youtube-integrity",
+      "kind": "question",
+      "question": "Response consistency and failure classification",
+      "status": "source_inspected",
+      "mechanism_explanation": "A client-side check decodes and parses reference data, compares selected response values, and records distinct outcomes for missing information, parse/decode failures and inconsistency. The surrounding handler treats these as a separate class of playback failure.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-kevlar",
+            "section": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "offsets": {
+              "start": 915200,
+              "end": 916700,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Separate the ability to parse a response from its consistency with reference data. Preserve uncertainty and classify failure rather than collapsing every case into a boolean.",
+      "qualification": "No cryptographic verification guarantee, key management, server decision or bypass demonstrated.",
+      "evidence_run_ids": [
+        "Y-integrity",
+        "Y-validation"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0063",
+        "rea-youtube-t-0064",
+        "rea-youtube-t-0065",
+        "rea-youtube-t-0066",
+        "rea-youtube-t-0067",
+        "rea-youtube-t-0068"
+      ]
+    },
+    {
+      "id": "REA-Y-attestation",
+      "parent_id": "REA-youtube-integrity",
+      "kind": "question",
+      "question": "Client attestation and bounded asynchronous work",
+      "status": "source_inspected",
+      "mechanism_explanation": "Observed request construction carries capability and integrity-related fields; a separate asynchronous challenge/snapshot flow distinguishes initialization, internal, absent-result and timeout failures. These are interface and lifecycle observations, not a reconstruction of the attestation engine.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-player",
+            "section": "base.js",
+            "offsets": {
+              "start": 702000,
+              "end": 704200,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          },
+          {
+            "source_id": "Y-kevlar",
+            "section": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "offsets": {
+              "start": 5999500,
+              "end": 6001000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Treat trust-producing work as a bounded service with explicit unavailable and timeout states rather than assuming that a response is always obtainable.",
+      "qualification": "No proof of the underlying VM algorithm, token generation, secret material, server checks or security efficacy.",
+      "evidence_run_ids": [
+        "Y-response",
+        "Y-attestation"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0069",
+        "rea-youtube-t-0070",
+        "rea-youtube-t-0071",
+        "rea-youtube-t-0072",
+        "rea-youtube-t-0073",
+        "rea-youtube-t-0074",
+        "rea-youtube-t-0075"
+      ]
+    },
+    {
+      "id": "REA-Y-probes",
+      "parent_id": "REA-youtube-integrity",
+      "kind": "question",
+      "question": "Differential observations and diagnostic confidence",
+      "status": "source_inspected",
+      "mechanism_explanation": "The inspected code includes repeated observations of browser behavior, checks for inconsistent trials, comparisons against a reference observation and explicit categories for detected, not detected, unspecified and failure. The surrounding code aggregates classifications and records diagnostics.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-kevlar",
+            "section": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "offsets": {
+              "start": 574000,
+              "end": 578050,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          },
+          {
+            "source_id": "Y-kevlar",
+            "section": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "offsets": {
+              "start": 578000,
+              "end": 582000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "Use matched controls, repeated trials and an explicit inconclusive state. A heuristic observation is not a proof of causation or a guarantee of a detector's accuracy.",
+      "qualification": "No live trials, population statistics or actual extension identification established. This study describes methodology, not evasion or modification of the service.",
+      "evidence_run_ids": [
+        "Y-validation",
+        "Y-classification"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0076",
+        "rea-youtube-t-0077",
+        "rea-youtube-t-0078",
+        "rea-youtube-t-0079",
+        "rea-youtube-t-0080",
+        "rea-youtube-t-0081",
+        "rea-youtube-t-0082"
+      ]
+    },
+    {
+      "id": "REA-Y-errors",
+      "parent_id": "REA-youtube-observability",
+      "kind": "question",
+      "question": "Exception attribution and weighted sampling",
+      "status": "source_inspected",
+      "mechanism_explanation": "Observed error classifiers use stack origins, message patterns, browser-specific conditions and configurable weights. Some outside-script patterns are recognized, but the code is not proof of active extension enumeration.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "Y-kevlar",
+            "section": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+            "offsets": {
+              "start": 6354000,
+              "end": 6357600,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Returned source excerpt, not runtime proof"
+          }
+        ]
+      },
+      "transferable_insight": "At large scale, classify and sample diagnostics before drawing conclusions from error volume. Retain uncertainty: suppression can hide actionable errors.",
+      "qualification": "No server sampling rate, complete classifier or runtime effectiveness verified. Pattern recognition is not extension detection.",
+      "evidence_run_ids": [
+        "Y-media"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0083",
+        "rea-youtube-t-0084",
+        "rea-youtube-t-0085",
+        "rea-youtube-t-0086",
+        "rea-youtube-t-0087",
+        "rea-youtube-t-0088",
+        "rea-youtube-t-0089"
+      ]
+    },
+    {
+      "id": "REA-Y-commands",
+      "parent_id": "REA-youtube-navigation",
+      "kind": "question",
+      "question": "Response renderers and command dispatch",
+      "status": "pending_investigation",
+      "why": "Search located 54 lexical occurrences of innertubeCommand and nearby names for navigation, logging and optimistic updates. A separate inspected excerpt extracts playlist/autoplay and related-video renderer data from a response.",
+      "transferable_insight": "Separate declarative response data, command execution, navigation and local optimistic state; investigate the boundaries rather than inferring dispatch from a field name.",
+      "qualification": "The command execution mechanism and recommendation algorithm remain uninspected.",
+      "evidence_run_ids": [
+        "Y-platform",
+        "Y-classification",
+        "Y-next-commands"
+      ],
+      "term_ids": [
+        "rea-youtube-t-0090",
+        "rea-youtube-t-0091",
+        "rea-youtube-t-0092",
+        "rea-youtube-t-0093",
+        "rea-youtube-t-0094",
+        "rea-youtube-t-0095",
+        "rea-youtube-t-0096"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "Y-kevlar",
+      "title": "m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+      "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.O2ombKKCIBU.2021.O/am=AAAAAEAAAACAAEgJ/d=1/br=1/rs=AGKMywFuDJl4EqsN9g4eDlASwzAsGTVtbA/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+      "sha256": "9e3fd203f365c7466cce208d980f226a2c1713f095ebb2da5cafad6589508461",
+      "origin": "https://www.youtube.com"
+    },
+    {
+      "id": "Y-player",
+      "title": "base.js",
+      "url": "https://www.youtube.com/s/player/b485e332/player_es6.vflset/en_US/base.js",
+      "sha256": "6fb3b876821b6f9737119baa78dbfb79fb53e881f212ee421fd3a20b3167e109",
+      "origin": "https://www.youtube.com"
+    },
+    {
+      "id": "Y-annotations",
+      "title": "annotations_module.js",
+      "url": "https://www.youtube.com/s/player/b485e332/player_es6.vflset/en_US/annotations_module.js",
+      "sha256": "93d1569d7d39193fd58f3052e4ad07fc90b67bf3c09028c160a4964e01cebe03",
+      "origin": "https://www.youtube.com"
+    }
+  ],
+  "evidence_file": "Software/YouTube/evidence.json",
+  "connections": [],
+  "curiosity_atlas": {
+    "purpose": "Navigate from video-platform curiosities or descriptive vocabulary into observed mechanisms and explicitly open directions.",
+    "families": [
+      {
+        "id": "delivery",
+        "label": "How YouTube delivers video",
+        "description": "Adaptive delivery, response formats, decompression and media fetch recovery."
+      },
+      {
+        "id": "timeline",
+        "label": "The video player's media timeline",
+        "description": "Container formats, segment timing, audio/video synchronization and discontinuities."
+      },
+      {
+        "id": "architecture",
+        "label": "YouTube's modular web client",
+        "description": "Dependency resolution, feature loading, framework lifecycle and resource scheduling."
+      },
+      {
+        "id": "experience",
+        "label": "The viewing experience beyond playback",
+        "description": "Captions, remote playback, offline viewing, miniplayer and interactive features."
+      },
+      {
+        "id": "ads",
+        "label": "Advertising as part of the playback timeline",
+        "description": "Cue positions, prefetching and the distinction between content and advertising state."
+      },
+      {
+        "id": "integrity",
+        "label": "Playback integrity and client attestation",
+        "description": "Validation, trust boundaries, bounded failures, browser compatibility and diagnostic observations."
+      },
+      {
+        "id": "observability",
+        "label": "Diagnosing failures at YouTube scale",
+        "description": "Classifying external exceptions, instrumentation and managing noisy signals."
+      },
+      {
+        "id": "navigation",
+        "label": "Server-driven navigation and recommendations",
+        "description": "Response shapes, commands and the distinction between received data and UI actions."
+      }
+    ],
+    "entries": [
+      {
+        "id": "REA-Y-CURI-gzip",
+        "family_id": "delivery",
+        "question": "How does YouTube decompress streamed player responses across browsers?",
+        "aliases": [
+          "compressed reply fails",
+          "browser has no decompressor",
+          "native fails use software",
+          "decompress streaming response"
+        ],
+        "context": "An observed player routine tries browser-native gzip decompression, then a supplied accelerated implementation (Wasm/asm.js in one variant), then pure JavaScript. Each path records timing or failure. A later variant logs which implementation succeeded. Native availability does not eliminate the need for error recovery.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-gzip"
+        ],
+        "target_ids": [
+          "REA-Y-gzip"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0001",
+          "rea-youtube-t-0002",
+          "rea-youtube-t-0003",
+          "rea-youtube-t-0004",
+          "rea-youtube-t-0005",
+          "rea-youtube-t-0006",
+          "rea-youtube-t-0007"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-sabr",
+        "family_id": "delivery",
+        "question": "How does YouTube adapt video delivery to changing network conditions?",
+        "aliases": [
+          "video quality changes",
+          "slow internet",
+          "switch video servers",
+          "buffering"
+        ],
+        "context": "The retained index contains SABR-related names and nearby configuration for Safari format selection, timestamp rewriting and host fallback. This establishes a promising investigation direction, not the selection algorithm.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-sabr"
+        ],
+        "target_ids": [
+          "REA-Y-sabr"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0008",
+          "rea-youtube-t-0009",
+          "rea-youtube-t-0010",
+          "rea-youtube-t-0011",
+          "rea-youtube-t-0012",
+          "rea-youtube-t-0013"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-timeline",
+        "family_id": "timeline",
+        "question": "How does YouTube keep audio and video synchronized across media segments?",
+        "aliases": [
+          "audio out of sync",
+          "video jumps after a segment",
+          "drift over playback",
+          "different clip timestamps"
+        ],
+        "context": "The player parses and conditionally rewrites media-container metadata, compares expected and actual segment timing, reports drift and can reset after repeated rewrites. It includes separate paths for WebM and MP4-family data.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-timeline"
+        ],
+        "target_ids": [
+          "REA-Y-timeline"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0014",
+          "rea-youtube-t-0015",
+          "rea-youtube-t-0016",
+          "rea-youtube-t-0017",
+          "rea-youtube-t-0018",
+          "rea-youtube-t-0019",
+          "rea-youtube-t-0020",
+          "rea-youtube-t-0021"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-modules",
+        "family_id": "architecture",
+        "question": "How does YouTube load a changing graph of client modules?",
+        "aliases": [
+          "download missing code",
+          "script loads but feature absent",
+          "dependency changes",
+          "long module URL"
+        ],
+        "context": "The observed Closure-style module loader walks dependencies with a visited map, tracks requested and loaded modules, partitions requests by URL length, and has a graph-refresh fallback when a request representation cannot fit. A successful script response can still be rejected if required modules did not initialize.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-modules"
+        ],
+        "target_ids": [
+          "REA-Y-modules"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0022",
+          "rea-youtube-t-0023",
+          "rea-youtube-t-0024",
+          "rea-youtube-t-0025",
+          "rea-youtube-t-0026",
+          "rea-youtube-t-0027",
+          "rea-youtube-t-0028",
+          "rea-youtube-t-0029",
+          "rea-youtube-t-0030"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-features",
+        "family_id": "architecture",
+        "question": "How does YouTube divide the player into independently loaded features?",
+        "aliases": [
+          "separate player features",
+          "load captions on demand",
+          "find annotation module",
+          "download offline feature"
+        ],
+        "context": "A map associates features including annotations, captions, offline, remote, miniplayer and WebGL with script names. AI Pill successfully acquired the annotation sibling from the observed literal.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-features"
+        ],
+        "target_ids": [
+          "REA-Y-features"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0031",
+          "rea-youtube-t-0032",
+          "rea-youtube-t-0033",
+          "rea-youtube-t-0034",
+          "rea-youtube-t-0035",
+          "rea-youtube-t-0036"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-lifecycle",
+        "family_id": "architecture",
+        "question": "How does YouTube contain failures in UI component lifecycle callbacks?",
+        "aliases": [
+          "component throws during attach",
+          "remove a wrapped listener",
+          "lifecycle errors"
+        ],
+        "context": "A Polymer wrapper catches exceptions in lifecycle callbacks and event listeners and routes them to an error handler. A WeakMap retains wrapped listener identity for removal. Asynchronous callbacks also receive error handling.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-lifecycle"
+        ],
+        "target_ids": [
+          "REA-Y-lifecycle"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0037",
+          "rea-youtube-t-0038",
+          "rea-youtube-t-0039",
+          "rea-youtube-t-0040",
+          "rea-youtube-t-0041",
+          "rea-youtube-t-0042",
+          "rea-youtube-t-0043"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-viewing",
+        "family_id": "experience",
+        "question": "How does YouTube extend playback into captions, offline viewing and other viewing modes?",
+        "aliases": [
+          "captions timing",
+          "watch offline",
+          "control TV",
+          "small floating player"
+        ],
+        "context": "The captured asset inventory and player module map expose separate captions, offline, remote and miniplayer resources. These are starting points for independent investigations of rendering, local media persistence and playback control.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-viewing"
+        ],
+        "target_ids": [
+          "REA-Y-viewing"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0044",
+          "rea-youtube-t-0045",
+          "rea-youtube-t-0046",
+          "rea-youtube-t-0047",
+          "rea-youtube-t-0048",
+          "rea-youtube-t-0049",
+          "rea-youtube-t-0050"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-ads",
+        "family_id": "ads",
+        "question": "How does YouTube represent advertising breaks within a video timeline?",
+        "aliases": [
+          "where breaks appear",
+          "prepare a break ahead of time",
+          "advertising timeline"
+        ],
+        "context": "Observed response construction contains millisecond placement offsets, cue-range visibility and advance-fetch configuration, together with serialized placement/logging metadata.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-ads"
+        ],
+        "target_ids": [
+          "REA-Y-ads"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0051",
+          "rea-youtube-t-0052",
+          "rea-youtube-t-0053",
+          "rea-youtube-t-0054",
+          "rea-youtube-t-0055",
+          "rea-youtube-t-0056"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-response",
+        "family_id": "integrity",
+        "question": "How does YouTube handle different player response formats and failure states?",
+        "aliases": [
+          "video response error",
+          "server says playable",
+          "response shape differs",
+          "something went wrong"
+        ],
+        "context": "Player response processing unwraps array or streaming response variants and directs an embedded error to a separate error-processing state. Another observed handler distinguishes unsuccessful playability responses from validation failures and converts certain failures into a user-facing error state.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-response"
+        ],
+        "target_ids": [
+          "REA-Y-response"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0057",
+          "rea-youtube-t-0058",
+          "rea-youtube-t-0059",
+          "rea-youtube-t-0060",
+          "rea-youtube-t-0061",
+          "rea-youtube-t-0062"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-integrity",
+        "family_id": "integrity",
+        "question": "How does YouTube distinguish a malformed or inconsistent playback response?",
+        "aliases": [
+          "response data does not agree",
+          "malformed playback response",
+          "integrity check fails"
+        ],
+        "context": "A client-side check decodes and parses reference data, compares selected response values, and records distinct outcomes for missing information, parse/decode failures and inconsistency. The surrounding handler treats these as a separate class of playback failure.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-integrity"
+        ],
+        "target_ids": [
+          "REA-Y-integrity"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0063",
+          "rea-youtube-t-0064",
+          "rea-youtube-t-0065",
+          "rea-youtube-t-0066",
+          "rea-youtube-t-0067",
+          "rea-youtube-t-0068"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-attestation",
+        "family_id": "integrity",
+        "question": "How does YouTube integrate client attestation into playback requests?",
+        "aliases": [
+          "prove client integrity",
+          "attestation fails",
+          "challenge waits forever",
+          "playback capabilities"
+        ],
+        "context": "Observed request construction carries capability and integrity-related fields; a separate asynchronous challenge/snapshot flow distinguishes initialization, internal, absent-result and timeout failures. These are interface and lifecycle observations, not a reconstruction of the attestation engine.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-attestation"
+        ],
+        "target_ids": [
+          "REA-Y-attestation"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0069",
+          "rea-youtube-t-0070",
+          "rea-youtube-t-0071",
+          "rea-youtube-t-0072",
+          "rea-youtube-t-0073",
+          "rea-youtube-t-0074",
+          "rea-youtube-t-0075"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-probes",
+        "family_id": "integrity",
+        "question": "How does YouTube reason about uncertain browser-side observations?",
+        "aliases": [
+          "compare browser behavior",
+          "test is inconsistent",
+          "false positive",
+          "uncertain detection"
+        ],
+        "context": "The inspected code includes repeated observations of browser behavior, checks for inconsistent trials, comparisons against a reference observation and explicit categories for detected, not detected, unspecified and failure. The surrounding code aggregates classifications and records diagnostics.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-probes"
+        ],
+        "target_ids": [
+          "REA-Y-probes"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0076",
+          "rea-youtube-t-0077",
+          "rea-youtube-t-0078",
+          "rea-youtube-t-0079",
+          "rea-youtube-t-0080",
+          "rea-youtube-t-0081",
+          "rea-youtube-t-0082"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-errors",
+        "family_id": "observability",
+        "question": "How does YouTube distinguish its own client failures from external script noise?",
+        "aliases": [
+          "extension caused error",
+          "browser plugin exception",
+          "too many error reports",
+          "classify stack origin"
+        ],
+        "context": "Observed error classifiers use stack origins, message patterns, browser-specific conditions and configurable weights. Some outside-script patterns are recognized, but the code is not proof of active extension enumeration.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-errors"
+        ],
+        "target_ids": [
+          "REA-Y-errors"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0083",
+          "rea-youtube-t-0084",
+          "rea-youtube-t-0085",
+          "rea-youtube-t-0086",
+          "rea-youtube-t-0087",
+          "rea-youtube-t-0088",
+          "rea-youtube-t-0089"
+        ]
+      },
+      {
+        "id": "REA-Y-CURI-commands",
+        "family_id": "navigation",
+        "question": "How does YouTube connect server-provided response data to interface actions?",
+        "aliases": [
+          "click server supplied button",
+          "next video renderer",
+          "navigation commands",
+          "recommendations display"
+        ],
+        "context": "Search located 54 lexical occurrences of innertubeCommand and nearby names for navigation, logging and optimistic updates. A separate inspected excerpt extracts playlist/autoplay and related-video renderer data from a response.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-Y-BRG-commands"
+        ],
+        "target_ids": [
+          "REA-Y-commands"
+        ],
+        "term_ids": [
+          "rea-youtube-t-0090",
+          "rea-youtube-t-0091",
+          "rea-youtube-t-0092",
+          "rea-youtube-t-0093",
+          "rea-youtube-t-0094",
+          "rea-youtube-t-0095",
+          "rea-youtube-t-0096"
+        ]
+      }
+    ]
+  },
+  "navigation_bridges": [
+    {
+      "id": "REA-Y-BRG-gzip",
+      "question": "How does YouTube decompress streamed player responses across browsers?",
+      "choices": [
+        {
+          "label": "Native, Wasm and JavaScript decompression",
+          "technical_title": "Native, Wasm and JavaScript decompression",
+          "distinguishing_question": "The implementation of the accelerated module is not included; no throughput comparison or live fallback test.",
+          "why": "Choose a capability ladder whose tiers share one functional contract; measure actual fallback rates and distinguish unsupported APIs from failure at runtime.",
+          "targets": [
+            "REA-Y-gzip"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0001",
+            "rea-youtube-t-0002",
+            "rea-youtube-t-0003",
+            "rea-youtube-t-0004",
+            "rea-youtube-t-0005",
+            "rea-youtube-t-0006",
+            "rea-youtube-t-0007"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-sabr",
+      "question": "How does YouTube adapt video delivery to changing network conditions?",
+      "choices": [
+        {
+          "label": "Adaptive streaming and host recovery",
+          "technical_title": "Adaptive streaming and host recovery",
+          "distinguishing_question": "Lexical lead only; no actual adaptation policy or network trace has been inspected.",
+          "why": "Separate bitrate choice, request scheduling, server-directed host changes and the media timeline.",
+          "targets": [
+            "REA-Y-sabr"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0008",
+            "rea-youtube-t-0009",
+            "rea-youtube-t-0010",
+            "rea-youtube-t-0011",
+            "rea-youtube-t-0012",
+            "rea-youtube-t-0013"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-timeline",
+      "question": "How does YouTube keep audio and video synchronized across media segments?",
+      "choices": [
+        {
+          "label": "Segment timing and discontinuity reconciliation",
+          "technical_title": "Segment timing and discontinuity reconciliation",
+          "distinguishing_question": "No complete container specification, runtime A/V drift measurement or DRM implementation established. The original run description calling this a Wasm bridge is inaccurate.",
+          "why": "A media timeline is not just wall-clock time: keep source segment timing, accumulated duration and effective playback position distinct; treat corrections as guarded operations.",
+          "targets": [
+            "REA-Y-timeline"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0014",
+            "rea-youtube-t-0015",
+            "rea-youtube-t-0016",
+            "rea-youtube-t-0017",
+            "rea-youtube-t-0018",
+            "rea-youtube-t-0019",
+            "rea-youtube-t-0020",
+            "rea-youtube-t-0021"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-modules",
+      "question": "How does YouTube load a changing graph of client modules?",
+      "choices": [
+        {
+          "label": "Module dependency closure and graph refresh",
+          "technical_title": "Module dependency closure and graph refresh",
+          "distinguishing_question": "The full loader and server protocol are outside the excerpt; no actual module reload experiment.",
+          "why": "Distinguish network success from semantic readiness; maintain requested, in-flight and loaded sets independently and account for graph revisions.",
+          "targets": [
+            "REA-Y-modules"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0022",
+            "rea-youtube-t-0023",
+            "rea-youtube-t-0024",
+            "rea-youtube-t-0025",
+            "rea-youtube-t-0026",
+            "rea-youtube-t-0027",
+            "rea-youtube-t-0028",
+            "rea-youtube-t-0029",
+            "rea-youtube-t-0030"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-features",
+      "question": "How does YouTube divide the player into independently loaded features?",
+      "choices": [
+        {
+          "label": "Player feature module boundaries",
+          "technical_title": "Player feature module boundaries",
+          "distinguishing_question": "The successful dependency collection establishes asset existence, not runtime import or execution. No annotation implementation inspected.",
+          "why": "Module naming is useful for economical code navigation; verify fetch, registration and use separately rather than treating a bundle name as a feature implementation.",
+          "targets": [
+            "REA-Y-features"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0031",
+            "rea-youtube-t-0032",
+            "rea-youtube-t-0033",
+            "rea-youtube-t-0034",
+            "rea-youtube-t-0035",
+            "rea-youtube-t-0036"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-lifecycle",
+      "question": "How does YouTube contain failures in UI component lifecycle callbacks?",
+      "choices": [
+        {
+          "label": "Framework lifecycle exception boundaries",
+          "technical_title": "Framework lifecycle exception boundaries",
+          "distinguishing_question": "Scope and installation conditions only partially visible; not evidence of a React error boundary or full framework behavior.",
+          "why": "When wrapping a callback, preserve identity-dependent cleanup and the original call context; exception containment must not make listeners impossible to remove.",
+          "targets": [
+            "REA-Y-lifecycle"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0037",
+            "rea-youtube-t-0038",
+            "rea-youtube-t-0039",
+            "rea-youtube-t-0040",
+            "rea-youtube-t-0041",
+            "rea-youtube-t-0042",
+            "rea-youtube-t-0043"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-viewing",
+      "question": "How does YouTube extend playback into captions, offline viewing and other viewing modes?",
+      "choices": [
+        {
+          "label": "Independent viewing capabilities",
+          "technical_title": "Independent viewing capabilities",
+          "distinguishing_question": "Asset names are evidence of collected code, not detailed functionality. No feature internals inspected.",
+          "why": "A feature landscape should distinguish UI, data persistence and device control rather than treat all as playback variants.",
+          "targets": [
+            "REA-Y-viewing"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0044",
+            "rea-youtube-t-0045",
+            "rea-youtube-t-0046",
+            "rea-youtube-t-0047",
+            "rea-youtube-t-0048",
+            "rea-youtube-t-0049",
+            "rea-youtube-t-0050"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-ads",
+      "question": "How does YouTube represent advertising breaks within a video timeline?",
+      "choices": [
+        {
+          "label": "Ad placement and prefetch",
+          "technical_title": "Ad placement and prefetch",
+          "distinguishing_question": "This does not establish ad-selection policy, real-time scheduling behavior, revenue or user-specific decisions.",
+          "why": "Model scheduled interruptions as timeline data with explicit boundaries and preparation windows; separate schedule, fetch and rendered state.",
+          "targets": [
+            "REA-Y-ads"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0051",
+            "rea-youtube-t-0052",
+            "rea-youtube-t-0053",
+            "rea-youtube-t-0054",
+            "rea-youtube-t-0055",
+            "rea-youtube-t-0056"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-response",
+      "question": "How does YouTube handle different player response formats and failure states?",
+      "choices": [
+        {
+          "label": "Response envelopes and validation",
+          "technical_title": "Response envelopes and validation",
+          "distinguishing_question": "Only client-side branches observed, not complete protocol or server enforcement. No response modification experiment.",
+          "why": "Transport, structural decoding, domain validation and user-visible failure are separate layers; keep their outcomes legible.",
+          "targets": [
+            "REA-Y-response"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0057",
+            "rea-youtube-t-0058",
+            "rea-youtube-t-0059",
+            "rea-youtube-t-0060",
+            "rea-youtube-t-0061",
+            "rea-youtube-t-0062"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-integrity",
+      "question": "How does YouTube distinguish a malformed or inconsistent playback response?",
+      "choices": [
+        {
+          "label": "Response consistency and failure classification",
+          "technical_title": "Response consistency and failure classification",
+          "distinguishing_question": "No cryptographic verification guarantee, key management, server decision or bypass demonstrated.",
+          "why": "Separate the ability to parse a response from its consistency with reference data. Preserve uncertainty and classify failure rather than collapsing every case into a boolean.",
+          "targets": [
+            "REA-Y-integrity"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0063",
+            "rea-youtube-t-0064",
+            "rea-youtube-t-0065",
+            "rea-youtube-t-0066",
+            "rea-youtube-t-0067",
+            "rea-youtube-t-0068"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-attestation",
+      "question": "How does YouTube integrate client attestation into playback requests?",
+      "choices": [
+        {
+          "label": "Client attestation and bounded asynchronous work",
+          "technical_title": "Client attestation and bounded asynchronous work",
+          "distinguishing_question": "No proof of the underlying VM algorithm, token generation, secret material, server checks or security efficacy.",
+          "why": "Treat trust-producing work as a bounded service with explicit unavailable and timeout states rather than assuming that a response is always obtainable.",
+          "targets": [
+            "REA-Y-attestation"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0069",
+            "rea-youtube-t-0070",
+            "rea-youtube-t-0071",
+            "rea-youtube-t-0072",
+            "rea-youtube-t-0073",
+            "rea-youtube-t-0074",
+            "rea-youtube-t-0075"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-probes",
+      "question": "How does YouTube reason about uncertain browser-side observations?",
+      "choices": [
+        {
+          "label": "Differential observations and diagnostic confidence",
+          "technical_title": "Differential observations and diagnostic confidence",
+          "distinguishing_question": "No live trials, population statistics or actual extension identification established. This study describes methodology, not evasion or modification of the service.",
+          "why": "Use matched controls, repeated trials and an explicit inconclusive state. A heuristic observation is not a proof of causation or a guarantee of a detector's accuracy.",
+          "targets": [
+            "REA-Y-probes"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0076",
+            "rea-youtube-t-0077",
+            "rea-youtube-t-0078",
+            "rea-youtube-t-0079",
+            "rea-youtube-t-0080",
+            "rea-youtube-t-0081",
+            "rea-youtube-t-0082"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-errors",
+      "question": "How does YouTube distinguish its own client failures from external script noise?",
+      "choices": [
+        {
+          "label": "Exception attribution and weighted sampling",
+          "technical_title": "Exception attribution and weighted sampling",
+          "distinguishing_question": "No server sampling rate, complete classifier or runtime effectiveness verified. Pattern recognition is not extension detection.",
+          "why": "At large scale, classify and sample diagnostics before drawing conclusions from error volume. Retain uncertainty: suppression can hide actionable errors.",
+          "targets": [
+            "REA-Y-errors"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0083",
+            "rea-youtube-t-0084",
+            "rea-youtube-t-0085",
+            "rea-youtube-t-0086",
+            "rea-youtube-t-0087",
+            "rea-youtube-t-0088",
+            "rea-youtube-t-0089"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-Y-BRG-commands",
+      "question": "How does YouTube connect server-provided response data to interface actions?",
+      "choices": [
+        {
+          "label": "Response renderers and command dispatch",
+          "technical_title": "Response renderers and command dispatch",
+          "distinguishing_question": "The command execution mechanism and recommendation algorithm remain uninspected.",
+          "why": "Separate declarative response data, command execution, navigation and local optimistic state; investigate the boundaries rather than inferring dispatch from a field name.",
+          "targets": [
+            "REA-Y-commands"
+          ],
+          "term_ids": [
+            "rea-youtube-t-0090",
+            "rea-youtube-t-0091",
+            "rea-youtube-t-0092",
+            "rea-youtube-t-0093",
+            "rea-youtube-t-0094",
+            "rea-youtube-t-0095",
+            "rea-youtube-t-0096"
+          ]
+        }
+      ]
+    }
+  ],
+  "landscape_views": [
+    {
+      "id": "delivery",
+      "title": "How YouTube delivers video",
+      "short_label": "How YouTube delivers video",
+      "root_id": "REA-youtube-delivery",
+      "node_ids": [
+        "REA-youtube-delivery",
+        "REA-Y-gzip",
+        "REA-Y-sabr"
+      ],
+      "parent_overrides": {
+        "REA-Y-gzip": "REA-youtube-delivery",
+        "REA-Y-sabr": "REA-youtube-delivery"
+      },
+      "entry_ids": [
+        "REA-Y-CURI-gzip",
+        "REA-Y-CURI-sabr"
+      ],
+      "rationale": "Adaptive delivery, response formats, decompression and media fetch recovery.",
+      "term_ids": [
+        "rea-youtube-t-0001",
+        "rea-youtube-t-0002",
+        "rea-youtube-t-0003",
+        "rea-youtube-t-0004",
+        "rea-youtube-t-0005",
+        "rea-youtube-t-0006",
+        "rea-youtube-t-0007",
+        "rea-youtube-t-0008",
+        "rea-youtube-t-0009",
+        "rea-youtube-t-0010",
+        "rea-youtube-t-0011",
+        "rea-youtube-t-0012",
+        "rea-youtube-t-0013"
+      ]
+    },
+    {
+      "id": "timeline",
+      "title": "The video player's media timeline",
+      "short_label": "The video player's media timeline",
+      "root_id": "REA-youtube-timeline",
+      "node_ids": [
+        "REA-youtube-timeline",
+        "REA-Y-timeline"
+      ],
+      "parent_overrides": {
+        "REA-Y-timeline": "REA-youtube-timeline"
+      },
+      "entry_ids": [
+        "REA-Y-CURI-timeline"
+      ],
+      "rationale": "Container formats, segment timing, audio/video synchronization and discontinuities.",
+      "term_ids": [
+        "rea-youtube-t-0014",
+        "rea-youtube-t-0015",
+        "rea-youtube-t-0016",
+        "rea-youtube-t-0017",
+        "rea-youtube-t-0018",
+        "rea-youtube-t-0019",
+        "rea-youtube-t-0020",
+        "rea-youtube-t-0021"
+      ]
+    },
+    {
+      "id": "architecture",
+      "title": "YouTube's modular web client",
+      "short_label": "YouTube's modular web client",
+      "root_id": "REA-youtube-architecture",
+      "node_ids": [
+        "REA-youtube-architecture",
+        "REA-Y-modules",
+        "REA-Y-features",
+        "REA-Y-lifecycle"
+      ],
+      "parent_overrides": {
+        "REA-Y-modules": "REA-youtube-architecture",
+        "REA-Y-features": "REA-youtube-architecture",
+        "REA-Y-lifecycle": "REA-youtube-architecture"
+      },
+      "entry_ids": [
+        "REA-Y-CURI-modules",
+        "REA-Y-CURI-features",
+        "REA-Y-CURI-lifecycle"
+      ],
+      "rationale": "Dependency resolution, feature loading, framework lifecycle and resource scheduling.",
+      "term_ids": [
+        "rea-youtube-t-0022",
+        "rea-youtube-t-0023",
+        "rea-youtube-t-0024",
+        "rea-youtube-t-0025",
+        "rea-youtube-t-0026",
+        "rea-youtube-t-0027",
+        "rea-youtube-t-0028",
+        "rea-youtube-t-0029",
+        "rea-youtube-t-0030",
+        "rea-youtube-t-0031",
+        "rea-youtube-t-0032",
+        "rea-youtube-t-0033",
+        "rea-youtube-t-0034",
+        "rea-youtube-t-0035",
+        "rea-youtube-t-0036",
+        "rea-youtube-t-0037",
+        "rea-youtube-t-0038",
+        "rea-youtube-t-0039",
+        "rea-youtube-t-0040",
+        "rea-youtube-t-0041",
+        "rea-youtube-t-0042",
+        "rea-youtube-t-0043"
+      ]
+    },
+    {
+      "id": "experience",
+      "title": "The viewing experience beyond playback",
+      "short_label": "The viewing experience beyond playback",
+      "root_id": "REA-youtube-experience",
+      "node_ids": [
+        "REA-youtube-experience",
+        "REA-Y-viewing"
+      ],
+      "parent_overrides": {
+        "REA-Y-viewing": "REA-youtube-experience"
+      },
+      "entry_ids": [
+        "REA-Y-CURI-viewing"
+      ],
+      "rationale": "Captions, remote playback, offline viewing, miniplayer and interactive features.",
+      "term_ids": [
+        "rea-youtube-t-0044",
+        "rea-youtube-t-0045",
+        "rea-youtube-t-0046",
+        "rea-youtube-t-0047",
+        "rea-youtube-t-0048",
+        "rea-youtube-t-0049",
+        "rea-youtube-t-0050"
+      ]
+    },
+    {
+      "id": "ads",
+      "title": "Advertising as part of the playback timeline",
+      "short_label": "Advertising as part of the playback timeline",
+      "root_id": "REA-youtube-ads",
+      "node_ids": [
+        "REA-youtube-ads",
+        "REA-Y-ads"
+      ],
+      "parent_overrides": {
+        "REA-Y-ads": "REA-youtube-ads"
+      },
+      "entry_ids": [
+        "REA-Y-CURI-ads"
+      ],
+      "rationale": "Cue positions, prefetching and the distinction between content and advertising state.",
+      "term_ids": [
+        "rea-youtube-t-0051",
+        "rea-youtube-t-0052",
+        "rea-youtube-t-0053",
+        "rea-youtube-t-0054",
+        "rea-youtube-t-0055",
+        "rea-youtube-t-0056"
+      ]
+    },
+    {
+      "id": "integrity",
+      "title": "Playback integrity and client attestation",
+      "short_label": "Playback integrity and client attestation",
+      "root_id": "REA-youtube-integrity",
+      "node_ids": [
+        "REA-youtube-integrity",
+        "REA-Y-response",
+        "REA-Y-integrity",
+        "REA-Y-attestation",
+        "REA-Y-probes"
+      ],
+      "parent_overrides": {
+        "REA-Y-response": "REA-youtube-integrity",
+        "REA-Y-integrity": "REA-youtube-integrity",
+        "REA-Y-attestation": "REA-youtube-integrity",
+        "REA-Y-probes": "REA-youtube-integrity"
+      },
+      "entry_ids": [
+        "REA-Y-CURI-response",
+        "REA-Y-CURI-integrity",
+        "REA-Y-CURI-attestation",
+        "REA-Y-CURI-probes"
+      ],
+      "rationale": "Validation, trust boundaries, bounded failures, browser compatibility and diagnostic observations.",
+      "term_ids": [
+        "rea-youtube-t-0057",
+        "rea-youtube-t-0058",
+        "rea-youtube-t-0059",
+        "rea-youtube-t-0060",
+        "rea-youtube-t-0061",
+        "rea-youtube-t-0062",
+        "rea-youtube-t-0063",
+        "rea-youtube-t-0064",
+        "rea-youtube-t-0065",
+        "rea-youtube-t-0066",
+        "rea-youtube-t-0067",
+        "rea-youtube-t-0068",
+        "rea-youtube-t-0069",
+        "rea-youtube-t-0070",
+        "rea-youtube-t-0071",
+        "rea-youtube-t-0072",
+        "rea-youtube-t-0073",
+        "rea-youtube-t-0074",
+        "rea-youtube-t-0075",
+        "rea-youtube-t-0076",
+        "rea-youtube-t-0077",
+        "rea-youtube-t-0078",
+        "rea-youtube-t-0079",
+        "rea-youtube-t-0080",
+        "rea-youtube-t-0081",
+        "rea-youtube-t-0082"
+      ]
+    },
+    {
+      "id": "observability",
+      "title": "Diagnosing failures at YouTube scale",
+      "short_label": "Diagnosing failures at YouTube scale",
+      "root_id": "REA-youtube-observability",
+      "node_ids": [
+        "REA-youtube-observability",
+        "REA-Y-errors"
+      ],
+      "parent_overrides": {
+        "REA-Y-errors": "REA-youtube-observability"
+      },
+      "entry_ids": [
+        "REA-Y-CURI-errors"
+      ],
+      "rationale": "Classifying external exceptions, instrumentation and managing noisy signals.",
+      "term_ids": [
+        "rea-youtube-t-0083",
+        "rea-youtube-t-0084",
+        "rea-youtube-t-0085",
+        "rea-youtube-t-0086",
+        "rea-youtube-t-0087",
+        "rea-youtube-t-0088",
+        "rea-youtube-t-0089"
+      ]
+    },
+    {
+      "id": "navigation",
+      "title": "Server-driven navigation and recommendations",
+      "short_label": "Server-driven navigation and recommendations",
+      "root_id": "REA-youtube-navigation",
+      "node_ids": [
+        "REA-youtube-navigation",
+        "REA-Y-commands"
+      ],
+      "parent_overrides": {
+        "REA-Y-commands": "REA-youtube-navigation"
+      },
+      "entry_ids": [
+        "REA-Y-CURI-commands"
+      ],
+      "rationale": "Response shapes, commands and the distinction between received data and UI actions.",
+      "term_ids": [
+        "rea-youtube-t-0090",
+        "rea-youtube-t-0091",
+        "rea-youtube-t-0092",
+        "rea-youtube-t-0093",
+        "rea-youtube-t-0094",
+        "rea-youtube-t-0095",
+        "rea-youtube-t-0096"
+      ]
+    }
+  ],
+  "glossary_path": "glossary.json",
+  "glossary_schema": "1.0",
+  "search_profile": "descriptive"
+}
