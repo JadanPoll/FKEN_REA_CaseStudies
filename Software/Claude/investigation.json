@@ -1,0 +1,368 @@
+{
+  "id": "REA-claude",
+  "title": "Claude — Engineering case studies",
+  "root": "REA-claude",
+  "nodes": [
+    {
+      "id": "REA-claude",
+      "parent_id": null,
+      "kind": "question",
+      "question": "What can we learn from Claude's engineering?",
+      "why": "An evolving landscape of source-inspected engineering mechanisms and open questions in Claude."
+    },
+    {
+      "id": "REA-claude-render",
+      "parent_id": "REA-claude",
+      "kind": "question",
+      "question": "How can changing data preserve visual continuity?"
+    },
+    {
+      "id": "REA-claude-state",
+      "parent_id": "REA-claude",
+      "kind": "question",
+      "question": "How can asynchronous systems preserve intent and identity?"
+    },
+    {
+      "id": "REA-claude-work",
+      "parent_id": "REA-claude",
+      "kind": "question",
+      "question": "How can computation be scheduled, recovered and observed economically?"
+    },
+    {
+      "id": "REA-C-markdown",
+      "parent_id": "REA-claude-render",
+      "question": "Can streaming Markdown grow without reparsing everything?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "Cache completed table rows, source offsets, alignment and prefix; validate retained rows, parse newly completed rows and the unstable tail, shift source coordinates and graft nodes. A guarded code-fence path updates the existing AST node directly. General parsing remains the fallback.",
+      "transferable_insight": "Guarded fast paths preserve stable constituents without replacing the general parser.",
+      "distinctions": [
+        "Pocket Express, document editors, incremental graph updates."
+      ],
+      "qualification": "List/paragraph implementations only partially inspected; runtime savings unmeasured.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "C-markdown",
+            "section": "shared-31-k46qfpBX.js",
+            "offsets": {
+              "start": 173000,
+              "end": 179000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          },
+          {
+            "source_id": "C-markdown",
+            "section": "shared-31-k46qfpBX.js",
+            "offsets": {
+              "start": 183500,
+              "end": 189500,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "C-read"
+      ],
+      "htmlet": {
+        "title": "Stable prefix versus unstable tail",
+        "height": 300,
+        "html": "<p>Append rows to a growing table. Compare idealized row visits, not real execution time.</p><div class=\"controls\"><button id=\"add\">Append row</button><button id=\"reset\">Reset</button></div><div class=\"metrics\"><span>Full <b id=\"f\">0</b></span><span>Incremental <b id=\"i\">0</b></span></div><div id=\"rows\"></div><script>let n=0,f=0,i=0;const $=id=>document.getElementById(id);function draw(){$('f').textContent=f;$('i').textContent=i;$('rows').replaceChildren();for(let j=0;j<n;j++){let r=document.createElement('span');r.className='tile';r.textContent='Row '+(j+1);if(j===n-1)r.style.background='#fef3c7';$('rows').append(r)}$('add').disabled=n>=24}$('add').onclick=()=>{n++;f+=n;i+=n===1?1:2;draw()};$('reset').onclick=()=>{n=f=i=0;draw()}</script>"
+      }
+    },
+    {
+      "id": "REA-C-scroll",
+      "parent_id": "REA-claude-render",
+      "question": "Why can correcting scroll position during a gesture make scrolling worse?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "The virtualizer distinguishes touch, active scrolling and a 150 ms iOS post-touch window. It accumulates corrections during these conditions, refuses to flush outside normal bounds, and reconciles when settled. Numeric measurements are cached and recomputed from the earliest invalidated index.",
+      "transferable_insight": "A gesture temporarily owns scroll state; defer conflicting mutations and reconcile afterwards.",
+      "distinctions": [
+        "Kami, Discord Wiki, mobile virtualized lists."
+      ],
+      "qualification": "Vendor code; upstream attribution and transfer to custom canvas not verified.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "C-scroll",
+            "section": "vendor-frame-BVlhyxBh.js",
+            "offsets": {
+              "start": 259000,
+              "end": 265500,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "C-read"
+      ],
+      "htmlet": {
+        "title": "Gesture ownership",
+        "height": 345,
+        "html": "<p>Grow an item above the viewport while a gesture is active. Compare immediate and deferred correction.</p><label><input type=\"checkbox\" id=\"defer\" checked> Defer corrections</label><div class=\"controls\"><button id=\"start\">Begin gesture</button><button id=\"grow\">Grow +20 px</button><button id=\"end\">Settle</button><button id=\"reset\">Reset</button></div><div class=\"metrics\"><span>Applied <b id=\"a\">0</b> px</span><span>Pending <b id=\"p\">0</b> px</span></div><p id=\"state\" aria-live=\"polite\">Settled.</p><script>let held=false,a=0,p=0;const $=id=>document.getElementById(id);function draw(t){$('a').textContent=a;$('p').textContent=p;$('state').textContent=t}$('start').onclick=()=>{held=true;draw('Gesture owns scroll position.')};$('grow').onclick=()=>{if(held&&$('defer').checked){p+=20;draw('Correction queued; momentum not interrupted.')}else{a+=20;draw(held?'Correction issued during gesture; may disrupt momentum.':'Applied while settled.')}};$('end').onclick=()=>{held=false;a+=p;p=0;draw('Settled; pending adjustment applied.')};$('reset').onclick=()=>{held=false;a=p=0;draw('Settled.')}</script>"
+      }
+    },
+    {
+      "id": "REA-C-persist",
+      "parent_id": "REA-claude-state",
+      "question": "What if a delayed storage read arrives after a user has edited a draft?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "Tracks unsettled reads, write epochs, read barriers and ownership; caller uses 500 ms write debounce and 5 s hydration timeout. Before retrying, rereads the record and rechecks intent and epoch; unchanged writes and deletion have distinct policies.",
+      "transferable_insight": "Unknown is not empty; a failed write does not imply its original intent remains valid.",
+      "distinctions": [
+        "Pocket notes and cross-tab queues."
+      ],
+      "qualification": "Helpers and runtime behavior not fully examined.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "C-store",
+            "section": "shared-l-p-m-w-8-CFELbFb2.js",
+            "offsets": {
+              "start": 173000,
+              "end": 181000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          },
+          {
+            "source_id": "C-store",
+            "section": "shared-l-p-m-w-8-CFELbFb2.js",
+            "offsets": {
+              "start": 185000,
+              "end": 192000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "C-read"
+      ]
+    },
+    {
+      "id": "REA-C-optimistic",
+      "parent_id": "REA-claude-state",
+      "question": "Can an earlier failed save undo a later successful edit?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "Mutations retain prior field sequences and account identity; rollback filters by write sequence. Pending optimistic values can be reapplied over query-cache updates. Settlement reconciles and invalidates stale queries.",
+      "transferable_insight": "Consistency granularity need not equal storage granularity.",
+      "distinctions": [
+        "Concurrent configuration edits and agents."
+      ],
+      "qualification": "Demo illustrates invariant rather than exact product implementation.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "C-settings",
+            "section": "shared-l-p-m-w-3-Ba6-SV97.js",
+            "offsets": {
+              "start": 258000,
+              "end": 264000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          },
+          {
+            "source_id": "C-settings",
+            "section": "shared-l-p-m-w-3-Ba6-SV97.js",
+            "offsets": {
+              "start": 105500,
+              "end": 110500,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "C-read"
+      ],
+      "htmlet": {
+        "title": "Two writes, one late failure",
+        "height": 300,
+        "html": "<p>Two optimistic writes affect independent fields in the same record.</p><label><input id=\"selective\" type=\"checkbox\" checked> Selective rollback</label><div class=\"controls\"><button id=\"next\">Next step</button><button id=\"reset\">Reset</button></div><div class=\"metrics\"><span>A <b id=\"a\">OFF</b></span><span>B <b id=\"b\">OFF</b></span></div><p id=\"note\" aria-live=\"polite\">Initial state.</p><script>let step=0,a=false,b=false;const $=id=>document.getElementById(id);function draw(t){$('a').textContent=a?'ON':'OFF';$('b').textContent=b?'ON':'OFF';$('note').textContent=t;$('next').disabled=step===3}$('next').onclick=()=>{step++;if(step===1){a=true;draw('Write 1: A on, pending.')}if(step===2){b=true;draw('Write 2: B on, acknowledged.')}if(step===3){a=false;if(!$('selective').checked)b=false;draw($('selective').checked?'Write 1 fails; only A restored.':'Whole snapshot restored; successful B erased.')}};$('reset').onclick=()=>{step=0;a=b=false;draw('Initial state.')}</script>"
+      }
+    },
+    {
+      "id": "REA-C-provisional",
+      "parent_id": "REA-claude-state",
+      "question": "If a remembered session is missing from a listing, does it no longer exist?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "Tracks provisional IDs, listConfirmed and listSettled independently; bounded recovery distinguishes loading, deleted, unreadable and available. Generation checks reject obsolete results; a 10 s timer drops unconfirmed provisional IDs.",
+      "transferable_insight": "Represent evidence about existence rather than a Boolean.",
+      "distinctions": [
+        "Logical Cloud device registry and reconnecting sessions."
+      ],
+      "qualification": "Backend semantics unverified; removing provisional status is not necessarily deleting a session.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "C-settings",
+            "section": "shared-l-p-m-w-3-Ba6-SV97.js",
+            "offsets": {
+              "start": 258000,
+              "end": 264000,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          },
+          {
+            "source_id": "C-settings",
+            "section": "shared-l-p-m-w-3-Ba6-SV97.js",
+            "offsets": {
+              "start": 105500,
+              "end": 110500,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "C-read"
+      ]
+    },
+    {
+      "id": "REA-C-worker",
+      "parent_id": "REA-claude-work",
+      "question": "Can a worker compress bytes without copying its output?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "A 591-character worker receives numeric ID and Uint8Array, streams a Blob through CompressionStream(gzip), returns bytes and duration, transfers the output buffer, and announces availability on startup.",
+      "transferable_insight": "Capability handshake, correlation ID, transferable ownership and intrinsic timing.",
+      "distinctions": [
+        "Logical Cloud workers and diagnostic export."
+      ],
+      "qualification": "Parent scheduling, input transfer and backpressure not inspected.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "C-worker",
+            "section": "completionGzipWorker-Q_JtDKxH.js",
+            "offsets": {
+              "start": 0,
+              "end": 591,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "C-discover"
+      ]
+    },
+    {
+      "id": "REA-C-latency",
+      "parent_id": "REA-claude-work",
+      "question": "How can we distinguish slow JavaScript from waiting for paint?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "Correlates Long Animation Frame entries, long tasks and interaction/render probes, estimates script, frame wait, style/layout and post-render contributions, and attributes consequential script activity.",
+      "transferable_insight": "Measure actionable contributing phases rather than total latency alone.",
+      "distinctions": [
+        "Pocket input and canvas responsiveness."
+      ],
+      "qualification": "Heuristic decomposition; browser support varies, no measured product performance.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "C-perf",
+            "section": "cca471d3a-C4dKEi_-.js",
+            "offsets": {
+              "start": 31000,
+              "end": 35500,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "C-read"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "C-worker",
+      "title": "completionGzipWorker-Q_JtDKxH.js",
+      "sha256": "ae8faf6861cddd9dcf510dce849db404d56ae67a4b9c73d7214e5de6b1236360",
+      "origin": "https://claude.ai"
+    },
+    {
+      "id": "C-markdown",
+      "title": "shared-31-k46qfpBX.js",
+      "sha256": "a2c12d89719d78b0ffe3f2618b4faf4170c10db2530198e6fcd9b52536eada96",
+      "origin": "https://claude.ai"
+    },
+    {
+      "id": "C-scroll",
+      "title": "vendor-frame-BVlhyxBh.js",
+      "sha256": "a66780ee845c39d753f6494b716d716bfcf9927b289d91996e90a85453b76ae4",
+      "origin": "https://claude.ai"
+    },
+    {
+      "id": "C-store",
+      "title": "shared-l-p-m-w-8-CFELbFb2.js",
+      "sha256": "f7d3b6fb4596775f3011d71ec12a94ac437fb07d361782ee550e520ad0de2dfd",
+      "origin": "https://claude.ai"
+    },
+    {
+      "id": "C-settings",
+      "title": "shared-l-p-m-w-3-Ba6-SV97.js",
+      "sha256": "2009cc979eca1824b489d47d796375c501776ca3e12459dfa6c995b7aa407ab7",
+      "origin": "https://claude.ai"
+    },
+    {
+      "id": "C-perf",
+      "title": "cca471d3a-C4dKEi_-.js",
+      "sha256": "070b5f5794124a4c7f27a5a9c3c4dcd01ddec44f2841b12afba51f466d3cf802",
+      "origin": "https://claude.ai"
+    }
+  ],
+  "evidence_file": "Software/Claude/evidence.json",
+  "connections": [
+    {
+      "from": "REA-C-persist",
+      "to": "REA-C-optimistic",
+      "type": "related",
+      "why": "Write ownership"
+    },
+    {
+      "from": "REA-C-provisional",
+      "to": "REA-C-persist",
+      "type": "related",
+      "why": "Unknown is not absent"
+    }
+  ]
+}
