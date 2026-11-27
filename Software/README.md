@@ -8,16 +8,24 @@
 
 Each product owns an independent, evolving investigation folder. Do not combine multiple products into a single growing evidence archive.
 
-| Product | Question landscape | Evidence and replay |
-| --- | --- | --- |
-| Claude | [investigation.json](Claude/investigation.json) | [evidence.json](Claude/evidence.json) |
-| Discord | [investigation.json](Discord/investigation.json) | [evidence.json](Discord/evidence.json) |
+| Product | Question landscape | Vocabulary | Evidence and replay |
+| --- | --- | --- | --- |
+| Claude | [investigation.json](Claude/investigation.json) | [glossary.json](Claude/glossary.json) | [evidence.json](Claude/evidence.json) |
+| Discord | [investigation.json](Discord/investigation.json) | [glossary.json](Discord/glossary.json) | [evidence.json](Discord/evidence.json) |
 
-Within each folder, `investigation.json` owns questions, mechanism explanations, transferable insights, qualifications and optional HTMlets. `evidence.json` owns replayable JSON plans, run IDs, compact result receipts, source filenames, SHA-256 digests and half-open UTF-16 ranges. Keep stable study IDs and append new evidence rather than overwrite older observations. Reconstructed plans are explicitly marked; fresh deployments may differ.
+Within each folder, `investigation.json` owns ordinary-language entry questions (`curiosity_atlas`), conditional navigation (`navigation_bridges`), canonical technical `nodes`, reusable question-set projections (`landscape_views`), qualifications and optional HTMlets. `glossary.json` owns permanent concept IDs, labels, aliases, categories and meaningful non-equivalent relationships. Vocabulary can expand independently of the question landscape; never require a question for each term. `evidence.json` owns replayable JSON plans, run IDs, compact result receipts, source filenames, SHA-256 digests and half-open UTF-16 ranges. Keep stable study IDs and append new evidence rather than overwrite older observations. Reconstructed plans are explicitly marked; fresh deployments may differ.
 
 The software-level [investigation.json](investigation.json) is only a product navigation index, with optional cross-product mechanism references. The root [rsm-view.json](../rsm-view.json) registers the index and product views in the canonical viewer. Neither duplicates educational content. Add a new product folder and its view/index entry when a new product is investigated.
 
 Start from a question, inspect the mechanism, then expand **Investigation plans & receipts** to recover and copy the relevant JSON. Use the retained archive if available; verify digests before treating old offsets as evidence. A successful plan is not necessarily a successful hypothesis test.
+
+## Discovery and semantic persistence
+
+Reuse the [Kami glossary contract](https://github.com/JadanPoll/Kami_Uploads_RSM_Tree/blob/main/GLOSSARY_SCHEMA.md), [question classification](https://github.com/JadanPoll/Kami_Uploads_RSM_Tree/blob/main/QUESTION_TYPES.md) and [authoring discipline](https://github.com/JadanPoll/Kami_Uploads_RSM_Tree/blob/main/AGENTS.md). Treat these as the existing architecture, not templates to reinvent. Preserve term IDs, distinguish aliases from related concepts, and link only substantively relevant terms. A glossary entry may have no associated investigation.
+
+AI Pill's discovery map is the upstream empirical surface: identifiers, lexical motifs, occurrence counts, distinct files/regions, and their source coordinates. Set union broadens retrieval, intersection identifies co-occurrence, and set difference surfaces newly observed or unmatched candidates. A high occurrence count is not intellectual importance; use distinct-file support, diversity and actual source inspection to interpret it. Co-occurrence is not proof of a semantic relationship. The glossary is the persistent, curated concept landscape, not a dump of mined strings. Normalize genuine synonyms, keep different concepts separate, and permit promising leads without claiming they are present or implemented. Retain the associated query and compact counts in evidence when consequential. Compare deployments only with recorded archive identities and coverage.
+
+For a new investigation, first recover the product's existing vocabulary, questions and evidence. Expand the smallest useful surface: new concept, new ordinary question, new source evidence, or a better navigation route. No quota-driven taxonomy and no duplicating technical explanations. Test real frustration-to-resource traversal and the reverse route from an independently chosen valuable mechanism.
 
 ## Public persistence discipline
 
