@@ -28,7 +28,12 @@ Exploring it should actively expand our conception of what is interesting, possi
 a. variance
 b. unique dimensions offered
 
-glossary plays a critical role in fulfilling this but so do questions, especially when an LLM is figuring out what a good question would be, Again, it should make sense if the folder was a title of the case study book. This prevents the accumulation on :slop that is simply asking questions just to ask. I do have a meta rule for this
+glossary plays a critical role in fulfilling this but so do questions, especially when an LLM is figuring out what a good question would be. Glossaries should enable me to 
+a. quickly estimate how seminal or authoritatively comprehensive the ‘book’ is.
+b. excite me about twist info the book might contain if I was giving it a once over(gives me a landscape of all the dimensions, and spectral variance or set of terms within any particular dimension of the book.
+c. enable me, through pseudo-deterministic semantics, to locate any relevant content in the book even if I have a sort of vague idea bout what I want to look into, say ‘security’ or “payment” systems.
+
+Again, it should make sense if the folder was a title of the case study book. This prevents the accumulation on :slop that is simply asking questions just to ask. I do have a meta rule for this
 The ‘book’ should asymptotically be in such a way that I simply can’t out it down. That is it maximally activates and fires my neurons. This can be done recursively of course, on a, b, and c in the earlier specified criterion A., am I unable to put the chapter titular questions down, within a chapter titular question, am I unable to put its Subchapter titular questions down etc.
 
 
