@@ -29,6 +29,8 @@ a. variance
 b. unique dimensions offered
 
 glossary plays a critical role in fulfilling this but so do questions, especially when an LLM is figuring out what a good question would be, Again, it should make sense if the folder was a title of the case study book. This prevents the accumulation on :slop that is simply asking questions just to ask. I do have a meta rule for this
+The ‘book’ should asymptotically be in such a way that I simply can’t out it down. That is it maximally activates and fires my neurons. This can be done recursively of course, on a, b, and c in the earlier specified criterion A., am I unable to put the chapter titular questions down, within a chapter titular question, am I unable to put its Subchapter titular questions down etc.
+
 
 A hyper-specific question that does not expose a landscape of thinking or ideas and is not generating and so is just technical slop. If you find it relevant identify the actual big picture question and persist the more technical important or nuanced stuff in the content under it
 A vague, generic question that could easily appear in a ‘Book’ with a different title is just question-generating slop, in other words asking just to ask. Question like this offer no navigational usefulness or excitement
