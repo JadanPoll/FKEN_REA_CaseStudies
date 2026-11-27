@@ -52,6 +52,13 @@
       },
       "evidence_run_ids": [
         "D-read"
+      ],
+      "term_ids": [
+        "rea-discord-t-0001",
+        "rea-discord-t-0002",
+        "rea-discord-t-0003",
+        "rea-discord-t-0024",
+        "rea-discord-t-0026"
       ]
     },
     {
@@ -95,6 +102,13 @@
       },
       "evidence_run_ids": [
         "D-read"
+      ],
+      "term_ids": [
+        "rea-discord-t-0005",
+        "rea-discord-t-0006",
+        "rea-discord-t-0007",
+        "rea-discord-t-0008",
+        "rea-discord-t-0030"
       ]
     },
     {
@@ -138,6 +152,10 @@
       },
       "evidence_run_ids": [
         "D-read"
+      ],
+      "term_ids": [
+        "rea-discord-t-0010",
+        "rea-discord-t-0011"
       ]
     },
     {
@@ -181,6 +199,15 @@
       },
       "evidence_run_ids": [
         "D-read"
+      ],
+      "term_ids": [
+        "rea-discord-t-0012",
+        "rea-discord-t-0013",
+        "rea-discord-t-0014",
+        "rea-discord-t-0015",
+        "rea-discord-t-0016",
+        "rea-discord-t-0020",
+        "rea-discord-t-0022"
       ]
     },
     {
@@ -213,6 +240,12 @@
       },
       "evidence_run_ids": [
         "D-read"
+      ],
+      "term_ids": [
+        "rea-discord-t-0017",
+        "rea-discord-t-0018",
+        "rea-discord-t-0019",
+        "rea-discord-t-0029"
       ]
     }
   ],
@@ -261,5 +294,332 @@
     }
   ],
   "evidence_file": "Software/Discord/evidence.json",
-  "connections": []
+  "connections": [],
+  "curiosity_atlas": {
+    "purpose": "Enter through an ordinary question or browse vocabulary independently. Each technical mechanism has one canonical record.",
+    "families": [
+      {
+        "id": "render",
+        "label": "Visual continuity and input"
+      },
+      {
+        "id": "work",
+        "label": "Execution, recovery and observability"
+      }
+    ],
+    "entries": [
+      {
+        "id": "REA-D-CURI-scroll",
+        "family_id": "render",
+        "question": "How can older chat messages load without making the messages I am reading jump?",
+        "aliases": [
+          "prepend history",
+          "chat scroll jump",
+          "load older messages"
+        ],
+        "context": "Inspect the separation between message fetch anchors, pinned geometry and viewport intent. Restoration itself is still unexamined.",
+        "question_type": "design",
+        "task_scope": "open_goal",
+        "bridge_ids": [
+          "REA-D-BRG-scroll"
+        ],
+        "target_ids": [
+          "REA-D-scroll"
+        ],
+        "term_ids": [
+          "rea-discord-t-0001",
+          "rea-discord-t-0002",
+          "rea-discord-t-0003",
+          "rea-discord-t-0024",
+          "rea-discord-t-0026"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-editor",
+        "family_id": "render",
+        "question": "Why does a rich text editor sometimes allow the browser to type directly and sometimes intercept typing?",
+        "aliases": [
+          "native input",
+          "IME composition",
+          "selection"
+        ],
+        "context": "Inspect guards on native input and selection reconciliation.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-editor"
+        ],
+        "target_ids": [
+          "REA-D-editor"
+        ],
+        "term_ids": [
+          "rea-discord-t-0005",
+          "rea-discord-t-0006",
+          "rea-discord-t-0007",
+          "rea-discord-t-0008",
+          "rea-discord-t-0030"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-backoff",
+        "family_id": "work",
+        "question": "How can failing requests avoid repeatedly hammering the network without blocking unrelated requests?",
+        "aliases": [
+          "retry storm",
+          "per item retries",
+          "backoff"
+        ],
+        "context": "Inspect per-SKU state and caller guards; exact backoff algorithm remains open.",
+        "question_type": "design",
+        "task_scope": "open_goal",
+        "bridge_ids": [
+          "REA-D-BRG-backoff"
+        ],
+        "target_ids": [
+          "REA-D-backoff"
+        ],
+        "term_ids": [
+          "rea-discord-t-0010",
+          "rea-discord-t-0011"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-intl",
+        "family_id": "work",
+        "question": "How can changing language load only the needed text without exposing incomplete translations?",
+        "aliases": [
+          "locale change",
+          "lazy translation",
+          "missing messages"
+        ],
+        "context": "Inspect asynchronous readiness, cache and fallback-cycle checks.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-intl"
+        ],
+        "target_ids": [
+          "REA-D-intl"
+        ],
+        "term_ids": [
+          "rea-discord-t-0012",
+          "rea-discord-t-0013",
+          "rea-discord-t-0014",
+          "rea-discord-t-0015",
+          "rea-discord-t-0016",
+          "rea-discord-t-0020",
+          "rea-discord-t-0022"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-errors",
+        "family_id": "work",
+        "question": "How can an app tell which errors were introduced by outside scripts?",
+        "aliases": [
+          "third party exceptions",
+          "noisy console",
+          "error attribution"
+        ],
+        "context": "Inspect module metadata filtering rather than relying on exception message text.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-errors"
+        ],
+        "target_ids": [
+          "REA-D-errors"
+        ],
+        "term_ids": [
+          "rea-discord-t-0017",
+          "rea-discord-t-0018",
+          "rea-discord-t-0019",
+          "rea-discord-t-0029"
+        ]
+      }
+    ]
+  },
+  "navigation_bridges": [
+    {
+      "id": "REA-D-BRG-scroll",
+      "question": "How can older chat messages load without making the messages I am reading jump?",
+      "choices": [
+        {
+          "label": "How can chat history load without making visible messages jump?",
+          "technical_title": "How can chat history load without making visible messages jump?",
+          "distinguishing_question": "Inspect the separation between message fetch anchors, pinned geometry and viewport intent. Restoration itself is still unexamined.",
+          "why": "Separate data acquisition frontier from visible logical anchor.",
+          "targets": [
+            "REA-D-scroll"
+          ],
+          "term_ids": [
+            "rea-discord-t-0001",
+            "rea-discord-t-0002",
+            "rea-discord-t-0003",
+            "rea-discord-t-0024",
+            "rea-discord-t-0026"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-editor",
+      "question": "Why does a rich text editor sometimes allow the browser to type directly and sometimes intercept typing?",
+      "choices": [
+        {
+          "label": "How can an editor retain native input while maintaining a logical document model?",
+          "technical_title": "How can an editor retain native input while maintaining a logical document model?",
+          "distinguishing_question": "Inspect guards on native input and selection reconciliation.",
+          "why": "Use native editing when invariants hold; explicitly reconcile exceptions.",
+          "targets": [
+            "REA-D-editor"
+          ],
+          "term_ids": [
+            "rea-discord-t-0005",
+            "rea-discord-t-0006",
+            "rea-discord-t-0007",
+            "rea-discord-t-0008",
+            "rea-discord-t-0030"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-backoff",
+      "question": "How can failing requests avoid repeatedly hammering the network without blocking unrelated requests?",
+      "choices": [
+        {
+          "label": "How can independent failing requests avoid creating network pressure?",
+          "technical_title": "How can independent failing requests avoid creating network pressure?",
+          "distinguishing_question": "Inspect per-SKU state and caller guards; exact backoff algorithm remains open.",
+          "why": "Tie recovery to affected identity; gate at acquisition boundary.",
+          "targets": [
+            "REA-D-backoff"
+          ],
+          "term_ids": [
+            "rea-discord-t-0010",
+            "rea-discord-t-0011"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-intl",
+      "question": "How can changing language load only the needed text without exposing incomplete translations?",
+      "choices": [
+        {
+          "label": "How can a language change load only needed resources without partially ready state?",
+          "technical_title": "How can a language change load only needed resources without partially ready state?",
+          "distinguishing_question": "Inspect asynchronous readiness, cache and fallback-cycle checks.",
+          "why": "Deferred acquisition plus per-key deduplication and explicit readiness.",
+          "targets": [
+            "REA-D-intl"
+          ],
+          "term_ids": [
+            "rea-discord-t-0012",
+            "rea-discord-t-0013",
+            "rea-discord-t-0014",
+            "rea-discord-t-0015",
+            "rea-discord-t-0016",
+            "rea-discord-t-0020",
+            "rea-discord-t-0022"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-errors",
+      "question": "How can an app tell which errors were introduced by outside scripts?",
+      "choices": [
+        {
+          "label": "How can software distinguish its own errors from third-party errors?",
+          "technical_title": "How can software distinguish its own errors from third-party errors?",
+          "distinguishing_question": "Inspect module metadata filtering rather than relying on exception message text.",
+          "why": "Attach provenance at build time; classify with explicit policy.",
+          "targets": [
+            "REA-D-errors"
+          ],
+          "term_ids": [
+            "rea-discord-t-0017",
+            "rea-discord-t-0018",
+            "rea-discord-t-0019",
+            "rea-discord-t-0029"
+          ]
+        }
+      ]
+    }
+  ],
+  "landscape_views": [
+    {
+      "id": "render",
+      "title": "How can changing data preserve visual continuity?",
+      "short_label": "Visual continuity and input",
+      "root_id": "REA-discord-render",
+      "node_ids": [
+        "REA-discord-render",
+        "REA-D-scroll",
+        "REA-D-editor"
+      ],
+      "parent_overrides": {
+        "REA-D-scroll": "REA-discord-render",
+        "REA-D-editor": "REA-discord-render"
+      },
+      "entry_ids": [
+        "REA-D-CURI-scroll",
+        "REA-D-CURI-editor"
+      ],
+      "rationale": "Explore a family of mechanisms using the same canonical technical studies.",
+      "term_ids": [
+        "rea-discord-t-0001",
+        "rea-discord-t-0002",
+        "rea-discord-t-0003",
+        "rea-discord-t-0024",
+        "rea-discord-t-0026",
+        "rea-discord-t-0005",
+        "rea-discord-t-0006",
+        "rea-discord-t-0007",
+        "rea-discord-t-0008",
+        "rea-discord-t-0030"
+      ]
+    },
+    {
+      "id": "work",
+      "title": "How can computation be scheduled, recovered and observed economically?",
+      "short_label": "Execution, recovery and observability",
+      "root_id": "REA-discord-work",
+      "node_ids": [
+        "REA-discord-work",
+        "REA-D-backoff",
+        "REA-D-intl",
+        "REA-D-errors"
+      ],
+      "parent_overrides": {
+        "REA-D-backoff": "REA-discord-work",
+        "REA-D-intl": "REA-discord-work",
+        "REA-D-errors": "REA-discord-work"
+      },
+      "entry_ids": [
+        "REA-D-CURI-backoff",
+        "REA-D-CURI-intl",
+        "REA-D-CURI-errors"
+      ],
+      "rationale": "Explore a family of mechanisms using the same canonical technical studies.",
+      "term_ids": [
+        "rea-discord-t-0010",
+        "rea-discord-t-0011",
+        "rea-discord-t-0012",
+        "rea-discord-t-0013",
+        "rea-discord-t-0014",
+        "rea-discord-t-0015",
+        "rea-discord-t-0016",
+        "rea-discord-t-0020",
+        "rea-discord-t-0022",
+        "rea-discord-t-0017",
+        "rea-discord-t-0018",
+        "rea-discord-t-0019",
+        "rea-discord-t-0029"
+      ]
+    }
+  ],
+  "glossary_path": "glossary.json",
+  "glossary_schema": "1.0"
 }
