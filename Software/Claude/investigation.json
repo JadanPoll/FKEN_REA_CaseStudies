@@ -434,7 +434,6 @@
       "question": "Conversation tree and selected message",
       "status": "pending_investigation",
       "why": "current_leaf_message_uuid and LATEST_ASSISTANT_OUTPUT_KIND_ occur in the discovery atlas. Investigate identity, parent/child relationships, editing and regeneration; the representation itself has not been inspected.",
-      "mechanisms_to_investigate": "current_leaf_message_uuid and LATEST_ASSISTANT_OUTPUT_KIND_ occur in the discovery atlas. Investigate identity, parent/child relationships, editing and regeneration; the representation itself has not been inspected.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-claude-t-0062",
@@ -455,7 +454,6 @@
       "question": "Connection recovery and request cancellation",
       "status": "pending_investigation",
       "why": "The atlas contains first_online_change_after_failure_type, first_online_change_after_failure_ms and AbortController near fetch. These are clues to client-side failure classification, cancellation and recovery—not a proven streaming resume protocol.",
-      "mechanisms_to_investigate": "The atlas contains first_online_change_after_failure_type, first_online_change_after_failure_ms and AbortController near fetch. These are clues to client-side failure classification, cancellation and recovery—not a proven streaming resume protocol.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-claude-t-0067",
@@ -477,7 +475,6 @@
       "question": "Microphone readiness and WebRTC recovery",
       "status": "pending_investigation",
       "why": "Search found voice_web_no_mic_preconnect_bail alongside webRtcRedialAfterSilence, webRtcSessionRolloverOff and media/socket silence limits. Distinguish microphone permission/track readiness, transport setup and media liveness before interpreting these names.",
-      "mechanisms_to_investigate": "Search found voice_web_no_mic_preconnect_bail alongside webRtcRedialAfterSilence, webRtcSessionRolloverOff and media/socket silence limits. Distinguish microphone permission/track readiness, transport setup and media liveness before interpreting these names.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-claude-t-0026",
@@ -499,7 +496,6 @@
       "question": "Audio clocks, capture and playback diagnostics",
       "status": "pending_investigation",
       "why": "Search found capture_clock_mismatch_deliveries_per_sec, sample-rate changes, frames per delivery, output latency and playback underrun metrics. The actual clock model and corrective policy remain open.",
-      "mechanisms_to_investigate": "Search found capture_clock_mismatch_deliveries_per_sec, sample-rate changes, frames per delivery, output latency and playback underrun metrics. The actual clock model and corrective policy remain open.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-claude-t-0027",
@@ -521,7 +517,6 @@
       "question": "Attachment limits and conversion",
       "status": "pending_investigation",
       "why": "The discovery atlas exposes file_kept_over_page_limit_direct, file_kept_after_conversion_page_limit and file_kept_after_blank_text. These are clues to admission/conversion decisions; inspect their callers and distinguish local policy from server validation.",
-      "mechanisms_to_investigate": "The discovery atlas exposes file_kept_over_page_limit_direct, file_kept_after_conversion_page_limit and file_kept_after_blank_text. These are clues to admission/conversion decisions; inspect their callers and distinguish local policy from server validation.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-claude-t-0082",
@@ -543,7 +538,6 @@
       "question": "Tool invocation and consent",
       "status": "pending_investigation",
       "why": "Atlas identifiers include toolUseResultPresent, preceding_tool_use_ids, submitToolApproval, sensitive_mcps_per_call_consent and tool_approval_default_always_allow. Inspect the presentation of tool lifecycle and the approval boundary; no server-side enforcement claim.",
-      "mechanisms_to_investigate": "Atlas identifiers include toolUseResultPresent, preceding_tool_use_ids, submitToolApproval, sensitive_mcps_per_call_consent and tool_approval_default_always_allow. Inspect the presentation of tool lifecycle and the approval boundary; no server-side enforcement claim.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-claude-t-0088",
@@ -566,7 +560,6 @@
       "question": "Artifact and MCP app presentation",
       "status": "pending_investigation",
       "why": "Atlas contains tool_cell_artifact_designed_approval, McpAppViewAskPrompt and anyConsentPromptLive. These indicate candidate UI boundaries, not a verified sandbox contract. Investigate how content is handed off and how interaction/permission state is represented.",
-      "mechanisms_to_investigate": "Atlas contains tool_cell_artifact_designed_approval, McpAppViewAskPrompt and anyConsentPromptLive. These indicate candidate UI boundaries, not a verified sandbox contract. Investigate how content is handed off and how interaction/permission state is represented.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-claude-t-0095",
@@ -587,7 +580,6 @@
       "question": "Account transitions and draft isolation",
       "status": "pending_investigation",
       "why": "Search found draftHeldForSessionMismatch with accountSwitchGen, crossedAccount and isIncognitoDraftIsolated. The atlas additionally exposes disableWritesUntilReload and bootstrap_eager_stale_identity. Determine what data is cleared, retained or write-blocked; do not infer actual privacy guarantees from names.",
-      "mechanisms_to_investigate": "Search found draftHeldForSessionMismatch with accountSwitchGen, crossedAccount and isIncognitoDraftIsolated. The atlas additionally exposes disableWritesUntilReload and bootstrap_eager_stale_identity. Determine what data is cleared, retained or write-blocked; do not infer actual privacy guarantees from names.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-claude-t-0100",
@@ -610,7 +602,6 @@
       "question": "Credit, spend limits and model access",
       "status": "pending_investigation",
       "why": "The atlas contains claudified_extra_usage_no_default_spend_limit, creditsOnlyModelOff, askAdminHigherLimit and MobileOveragesPaymentSetupModal. These are leads to UI and policy distinctions, not a statement of pricing, current entitlement, or billing enforcement.",
-      "mechanisms_to_investigate": "The atlas contains claudified_extra_usage_no_default_spend_limit, creditsOnlyModelOff, askAdminHigherLimit and MobileOveragesPaymentSetupModal. These are leads to UI and policy distinctions, not a statement of pricing, current entitlement, or billing enforcement.",
       "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
       "term_ids": [
         "rea-claude-t-0104",
