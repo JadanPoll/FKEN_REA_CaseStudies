@@ -1,0 +1,248 @@
+{
+  "schema": "rea-evidence/v1",
+  "scope": "Static browser assets, original archive retained in AI Pill; public repo contains receipts and interpretations, not proprietary source dumps or personal state. Replays require matching retained files; a new deployment may differ.",
+  "runs": [
+    {
+      "id": "D-acquire",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Complete retained source discovery",
+        "operations": [
+          {
+            "op": "snapshotSources"
+          }
+        ]
+      },
+      "receipt": {
+        "run_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e",
+        "version": "0.4.28",
+        "elapsed_ms": 9765,
+        "collected": 1429,
+        "reused": 256,
+        "newly_collected": 1173,
+        "failed": 0,
+        "bytes": 24197823
+      },
+      "interpretation": "Cumulative archive completed without refetching the first 256 assets."
+    },
+    {
+      "id": "D-structure",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Verify bootstrap initializer parsing",
+        "operations": [
+          {
+            "op": "resolveModule",
+            "moduleId": "674658"
+          },
+          {
+            "op": "resolveModule",
+            "moduleId": "590180"
+          },
+          {
+            "op": "resolveModule",
+            "moduleId": "158390"
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "isProductFetchBackedOff"
+            ],
+            "scope": "module",
+            "limit": 6
+          }
+        ]
+      },
+      "receipt": {
+        "run_id": "3c3abc60-bb63-463e-ba07-2faf74270056",
+        "version": "0.4.31",
+        "elapsed_ms": 6050,
+        "passed": 4,
+        "recognized_files": 1429,
+        "recognized_bytes": 24197823,
+        "factories": 13976
+      },
+      "interpretation": "All retained files recognized; consumer→store→backoff-class candidate edges recovered. Registry recognition is not semantic coverage; loader calls are lexical."
+    },
+    {
+      "id": "D-read",
+      "plan_status": "reconstructed from returned source coordinates; exact original plan unavailable in current context",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Replay selected Discord mechanism excerpts",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "698610.174da93ccb01bd4a.js",
+            "start": 13824,
+            "length": 4000
+          },
+          {
+            "op": "readSource",
+            "file": "0867b5a62d48e35b.js",
+            "start": 0,
+            "length": 331
+          },
+          {
+            "op": "readSource",
+            "file": "187398.e745b22c0e2a3ce3.js",
+            "start": 32256,
+            "length": 4000
+          },
+          {
+            "op": "readSource",
+            "file": "187398.e745b22c0e2a3ce3.js",
+            "start": 38400,
+            "length": 4000
+          },
+          {
+            "op": "readSource",
+            "file": "a6449ce72c7f8ddd.js",
+            "start": 168960,
+            "length": 4000
+          },
+          {
+            "op": "readSource",
+            "file": "619666.09dd54383afdd816.js",
+            "start": 33792,
+            "length": 4000
+          },
+          {
+            "op": "readSource",
+            "file": "web.1732a939a32a5e17.js",
+            "start": 6002688,
+            "length": 4000
+          },
+          {
+            "op": "readSource",
+            "file": "d98faba192fc7e37.js",
+            "start": 0,
+            "length": 713
+          }
+        ]
+      },
+      "receipt": {
+        "run_id": "70ee1a03-9ee6-4752-b890-5f0c4d9068d6",
+        "version": "0.4.28",
+        "elapsed_ms": 155,
+        "passed": 8,
+        "source_characters": 25044,
+        "new_bytes": 0
+      },
+      "interpretation": "Locale loading, editor native-input fast path, anchored history acquisition, error filtering and per-SKU backoff. Several implementations are library code. Excerpts are incomplete."
+    }
+  ],
+  "sources": [
+    {
+      "id": "D-intl",
+      "file": "698610.174da93ccb01bd4a.js",
+      "sha256": "ff7356b39f949d62186c6d2520c3c695373c3757b1c1a7fc234923252e1d7fce",
+      "origin": "https://discord.com",
+      "run_id": "D-read",
+      "ranges": [
+        {
+          "start": 13824,
+          "end": 17824,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "D-editor",
+      "file": "187398.e745b22c0e2a3ce3.js",
+      "sha256": "1ffe8f7e7b5d6de55dd348fe71a26fbc7e09fa294de6762277bc666b75c2c10c",
+      "origin": "https://discord.com",
+      "run_id": "D-read",
+      "ranges": [
+        {
+          "start": 32256,
+          "end": 36256,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        },
+        {
+          "start": 38400,
+          "end": 42400,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "D-scroll",
+      "file": "a6449ce72c7f8ddd.js",
+      "sha256": "efe792da55eb7552d81e337037f96658467970d591561c7cff80452c89ba506c",
+      "origin": "https://discord.com",
+      "run_id": "D-read",
+      "ranges": [
+        {
+          "start": 168960,
+          "end": 172960,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "D-errors",
+      "file": "619666.09dd54383afdd816.js",
+      "sha256": "27c0712b5105bdd775f6d1aa76f6d73b302fea90e9c78e9e1dc7dbffe3c3a4ae",
+      "origin": "https://discord.com",
+      "run_id": "D-read",
+      "ranges": [
+        {
+          "start": 33792,
+          "end": 37792,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "D-main",
+      "file": "web.1732a939a32a5e17.js",
+      "sha256": "ebe5680031ad0f192b18840b86a5720566984c2f9b4fe28848dc059730d71a47",
+      "origin": "https://discord.com",
+      "run_id": "D-read",
+      "ranges": [
+        {
+          "start": 6002688,
+          "end": 6006688,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "D-hook",
+      "file": "d98faba192fc7e37.js",
+      "sha256": "d4e50985158bc0099b82f8d9ac4d1830feecbfb0cce66efe74057506dcd7c10b",
+      "origin": "https://discord.com",
+      "run_id": "D-read",
+      "ranges": [
+        {
+          "start": 0,
+          "end": 713,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "D-chunk",
+      "file": "0867b5a62d48e35b.js",
+      "sha256": "5474cb4319e1a32488cab1ae6b7044caa9e8b8d590ffa18ecdbc1809c601bbdb",
+      "origin": "https://discord.com",
+      "run_id": "D-read",
+      "ranges": [
+        {
+          "start": 0,
+          "end": 331,
+          "unit": "UTF-16",
+          "end_exclusive": true
+        }
+      ]
+    }
+  ]
+}
