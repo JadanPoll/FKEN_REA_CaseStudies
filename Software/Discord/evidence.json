@@ -24,7 +24,8 @@
         "bytes": 24197823,
         "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
       },
-      "interpretation": "Cumulative archive completed without refetching the first 256 assets."
+      "interpretation": "Cumulative archive completed without refetching the first 256 assets.",
+      "plan_status": "Replay plan reconstructed from earlier recorded investigation and returned evidence; original input JSON not independently reverified in this pass."
     },
     {
       "id": "D-structure",
@@ -64,7 +65,8 @@
         "factories": 13976,
         "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
       },
-      "interpretation": "All retained files recognized; consumer→store→backoff-class candidate edges recovered. Registry recognition is not semantic coverage; loader calls are lexical."
+      "interpretation": "All retained files recognized; consumer→store→backoff-class candidate edges recovered. Registry recognition is not semantic coverage; loader calls are lexical.",
+      "plan_status": "Replay plan reconstructed from earlier recorded investigation and returned evidence; original input JSON not independently reverified in this pass."
     },
     {
       "id": "D-read",
@@ -210,8 +212,9 @@
           }
         ]
       },
-      "interpretation": "Prospective chapter: separate gateway event delivery, resume, REST reconciliation and connection state. No specific gateway implementation recovered in the available discovery excerpts; use candidate lexical queries and official gateway documentation to orient a client-side investigation.",
-      "locators": []
+      "interpretation": "Prospective chapter: separate gateway event delivery, resume, REST reconciliation and connection state. No specific gateway implementation recovered in the available discovery excerpts; use candidate lexical queries and official gateway documentation to orient a client-side investigation. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
+      "locators": [],
+      "external_reference": "https://discord.com/developers/docs/events/gateway"
     },
     {
       "id": "D-next-decode",
@@ -238,12 +241,12 @@
             "op": "readSource",
             "file": "760476.b912f6ec14757186.js",
             "sha256": "0012fa766c964a2cb00e32e1229a31dfa45e1e6c78f9f32527544bcf391b2b1e",
-            "start": 32768,
-            "length": 6000
+            "start": 48500,
+            "length": 7000
           }
         ]
       },
-      "interpretation": "The explored region exposes ogvjsVideoFrameRate, ogvjsAudioSampleRate, _lastFrameDecodeTime, MEDIA_ERR_SRC_NOT_SUPPORTED and WebAssembly. This is likely media-library code; inspect whether and when Discord invokes it. Do not conflate media playback with live call transport.",
+      "interpretation": "The explored region exposes ogvjsVideoFrameRate, ogvjsAudioSampleRate, _lastFrameDecodeTime, MEDIA_ERR_SRC_NOT_SUPPORTED and WebAssembly. This is likely media-library code; inspect whether and when Discord invokes it. Do not conflate media playback with live call transport. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "760476.b912f6ec14757186.js",
@@ -280,8 +283,9 @@
           }
         ]
       },
-      "interpretation": "Prospective territory, not an inspected implementation. Distinguish microphone and camera capture, signaling, transport, codec negotiation and display capture; do not infer voice behavior from the discovered playback library.",
-      "locators": []
+      "interpretation": "Prospective territory, not an inspected implementation. Distinguish microphone and camera capture, signaling, transport, codec negotiation and display capture; do not infer voice behavior from the discovered playback library. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
+      "locators": [],
+      "external_reference": "https://discord.com/developers/docs/topics/voice-connections"
     },
     {
       "id": "D-next-moderation",
@@ -303,13 +307,6 @@
             "limit": 5
           },
           {
-            "op": "readSource",
-            "file": "a6449ce72c7f8ddd.js",
-            "sha256": "efe792da55eb7552d81e337037f96658467970d591561c7cff80452c89ba506c",
-            "start": 0,
-            "length": 6000
-          },
-          {
             "op": "searchIndex",
             "any": [
               "getSubmittedGuildJoinRequestTotal"
@@ -322,14 +319,21 @@
           },
           {
             "op": "readSource",
+            "file": "a6449ce72c7f8ddd.js",
+            "sha256": "efe792da55eb7552d81e337037f96658467970d591561c7cff80452c89ba506c",
+            "start": 16000,
+            "length": 5000
+          },
+          {
+            "op": "readSource",
             "file": "66f0119f286fe5e5.js",
             "sha256": "f12a989589bda6839ca17289baab408f12f50c6e76be7258cea5a5e111fbee87",
             "start": 0,
-            "length": 6000
+            "length": 5000
           }
         ]
       },
-      "interpretation": "Discovery found AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME and getSubmittedGuildJoinRequestTotal in separate regions. They are possible moderation and join-request UI/state leads, not evidence of how permissions are enforced.",
+      "interpretation": "Discovery found AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME and getSubmittedGuildJoinRequestTotal in separate regions. They are possible moderation and join-request UI/state leads, not evidence of how permissions are enforced. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "a6449ce72c7f8ddd.js",
@@ -373,13 +377,6 @@
             "limit": 5
           },
           {
-            "op": "readSource",
-            "file": "3b37d99abf64c54b.js",
-            "sha256": "d8475f3cd7cee4864c8c9b733adcdac161a20f7d4452feb4fbf0e301ea1806aa",
-            "start": 98304,
-            "length": 6000
-          },
-          {
             "op": "searchIndex",
             "any": [
               "CHANNEL_FOLLOWER_STATS_FETCH_START",
@@ -393,14 +390,21 @@
           },
           {
             "op": "readSource",
+            "file": "3b37d99abf64c54b.js",
+            "sha256": "d8475f3cd7cee4864c8c9b733adcdac161a20f7d4452feb4fbf0e301ea1806aa",
+            "start": 100500,
+            "length": 4000
+          },
+          {
+            "op": "readSource",
             "file": "33f4b82c23c08fe0.js",
             "sha256": "ba41fa1315c31d8671ca6ca163c2b3bd32d522b22f30b8ee2a76e5e111fbee87",
             "start": 0,
-            "length": 6000
+            "length": 5000
           }
         ]
       },
-      "interpretation": "The discovered autoArchiveDurationHook and CHANNEL_FOLLOWER_STATS_FETCH_* identifiers point toward distinct lifecycle and following mechanisms. Trace actual definitions and separate client controls from server policy.",
+      "interpretation": "The discovered autoArchiveDurationHook and CHANNEL_FOLLOWER_STATS_FETCH_* identifiers point toward distinct lifecycle and following mechanisms. Trace actual definitions and separate client controls from server policy. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "3b37d99abf64c54b.js",
@@ -450,12 +454,12 @@
             "op": "readSource",
             "file": "ca6b605c120e5222.js",
             "sha256": "7831dc9271a76e7e01a70498c73dd2904c884c078f0d4ac24dfc089548fc1370",
-            "start": 0,
+            "start": 7500,
             "length": 6000
           }
         ]
       },
-      "interpretation": "The atlas reveals getEmbeddedActivitiesForLocationIncludingHidden, getSelfEmbeddedActivityForLocation, ACTIVITY_POPOUT_POP_OUT_BUTTON_CLICKED and getAnyStreamForUser. Explore activity discovery, placement and pop-out behavior, without assuming an authorization or sandbox model.",
+      "interpretation": "The atlas reveals getEmbeddedActivitiesForLocationIncludingHidden, getSelfEmbeddedActivityForLocation, ACTIVITY_POPOUT_POP_OUT_BUTTON_CLICKED and getAnyStreamForUser. Explore activity discovery, placement and pop-out behavior, without assuming an authorization or sandbox model. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "ca6b605c120e5222.js",
@@ -496,12 +500,12 @@
             "op": "readSource",
             "file": "e5b09882b915bf6b.js",
             "sha256": "c77aba65720fb0bac233efc915ad82668a4346d38eb1197e5b47435d156aa083",
-            "start": 0,
-            "length": 6000
+            "start": 23500,
+            "length": 6500
           }
         ]
       },
-      "interpretation": "A discovered region contains setCurrentRawFrameValue, waitForFontsLoaded, _useWebWorker and Worker/Blob lexical motifs. Identify the animation library, rendering scheduler and whether Discord uses worker execution.",
+      "interpretation": "A discovered region contains setCurrentRawFrameValue, waitForFontsLoaded, _useWebWorker and Worker/Blob lexical motifs. Identify the animation library, rendering scheduler and whether Discord uses worker execution. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "e5b09882b915bf6b.js",
@@ -542,12 +546,12 @@
             "op": "readSource",
             "file": "02dc5732387c6fb3.js",
             "sha256": "61ca767af974a4d5021e512b0002c46f10e1cbd327b2a4bc02480b46baff2366",
-            "start": 0,
+            "start": 23000,
             "length": 6000
           }
         ]
       },
-      "interpretation": "The observed region contains hasAddedPaymentSourceThisSession, hasPaymentSourcesFromCheckoutStore, hasCheckedInitialPaymentSourceRef and checkAndResolveInitialPaymentSourceId. Recover the UI state machine, not payment credentials or private account information. Server-side transaction correctness is outside this evidence.",
+      "interpretation": "The observed region contains hasAddedPaymentSourceThisSession, hasPaymentSourcesFromCheckoutStore, hasCheckedInitialPaymentSourceRef and checkAndResolveInitialPaymentSourceId. Recover the UI state machine, not payment credentials or private account information. Server-side transaction correctness is outside this evidence. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "02dc5732387c6fb3.js",
@@ -572,26 +576,33 @@
         "description": "Investigate Webpack registries and dependency resolution",
         "operations": [
           {
-            "op": "searchIndex",
-            "any": [
-              "isProductFetchBackedOff"
-            ],
-            "scope": "region",
-            "files": [
-              "web.1732a939a32a5e17.js"
-            ],
-            "limit": 5
+            "op": "resolveModule",
+            "moduleId": "674658",
+            "file": "d98faba192fc7e37.js",
+            "sha256": "d4e50985158bc0099b82f8d9ac4d1830feecbfb0cce66efe74057506dcd7c10b"
+          },
+          {
+            "op": "resolveModule",
+            "moduleId": "590180",
+            "file": "web.1732a939a32a5e17.js",
+            "sha256": "ebe5680031ad0f192b18840b86a5720566984c2f9b4fe28848dc059730d71a47"
+          },
+          {
+            "op": "resolveModule",
+            "moduleId": "158390",
+            "file": "web.1732a939a32a5e17.js",
+            "sha256": "ebe5680031ad0f192b18840b86a5720566984c2f9b4fe28848dc059730d71a47"
           },
           {
             "op": "readSource",
             "file": "web.1732a939a32a5e17.js",
             "sha256": "ebe5680031ad0f192b18840b86a5720566984c2f9b4fe28848dc059730d71a47",
             "start": 352224,
-            "length": 6000
+            "length": 1027
           }
         ]
       },
-      "interpretation": "AI Pill's parsed registry recovered 13,976 factories across 1,429 retained assets; the observed consumer 674658, store 590180 and backoff 158390 are useful examples of direct module candidates. Distinguish registry recognition, actual imports and runtime execution. The locale chunk is another example.",
+      "interpretation": "AI Pill's parsed registry recovered 13,976 factories across 1,429 retained assets; the observed consumer 674658, store 590180 and backoff 158390 are useful examples of direct module candidates. Distinguish registry recognition, actual imports and runtime execution. The locale chunk is another example. If a pinned file is unavailable or a digest changes, acquire the current eligible assets and repeat the lexical search before using offsets.",
       "locators": [
         {
           "file": "web.1732a939a32a5e17.js",
