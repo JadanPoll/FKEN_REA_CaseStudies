@@ -10,7 +10,7 @@ Forward Criterion:
  b. Subchapter title
  c. Subsection title
 
- Asymptotically we aim to be the authoritative and seminal “Book” on this subject and hence questions should endeavor to form a convex set. They should also have variance, when adding the n + 1 question to the convex set of n-questions should “add dimensions” not already represented by the set of n questions.
+ Asymptotically we aim to be the authoritative and seminal “Book” on this subject and hence questions should endeavor to form a convex set. By this we particularly mean the chapter titular set of questions. They should also have variance, when adding the n + 1 question to the convex set of n-present titular questions should “add dimensions” not already represented by the set of n questions. Of course this can be done recursively, for b. and c. take a titular question, and form its convex set of “subchapter titular” questions.
 
 
 If it doesn’t fulfill either of these criterion it means the question is slop, or worded to complex or too hyperspecific. In other words, an LLM that doesn’t speak in human vernacular likely write it and couldn’t care about actual generative or readable quality. If you want hyper specificity it should be in the data under the question, not the question itself. 
