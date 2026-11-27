@@ -10,12 +10,15 @@ Forward Criterion:
  b. Subchapter title
  c. Subsection title
 
+ Asymptotically we aim to be the authoritative and seminal “Book” on this subject and hence questions should endeavor to form a convex set. They should also have variance, when adding the n + 1 question to the convex set of n-questions should “add dimensions” not already represented by the set of n questions.
+
+
 If it doesn’t fulfill either of these criterion it means the question is slop, or worded to complex or too hyperspecific. In other words, an LLM that doesn’t speak in human vernacular likely write it and couldn’t care about actual generative or readable quality. If you want hyper specificity it should be in the data under the question, not the question itself. 
 
 CRITERION B:
 an independent reading of the question makes it clear or recoverable what kind of ‘book’ it belong to, if it doesn’t fulfill this particular
  criterion it means the question is too generic to the point it might be hopeless dull.
-If it doesn’t fulfill either 
+ 
 
 
 Inverse Criterion:
@@ -26,3 +29,6 @@ a. variance
 b. unique dimensions offered
 
 glossary plays a critical role in fulfilling this but so do questions, especially when an LLM is figuring out what a good question would be, Again, it should make sense if the folder was a title of the case study book. This prevents the accumulation on :slop that is simply asking questions just to ask. I do have a meta rule for this
+
+A hyper-specific question that does not expose a landscape of thinking or ideas and is not generating and so is just technical slop. If you find it relevant identify the actual big picture question and persist the more technical important or nuanced stuff in the content under it
+A vague, generic question that could easily appear in a ‘Book’ with a different title is just question-generating slop, in other words asking just to ask. Question like this offer no navigational usefulness or excitement
