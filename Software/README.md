@@ -14,7 +14,7 @@ Start from a question, inspect the mechanism, then expand **Investigation plans 
 
 ## Public persistence discipline
 
-The private Microsoft RDP research project exemplifies exact evidence, falsification and replay. This public collection uses a deliberately smaller derivative: preserve the question, investigation plan, observation, interpretation, source identity and limits. Do not republish private reports, user data, session identifiers, credentials or proprietary source bundles. Run IDs here identify local AI Pill investigation receipts, not service sessions. If original evidence cannot be recovered, say so rather than promote the summary into independent certification.
+This is a curiosity-led educational collection, not an exhaustive engineering project archive. Preserve the question, investigation plan, observation, interpretation, source identity and limits at the resolution needed to understand or reuse the mechanism. Pursue deeper collection only when a consequential question requires it. Do not republish private reports, user data, session identifiers, credentials or proprietary source bundles. Run IDs here identify local AI Pill investigation receipts, not service sessions. If original evidence cannot be recovered, say so rather than promote the summary into independent certification.
 
 Source-inspected is distinct from runtime-observed, and both are distinct from a demonstrated transferable implementation. New questions can be added without demanding immediate answers. Extend a canonical record as evidence changes; preserve old receipts and stable IDs. Prefer distinct mechanisms over many superficially different examples.
 
