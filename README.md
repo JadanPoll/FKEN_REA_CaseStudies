@@ -22,3 +22,6 @@ this is the original architecture design principle that communicates motivations
 https://github.com/JadanPoll/Learning_Visualizations_Taxonomy/blob/main/Navigationals/Fractal_Knowledge_And_Ecosystem_Navigation.md
 
 Note: the idea of htmlets is similar to the kind of thing LLs do where they can output and render self contained visualizations, animations and even games in the very chat as an artifact. We might be able to achieve style and api normalization through variables, that way we can develop heavy machinery in .html and LLMs only string together cheap structural displays that pulls them in for htmlets, that way too we can also independently develop and fine tune capabilities in RSM tree viewer without each htmlet having to be an unnecessarily large file due to trying to self contain reusable stuff
+
+This is of course an overly ambitious version of what an htmlets could be. to be sure, htmlets should in general not be this ambitious
+https://github.com/JadanPoll/Tacit_Virtual_Lab
