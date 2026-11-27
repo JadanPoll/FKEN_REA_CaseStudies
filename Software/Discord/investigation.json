@@ -1,0 +1,265 @@
+{
+  "id": "REA-discord",
+  "title": "Discord — Engineering case studies",
+  "root": "REA-discord",
+  "nodes": [
+    {
+      "id": "REA-discord",
+      "parent_id": null,
+      "kind": "question",
+      "question": "What can we learn from Discord's engineering?",
+      "why": "An evolving landscape of source-inspected engineering mechanisms and open questions in Discord."
+    },
+    {
+      "id": "REA-discord-render",
+      "parent_id": "REA-discord",
+      "kind": "question",
+      "question": "How can changing data preserve visual continuity?"
+    },
+    {
+      "id": "REA-discord-work",
+      "parent_id": "REA-discord",
+      "kind": "question",
+      "question": "How can computation be scheduled, recovered and observed economically?"
+    },
+    {
+      "id": "REA-D-scroll",
+      "parent_id": "REA-discord-render",
+      "question": "How can chat history load without making visible messages jump?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "Tracks first/last message IDs, fetch anchors and pre-fetch scroll height. Pinned dimensions update immediately, unpinned updates are debounced. Focus, automatic anchors and jump-to-present are distinct.",
+      "transferable_insight": "Separate data acquisition frontier from visible logical anchor.",
+      "distinctions": [
+        "Discord Wiki history acquisition and keyed rendering."
+      ],
+      "qualification": "Restoration implementation outside excerpt.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "D-scroll",
+            "section": "a6449ce72c7f8ddd.js",
+            "offsets": {
+              "start": 168960,
+              "end": 172960,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "D-read"
+      ]
+    },
+    {
+      "id": "REA-D-editor",
+      "parent_id": "REA-discord-render",
+      "question": "How can an editor retain native input while maintaining a logical document model?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "Tracks pending diffs/actions, composition and beforeinput target ranges; falls back to browser/logical selection. A guarded native simple-input path avoids preventDefault; other paths reconcile selection with setBaseAndExtent.",
+      "transferable_insight": "Use native editing when invariants hold; explicitly reconcile exceptions.",
+      "distinctions": [
+        "Safari composer and Pocket editing."
+      ],
+      "qualification": "Slate-related vendor code, active configuration not established.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "D-editor",
+            "section": "187398.e745b22c0e2a3ce3.js",
+            "offsets": {
+              "start": 32256,
+              "end": 36256,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          },
+          {
+            "source_id": "D-editor",
+            "section": "187398.e745b22c0e2a3ce3.js",
+            "offsets": {
+              "start": 38400,
+              "end": 42400,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "D-read"
+      ]
+    },
+    {
+      "id": "REA-D-backoff",
+      "parent_id": "REA-discord-work",
+      "question": "How can independent failing requests avoid creating network pressure?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "Collectibles store maintains per-SKU backoff and fetch states. Hook guards on already loaded, fetching or backed-off conditions; success clears backoff, failure schedules expiry. Candidate registry chain 674658→590180→158390.",
+      "transferable_insight": "Tie recovery to affected identity; gate at acquisition boundary.",
+      "distinctions": [
+        "Per-device retries and source retrieval."
+      ],
+      "qualification": "Exact backoff class not yet read; parsed module links are lexical candidates.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "D-main",
+            "section": "web.1732a939a32a5e17.js",
+            "offsets": {
+              "start": 6002688,
+              "end": 6006688,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          },
+          {
+            "source_id": "D-hook",
+            "section": "d98faba192fc7e37.js",
+            "offsets": {
+              "start": 0,
+              "end": 713,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "D-read"
+      ]
+    },
+    {
+      "id": "REA-D-intl",
+      "parent_id": "REA-discord-work",
+      "question": "How can a language change load only needed resources without partially ready state?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "Locale manager subscribes to changes, rebuilds formatters, uses Promise.all readiness barriers, per-loader import maps and promise/cache maps with fallback cycle checks. Tiny webpack factory demonstrates lazy locale import.",
+      "transferable_insight": "Deferred acquisition plus per-key deduplication and explicit readiness.",
+      "distinctions": [
+        "Lazy educational resources and domain atlases."
+      ],
+      "qualification": "Actual proxy implementation not recovered.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "D-intl",
+            "section": "698610.174da93ccb01bd4a.js",
+            "offsets": {
+              "start": 13824,
+              "end": 17824,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          },
+          {
+            "source_id": "D-chunk",
+            "section": "0867b5a62d48e35b.js",
+            "offsets": {
+              "start": 0,
+              "end": 331,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "D-read"
+      ]
+    },
+    {
+      "id": "REA-D-errors",
+      "parent_id": "REA-discord-work",
+      "question": "How can software distinguish its own errors from third-party errors?",
+      "kind": "question",
+      "status": "source_inspected",
+      "mechanism_explanation": "Sentry-related filter compares frame module metadata app keys against configured keys; supports drop/tag policies and strips metadata before envelope sending.",
+      "transferable_insight": "Attach provenance at build time; classify with explicit policy.",
+      "distinctions": [
+        "Console diagnostics and userscript attribution."
+      ],
+      "qualification": "Vendor code; active Discord configuration unknown.",
+      "certificate": {
+        "status": "static_source_inspected",
+        "references": [
+          {
+            "source_id": "D-errors",
+            "section": "619666.09dd54383afdd816.js",
+            "offsets": {
+              "start": 33792,
+              "end": 37792,
+              "unit": "UTF-16",
+              "end_exclusive": true
+            },
+            "role": "Static inspected source; not runtime proof"
+          }
+        ]
+      },
+      "evidence_run_ids": [
+        "D-read"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "D-intl",
+      "title": "698610.174da93ccb01bd4a.js",
+      "sha256": "ff7356b39f949d62186c6d2520c3c695373c3757b1c1a7fc234923252e1d7fce",
+      "origin": "https://discord.com"
+    },
+    {
+      "id": "D-editor",
+      "title": "187398.e745b22c0e2a3ce3.js",
+      "sha256": "1ffe8f7e7b5d6de55dd348fe71a26fbc7e09fa294de6762277bc666b75c2c10c",
+      "origin": "https://discord.com"
+    },
+    {
+      "id": "D-scroll",
+      "title": "a6449ce72c7f8ddd.js",
+      "sha256": "efe792da55eb7552d81e337037f96658467970d591561c7cff80452c89ba506c",
+      "origin": "https://discord.com"
+    },
+    {
+      "id": "D-errors",
+      "title": "619666.09dd54383afdd816.js",
+      "sha256": "27c0712b5105bdd775f6d1aa76f6d73b302fea90e9c78e9e1dc7dbffe3c3a4ae",
+      "origin": "https://discord.com"
+    },
+    {
+      "id": "D-main",
+      "title": "web.1732a939a32a5e17.js",
+      "sha256": "ebe5680031ad0f192b18840b86a5720566984c2f9b4fe28848dc059730d71a47",
+      "origin": "https://discord.com"
+    },
+    {
+      "id": "D-hook",
+      "title": "d98faba192fc7e37.js",
+      "sha256": "d4e50985158bc0099b82f8d9ac4d1830feecbfb0cce66efe74057506dcd7c10b",
+      "origin": "https://discord.com"
+    },
+    {
+      "id": "D-chunk",
+      "title": "0867b5a62d48e35b.js",
+      "sha256": "5474cb4319e1a32488cab1ae6b7044caa9e8b8d590ffa18ecdbc1809c601bbdb",
+      "origin": "https://discord.com"
+    }
+  ],
+  "evidence_file": "Software/Discord/evidence.json",
+  "connections": []
+}
