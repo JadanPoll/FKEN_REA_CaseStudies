@@ -1,0 +1,317 @@
+{
+  "schema_version": "1.0",
+  "domain_id": "REA-discord",
+  "title": "Discord — Engineering vocabulary",
+  "terms": [
+    {
+      "id": "rea-discord-t-0001",
+      "label": "scroll anchoring",
+      "aliases": [
+        "viewport anchor"
+      ],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-discord-t-0002",
+        "rea-discord-t-0003",
+        "rea-discord-t-0004",
+        "rea-discord-t-0023",
+        "rea-discord-t-0027"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0002",
+      "label": "history pagination",
+      "aliases": [
+        "message pagination"
+      ],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-discord-t-0001",
+        "rea-discord-t-0024",
+        "rea-discord-t-0026"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0003",
+      "label": "fetch frontier",
+      "aliases": [
+        "history frontier"
+      ],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-discord-t-0001"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0004",
+      "label": "scroll virtualization",
+      "aliases": [
+        "virtualized list"
+      ],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-discord-t-0001"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0005",
+      "label": "beforeinput",
+      "aliases": [
+        "beforeinput event"
+      ],
+      "category": "Input",
+      "related_ids": [
+        "rea-discord-t-0006",
+        "rea-discord-t-0007",
+        "rea-discord-t-0008"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0006",
+      "label": "input method editor",
+      "aliases": [
+        "IME"
+      ],
+      "category": "Input",
+      "related_ids": [
+        "rea-discord-t-0005",
+        "rea-discord-t-0030"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0007",
+      "label": "selection reconciliation",
+      "aliases": [],
+      "category": "Input",
+      "related_ids": [
+        "rea-discord-t-0005",
+        "rea-discord-t-0008"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0008",
+      "label": "native input fast path",
+      "aliases": [],
+      "category": "Input",
+      "related_ids": [
+        "rea-discord-t-0005",
+        "rea-discord-t-0007"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0009",
+      "label": "exponential backoff",
+      "aliases": [],
+      "category": "Recovery",
+      "related_ids": [
+        "rea-discord-t-0010",
+        "rea-discord-t-0011"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0010",
+      "label": "per-key retry state",
+      "aliases": [],
+      "category": "Recovery",
+      "related_ids": [
+        "rea-discord-t-0009",
+        "rea-discord-t-0011",
+        "rea-discord-t-0028"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0011",
+      "label": "retry budget",
+      "aliases": [],
+      "category": "Recovery",
+      "related_ids": [
+        "rea-discord-t-0009",
+        "rea-discord-t-0010"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0012",
+      "label": "in-flight deduplication",
+      "aliases": [
+        "request coalescing"
+      ],
+      "category": "Execution",
+      "related_ids": [
+        "rea-discord-t-0013",
+        "rea-discord-t-0014"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0013",
+      "label": "lazy loading",
+      "aliases": [
+        "deferred loading"
+      ],
+      "category": "Execution",
+      "related_ids": [
+        "rea-discord-t-0012",
+        "rea-discord-t-0014",
+        "rea-discord-t-0021"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0014",
+      "label": "readiness barrier",
+      "aliases": [],
+      "category": "Execution",
+      "related_ids": [
+        "rea-discord-t-0012",
+        "rea-discord-t-0013"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0015",
+      "label": "locale fallback",
+      "aliases": [],
+      "category": "Localization",
+      "related_ids": [
+        "rea-discord-t-0016"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0016",
+      "label": "cycle detection",
+      "aliases": [],
+      "category": "Localization",
+      "related_ids": [
+        "rea-discord-t-0015"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0017",
+      "label": "error provenance",
+      "aliases": [],
+      "category": "Observability",
+      "related_ids": [
+        "rea-discord-t-0018",
+        "rea-discord-t-0019",
+        "rea-discord-t-0029"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0018",
+      "label": "stack frame metadata",
+      "aliases": [],
+      "category": "Observability",
+      "related_ids": [
+        "rea-discord-t-0017"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0019",
+      "label": "third-party error filtering",
+      "aliases": [],
+      "category": "Observability",
+      "related_ids": [
+        "rea-discord-t-0017"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0020",
+      "label": "Webpack module registry",
+      "aliases": [],
+      "category": "Packaging",
+      "related_ids": [
+        "rea-discord-t-0021",
+        "rea-discord-t-0022"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0021",
+      "label": "dynamic import",
+      "aliases": [],
+      "category": "Packaging",
+      "related_ids": [
+        "rea-discord-t-0013",
+        "rea-discord-t-0020",
+        "rea-discord-t-0022"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0022",
+      "label": "chunk loading",
+      "aliases": [],
+      "category": "Packaging",
+      "related_ids": [
+        "rea-discord-t-0020",
+        "rea-discord-t-0021"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0023",
+      "label": "keyed reconciliation",
+      "aliases": [],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-discord-t-0001"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0024",
+      "label": "message identity",
+      "aliases": [],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-discord-t-0002"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0025",
+      "label": "event cleanup",
+      "aliases": [],
+      "category": "Execution",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0026",
+      "label": "debouncing",
+      "aliases": [],
+      "category": "Execution",
+      "related_ids": [
+        "rea-discord-t-0002"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0027",
+      "label": "scroll restoration",
+      "aliases": [],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-discord-t-0001"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0028",
+      "label": "rate limiting",
+      "aliases": [],
+      "category": "Recovery",
+      "related_ids": [
+        "rea-discord-t-0010"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0029",
+      "label": "error attribution",
+      "aliases": [],
+      "category": "Observability",
+      "related_ids": [
+        "rea-discord-t-0017"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0030",
+      "label": "composition event",
+      "aliases": [],
+      "category": "Input",
+      "related_ids": [
+        "rea-discord-t-0006"
+      ]
+    }
+  ],
+  "redirects": {}
+}
