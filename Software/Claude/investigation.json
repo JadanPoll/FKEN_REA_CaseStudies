@@ -7,31 +7,31 @@
       "id": "REA-claude",
       "parent_id": null,
       "kind": "question",
-      "question": "What can we learn from Claude's engineering?",
+      "question": "Claude: client architecture and engineering mechanisms",
       "why": "An evolving landscape of source-inspected engineering mechanisms and open questions in Claude."
     },
     {
       "id": "REA-claude-render",
       "parent_id": "REA-claude",
       "kind": "question",
-      "question": "How can changing data preserve visual continuity?"
+      "question": "Rendering streaming responses"
     },
     {
       "id": "REA-claude-state",
       "parent_id": "REA-claude",
       "kind": "question",
-      "question": "How can asynchronous systems preserve intent and identity?"
+      "question": "Conversation drafts, settings and session state"
     },
     {
       "id": "REA-claude-work",
       "parent_id": "REA-claude",
       "kind": "question",
-      "question": "How can computation be scheduled, recovered and observed economically?"
+      "question": "Response processing and interaction performance"
     },
     {
       "id": "REA-C-markdown",
       "parent_id": "REA-claude-render",
-      "question": "Can streaming Markdown grow without reparsing everything?",
+      "question": "Incremental Markdown parsing",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Cache completed table rows, source offsets, alignment and prefix; validate retained rows, parse newly completed rows and the unstable tail, shift source coordinates and graft nodes. A guarded code-fence path updates the existing AST node directly. General parsing remains the fallback.",
@@ -87,7 +87,7 @@
     {
       "id": "REA-C-scroll",
       "parent_id": "REA-claude-render",
-      "question": "Why can correcting scroll position during a gesture make scrolling worse?",
+      "question": "Scroll anchoring during touch and momentum",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "The virtualizer distinguishes touch, active scrolling and a 150 ms iOS post-touch window. It accumulates corrections during these conditions, refuses to flush outside normal bounds, and reconciles when settled. Numeric measurements are cached and recomputed from the earliest invalidated index.",
@@ -131,7 +131,7 @@
     {
       "id": "REA-C-persist",
       "parent_id": "REA-claude-state",
-      "question": "What if a delayed storage read arrives after a user has edited a draft?",
+      "question": "Draft restoration and cross-tab writes",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Tracks unsettled reads, write epochs, read barriers and ownership; caller uses 500 ms write debounce and 5 s hydration timeout. Before retrying, rereads the record and rechecks intent and epoch; unchanged writes and deletion have distinct policies.",
@@ -182,7 +182,7 @@
     {
       "id": "REA-C-optimistic",
       "parent_id": "REA-claude-state",
-      "question": "Can an earlier failed save undo a later successful edit?",
+      "question": "Optimistic settings updates and selective rollback",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Mutations retain prior field sequences and account identity; rollback filters by write sequence. Pending optimistic values can be reapplied over query-cache updates. Settlement reconciles and invalidates stale queries.",
@@ -236,7 +236,7 @@
     {
       "id": "REA-C-provisional",
       "parent_id": "REA-claude-state",
-      "question": "If a remembered session is missing from a listing, does it no longer exist?",
+      "question": "Provisional session discovery",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Tracks provisional IDs, listConfirmed and listSettled independently; bounded recovery distinguishes loading, deleted, unreadable and available. Generation checks reject obsolete results; a 10 s timer drops unconfirmed provisional IDs.",
@@ -284,7 +284,7 @@
     {
       "id": "REA-C-worker",
       "parent_id": "REA-claude-work",
-      "question": "Can a worker compress bytes without copying its output?",
+      "question": "Completion compression workers",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "A 591-character worker receives numeric ID and Uint8Array, streams a Blob through CompressionStream(gzip), returns bytes and duration, transfers the output buffer, and announces availability on startup.",
@@ -323,7 +323,7 @@
     {
       "id": "REA-C-latency",
       "parent_id": "REA-claude-work",
-      "question": "How can we distinguish slow JavaScript from waiting for paint?",
+      "question": "Interaction latency and paint attribution",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Correlates Long Animation Frame entries, long tasks and interaction/render probes, estimates script, frame wait, style/layout and post-render contributions, and attributes consequential script activity.",
@@ -416,26 +416,31 @@
     "families": [
       {
         "id": "render",
-        "label": "Visual continuity and input"
+        "label": "Streaming responses",
+        "description": "Markdown parsing and scroll stability as a response grows."
       },
       {
         "id": "state",
-        "label": "Asynchronous state and identity"
+        "label": "Drafts and session state",
+        "description": "How the client preserves user intent across storage reads, network responses and session changes."
       },
       {
         "id": "work",
-        "label": "Execution, recovery and observability"
+        "label": "Response processing",
+        "description": "How browser workers and performance instrumentation support the chat experience."
       }
     ],
     "entries": [
       {
         "id": "REA-C-CURI-markdown",
         "family_id": "render",
-        "question": "Why does a long streamed response not need to be rendered from scratch every time?",
+        "question": "How does Claude render a streaming response?",
         "aliases": [
           "streaming table",
           "growing code block",
-          "markdown rendering"
+          "markdown rendering",
+          "Why does a long streamed response not need to be rendered from scratch every time?",
+          "Can streaming Markdown grow without reparsing everything?"
         ],
         "context": "Earlier syntax may be stable while the last block is not. Inspect the guarded AST reuse path.",
         "question_type": "explanation",
@@ -458,14 +463,16 @@
       {
         "id": "REA-C-CURI-scroll",
         "family_id": "render",
-        "question": "Why does my list jump or stop moving when new content arrives during a swipe?",
+        "question": "How does Claude keep a growing conversation scrollable on iOS?",
         "aliases": [
           "iPad scroll interruption",
           "changing row height",
-          "momentum scrolling"
+          "momentum scrolling",
+          "Why does my list jump or stop moving when new content arrives during a swipe?",
+          "Why can correcting scroll position during a gesture make scrolling worse?"
         ],
         "context": "Does the viewport shift because the geometry changed while a gesture owned the position?",
-        "question_type": "diagnosis",
+        "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
           "REA-C-BRG-scroll"
@@ -484,15 +491,17 @@
       {
         "id": "REA-C-CURI-persist",
         "family_id": "state",
-        "question": "How do I stop a late restored draft from overwriting what I just typed?",
+        "question": "How does Claude preserve unsent conversation drafts?",
         "aliases": [
           "stale draft",
           "multiple tabs",
-          "failed save retry"
+          "failed save retry",
+          "How do I stop a late restored draft from overwriting what I just typed?",
+          "What if a delayed storage read arrives after a user has edited a draft?"
         ],
         "context": "Can an older storage operation finish after newer user intent? Inspect read barriers and write ownership.",
-        "question_type": "design",
-        "task_scope": "open_goal",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
         "bridge_ids": [
           "REA-C-BRG-persist"
         ],
@@ -511,14 +520,16 @@
       {
         "id": "REA-C-CURI-optimistic",
         "family_id": "state",
-        "question": "How can settings feel instant without a failed save undoing newer changes?",
+        "question": "How does Claude save settings without losing newer edits?",
         "aliases": [
           "optimistic UI",
-          "concurrent saves"
+          "concurrent saves",
+          "How can settings feel instant without a failed save undoing newer changes?",
+          "Can an earlier failed save undo a later successful edit?"
         ],
         "context": "Do failures roll back a whole snapshot or only fields still owned by the failed change?",
-        "question_type": "design",
-        "task_scope": "open_goal",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
         "bridge_ids": [
           "REA-C-BRG-optimistic"
         ],
@@ -535,11 +546,13 @@
       {
         "id": "REA-C-CURI-provisional",
         "family_id": "state",
-        "question": "Why might a previously known session temporarily disappear?",
+        "question": "How does Claude keep track of local sessions?",
         "aliases": [
           "missing device",
           "session listing",
-          "not found"
+          "not found",
+          "Why might a previously known session temporarily disappear?",
+          "If a remembered session is missing from a listing, does it no longer exist?"
         ],
         "context": "Is absence a confirmed deletion, an incomplete listing, or a stale result?",
         "question_type": "explanation",
@@ -559,14 +572,16 @@
       {
         "id": "REA-C-CURI-worker",
         "family_id": "work",
-        "question": "How can I move compression work off the main thread cheaply?",
+        "question": "How does Claude compress completion data in the browser?",
         "aliases": [
           "compress bytes",
-          "worker communication"
+          "worker communication",
+          "How can I move compression work off the main thread cheaply?",
+          "Can a worker compress bytes without copying its output?"
         ],
         "context": "Inspect the native compression worker and its minimal message contract.",
-        "question_type": "design",
-        "task_scope": "open_goal",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
         "bridge_ids": [
           "REA-C-BRG-worker"
         ],
@@ -584,14 +599,16 @@
       {
         "id": "REA-C-CURI-latency",
         "family_id": "work",
-        "question": "What is actually making a click feel slow?",
+        "question": "How does Claude diagnose a slow chat interface?",
         "aliases": [
           "slow interaction",
           "paint delay",
-          "long animation frame"
+          "long animation frame",
+          "What is actually making a click feel slow?",
+          "How can we distinguish slow JavaScript from waiting for paint?"
         ],
         "context": "Distinguish script activity, waiting for a frame and rendering delay.",
-        "question_type": "diagnosis",
+        "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
           "REA-C-BRG-latency"
@@ -610,12 +627,12 @@
   "navigation_bridges": [
     {
       "id": "REA-C-BRG-markdown",
-      "question": "Why does a long streamed response not need to be rendered from scratch every time?",
+      "question": "How does Claude render a streaming response?",
       "choices": [
         {
-          "label": "Can streaming Markdown grow without reparsing everything?",
-          "technical_title": "Can streaming Markdown grow without reparsing everything?",
-          "distinguishing_question": "Earlier syntax may be stable while the last block is not. Inspect the guarded AST reuse path.",
+          "label": "Stable document blocks versus an unfinished tail",
+          "technical_title": "Incremental Markdown parsing",
+          "distinguishing_question": "Which Markdown structures can be reused as the response grows, and which require a full parse?",
           "why": "Guarded fast paths preserve stable constituents without replacing the general parser.",
           "targets": [
             "REA-C-markdown"
@@ -633,12 +650,12 @@
     },
     {
       "id": "REA-C-BRG-scroll",
-      "question": "Why does my list jump or stop moving when new content arrives during a swipe?",
+      "question": "How does Claude keep a growing conversation scrollable on iOS?",
       "choices": [
         {
-          "label": "Why can correcting scroll position during a gesture make scrolling worse?",
-          "technical_title": "Why can correcting scroll position during a gesture make scrolling worse?",
-          "distinguishing_question": "Does the viewport shift because the geometry changed while a gesture owned the position?",
+          "label": "User scrolling versus automatic position correction",
+          "technical_title": "Scroll anchoring during touch and momentum",
+          "distinguishing_question": "Does the correction occur while the user is touching, scrolling or overscrolling?",
           "why": "A gesture temporarily owns scroll state; defer conflicting mutations and reconcile afterwards.",
           "targets": [
             "REA-C-scroll"
@@ -655,12 +672,12 @@
     },
     {
       "id": "REA-C-BRG-persist",
-      "question": "How do I stop a late restored draft from overwriting what I just typed?",
+      "question": "How does Claude preserve unsent conversation drafts?",
       "choices": [
         {
-          "label": "What if a delayed storage read arrives after a user has edited a draft?",
-          "technical_title": "What if a delayed storage read arrives after a user has edited a draft?",
-          "distinguishing_question": "Can an older storage operation finish after newer user intent? Inspect read barriers and write ownership.",
+          "label": "Restored content versus newer user edits",
+          "technical_title": "Draft restoration and cross-tab writes",
+          "distinguishing_question": "Can a delayed read or retry act on a draft after its ownership or write epoch changes?",
           "why": "Unknown is not empty; a failed write does not imply its original intent remains valid.",
           "targets": [
             "REA-C-persist"
@@ -678,12 +695,12 @@
     },
     {
       "id": "REA-C-BRG-optimistic",
-      "question": "How can settings feel instant without a failed save undoing newer changes?",
+      "question": "How does Claude save settings without losing newer edits?",
       "choices": [
         {
-          "label": "Can an earlier failed save undo a later successful edit?",
-          "technical_title": "Can an earlier failed save undo a later successful edit?",
-          "distinguishing_question": "Do failures roll back a whole snapshot or only fields still owned by the failed change?",
+          "label": "Independent edits versus whole-record rollback",
+          "technical_title": "Optimistic settings updates and selective rollback",
+          "distinguishing_question": "Which fields still belong to a failed mutation when another save has already succeeded?",
           "why": "Consistency granularity need not equal storage granularity.",
           "targets": [
             "REA-C-optimistic"
@@ -699,12 +716,12 @@
     },
     {
       "id": "REA-C-BRG-provisional",
-      "question": "Why might a previously known session temporarily disappear?",
+      "question": "How does Claude keep track of local sessions?",
       "choices": [
         {
-          "label": "If a remembered session is missing from a listing, does it no longer exist?",
-          "technical_title": "If a remembered session is missing from a listing, does it no longer exist?",
-          "distinguishing_question": "Is absence a confirmed deletion, an incomplete listing, or a stale result?",
+          "label": "Incomplete listings versus confirmed absence",
+          "technical_title": "Provisional session discovery",
+          "distinguishing_question": "Is a missing session still loading, unavailable, or actually deleted?",
           "why": "Represent evidence about existence rather than a Boolean.",
           "targets": [
             "REA-C-provisional"
@@ -719,12 +736,12 @@
     },
     {
       "id": "REA-C-BRG-worker",
-      "question": "How can I move compression work off the main thread cheaply?",
+      "question": "How does Claude compress completion data in the browser?",
       "choices": [
         {
-          "label": "Can a worker compress bytes without copying its output?",
-          "technical_title": "Can a worker compress bytes without copying its output?",
-          "distinguishing_question": "Inspect the native compression worker and its minimal message contract.",
+          "label": "Native compression and buffer transfer",
+          "technical_title": "Completion compression workers",
+          "distinguishing_question": "Can compression run independently of the main thread, and how is the result returned?",
           "why": "Capability handshake, correlation ID, transferable ownership and intrinsic timing.",
           "targets": [
             "REA-C-worker"
@@ -741,12 +758,12 @@
     },
     {
       "id": "REA-C-BRG-latency",
-      "question": "What is actually making a click feel slow?",
+      "question": "How does Claude diagnose a slow chat interface?",
       "choices": [
         {
-          "label": "How can we distinguish slow JavaScript from waiting for paint?",
-          "technical_title": "How can we distinguish slow JavaScript from waiting for paint?",
-          "distinguishing_question": "Distinguish script activity, waiting for a frame and rendering delay.",
+          "label": "Script work versus rendering delay",
+          "technical_title": "Interaction latency and paint attribution",
+          "distinguishing_question": "Is the interaction delayed by a task, frame scheduling, style/layout or later paint activity?",
           "why": "Measure actionable contributing phases rather than total latency alone.",
           "targets": [
             "REA-C-latency"
@@ -763,8 +780,8 @@
   "landscape_views": [
     {
       "id": "render",
-      "title": "How can changing data preserve visual continuity?",
-      "short_label": "Visual continuity and input",
+      "title": "Rendering streaming responses",
+      "short_label": "Streaming responses",
       "root_id": "REA-claude-render",
       "node_ids": [
         "REA-claude-render",
@@ -779,7 +796,7 @@
         "REA-C-CURI-markdown",
         "REA-C-CURI-scroll"
       ],
-      "rationale": "Explore a family of mechanisms using the same canonical technical studies.",
+      "rationale": "Markdown parsing and scroll stability as a response grows.",
       "term_ids": [
         "rea-claude-t-0001",
         "rea-claude-t-0002",
@@ -796,8 +813,8 @@
     },
     {
       "id": "state",
-      "title": "How can asynchronous systems preserve intent and identity?",
-      "short_label": "Asynchronous state and identity",
+      "title": "Conversation drafts, settings and session state",
+      "short_label": "Drafts and session state",
       "root_id": "REA-claude-state",
       "node_ids": [
         "REA-claude-state",
@@ -815,7 +832,7 @@
         "REA-C-CURI-optimistic",
         "REA-C-CURI-provisional"
       ],
-      "rationale": "Explore a family of mechanisms using the same canonical technical studies.",
+      "rationale": "How the client preserves user intent across storage reads, network responses and session changes.",
       "term_ids": [
         "rea-claude-t-0011",
         "rea-claude-t-0012",
@@ -834,8 +851,8 @@
     },
     {
       "id": "work",
-      "title": "How can computation be scheduled, recovered and observed economically?",
-      "short_label": "Execution, recovery and observability",
+      "title": "Response processing and interaction performance",
+      "short_label": "Response processing",
       "root_id": "REA-claude-work",
       "node_ids": [
         "REA-claude-work",
@@ -850,7 +867,7 @@
         "REA-C-CURI-worker",
         "REA-C-CURI-latency"
       ],
-      "rationale": "Explore a family of mechanisms using the same canonical technical studies.",
+      "rationale": "How browser workers and performance instrumentation support the chat experience.",
       "term_ids": [
         "rea-claude-t-0020",
         "rea-claude-t-0021",
