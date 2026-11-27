@@ -21,7 +21,8 @@
         "reused": 256,
         "newly_collected": 1173,
         "failed": 0,
-        "bytes": 24197823
+        "bytes": 24197823,
+        "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
       },
       "interpretation": "Cumulative archive completed without refetching the first 256 assets."
     },
@@ -60,7 +61,8 @@
         "passed": 4,
         "recognized_files": 1429,
         "recognized_bytes": 24197823,
-        "factories": 13976
+        "factories": 13976,
+        "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
       },
       "interpretation": "All retained files recognized; consumer→store→backoff-class candidate edges recovered. Registry recognition is not semantic coverage; loader calls are lexical."
     },
@@ -127,9 +129,481 @@
         "elapsed_ms": 155,
         "passed": 8,
         "source_characters": 25044,
-        "new_bytes": 0
+        "new_bytes": 0,
+        "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
       },
       "interpretation": "Locale loading, editor native-input fast path, anchored history acquisition, error filtering and per-SKU backoff. Several implementations are library code. Excerpts are incomplete."
+    },
+    {
+      "id": "D-discover",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Investigate discovered engineering mechanisms",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "makeMessagesProxy"
+            ],
+            "scope": "region",
+            "limit": 5
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "handleDOMBeforeInput",
+              "scrollManager"
+            ],
+            "scope": "region",
+            "limit": 8
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "isProductFetchBackedOff",
+              "ThirdPartyErrorsFilter"
+            ],
+            "scope": "region",
+            "limit": 5
+          },
+          {
+            "op": "exploreIndex",
+            "offset": 0,
+            "limit": 15
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned query and results; exact original JSON not retained.",
+      "receipt": {
+        "run_id": "cf08003a-a233-4f53-a2d7-0e8d40cf8e0c",
+        "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e",
+        "version": "0.4.28",
+        "elapsed_ms": 1255,
+        "reported_region_totals": [
+          126,
+          13,
+          5
+        ],
+        "explore_total": 2066,
+        "explore_returned": 15
+      },
+      "interpretation": "Observed names and ordered lexical motifs supply directions, not verified behavior."
+    },
+    {
+      "id": "D-next-gateway",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Investigate Gateway messages and recovery",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "WebSocket",
+              "heartbeat",
+              "resume",
+              "sequence"
+            ],
+            "scope": "region",
+            "limit": 10
+          }
+        ]
+      },
+      "interpretation": "Prospective chapter: separate gateway event delivery, resume, REST reconciliation and connection state. No specific gateway implementation recovered in the available discovery excerpts; use candidate lexical queries and official gateway documentation to orient a client-side investigation.",
+      "locators": []
+    },
+    {
+      "id": "D-next-decode",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Investigate Media decoding and browser fallback",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "_lastFrameDecodeTime",
+              "ogvjsVideoFrameRate",
+              "ogvjsAudioSampleRate"
+            ],
+            "scope": "region",
+            "files": [
+              "760476.b912f6ec14757186.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "760476.b912f6ec14757186.js",
+            "sha256": "0012fa766c964a2cb00e32e1229a31dfa45e1e6c78f9f32527544bcf391b2b1e",
+            "start": 32768,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "The explored region exposes ogvjsVideoFrameRate, ogvjsAudioSampleRate, _lastFrameDecodeTime, MEDIA_ERR_SRC_NOT_SUPPORTED and WebAssembly. This is likely media-library code; inspect whether and when Discord invokes it. Do not conflate media playback with live call transport.",
+      "locators": [
+        {
+          "file": "760476.b912f6ec14757186.js",
+          "sha256": "0012fa766c964a2cb00e32e1229a31dfa45e1e6c78f9f32527544bcf391b2b1e",
+          "start": 32768,
+          "unit": "UTF-16",
+          "signatures": [
+            "_lastFrameDecodeTime",
+            "ogvjsVideoFrameRate",
+            "ogvjsAudioSampleRate"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "D-next-voice",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Investigate Live media transport",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "RTCPeerConnection",
+              "getUserMedia",
+              "voice",
+              "screenShare"
+            ],
+            "scope": "region",
+            "limit": 10
+          }
+        ]
+      },
+      "interpretation": "Prospective territory, not an inspected implementation. Distinguish microphone and camera capture, signaling, transport, codec negotiation and display capture; do not infer voice behavior from the discovered playback library.",
+      "locators": []
+    },
+    {
+      "id": "D-next-moderation",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Investigate Moderation and server membership",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME"
+            ],
+            "scope": "region",
+            "files": [
+              "a6449ce72c7f8ddd.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "a6449ce72c7f8ddd.js",
+            "sha256": "efe792da55eb7552d81e337037f96658467970d591561c7cff80452c89ba506c",
+            "start": 0,
+            "length": 6000
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "getSubmittedGuildJoinRequestTotal"
+            ],
+            "scope": "region",
+            "files": [
+              "66f0119f286fe5e5.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "66f0119f286fe5e5.js",
+            "sha256": "f12a989589bda6839ca17289baab408f12f50c6e76be7258cea5a5e111fbee87",
+            "start": 0,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "Discovery found AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME and getSubmittedGuildJoinRequestTotal in separate regions. They are possible moderation and join-request UI/state leads, not evidence of how permissions are enforced.",
+      "locators": [
+        {
+          "file": "a6449ce72c7f8ddd.js",
+          "sha256": "efe792da55eb7552d81e337037f96658467970d591561c7cff80452c89ba506c",
+          "start": 0,
+          "unit": "UTF-16",
+          "signatures": [
+            "AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        },
+        {
+          "file": "66f0119f286fe5e5.js",
+          "sha256": "f12a989589bda6839ca17289baab408f12f50c6e76be7258cea5a5e111fbee87",
+          "start": 0,
+          "unit": "UTF-16",
+          "signatures": [
+            "getSubmittedGuildJoinRequestTotal"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "D-next-channels",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Investigate Thread archiving and channel activity",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "autoArchiveDurationHook"
+            ],
+            "scope": "region",
+            "files": [
+              "3b37d99abf64c54b.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "3b37d99abf64c54b.js",
+            "sha256": "d8475f3cd7cee4864c8c9b733adcdac161a20f7d4452feb4fbf0e301ea1806aa",
+            "start": 98304,
+            "length": 6000
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "CHANNEL_FOLLOWER_STATS_FETCH_START",
+              "CHANNEL_FOLLOWER_STATS_FETCH_SUCCESS"
+            ],
+            "scope": "region",
+            "files": [
+              "33f4b82c23c08fe0.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "33f4b82c23c08fe0.js",
+            "sha256": "ba41fa1315c31d8671ca6ca163c2b3bd32d522b22f30b8ee2a76e5e111fbee87",
+            "start": 0,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "The discovered autoArchiveDurationHook and CHANNEL_FOLLOWER_STATS_FETCH_* identifiers point toward distinct lifecycle and following mechanisms. Trace actual definitions and separate client controls from server policy.",
+      "locators": [
+        {
+          "file": "3b37d99abf64c54b.js",
+          "sha256": "d8475f3cd7cee4864c8c9b733adcdac161a20f7d4452feb4fbf0e301ea1806aa",
+          "start": 98304,
+          "unit": "UTF-16",
+          "signatures": [
+            "autoArchiveDurationHook"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        },
+        {
+          "file": "33f4b82c23c08fe0.js",
+          "sha256": "ba41fa1315c31d8671ca6ca163c2b3bd32d522b22f30b8ee2a76e5e111fbee87",
+          "start": 0,
+          "unit": "UTF-16",
+          "signatures": [
+            "CHANNEL_FOLLOWER_STATS_FETCH_START",
+            "CHANNEL_FOLLOWER_STATS_FETCH_SUCCESS"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "D-next-embedded",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Investigate Embedded activity discovery and presentation",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "getEmbeddedActivitiesForLocationIncludingHidden",
+              "getSelfEmbeddedActivityForLocation",
+              "ACTIVITY_POPOUT_POP_OUT_BUTTON_CLICKED"
+            ],
+            "scope": "region",
+            "files": [
+              "ca6b605c120e5222.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "ca6b605c120e5222.js",
+            "sha256": "7831dc9271a76e7e01a70498c73dd2904c884c078f0d4ac24dfc089548fc1370",
+            "start": 0,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "The atlas reveals getEmbeddedActivitiesForLocationIncludingHidden, getSelfEmbeddedActivityForLocation, ACTIVITY_POPOUT_POP_OUT_BUTTON_CLICKED and getAnyStreamForUser. Explore activity discovery, placement and pop-out behavior, without assuming an authorization or sandbox model.",
+      "locators": [
+        {
+          "file": "ca6b605c120e5222.js",
+          "sha256": "7831dc9271a76e7e01a70498c73dd2904c884c078f0d4ac24dfc089548fc1370",
+          "start": 0,
+          "unit": "UTF-16",
+          "signatures": [
+            "getEmbeddedActivitiesForLocationIncludingHidden",
+            "getSelfEmbeddedActivityForLocation",
+            "ACTIVITY_POPOUT_POP_OUT_BUTTON_CLICKED"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "D-next-animation",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Investigate Animation scheduling and workers",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "setCurrentRawFrameValue",
+              "waitForFontsLoaded",
+              "_useWebWorker"
+            ],
+            "scope": "region",
+            "files": [
+              "e5b09882b915bf6b.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "e5b09882b915bf6b.js",
+            "sha256": "c77aba65720fb0bac233efc915ad82668a4346d38eb1197e5b47435d156aa083",
+            "start": 0,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "A discovered region contains setCurrentRawFrameValue, waitForFontsLoaded, _useWebWorker and Worker/Blob lexical motifs. Identify the animation library, rendering scheduler and whether Discord uses worker execution.",
+      "locators": [
+        {
+          "file": "e5b09882b915bf6b.js",
+          "sha256": "c77aba65720fb0bac233efc915ad82668a4346d38eb1197e5b47435d156aa083",
+          "start": 0,
+          "unit": "UTF-16",
+          "signatures": [
+            "setCurrentRawFrameValue",
+            "waitForFontsLoaded",
+            "_useWebWorker"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "D-next-checkout",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Investigate Checkout state and payment-source selection",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "hasAddedPaymentSourceThisSession",
+              "hasPaymentSourcesFromCheckoutStore",
+              "checkAndResolveInitialPaymentSourceId"
+            ],
+            "scope": "region",
+            "files": [
+              "02dc5732387c6fb3.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "02dc5732387c6fb3.js",
+            "sha256": "61ca767af974a4d5021e512b0002c46f10e1cbd327b2a4bc02480b46baff2366",
+            "start": 0,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "The observed region contains hasAddedPaymentSourceThisSession, hasPaymentSourcesFromCheckoutStore, hasCheckedInitialPaymentSourceRef and checkAndResolveInitialPaymentSourceId. Recover the UI state machine, not payment credentials or private account information. Server-side transaction correctness is outside this evidence.",
+      "locators": [
+        {
+          "file": "02dc5732387c6fb3.js",
+          "sha256": "61ca767af974a4d5021e512b0002c46f10e1cbd327b2a4bc02480b46baff2366",
+          "start": 0,
+          "unit": "UTF-16",
+          "signatures": [
+            "hasAddedPaymentSourceThisSession",
+            "hasPaymentSourcesFromCheckoutStore",
+            "checkAndResolveInitialPaymentSourceId"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "D-next-bundles",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://discord.com",
+        "description": "Investigate Webpack registries and dependency resolution",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "isProductFetchBackedOff"
+            ],
+            "scope": "region",
+            "files": [
+              "web.1732a939a32a5e17.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "web.1732a939a32a5e17.js",
+            "sha256": "ebe5680031ad0f192b18840b86a5720566984c2f9b4fe28848dc059730d71a47",
+            "start": 352224,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "AI Pill's parsed registry recovered 13,976 factories across 1,429 retained assets; the observed consumer 674658, store 590180 and backoff 158390 are useful examples of direct module candidates. Distinguish registry recognition, actual imports and runtime execution. The locale chunk is another example.",
+      "locators": [
+        {
+          "file": "web.1732a939a32a5e17.js",
+          "sha256": "ebe5680031ad0f192b18840b86a5720566984c2f9b4fe28848dc059730d71a47",
+          "start": 352224,
+          "unit": "UTF-16",
+          "signatures": [
+            "isProductFetchBackedOff"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
     }
   ],
   "sources": [
@@ -146,7 +620,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://discord.com/assets/698610.174da93ccb01bd4a.js",
+      "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
     },
     {
       "id": "D-editor",
@@ -167,7 +643,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://discord.com/assets/187398.e745b22c0e2a3ce3.js",
+      "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
     },
     {
       "id": "D-scroll",
@@ -182,7 +660,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://discord.com/assets/a6449ce72c7f8ddd.js",
+      "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
     },
     {
       "id": "D-errors",
@@ -197,7 +677,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://discord.com/assets/619666.09dd54383afdd816.js",
+      "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
     },
     {
       "id": "D-main",
@@ -212,7 +694,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://discord.com/assets/web.1732a939a32a5e17.js",
+      "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
     },
     {
       "id": "D-hook",
@@ -227,7 +711,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://discord.com/assets/d98faba192fc7e37.js",
+      "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
     },
     {
       "id": "D-chunk",
@@ -242,7 +728,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://discord.com/assets/0867b5a62d48e35b.js",
+      "archive_id": "cbd1b9c7-6462-407f-9968-5aa5f3b1402e"
     }
   ]
 }
