@@ -7,25 +7,25 @@
       "id": "REA-discord",
       "parent_id": null,
       "kind": "question",
-      "question": "What can we learn from Discord's engineering?",
+      "question": "Discord: client architecture and engineering mechanisms",
       "why": "An evolving landscape of source-inspected engineering mechanisms and open questions in Discord."
     },
     {
       "id": "REA-discord-render",
       "parent_id": "REA-discord",
       "kind": "question",
-      "question": "How can changing data preserve visual continuity?"
+      "question": "Message history and rich-text composition"
     },
     {
       "id": "REA-discord-work",
       "parent_id": "REA-discord",
       "kind": "question",
-      "question": "How can computation be scheduled, recovered and observed economically?"
+      "question": "Client resource loading and diagnostics"
     },
     {
       "id": "REA-D-scroll",
       "parent_id": "REA-discord-render",
-      "question": "How can chat history load without making visible messages jump?",
+      "question": "Message pagination and viewport anchors",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Tracks first/last message IDs, fetch anchors and pre-fetch scroll height. Pinned dimensions update immediately, unpinned updates are debounced. Focus, automatic anchors and jump-to-present are distinct.",
@@ -64,7 +64,7 @@
     {
       "id": "REA-D-editor",
       "parent_id": "REA-discord-render",
-      "question": "How can an editor retain native input while maintaining a logical document model?",
+      "question": "Native input and editor reconciliation",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Tracks pending diffs/actions, composition and beforeinput target ranges; falls back to browser/logical selection. A guarded native simple-input path avoids preventDefault; other paths reconcile selection with setBaseAndExtent.",
@@ -114,7 +114,7 @@
     {
       "id": "REA-D-backoff",
       "parent_id": "REA-discord-work",
-      "question": "How can independent failing requests avoid creating network pressure?",
+      "question": "Per-collectible fetch state and backoff",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Collectibles store maintains per-SKU backoff and fetch states. Hook guards on already loaded, fetching or backed-off conditions; success clears backoff, failure schedules expiry. Candidate registry chain 674658→590180→158390.",
@@ -161,7 +161,7 @@
     {
       "id": "REA-D-intl",
       "parent_id": "REA-discord-work",
-      "question": "How can a language change load only needed resources without partially ready state?",
+      "question": "Lazy locale loading and readiness",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Locale manager subscribes to changes, rebuilds formatters, uses Promise.all readiness barriers, per-loader import maps and promise/cache maps with fallback cycle checks. Tiny webpack factory demonstrates lazy locale import.",
@@ -213,7 +213,7 @@
     {
       "id": "REA-D-errors",
       "parent_id": "REA-discord-work",
-      "question": "How can software distinguish its own errors from third-party errors?",
+      "question": "Error attribution through module metadata",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Sentry-related filter compares frame module metadata app keys against configured keys; supports drop/tag policies and strips metadata before envelope sending.",
@@ -300,26 +300,30 @@
     "families": [
       {
         "id": "render",
-        "label": "Visual continuity and input"
+        "label": "Messages and composition",
+        "description": "How Discord loads conversations and reconciles browser text input with its editor model."
       },
       {
         "id": "work",
-        "label": "Execution, recovery and observability"
+        "label": "Resource loading and diagnostics",
+        "description": "How the client loads localized resources and collectibles, limits retries and classifies errors."
       }
     ],
     "entries": [
       {
         "id": "REA-D-CURI-scroll",
         "family_id": "render",
-        "question": "How can older chat messages load without making the messages I am reading jump?",
+        "question": "How does Discord load and scroll through message history?",
         "aliases": [
           "prepend history",
           "chat scroll jump",
-          "load older messages"
+          "load older messages",
+          "How can older chat messages load without making the messages I am reading jump?",
+          "How can chat history load without making visible messages jump?"
         ],
         "context": "Inspect the separation between message fetch anchors, pinned geometry and viewport intent. Restoration itself is still unexamined.",
-        "question_type": "design",
-        "task_scope": "open_goal",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
         "bridge_ids": [
           "REA-D-BRG-scroll"
         ],
@@ -337,11 +341,13 @@
       {
         "id": "REA-D-CURI-editor",
         "family_id": "render",
-        "question": "Why does a rich text editor sometimes allow the browser to type directly and sometimes intercept typing?",
+        "question": "How does Discord's message editor handle typing and composition?",
         "aliases": [
           "native input",
           "IME composition",
-          "selection"
+          "selection",
+          "Why does a rich text editor sometimes allow the browser to type directly and sometimes intercept typing?",
+          "How can an editor retain native input while maintaining a logical document model?"
         ],
         "context": "Inspect guards on native input and selection reconciliation.",
         "question_type": "explanation",
@@ -363,15 +369,17 @@
       {
         "id": "REA-D-CURI-backoff",
         "family_id": "work",
-        "question": "How can failing requests avoid repeatedly hammering the network without blocking unrelated requests?",
+        "question": "How does Discord handle failed collectible requests?",
         "aliases": [
           "retry storm",
           "per item retries",
-          "backoff"
+          "backoff",
+          "How can failing requests avoid repeatedly hammering the network without blocking unrelated requests?",
+          "How can independent failing requests avoid creating network pressure?"
         ],
         "context": "Inspect per-SKU state and caller guards; exact backoff algorithm remains open.",
-        "question_type": "design",
-        "task_scope": "open_goal",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
         "bridge_ids": [
           "REA-D-BRG-backoff"
         ],
@@ -386,11 +394,13 @@
       {
         "id": "REA-D-CURI-intl",
         "family_id": "work",
-        "question": "How can changing language load only the needed text without exposing incomplete translations?",
+        "question": "How does Discord load translations when languages change?",
         "aliases": [
           "locale change",
           "lazy translation",
-          "missing messages"
+          "missing messages",
+          "How can changing language load only the needed text without exposing incomplete translations?",
+          "How can a language change load only needed resources without partially ready state?"
         ],
         "context": "Inspect asynchronous readiness, cache and fallback-cycle checks.",
         "question_type": "explanation",
@@ -414,11 +424,13 @@
       {
         "id": "REA-D-CURI-errors",
         "family_id": "work",
-        "question": "How can an app tell which errors were introduced by outside scripts?",
+        "question": "How does Discord's client distinguish third-party script errors?",
         "aliases": [
           "third party exceptions",
           "noisy console",
-          "error attribution"
+          "error attribution",
+          "How can an app tell which errors were introduced by outside scripts?",
+          "How can software distinguish its own errors from third-party errors?"
         ],
         "context": "Inspect module metadata filtering rather than relying on exception message text.",
         "question_type": "explanation",
@@ -441,12 +453,12 @@
   "navigation_bridges": [
     {
       "id": "REA-D-BRG-scroll",
-      "question": "How can older chat messages load without making the messages I am reading jump?",
+      "question": "How does Discord load and scroll through message history?",
       "choices": [
         {
-          "label": "How can chat history load without making visible messages jump?",
-          "technical_title": "How can chat history load without making visible messages jump?",
-          "distinguishing_question": "Inspect the separation between message fetch anchors, pinned geometry and viewport intent. Restoration itself is still unexamined.",
+          "label": "Fetching older messages versus preserving the reading position",
+          "technical_title": "Message pagination and viewport anchors",
+          "distinguishing_question": "Which message IDs define the fetch frontier, and which visible item should stay in place?",
           "why": "Separate data acquisition frontier from visible logical anchor.",
           "targets": [
             "REA-D-scroll"
@@ -463,12 +475,12 @@
     },
     {
       "id": "REA-D-BRG-editor",
-      "question": "Why does a rich text editor sometimes allow the browser to type directly and sometimes intercept typing?",
+      "question": "How does Discord's message editor handle typing and composition?",
       "choices": [
         {
-          "label": "How can an editor retain native input while maintaining a logical document model?",
-          "technical_title": "How can an editor retain native input while maintaining a logical document model?",
-          "distinguishing_question": "Inspect guards on native input and selection reconciliation.",
+          "label": "Browser input versus the editor's document model",
+          "technical_title": "Native input and editor reconciliation",
+          "distinguishing_question": "When can native text input proceed safely, and when must the editor reconcile composition or selection?",
           "why": "Use native editing when invariants hold; explicitly reconcile exceptions.",
           "targets": [
             "REA-D-editor"
@@ -485,12 +497,12 @@
     },
     {
       "id": "REA-D-BRG-backoff",
-      "question": "How can failing requests avoid repeatedly hammering the network without blocking unrelated requests?",
+      "question": "How does Discord handle failed collectible requests?",
       "choices": [
         {
-          "label": "How can independent failing requests avoid creating network pressure?",
-          "technical_title": "How can independent failing requests avoid creating network pressure?",
-          "distinguishing_question": "Inspect per-SKU state and caller guards; exact backoff algorithm remains open.",
+          "label": "One failed item versus unrelated requests",
+          "technical_title": "Per-collectible fetch state and backoff",
+          "distinguishing_question": "Is the requested item already loaded, in flight or subject to a backoff?",
           "why": "Tie recovery to affected identity; gate at acquisition boundary.",
           "targets": [
             "REA-D-backoff"
@@ -504,12 +516,12 @@
     },
     {
       "id": "REA-D-BRG-intl",
-      "question": "How can changing language load only the needed text without exposing incomplete translations?",
+      "question": "How does Discord load translations when languages change?",
       "choices": [
         {
-          "label": "How can a language change load only needed resources without partially ready state?",
-          "technical_title": "How can a language change load only needed resources without partially ready state?",
-          "distinguishing_question": "Inspect asynchronous readiness, cache and fallback-cycle checks.",
+          "label": "Available translations versus pending language resources",
+          "technical_title": "Lazy locale loading and readiness",
+          "distinguishing_question": "Which locale resources are ready, and how do deferred imports and fallback chains resolve them?",
           "why": "Deferred acquisition plus per-key deduplication and explicit readiness.",
           "targets": [
             "REA-D-intl"
@@ -528,12 +540,12 @@
     },
     {
       "id": "REA-D-BRG-errors",
-      "question": "How can an app tell which errors were introduced by outside scripts?",
+      "question": "How does Discord's client distinguish third-party script errors?",
       "choices": [
         {
-          "label": "How can software distinguish its own errors from third-party errors?",
-          "technical_title": "How can software distinguish its own errors from third-party errors?",
-          "distinguishing_question": "Inspect module metadata filtering rather than relying on exception message text.",
+          "label": "Application frames versus external frames",
+          "technical_title": "Error attribution through module metadata",
+          "distinguishing_question": "Do stack frames carry the build-time application key used by the error filter?",
           "why": "Attach provenance at build time; classify with explicit policy.",
           "targets": [
             "REA-D-errors"
@@ -551,8 +563,8 @@
   "landscape_views": [
     {
       "id": "render",
-      "title": "How can changing data preserve visual continuity?",
-      "short_label": "Visual continuity and input",
+      "title": "Message history and rich-text composition",
+      "short_label": "Messages and composition",
       "root_id": "REA-discord-render",
       "node_ids": [
         "REA-discord-render",
@@ -567,7 +579,7 @@
         "REA-D-CURI-scroll",
         "REA-D-CURI-editor"
       ],
-      "rationale": "Explore a family of mechanisms using the same canonical technical studies.",
+      "rationale": "How Discord loads conversations and reconciles browser text input with its editor model.",
       "term_ids": [
         "rea-discord-t-0001",
         "rea-discord-t-0002",
@@ -583,8 +595,8 @@
     },
     {
       "id": "work",
-      "title": "How can computation be scheduled, recovered and observed economically?",
-      "short_label": "Execution, recovery and observability",
+      "title": "Client resource loading and diagnostics",
+      "short_label": "Resource loading and diagnostics",
       "root_id": "REA-discord-work",
       "node_ids": [
         "REA-discord-work",
@@ -602,7 +614,7 @@
         "REA-D-CURI-intl",
         "REA-D-CURI-errors"
       ],
-      "rationale": "Explore a family of mechanisms using the same canonical technical studies.",
+      "rationale": "How the client loads localized resources and collectibles, limits retries and classifies errors.",
       "term_ids": [
         "rea-discord-t-0010",
         "rea-discord-t-0011",
