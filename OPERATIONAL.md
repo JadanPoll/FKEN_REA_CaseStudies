@@ -1,5 +1,5 @@
 Folder and question quality should be evaluated on this basis:
-Forward: 
+Forward Criterion:
  If I have a question about how to do or go about XYZ. Did we:
  a. save enough information to the answer is trivially inferable, especially with an LLM looking at the rep
  b. save enough directional and source information and certificate so the answer is trivially investigate by an LLM, even if it has to redo a particular flow.
@@ -20,3 +20,9 @@ If it doesn’t fulfill either
 
 Inverse Criterion:
 Questions and enough content should be preserved that it is itself generative of the landscape of possible questions, curiosity and wonder. That is simply from looking through you learn so much and get a rich sense of the interesting and generative questions to ask
+
+Exploring it should actively expand our conception of what is interesting, possible and even worth investigating. It should educate you or clue you in on things you didn’t even think to ask. To thst end, part of actually evaluating this is
+a. variance
+b. unique dimensions offered
+
+glossary plays a critical role in fulfilling this but so do questions, especially when an LLM is figuring out what a good question would be, Again, it should make sense if the folder was a title of the case study book. This prevents the accumulation on :slop that is simply asking questions just to ask. I do have a meta rule for this
