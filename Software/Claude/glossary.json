@@ -1,0 +1,389 @@
+{
+  "schema_version": "1.0",
+  "domain_id": "REA-claude",
+  "title": "Claude — Engineering vocabulary",
+  "terms": [
+    {
+      "id": "rea-claude-t-0001",
+      "label": "incremental parsing",
+      "aliases": [
+        "incremental parser",
+        "streaming parse"
+      ],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-claude-t-0002",
+        "rea-claude-t-0003",
+        "rea-claude-t-0004",
+        "rea-claude-t-0033"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0002",
+      "label": "abstract syntax tree",
+      "aliases": [
+        "AST",
+        "syntax tree"
+      ],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-claude-t-0001"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0003",
+      "label": "stable prefix",
+      "aliases": [],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-claude-t-0001"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0004",
+      "label": "guarded fast path",
+      "aliases": [],
+      "category": "Optimization",
+      "related_ids": [
+        "rea-claude-t-0001",
+        "rea-claude-t-0005"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0005",
+      "label": "full-parse fallback",
+      "aliases": [],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-claude-t-0004"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0006",
+      "label": "scroll anchoring",
+      "aliases": [
+        "viewport anchor"
+      ],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-claude-t-0007",
+        "rea-claude-t-0008"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0007",
+      "label": "scroll virtualization",
+      "aliases": [
+        "virtualized list"
+      ],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-claude-t-0006",
+        "rea-claude-t-0009"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0008",
+      "label": "momentum scrolling",
+      "aliases": [
+        "inertial scrolling"
+      ],
+      "category": "Input",
+      "related_ids": [
+        "rea-claude-t-0006",
+        "rea-claude-t-0010"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0009",
+      "label": "size cache",
+      "aliases": [
+        "measurement cache"
+      ],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-claude-t-0007"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0010",
+      "label": "elastic overscroll",
+      "aliases": [
+        "rubber band scrolling"
+      ],
+      "category": "Input",
+      "related_ids": [
+        "rea-claude-t-0008"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0011",
+      "label": "hydration",
+      "aliases": [
+        "state restoration"
+      ],
+      "category": "Persistence",
+      "related_ids": [
+        "rea-claude-t-0013",
+        "rea-claude-t-0034"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0012",
+      "label": "write epoch",
+      "aliases": [],
+      "category": "Persistence",
+      "related_ids": [
+        "rea-claude-t-0013",
+        "rea-claude-t-0018",
+        "rea-claude-t-0030",
+        "rea-claude-t-0035"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0013",
+      "label": "read barrier",
+      "aliases": [],
+      "category": "Persistence",
+      "related_ids": [
+        "rea-claude-t-0011",
+        "rea-claude-t-0012"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0014",
+      "label": "optimistic update",
+      "aliases": [
+        "optimistic mutation"
+      ],
+      "category": "Consistency",
+      "related_ids": [
+        "rea-claude-t-0015",
+        "rea-claude-t-0016"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0015",
+      "label": "selective rollback",
+      "aliases": [],
+      "category": "Consistency",
+      "related_ids": [
+        "rea-claude-t-0014",
+        "rea-claude-t-0016"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0016",
+      "label": "field-level versioning",
+      "aliases": [
+        "per-field sequence"
+      ],
+      "category": "Consistency",
+      "related_ids": [
+        "rea-claude-t-0014",
+        "rea-claude-t-0015",
+        "rea-claude-t-0036"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0017",
+      "label": "provisional identity",
+      "aliases": [
+        "provisional ID"
+      ],
+      "category": "Consistency",
+      "related_ids": [
+        "rea-claude-t-0018",
+        "rea-claude-t-0019"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0018",
+      "label": "generation counter",
+      "aliases": [
+        "generation guard"
+      ],
+      "category": "Consistency",
+      "related_ids": [
+        "rea-claude-t-0012",
+        "rea-claude-t-0017"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0019",
+      "label": "eventual consistency",
+      "aliases": [],
+      "category": "Consistency",
+      "related_ids": [
+        "rea-claude-t-0017"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0020",
+      "label": "Web Worker",
+      "aliases": [],
+      "category": "Execution",
+      "related_ids": [
+        "rea-claude-t-0021",
+        "rea-claude-t-0022",
+        "rea-claude-t-0032"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0021",
+      "label": "CompressionStream",
+      "aliases": [],
+      "category": "Execution",
+      "related_ids": [
+        "rea-claude-t-0020"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0022",
+      "label": "transferable object",
+      "aliases": [
+        "transferable buffer"
+      ],
+      "category": "Execution",
+      "related_ids": [
+        "rea-claude-t-0020",
+        "rea-claude-t-0031"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0023",
+      "label": "Long Animation Frame",
+      "aliases": [
+        "LoAF"
+      ],
+      "category": "Performance",
+      "related_ids": [
+        "rea-claude-t-0024",
+        "rea-claude-t-0025"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0024",
+      "label": "Interaction to Next Paint",
+      "aliases": [
+        "INP"
+      ],
+      "category": "Performance",
+      "related_ids": [
+        "rea-claude-t-0023"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0025",
+      "label": "long task",
+      "aliases": [],
+      "category": "Performance",
+      "related_ids": [
+        "rea-claude-t-0023"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0026",
+      "label": "microphone preconnection",
+      "aliases": [],
+      "category": "Audio",
+      "related_ids": [
+        "rea-claude-t-0027"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0027",
+      "label": "audio clock mismatch",
+      "aliases": [
+        "sample clock mismatch"
+      ],
+      "category": "Audio",
+      "related_ids": [
+        "rea-claude-t-0026",
+        "rea-claude-t-0028"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0028",
+      "label": "playback underrun",
+      "aliases": [],
+      "category": "Audio",
+      "related_ids": [
+        "rea-claude-t-0027"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0029",
+      "label": "stream backpressure",
+      "aliases": [],
+      "category": "Execution",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0030",
+      "label": "cross-tab coordination",
+      "aliases": [],
+      "category": "Consistency",
+      "related_ids": [
+        "rea-claude-t-0012"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0031",
+      "label": "structured clone",
+      "aliases": [],
+      "category": "Execution",
+      "related_ids": [
+        "rea-claude-t-0022"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0032",
+      "label": "request correlation",
+      "aliases": [
+        "correlation ID"
+      ],
+      "category": "Execution",
+      "related_ids": [
+        "rea-claude-t-0020"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0033",
+      "label": "progressive rendering",
+      "aliases": [],
+      "category": "Rendering",
+      "related_ids": [
+        "rea-claude-t-0001"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0034",
+      "label": "read timeout",
+      "aliases": [],
+      "category": "Persistence",
+      "related_ids": [
+        "rea-claude-t-0011"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0035",
+      "label": "conditional write",
+      "aliases": [],
+      "category": "Persistence",
+      "related_ids": [
+        "rea-claude-t-0012"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0036",
+      "label": "mutation sequence",
+      "aliases": [],
+      "category": "Consistency",
+      "related_ids": [
+        "rea-claude-t-0016"
+      ]
+    }
+  ],
+  "redirects": {}
+}
