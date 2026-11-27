@@ -6,9 +6,7 @@
     {
       "id": "rea-discord-t-0001",
       "label": "scroll anchoring",
-      "aliases": [
-        "viewport anchor"
-      ],
+      "aliases": [],
       "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0002",
@@ -20,7 +18,8 @@
         "rea-discord-t-0032",
         "rea-discord-t-0033",
         "rea-discord-t-0034"
-      ]
+      ],
+      "definition": "Keep a visible item in the same apparent place when items above it grow, shrink or are inserted."
     },
     {
       "id": "rea-discord-t-0002",
@@ -33,7 +32,8 @@
         "rea-discord-t-0001",
         "rea-discord-t-0024",
         "rea-discord-t-0026"
-      ]
+      ],
+      "definition": "Fetch bounded portions of message history using message positions or identifiers rather than downloading everything."
     },
     {
       "id": "rea-discord-t-0003",
@@ -44,7 +44,8 @@
       "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0001"
-      ]
+      ],
+      "definition": "The oldest or newest acquired message identity that determines where to request additional history."
     },
     {
       "id": "rea-discord-t-0004",
@@ -55,7 +56,8 @@
       "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0001"
-      ]
+      ],
+      "definition": "Render only nearby items in a long scrolling list while retaining a model of offscreen sizes."
     },
     {
       "id": "rea-discord-t-0005",
@@ -72,7 +74,8 @@
         "rea-discord-t-0036",
         "rea-discord-t-0037",
         "rea-discord-t-0038"
-      ]
+      ],
+      "definition": "Browser event describing the impending edit before it changes the document."
     },
     {
       "id": "rea-discord-t-0006",
@@ -84,7 +87,8 @@
       "related_ids": [
         "rea-discord-t-0005",
         "rea-discord-t-0030"
-      ]
+      ],
+      "definition": "Mechanism for composing text such as Japanese or Chinese using intermediary selections and composition events."
     },
     {
       "id": "rea-discord-t-0007",
@@ -94,7 +98,8 @@
       "related_ids": [
         "rea-discord-t-0005",
         "rea-discord-t-0008"
-      ]
+      ],
+      "definition": "Bring browser caret/selection state and the editor's logical document coordinates back into agreement."
     },
     {
       "id": "rea-discord-t-0008",
@@ -129,7 +134,8 @@
         "rea-discord-t-0040",
         "rea-discord-t-0041",
         "rea-discord-t-0042"
-      ]
+      ],
+      "definition": "Maintain recovery and delay separately for each resource, such as a collectible, so one failing item does not stop unrelated work."
     },
     {
       "id": "rea-discord-t-0011",
@@ -139,7 +145,8 @@
       "related_ids": [
         "rea-discord-t-0009",
         "rea-discord-t-0010"
-      ]
+      ],
+      "definition": "A bound on the number, duration or frequency of recovery attempts."
     },
     {
       "id": "rea-discord-t-0012",
@@ -178,7 +185,8 @@
       "related_ids": [
         "rea-discord-t-0012",
         "rea-discord-t-0013"
-      ]
+      ],
+      "definition": "Wait until a required collection of asynchronously loaded resources is available before using them."
     },
     {
       "id": "rea-discord-t-0015",
@@ -187,7 +195,8 @@
       "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0016"
-      ]
+      ],
+      "definition": "Choose another language resource when a requested translation is missing, without assuming a cycle-free fallback graph."
     },
     {
       "id": "rea-discord-t-0016",
@@ -211,7 +220,8 @@
         "rea-discord-t-0048",
         "rea-discord-t-0049",
         "rea-discord-t-0050"
-      ]
+      ],
+      "definition": "Determine which application, module or external script originated an error."
     },
     {
       "id": "rea-discord-t-0018",
@@ -220,7 +230,8 @@
       "category": "Diagnostics and operational reliability",
       "related_ids": [
         "rea-discord-t-0017"
-      ]
+      ],
+      "definition": "Additional information attached to a stack frame, such as its build-time application identity."
     },
     {
       "id": "rea-discord-t-0019",
@@ -229,7 +240,8 @@
       "category": "Diagnostics and operational reliability",
       "related_ids": [
         "rea-discord-t-0017"
-      ]
+      ],
+      "definition": "Drop or tag diagnostic events attributable to outside scripts, according to a policy."
     },
     {
       "id": "rea-discord-t-0020",
@@ -240,7 +252,8 @@
         "rea-discord-t-0021",
         "rea-discord-t-0022",
         "rea-discord-t-0098"
-      ]
+      ],
+      "definition": "A bundle's mapping from module identifiers to module factory functions."
     },
     {
       "id": "rea-discord-t-0021",
@@ -340,7 +353,8 @@
       "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0001"
-      ]
+      ],
+      "definition": "A scroll state attached to an endpoint, such as the latest message, rather than an arbitrary offset."
     },
     {
       "id": "rea-discord-t-0032",
@@ -349,7 +363,8 @@
       "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0001"
-      ]
+      ],
+      "definition": "A message or position recorded before fetching additional history so the reading location can be recovered."
     },
     {
       "id": "rea-discord-t-0033",
@@ -358,7 +373,8 @@
       "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0001"
-      ]
+      ],
+      "definition": "A position or message ID used to request the next segment of a conversation."
     },
     {
       "id": "rea-discord-t-0034",
@@ -385,7 +401,8 @@
       "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0005"
-      ]
+      ],
+      "definition": "A native editing change awaiting reconciliation into a logical document model."
     },
     {
       "id": "rea-discord-t-0037",
@@ -403,7 +420,8 @@
       "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0005"
-      ]
+      ],
+      "definition": "Track the start, changes and end of an IME composition without treating each intermediary text as final."
     },
     {
       "id": "rea-discord-t-0039",
@@ -439,7 +457,8 @@
       "category": "Collectibles, subscriptions and checkout",
       "related_ids": [
         "rea-discord-t-0010"
-      ]
+      ],
+      "definition": "The time when another attempt becomes eligible after a failure-imposed waiting period."
     },
     {
       "id": "rea-discord-t-0043",
@@ -466,7 +485,8 @@
       "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0012"
-      ]
+      ],
+      "definition": "Reuse pending locale-loading work so multiple callers do not trigger redundant imports."
     },
     {
       "id": "rea-discord-t-0046",
@@ -475,7 +495,8 @@
       "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0012"
-      ]
+      ],
+      "definition": "An intermediary for accessing localized messages; verify the exact lazy behavior in the implementation."
     },
     {
       "id": "rea-discord-t-0047",
@@ -484,7 +505,8 @@
       "category": "Diagnostics and operational reliability",
       "related_ids": [
         "rea-discord-t-0017"
-      ]
+      ],
+      "definition": "Metadata assigned during bundling that can help classify stack frames as belonging to an application."
     },
     {
       "id": "rea-discord-t-0048",
@@ -511,7 +533,8 @@
       "category": "Diagnostics and operational reliability",
       "related_ids": [
         "rea-discord-t-0017"
-      ]
+      ],
+      "definition": "A transport container for diagnostic events and attachments."
     },
     {
       "id": "rea-discord-t-0051",
@@ -520,7 +543,8 @@
       "category": "Real-time state and connection recovery",
       "related_ids": [
         "rea-discord-t-0052"
-      ]
+      ],
+      "definition": "A real-time event delivered over a connection; state reconciliation and event ordering remain separate issues."
     },
     {
       "id": "rea-discord-t-0052",
@@ -545,7 +569,8 @@
       "category": "Real-time state and connection recovery",
       "related_ids": [
         "rea-discord-t-0055"
-      ]
+      ],
+      "definition": "A number that can represent the ordering or progress of messages or events."
     },
     {
       "id": "rea-discord-t-0055",
@@ -554,14 +579,16 @@
       "category": "Real-time state and connection recovery",
       "related_ids": [
         "rea-discord-t-0054"
-      ]
+      ],
+      "definition": "Continue a previous logical session after interruption rather than always initializing a fresh one."
     },
     {
       "id": "rea-discord-t-0056",
       "label": "REST reconciliation",
       "aliases": [],
       "category": "Real-time state and connection recovery",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Use an independent request to refresh authoritative state when incremental event delivery leaves uncertainty."
     },
     {
       "id": "rea-discord-t-0057",
@@ -577,7 +604,8 @@
       "category": "Voice, video and media playback",
       "related_ids": [
         "rea-discord-t-0063"
-      ]
+      ],
+      "definition": "Turn compressed audio or video into frames and samples usable by playback."
     },
     {
       "id": "rea-discord-t-0059",
@@ -591,7 +619,8 @@
       "label": "frame decode time",
       "aliases": [],
       "category": "Voice, video and media playback",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Time spent transforming an encoded video frame into displayable content."
     },
     {
       "id": "rea-discord-t-0061",
@@ -605,7 +634,8 @@
       "label": "media fallback",
       "aliases": [],
       "category": "Voice, video and media playback",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Use another playback or decoding path when the preferred format or native browser capability is unavailable."
     },
     {
       "id": "rea-discord-t-0063",
@@ -614,7 +644,8 @@
       "category": "Voice, video and media playback",
       "related_ids": [
         "rea-discord-t-0058"
-      ]
+      ],
+      "definition": "Which media encodings a browser or decoding library can handle."
     },
     {
       "id": "rea-discord-t-0064",
@@ -632,7 +663,8 @@
       "category": "Voice, video and media playback",
       "related_ids": [
         "rea-discord-t-0064"
-      ]
+      ],
+      "definition": "Exchange setup and session-control information for a live media connection; distinct from transporting audio/video."
     },
     {
       "id": "rea-discord-t-0066",
@@ -655,7 +687,8 @@
       "category": "Voice, video and media playback",
       "related_ids": [
         "rea-discord-t-0069"
-      ]
+      ],
+      "definition": "Hold arriving media packets to absorb differences in network arrival timing."
     },
     {
       "id": "rea-discord-t-0069",
@@ -664,7 +697,8 @@
       "category": "Voice, video and media playback",
       "related_ids": [
         "rea-discord-t-0068"
-      ]
+      ],
+      "definition": "Expected network packets fail to arrive; different from delayed or reordered packets."
     },
     {
       "id": "rea-discord-t-0070",
@@ -689,7 +723,8 @@
       "category": "Servers, communities and safety",
       "related_ids": [
         "rea-discord-t-0071"
-      ]
+      ],
+      "definition": "A moderation-related state suggested by an observed identifier; exact meaning and enforcement remain to be verified."
     },
     {
       "id": "rea-discord-t-0073",
@@ -707,14 +742,16 @@
       "category": "Servers, communities and safety",
       "related_ids": [
         "rea-discord-t-0073"
-      ]
+      ],
+      "definition": "A request to enter a community that may have a pending approval lifecycle."
     },
     {
       "id": "rea-discord-t-0075",
       "label": "role permission",
       "aliases": [],
       "category": "Servers, communities and safety",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "An authorization capability associated with a member's role; client presentation is not authoritative enforcement."
     },
     {
       "id": "rea-discord-t-0076",
@@ -728,14 +765,16 @@
       "label": "thread auto-archive",
       "aliases": [],
       "category": "Servers, communities and safety",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Lifecycle rule that moves an inactive discussion thread into an archived state."
     },
     {
       "id": "rea-discord-t-0078",
       "label": "channel following",
       "aliases": [],
       "category": "Servers, communities and safety",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "A relationship through which activity or announcements from one channel can be followed elsewhere."
     },
     {
       "id": "rea-discord-t-0079",
@@ -765,7 +804,8 @@
       "category": "Embedded activities and interactive experiences",
       "related_ids": [
         "rea-discord-t-0083"
-      ]
+      ],
+      "definition": "An interactive application or shared experience placed within a conversation or channel."
     },
     {
       "id": "rea-discord-t-0083",
@@ -788,7 +828,8 @@
       "label": "activity pop-out",
       "aliases": [],
       "category": "Embedded activities and interactive experiences",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Move or present an activity in a separate viewing surface."
     },
     {
       "id": "rea-discord-t-0086",
@@ -809,14 +850,16 @@
       "label": "font readiness",
       "aliases": [],
       "category": "Embedded activities and interactive experiences",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Wait for required fonts before drawing or measuring content that depends on their metrics."
     },
     {
       "id": "rea-discord-t-0089",
       "label": "animation worker",
       "aliases": [],
       "category": "Embedded activities and interactive experiences",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Perform some animation processing off the main UI thread."
     },
     {
       "id": "rea-discord-t-0090",
@@ -837,7 +880,8 @@
       "label": "checkout state",
       "aliases": [],
       "category": "Collectibles, subscriptions and checkout",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Track the current purchase flow, selected items, available payment options and progress."
     },
     {
       "id": "rea-discord-t-0093",
@@ -846,7 +890,8 @@
       "category": "Collectibles, subscriptions and checkout",
       "related_ids": [
         "rea-discord-t-0094"
-      ]
+      ],
+      "definition": "A selected payment method or billing instrument reference, not its confidential credentials."
     },
     {
       "id": "rea-discord-t-0094",
@@ -855,7 +900,8 @@
       "category": "Collectibles, subscriptions and checkout",
       "related_ids": [
         "rea-discord-t-0093"
-      ]
+      ],
+      "definition": "Resolve the default or newly added payment option for a checkout flow."
     },
     {
       "id": "rea-discord-t-0095",
@@ -869,7 +915,8 @@
       "label": "billing history",
       "aliases": [],
       "category": "Collectibles, subscriptions and checkout",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "A record of prior billing transactions or subscription activity."
     },
     {
       "id": "rea-discord-t-0097",
@@ -885,7 +932,8 @@
       "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0020"
-      ]
+      ],
+      "definition": "Function that initializes a bundled module when its loader requests it."
     },
     {
       "id": "rea-discord-t-0099",
@@ -894,7 +942,8 @@
       "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0100"
-      ]
+      ],
+      "definition": "Identifier used by a bundled loader to resolve a module within a particular build."
     },
     {
       "id": "rea-discord-t-0100",
@@ -903,14 +952,16 @@
       "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0099"
-      ]
+      ],
+      "definition": "Relationships among modules or resources, where observed import edges and runtime execution need separate verification."
     },
     {
       "id": "rea-discord-t-0101",
       "label": "code splitting",
       "aliases": [],
       "category": "Client architecture and resource loading",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Partition code into separately loadable chunks so a client need not download every feature initially."
     }
   ],
   "redirects": {}
