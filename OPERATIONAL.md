@@ -35,6 +35,11 @@ c. enable me, through pseudo-deterministic semantics, to locate any relevant con
 
 In other words the glossary should enable someone to rapidly estimate breadth, depth, variance and fill(from the book level, the terms adequately color in all chapter level ideas, from a chapter, the terms adequately color in all Subchapter level ideas, from an idea, the terms adequately color in that particular idea), novelty and recoverability(can vague interests or curiosities if followed through lead to precise technical material, even if the material is directional)
 
+
+Think of it like this, question partition intellectual territory and books as if it were a tree data structure, and the questions were nodes, 
+glossary terms populate it and fill in the nodes as well. Glossary terms are like finding a location simply by describing what you believe it should look like and what you believe the surrounding environment should look like. You shouldn’t need to happen to know the precise terms to be able to eventually navigate to what or what you want.
+
+
 Again, it should make sense if the folder was a title of the case study book. This prevents the accumulation on :slop that is simply asking questions just to ask. I do have a meta rule for this
 The ‘book’ should asymptotically be in such a way that I simply can’t out it down. That is it maximally activates and fires my neurons. This can be done recursively of course, on a, b, and c in the earlier specified criterion A., am I unable to put the chapter titular questions down, within a chapter titular question, am I unable to put its Subchapter titular questions down etc.
 
