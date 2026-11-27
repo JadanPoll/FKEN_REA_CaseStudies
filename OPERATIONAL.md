@@ -46,3 +46,106 @@ The ‘book’ should asymptotically be in such a way that I simply can’t out 
 
 A hyper-specific question that does not expose a landscape of thinking or ideas and is not generating and so is just technical slop. If you find it relevant identify the actual big picture question and persist the more technical important or nuanced stuff in the content under it
 A vague, generic question that could easily appear in a ‘Book’ with a different title is just question-generating slop, in other words asking just to ask. Question like this offer no navigational usefulness or excitement
+
+
+## Examples — what would applying these criteria actually look like?
+
+The following are calibration examples, in the spirit of the cardboard RC plane example in [RSM-02.08](https://github.com/JadanPoll/Learning_Visualizations_Taxonomy/blob/main/Navigationals/The_Richer_Scientific_Method.md). Suppose we're developing a book called **Building RC planes out of cardboard**. We can use the same prospective book to understand several of the criteria, rather than invent a completely different example for each one.
+
+### 1. Forward criterion — what can another investigator do with what we've left behind?
+
+Suppose a month ago we investigated whether a particular cardboard wing could withstand the loads we expected during flight. A month later we want to build a much larger plane and wonder whether we could use the same structural arrangement.
+
+Consider a few possible things we could have left behind:
+
+- **A.** "The wing worked!" We don't know the dimensions of the wing, what we meant by worked, what we did to establish that it worked, or even whether we flew the plane or merely loaded the wing on a bench.
+- **B.** A video of the experiment and a folder containing a great many measurements, with no indication of which observations were relevant to which question or what we actually learned. We have evidence, but someone may have to do much of the investigation again to make use of it.
+- **C.** An explanation of the structural arrangement, what loading conditions we investigated, what happened, what seemed to limit its performance, and references to the relevant measurements or experiment. If we want to know whether a plane of roughly the same size could use the arrangement, much of the answer may already be inferable (forward criterion a.).
+- **D.** Alongside C, we preserved the relevant dimensions, material properties, way we applied the loads, what to measure and where the design might cease to work. Perhaps we didn't investigate larger wings at all. But another investigator can now reproduce the experiment under a different loading condition or use our previous results to develop a more useful model for the larger plane (b. and c.).
+
+Notice that D doesn't require us to have answered the question about the larger plane a month ago. It requires that what we learned then and what we might investigate now are able to compose.
+
+The same thing happens when investigating a software product. Saying "the app uses a clever recovery mechanism" is not particularly useful. Preserving what triggers recovery, what state it tries to recover, and which source and observations led us to that understanding may be enough to answer several future questions. If we can't preserve the original material, can we at least preserve the trajectory by which someone could recover the relevant evidence?
+
+Careful though! An experiment that established that a wing could support a particular static load doesn't establish that the aircraft flies safely. Similarly, successfully reading a function in the source doesn't establish that the corresponding mechanism was exercised at runtime. We should preserve what the certificate actually certifies.
+
+### 2. Criteria A and B — at what resolution should a question live?
+
+Imagine opening our book and encountering the following titles:
+
+| Possible title | What's wrong with it, or what makes it useful? |
+| --- | --- |
+| How do things work? | This could be in almost any book. It tells us virtually nothing about where we're going or why we should go there. |
+| Why did the third cardboard rib deform by 2 mm during test 7? | This might be a perfectly good question during an experiment. But as a chapter title it assumes we already care about that particular design, test and observation. |
+| How do cardboard wings withstand flight loads? | Now we know roughly what we're going to learn, why cardboard matters, and can imagine several interesting constituent questions without already knowing the answers. |
+
+Under the third title we might have subchapters on bending and twisting, how folds and corrugations distribute loads, the construction of lightweight spars, or how humidity changes the useful properties of the material. The third rib and its 2 mm deformation might be extremely interesting evidence under one of these ideas. We haven't lost any of the technical specificity by refusing to make it the title.
+
+Similarly, in a book on ChatGPT, "How do we deal with asynchronous operations?" isn't particularly exciting. "How does ChatGPT know whether a message I asked it to send a moment ago is still the message I want to send?" leads us to a much more particular landscape of questions about changes to the composer, attachments, navigation, and the distinction between readiness and intent.
+
+We don't need to artificially put the word cardboard or ChatGPT into every title. We should be able to recover the kind of book we're reading from the actual ideas in the title, not merely from a name that has been appended to an otherwise generic question.
+
+### 3. Variance — are we adding another dimension or exploring the same dimension at a higher resolution?
+
+Suppose the first four chapters of our cardboard RC plane book are:
+
+1. How do cardboard wings withstand bending?
+2. How do cardboard wings withstand twisting?
+3. How do folds make cardboard wings more rigid?
+4. How do we make cardboard wings more rigid without adding much mass?
+
+These might all be interesting questions, but imagine how little sense we'd have of building an RC plane from reading that table of contents. Compare it with:
+
+1. How do we design an aircraft that can lift its own weight?
+2. How do we make a cardboard airframe light and sufficiently strong?
+3. How do we select a propulsion system and understand how long the plane can fly?
+4. How do we make the aircraft stable and controllable?
+5. How do we construct, test, and repair the plane cheaply?
+
+Now each new chapter gives us a different way of thinking about what makes the plane possible. Under the second chapter the original four questions might be very useful (although we might still want to distinguish rigidity from strength).
+
+Notice that we haven't simply reduced the number of questions. We've changed the set of questions at the chapter level so that they better span what we care about. We can do the same thing recursively within each chapter.
+
+Careful though! We don't need to force these dimensions to be independent in a mathematical sense. A change in structural mass can have profound consequences for propulsion and control. Such connections may be some of the most interesting things in the book.
+
+### 4. Inverse criterion — could the book make us curious about something we didn't know to ask?
+
+Suppose we're primarily curious about making a cardboard plane rigid. We open the book expecting to learn about thicker materials, reinforcements, or perhaps how to reduce bending.
+
+One version of the book simply lists material properties and answers the question we came with. Another version exposes us to the idea of aeroelasticity: could some deformation of a wing actually be useful? Could we design the way the wing twists under loading rather than simply try to prevent all twisting?
+
+Suddenly we're asking different questions. Why do we want rigidity in the first place? What motions must we prevent and which might we deliberately allow? Are there other designs that achieve the desired flight behavior without maximizing stiffness?
+
+We haven't established that a flexible cardboard wing is necessarily better. But we've discovered an entire territory worth investigating that we didn't even know existed when we first opened the book.
+
+This is one way to understand the meta rule about being unable to put the book down. It's not an excuse to exaggerate how ingenious every mechanism is. The actual ideas and distinctions ought to be interesting enough that they make us want to follow the next branch.
+
+### 5. The glossary — how well does it color in the intellectual territory?
+
+Imagine two glossaries for the same book. One contains hundreds of terms concerning cardboard fibers, folds, joints, adhesives and different ways of measuring structural strength. The other contains far fewer terms but exposes us to wing loading, stall, center of gravity, static margin, thrust-to-weight ratio, servo torque, battery sag, sandwich structures and aeroelasticity.
+
+The first glossary may have much greater depth in structural mechanics. The second may give us a much better sense of the breadth and variance of the entire book. Neither is necessarily sufficient.
+
+Suppose we zoom in on the chapter about stability and control. Its vocabulary contains center of gravity, neutral point, static margin and trim. These are meaningful terms, but if we've also got subchapters on steering, disturbances and feedback control, where is the vocabulary about control surfaces, actuator saturation, damping or response to gusts? We might have colored in one region of the chapter rather well while leaving several other regions almost blank.
+
+And if we zoom in further on the idea of static margin, does the vocabulary help us understand the relationship between center of gravity, neutral point and longitudinal stability? Or is static margin simply a technical word in a list?
+
+This is what we mean by fill. **The number of terms in a glossary tells us very little about the amount of intellectual territory it actually colors in at any particular resolution.** A rich cluster of terms that doesn't seem to belong anywhere in our existing question tree might even expose a missing question or chapter. We shouldn't remove those terms simply because we haven't written that chapter yet.
+
+### 6. Recoverability — finding the place without knowing its name
+
+Imagine we're trying to find a town we once visited. We don't remember its name but recall that it was somewhere near a river, had a railway station and was surrounded by mountains. It would be quite useless to have a map that only allowed us to look up the exact name of the town.
+
+We might first find the river, narrow the search to the towns near the railway, and eventually recognize the place from the surrounding terrain. Some of what we remembered might even have been wrong.
+
+Consider the corresponding experience of learning about planes. We ask, "Why does my plane keep turning its nose upwards and then downwards again, even though I'm not moving the controls?" We may not know what pitch oscillations, longitudinal stability, damping or a phugoid are.
+
+A poor glossary only returns something if we already know to search for those words. A useful one allows us to get from descriptions of the motion, the absence of control inputs and the behavior of the aircraft over time, to several possible ideas. We might then find ourselves investigating the difference between a short-period oscillation, a phugoid, a control-system oscillation or a stall-related motion.
+
+The glossary shouldn't simply decide which of these we're experiencing. The description alone may not be sufficient. But can it get us to the relevant technical territory and expose the distinctions or observations that would help us figure it out?
+
+In much the same way we might ask about a software application, "What happens if the text changes while the app is waiting to upload a file?" We needn't already know the words currentness predicate or post-await validation to find a useful direction.
+
+This gives us a rather simple test of a question landscape and its glossary: give them to someone who is curious about the book but doesn't yet know its terminology. Can they find things they were looking for, and discover things they weren't looking for but now want to understand? Can another investigator then follow their questions all the way to the relevant evidence or a precise direction for obtaining it?
+
+We should evaluate both directions. A book that is very easy to retrieve exact answers from but doesn't make us curious may satisfy much of the forward criterion and little of the inverse criterion. A book full of fascinating but unsupported ideas may do the opposite. What we're trying to develop is a book in which these two properties reinforce one another.
