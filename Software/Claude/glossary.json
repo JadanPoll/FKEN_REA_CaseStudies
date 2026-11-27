@@ -10,12 +10,16 @@
         "incremental parser",
         "streaming parse"
       ],
-      "category": "Rendering",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0002",
         "rea-claude-t-0003",
         "rea-claude-t-0004",
-        "rea-claude-t-0033"
+        "rea-claude-t-0033",
+        "rea-claude-t-0037",
+        "rea-claude-t-0038",
+        "rea-claude-t-0039",
+        "rea-claude-t-0040"
       ]
     },
     {
@@ -25,7 +29,7 @@
         "AST",
         "syntax tree"
       ],
-      "category": "Rendering",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0001"
       ]
@@ -34,7 +38,7 @@
       "id": "rea-claude-t-0003",
       "label": "stable prefix",
       "aliases": [],
-      "category": "Rendering",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0001"
       ]
@@ -43,7 +47,7 @@
       "id": "rea-claude-t-0004",
       "label": "guarded fast path",
       "aliases": [],
-      "category": "Optimization",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0001",
         "rea-claude-t-0005"
@@ -53,7 +57,7 @@
       "id": "rea-claude-t-0005",
       "label": "full-parse fallback",
       "aliases": [],
-      "category": "Rendering",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0004"
       ]
@@ -64,10 +68,14 @@
       "aliases": [
         "viewport anchor"
       ],
-      "category": "Rendering",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0007",
-        "rea-claude-t-0008"
+        "rea-claude-t-0008",
+        "rea-claude-t-0041",
+        "rea-claude-t-0042",
+        "rea-claude-t-0043",
+        "rea-claude-t-0044"
       ]
     },
     {
@@ -76,7 +84,7 @@
       "aliases": [
         "virtualized list"
       ],
-      "category": "Rendering",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0006",
         "rea-claude-t-0009"
@@ -88,7 +96,7 @@
       "aliases": [
         "inertial scrolling"
       ],
-      "category": "Input",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0006",
         "rea-claude-t-0010"
@@ -100,7 +108,7 @@
       "aliases": [
         "measurement cache"
       ],
-      "category": "Rendering",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0007"
       ]
@@ -111,7 +119,7 @@
       "aliases": [
         "rubber band scrolling"
       ],
-      "category": "Input",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0008"
       ]
@@ -122,17 +130,21 @@
       "aliases": [
         "state restoration"
       ],
-      "category": "Persistence",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0013",
-        "rea-claude-t-0034"
+        "rea-claude-t-0034",
+        "rea-claude-t-0045",
+        "rea-claude-t-0046",
+        "rea-claude-t-0047",
+        "rea-claude-t-0048"
       ]
     },
     {
       "id": "rea-claude-t-0012",
       "label": "write epoch",
       "aliases": [],
-      "category": "Persistence",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0013",
         "rea-claude-t-0018",
@@ -144,7 +156,7 @@
       "id": "rea-claude-t-0013",
       "label": "read barrier",
       "aliases": [],
-      "category": "Persistence",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0011",
         "rea-claude-t-0012"
@@ -156,17 +168,20 @@
       "aliases": [
         "optimistic mutation"
       ],
-      "category": "Consistency",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0015",
-        "rea-claude-t-0016"
+        "rea-claude-t-0016",
+        "rea-claude-t-0049",
+        "rea-claude-t-0050",
+        "rea-claude-t-0051"
       ]
     },
     {
       "id": "rea-claude-t-0015",
       "label": "selective rollback",
       "aliases": [],
-      "category": "Consistency",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0014",
         "rea-claude-t-0016"
@@ -178,7 +193,7 @@
       "aliases": [
         "per-field sequence"
       ],
-      "category": "Consistency",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0014",
         "rea-claude-t-0015",
@@ -191,10 +206,13 @@
       "aliases": [
         "provisional ID"
       ],
-      "category": "Consistency",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0018",
-        "rea-claude-t-0019"
+        "rea-claude-t-0019",
+        "rea-claude-t-0052",
+        "rea-claude-t-0053",
+        "rea-claude-t-0054"
       ]
     },
     {
@@ -203,17 +221,18 @@
       "aliases": [
         "generation guard"
       ],
-      "category": "Consistency",
+      "category": "Account isolation and privacy",
       "related_ids": [
         "rea-claude-t-0012",
-        "rea-claude-t-0017"
+        "rea-claude-t-0017",
+        "rea-claude-t-0100"
       ]
     },
     {
       "id": "rea-claude-t-0019",
       "label": "eventual consistency",
       "aliases": [],
-      "category": "Consistency",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0017"
       ]
@@ -222,18 +241,21 @@
       "id": "rea-claude-t-0020",
       "label": "Web Worker",
       "aliases": [],
-      "category": "Execution",
+      "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0021",
         "rea-claude-t-0022",
-        "rea-claude-t-0032"
+        "rea-claude-t-0032",
+        "rea-claude-t-0055",
+        "rea-claude-t-0056",
+        "rea-claude-t-0057"
       ]
     },
     {
       "id": "rea-claude-t-0021",
       "label": "CompressionStream",
       "aliases": [],
-      "category": "Execution",
+      "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0020"
       ]
@@ -244,7 +266,7 @@
       "aliases": [
         "transferable buffer"
       ],
-      "category": "Execution",
+      "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0020",
         "rea-claude-t-0031"
@@ -256,10 +278,14 @@
       "aliases": [
         "LoAF"
       ],
-      "category": "Performance",
+      "category": "Performance engineering and observability",
       "related_ids": [
         "rea-claude-t-0024",
-        "rea-claude-t-0025"
+        "rea-claude-t-0025",
+        "rea-claude-t-0058",
+        "rea-claude-t-0059",
+        "rea-claude-t-0060",
+        "rea-claude-t-0061"
       ]
     },
     {
@@ -268,7 +294,7 @@
       "aliases": [
         "INP"
       ],
-      "category": "Performance",
+      "category": "Performance engineering and observability",
       "related_ids": [
         "rea-claude-t-0023"
       ]
@@ -277,7 +303,7 @@
       "id": "rea-claude-t-0025",
       "label": "long task",
       "aliases": [],
-      "category": "Performance",
+      "category": "Performance engineering and observability",
       "related_ids": [
         "rea-claude-t-0023"
       ]
@@ -286,9 +312,10 @@
       "id": "rea-claude-t-0026",
       "label": "microphone preconnection",
       "aliases": [],
-      "category": "Audio",
+      "category": "Voice and multimodal conversations",
       "related_ids": [
-        "rea-claude-t-0027"
+        "rea-claude-t-0027",
+        "rea-claude-t-0076"
       ]
     },
     {
@@ -297,33 +324,35 @@
       "aliases": [
         "sample clock mismatch"
       ],
-      "category": "Audio",
+      "category": "Voice and multimodal conversations",
       "related_ids": [
         "rea-claude-t-0026",
-        "rea-claude-t-0028"
+        "rea-claude-t-0028",
+        "rea-claude-t-0078"
       ]
     },
     {
       "id": "rea-claude-t-0028",
       "label": "playback underrun",
       "aliases": [],
-      "category": "Audio",
+      "category": "Voice and multimodal conversations",
       "related_ids": [
-        "rea-claude-t-0027"
+        "rea-claude-t-0027",
+        "rea-claude-t-0081"
       ]
     },
     {
       "id": "rea-claude-t-0029",
       "label": "stream backpressure",
       "aliases": [],
-      "category": "Execution",
+      "category": "Response delivery and recovery",
       "related_ids": []
     },
     {
       "id": "rea-claude-t-0030",
       "label": "cross-tab coordination",
       "aliases": [],
-      "category": "Consistency",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0012"
       ]
@@ -332,7 +361,7 @@
       "id": "rea-claude-t-0031",
       "label": "structured clone",
       "aliases": [],
-      "category": "Execution",
+      "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0022"
       ]
@@ -343,7 +372,7 @@
       "aliases": [
         "correlation ID"
       ],
-      "category": "Execution",
+      "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0020"
       ]
@@ -352,7 +381,7 @@
       "id": "rea-claude-t-0033",
       "label": "progressive rendering",
       "aliases": [],
-      "category": "Rendering",
+      "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0001"
       ]
@@ -361,7 +390,7 @@
       "id": "rea-claude-t-0034",
       "label": "read timeout",
       "aliases": [],
-      "category": "Persistence",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0011"
       ]
@@ -370,7 +399,7 @@
       "id": "rea-claude-t-0035",
       "label": "conditional write",
       "aliases": [],
-      "category": "Persistence",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0012"
       ]
@@ -379,10 +408,610 @@
       "id": "rea-claude-t-0036",
       "label": "mutation sequence",
       "aliases": [],
-      "category": "Consistency",
+      "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0016"
       ]
+    },
+    {
+      "id": "rea-claude-t-0037",
+      "label": "AST grafting",
+      "aliases": [],
+      "category": "Rendering streaming responses",
+      "related_ids": [
+        "rea-claude-t-0001"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0038",
+      "label": "source offset adjustment",
+      "aliases": [],
+      "category": "Rendering streaming responses",
+      "related_ids": [
+        "rea-claude-t-0001"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0039",
+      "label": "Markdown code fence",
+      "aliases": [],
+      "category": "Rendering streaming responses",
+      "related_ids": [
+        "rea-claude-t-0001"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0040",
+      "label": "table row cache",
+      "aliases": [],
+      "category": "Rendering streaming responses",
+      "related_ids": [
+        "rea-claude-t-0001"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0041",
+      "label": "deferred scroll adjustment",
+      "aliases": [],
+      "category": "Rendering streaming responses",
+      "related_ids": [
+        "rea-claude-t-0006"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0042",
+      "label": "touch-end grace period",
+      "aliases": [],
+      "category": "Rendering streaming responses",
+      "related_ids": [
+        "rea-claude-t-0006"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0043",
+      "label": "measurement invalidation",
+      "aliases": [],
+      "category": "Rendering streaming responses",
+      "related_ids": [
+        "rea-claude-t-0006"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0044",
+      "label": "scroll offset reconciliation",
+      "aliases": [],
+      "category": "Rendering streaming responses",
+      "related_ids": [
+        "rea-claude-t-0006"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0045",
+      "label": "draft ownership",
+      "aliases": [],
+      "category": "Account isolation and privacy",
+      "related_ids": [
+        "rea-claude-t-0011",
+        "rea-claude-t-0101"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0046",
+      "label": "hydration timeout",
+      "aliases": [],
+      "category": "Conversation drafts, settings and session state",
+      "related_ids": [
+        "rea-claude-t-0011"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0047",
+      "label": "write suppression",
+      "aliases": [],
+      "category": "Account isolation and privacy",
+      "related_ids": [
+        "rea-claude-t-0011"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0048",
+      "label": "storage retry guard",
+      "aliases": [],
+      "category": "Conversation drafts, settings and session state",
+      "related_ids": [
+        "rea-claude-t-0011"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0049",
+      "label": "query cache reconciliation",
+      "aliases": [],
+      "category": "Conversation drafts, settings and session state",
+      "related_ids": [
+        "rea-claude-t-0014"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0050",
+      "label": "mutation rollback ownership",
+      "aliases": [],
+      "category": "Conversation drafts, settings and session state",
+      "related_ids": [
+        "rea-claude-t-0014"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0051",
+      "label": "pending optimistic patch",
+      "aliases": [],
+      "category": "Conversation drafts, settings and session state",
+      "related_ids": [
+        "rea-claude-t-0014"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0052",
+      "label": "provisional session listing",
+      "aliases": [],
+      "category": "Conversation drafts, settings and session state",
+      "related_ids": [
+        "rea-claude-t-0017"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0053",
+      "label": "confirmed absence",
+      "aliases": [],
+      "category": "Conversation drafts, settings and session state",
+      "related_ids": [
+        "rea-claude-t-0017"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0054",
+      "label": "bounded recovery",
+      "aliases": [],
+      "category": "Conversation drafts, settings and session state",
+      "related_ids": [
+        "rea-claude-t-0017"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0055",
+      "label": "capability handshake",
+      "aliases": [],
+      "category": "Response delivery and recovery",
+      "related_ids": [
+        "rea-claude-t-0020"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0056",
+      "label": "buffer ownership transfer",
+      "aliases": [],
+      "category": "Response delivery and recovery",
+      "related_ids": [
+        "rea-claude-t-0020"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0057",
+      "label": "gzip",
+      "aliases": [],
+      "category": "Response delivery and recovery",
+      "related_ids": [
+        "rea-claude-t-0020"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0058",
+      "label": "frame scheduling delay",
+      "aliases": [],
+      "category": "Performance engineering and observability",
+      "related_ids": [
+        "rea-claude-t-0023"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0059",
+      "label": "style and layout",
+      "aliases": [],
+      "category": "Performance engineering and observability",
+      "related_ids": [
+        "rea-claude-t-0023"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0060",
+      "label": "script attribution",
+      "aliases": [],
+      "category": "Performance engineering and observability",
+      "related_ids": [
+        "rea-claude-t-0023"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0061",
+      "label": "render probe",
+      "aliases": [],
+      "category": "Performance engineering and observability",
+      "related_ids": [
+        "rea-claude-t-0023"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0062",
+      "label": "conversation tree",
+      "aliases": [],
+      "category": "Conversation structure and navigation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0063",
+      "label": "message identity",
+      "aliases": [],
+      "category": "Conversation structure and navigation",
+      "related_ids": [
+        "rea-claude-t-0064"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0064",
+      "label": "branch selection",
+      "aliases": [],
+      "category": "Conversation structure and navigation",
+      "related_ids": [
+        "rea-claude-t-0063"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0065",
+      "label": "regeneration",
+      "aliases": [],
+      "category": "Conversation structure and navigation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0066",
+      "label": "selected leaf",
+      "aliases": [],
+      "category": "Conversation structure and navigation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0067",
+      "label": "stream cancellation",
+      "aliases": [],
+      "category": "Response delivery and recovery",
+      "related_ids": [
+        "rea-claude-t-0068"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0068",
+      "label": "request retry",
+      "aliases": [],
+      "category": "Response delivery and recovery",
+      "related_ids": [
+        "rea-claude-t-0067"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0069",
+      "label": "connection recovery",
+      "aliases": [],
+      "category": "Response delivery and recovery",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0070",
+      "label": "network status",
+      "aliases": [],
+      "category": "Response delivery and recovery",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0071",
+      "label": "stream decoding",
+      "aliases": [],
+      "category": "Response delivery and recovery",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0072",
+      "label": "request deduplication",
+      "aliases": [],
+      "category": "Response delivery and recovery",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0073",
+      "label": "WebRTC session rollover",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": [
+        "rea-claude-t-0074"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0074",
+      "label": "media silence detection",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": [
+        "rea-claude-t-0073"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0075",
+      "label": "socket silence detection",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0076",
+      "label": "microphone permissions",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": [
+        "rea-claude-t-0026"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0077",
+      "label": "media track lifecycle",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0078",
+      "label": "sample rate",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": [
+        "rea-claude-t-0027"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0079",
+      "label": "audio frame delivery",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0080",
+      "label": "output latency",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0081",
+      "label": "audio buffering",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": [
+        "rea-claude-t-0028"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0082",
+      "label": "attachment admission",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": [
+        "rea-claude-t-0084"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0083",
+      "label": "document conversion",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0084",
+      "label": "page limit",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": [
+        "rea-claude-t-0082"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0085",
+      "label": "file upload",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0086",
+      "label": "upload progress",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0087",
+      "label": "attachment queue",
+      "aliases": [],
+      "category": "Voice and multimodal conversations",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0088",
+      "label": "tool call",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": [
+        "rea-claude-t-0089"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0089",
+      "label": "tool result",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": [
+        "rea-claude-t-0088"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0090",
+      "label": "Model Context Protocol",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0091",
+      "label": "per-call consent",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": [
+        "rea-claude-t-0093"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0092",
+      "label": "approval prompt",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0093",
+      "label": "tool permission",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": [
+        "rea-claude-t-0091"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0094",
+      "label": "tool lifecycle",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0095",
+      "label": "interactive artifact",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0096",
+      "label": "MCP app",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0097",
+      "label": "content handoff",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0098",
+      "label": "embedded interface",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0099",
+      "label": "artifact sandbox",
+      "aliases": [],
+      "category": "Tools, artifacts and interactive work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0100",
+      "label": "account switch",
+      "aliases": [],
+      "category": "Account isolation and privacy",
+      "related_ids": [
+        "rea-claude-t-0018"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0101",
+      "label": "incognito draft",
+      "aliases": [],
+      "category": "Account isolation and privacy",
+      "related_ids": [
+        "rea-claude-t-0045"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0102",
+      "label": "account isolation",
+      "aliases": [],
+      "category": "Account isolation and privacy",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0103",
+      "label": "stale identity",
+      "aliases": [],
+      "category": "Account isolation and privacy",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0104",
+      "label": "usage limit",
+      "aliases": [],
+      "category": "Usage limits and billing",
+      "related_ids": [
+        "rea-claude-t-0106"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0105",
+      "label": "extra usage",
+      "aliases": [],
+      "category": "Usage limits and billing",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0106",
+      "label": "spend limit",
+      "aliases": [],
+      "category": "Usage limits and billing",
+      "related_ids": [
+        "rea-claude-t-0104"
+      ]
+    },
+    {
+      "id": "rea-claude-t-0107",
+      "label": "credits",
+      "aliases": [],
+      "category": "Usage limits and billing",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0108",
+      "label": "model entitlement",
+      "aliases": [],
+      "category": "Usage limits and billing",
+      "related_ids": []
+    },
+    {
+      "id": "rea-claude-t-0109",
+      "label": "payment setup",
+      "aliases": [],
+      "category": "Usage limits and billing",
+      "related_ids": []
     }
   ],
   "redirects": {}
