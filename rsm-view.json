@@ -10,6 +10,24 @@
       "projection": {
         "shape": "flat"
       }
+    },
+    {
+      "id": "claude",
+      "title": "Claude — Engineering case studies",
+      "short_title": "Claude",
+      "file": "Software/Claude/investigation.json",
+      "projection": {
+        "shape": "flat"
+      }
+    },
+    {
+      "id": "discord",
+      "title": "Discord — Engineering case studies",
+      "short_title": "Discord",
+      "file": "Software/Discord/investigation.json",
+      "projection": {
+        "shape": "flat"
+      }
     }
   ]
 }
