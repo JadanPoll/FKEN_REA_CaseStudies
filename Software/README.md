@@ -6,9 +6,16 @@
 
 ## Canonical records
 
-- [investigation.json](investigation.json): ordinary-language questions, mechanism explanations, transferable distinctions, qualifications and optional HTMlets. Mechanism-oriented groups allow comparison across products; stable IDs identify individual cases.
-- [evidence.json](evidence.json): replayable JSON plans, run IDs and compact result receipts, interpreted outcomes, source filenames, SHA-256 digests and half-open UTF-16 ranges. A reconstructed plan is explicitly marked. A fresh deployment may not contain the same files.
-- [rsm-view.json](../rsm-view.json): view mapping only; no copied knowledge.
+Each product owns an independent, evolving investigation folder. Do not combine multiple products into a single growing evidence archive.
+
+| Product | Question landscape | Evidence and replay |
+| --- | --- | --- |
+| Claude | [investigation.json](Claude/investigation.json) | [evidence.json](Claude/evidence.json) |
+| Discord | [investigation.json](Discord/investigation.json) | [evidence.json](Discord/evidence.json) |
+
+Within each folder, `investigation.json` owns questions, mechanism explanations, transferable insights, qualifications and optional HTMlets. `evidence.json` owns replayable JSON plans, run IDs, compact result receipts, source filenames, SHA-256 digests and half-open UTF-16 ranges. Keep stable study IDs and append new evidence rather than overwrite older observations. Reconstructed plans are explicitly marked; fresh deployments may differ.
+
+The software-level [investigation.json](investigation.json) is only a product navigation index, with optional cross-product mechanism references. The root [rsm-view.json](../rsm-view.json) registers the index and product views in the canonical viewer. Neither duplicates educational content. Add a new product folder and its view/index entry when a new product is investigated.
 
 Start from a question, inspect the mechanism, then expand **Investigation plans & receipts** to recover and copy the relevant JSON. Use the retained archive if available; verify digests before treating old offsets as evidence. A successful plan is not necessarily a successful hypothesis test.
 
