@@ -1,0 +1,816 @@
+{
+  "schema_version": "1.0",
+  "domain_id": "REA-youtube",
+  "title": "YouTube — Engineering vocabulary",
+  "terms": [
+    {
+      "id": "rea-youtube-t-0001",
+      "label": "gzip decompression",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": [
+        "rea-youtube-t-0006"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0002",
+      "label": "capability fallback",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": [
+        "rea-youtube-t-0003",
+        "rea-youtube-t-0004"
+      ],
+      "definition": "Try another implementation of the same contract when the preferred capability is absent or fails."
+    },
+    {
+      "id": "rea-youtube-t-0003",
+      "label": "DecompressionStream",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": [
+        "rea-youtube-t-0002"
+      ],
+      "definition": "Native browser API for decoding compressed byte streams."
+    },
+    {
+      "id": "rea-youtube-t-0004",
+      "label": "WebAssembly",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": [
+        "rea-youtube-t-0002"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0005",
+      "label": "asm.js",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0006",
+      "label": "Huffman decoding",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": [
+        "rea-youtube-t-0001"
+      ],
+      "definition": "Decode variable-length symbols using a prefix code, often part of gzip decompression."
+    },
+    {
+      "id": "rea-youtube-t-0007",
+      "label": "latency instrumentation",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0008",
+      "label": "adaptive bitrate streaming",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": [
+        "rea-youtube-t-0013",
+        "rea-youtube-t-0010"
+      ],
+      "definition": "Adapt media representation to delivery and playback constraints; the specific selection policy remains open."
+    },
+    {
+      "id": "rea-youtube-t-0009",
+      "label": "SABR",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": [],
+      "definition": "Streaming-related name observed in the player configuration; do not infer its full protocol from the acronym."
+    },
+    {
+      "id": "rea-youtube-t-0010",
+      "label": "host fallback",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": [
+        "rea-youtube-t-0008"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0011",
+      "label": "format selection",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0012",
+      "label": "network adaptation",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0013",
+      "label": "buffer occupancy",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "related_ids": [
+        "rea-youtube-t-0008"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0014",
+      "label": "media segment",
+      "aliases": [],
+      "category": "The video player's media timeline",
+      "related_ids": [
+        "rea-youtube-t-0020"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0015",
+      "label": "audio-video synchronization",
+      "aliases": [],
+      "category": "The video player's media timeline",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0016",
+      "label": "timestamp discontinuity",
+      "aliases": [],
+      "category": "The video player's media timeline",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0017",
+      "label": "timeline drift",
+      "aliases": [],
+      "category": "The video player's media timeline",
+      "related_ids": [
+        "rea-youtube-t-0021"
+      ],
+      "definition": "Difference between expected playback timing and observed segment timing."
+    },
+    {
+      "id": "rea-youtube-t-0018",
+      "label": "WebM",
+      "aliases": [],
+      "category": "The video player's media timeline",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0019",
+      "label": "MP4 container",
+      "aliases": [],
+      "category": "The video player's media timeline",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0020",
+      "label": "segment duration",
+      "aliases": [],
+      "category": "The video player's media timeline",
+      "related_ids": [
+        "rea-youtube-t-0014"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0021",
+      "label": "timestamp reconciliation",
+      "aliases": [],
+      "category": "The video player's media timeline",
+      "related_ids": [
+        "rea-youtube-t-0017"
+      ],
+      "definition": "Align media segment timing to an effective playback timeline while accounting for discontinuities."
+    },
+    {
+      "id": "rea-youtube-t-0022",
+      "label": "module dependency graph",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0023",
+        "rea-youtube-t-0028"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0023",
+      "label": "dependency closure",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0022"
+      ],
+      "definition": "The complete set of dependencies recursively needed by a requested module."
+    },
+    {
+      "id": "rea-youtube-t-0024",
+      "label": "requested module set",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0026"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0025",
+      "label": "in-flight module",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0026",
+      "label": "module readiness",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0024",
+        "rea-youtube-t-0034"
+      ],
+      "definition": "Evidence that required module code has actually initialized, distinct from fetching a script successfully."
+    },
+    {
+      "id": "rea-youtube-t-0027",
+      "label": "request partitioning",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0028",
+      "label": "graph refresh",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0022"
+      ],
+      "definition": "Update dependency metadata before resolving another load request."
+    },
+    {
+      "id": "rea-youtube-t-0029",
+      "label": "negative loading",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [],
+      "definition": "An observed loader mode using already requested module information; the full server protocol remains open."
+    },
+    {
+      "id": "rea-youtube-t-0030",
+      "label": "CSS module loading",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0031",
+      "label": "feature module",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0032"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0032",
+      "label": "lazy loading",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0031"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0033",
+      "label": "player plugin",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0034",
+      "label": "module registration",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0026"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0035",
+      "label": "asset inventory",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0036",
+      "label": "dependency acquisition",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0037",
+      "label": "Polymer lifecycle",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0038",
+      "label": "callback wrapping",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0040"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0039",
+      "label": "WeakMap",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0040"
+      ],
+      "definition": "Map keyed by objects without independently retaining those keys, useful for matching wrapped callbacks."
+    },
+    {
+      "id": "rea-youtube-t-0040",
+      "label": "listener identity",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": [
+        "rea-youtube-t-0038",
+        "rea-youtube-t-0039"
+      ],
+      "definition": "The identity of an event callback that must be preserved or mapped to remove the correct listener."
+    },
+    {
+      "id": "rea-youtube-t-0041",
+      "label": "exception containment",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0042",
+      "label": "microtask",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0043",
+      "label": "render callback",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0044",
+      "label": "caption track",
+      "aliases": [],
+      "category": "The viewing experience beyond playback",
+      "related_ids": [
+        "rea-youtube-t-0045"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0045",
+      "label": "subtitle rendering",
+      "aliases": [],
+      "category": "The viewing experience beyond playback",
+      "related_ids": [
+        "rea-youtube-t-0044"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0046",
+      "label": "offline playback",
+      "aliases": [],
+      "category": "The viewing experience beyond playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0047",
+      "label": "remote playback",
+      "aliases": [],
+      "category": "The viewing experience beyond playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0048",
+      "label": "miniplayer",
+      "aliases": [],
+      "category": "The viewing experience beyond playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0049",
+      "label": "playback control",
+      "aliases": [],
+      "category": "The viewing experience beyond playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0050",
+      "label": "annotation",
+      "aliases": [],
+      "category": "The viewing experience beyond playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0051",
+      "label": "ad placement",
+      "aliases": [],
+      "category": "Advertising as part of the playback timeline",
+      "related_ids": [
+        "rea-youtube-t-0053"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0052",
+      "label": "midroll",
+      "aliases": [],
+      "category": "Advertising as part of the playback timeline",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0053",
+      "label": "cue point",
+      "aliases": [],
+      "category": "Advertising as part of the playback timeline",
+      "related_ids": [
+        "rea-youtube-t-0051",
+        "rea-youtube-t-0054"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0054",
+      "label": "prefetch window",
+      "aliases": [],
+      "category": "Advertising as part of the playback timeline",
+      "related_ids": [
+        "rea-youtube-t-0053"
+      ],
+      "definition": "Time allowed to obtain resources before their scheduled use."
+    },
+    {
+      "id": "rea-youtube-t-0055",
+      "label": "ad slot",
+      "aliases": [],
+      "category": "Advertising as part of the playback timeline",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0056",
+      "label": "playback interruption",
+      "aliases": [],
+      "category": "Advertising as part of the playback timeline",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0057",
+      "label": "response envelope",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0058"
+      ],
+      "definition": "Outer transport or structural representation from which an application payload is extracted."
+    },
+    {
+      "id": "rea-youtube-t-0058",
+      "label": "response extraction",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0057"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0059",
+      "label": "playability status",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0062"
+      ],
+      "definition": "Client-visible classification of whether a particular media response can be played."
+    },
+    {
+      "id": "rea-youtube-t-0060",
+      "label": "error state",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0061",
+      "label": "domain validation",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0062",
+      "label": "error renderer",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0059"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0063",
+      "label": "response integrity",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0064"
+      ],
+      "definition": "Consistency and trust properties of a response, distinct from mere syntactic validity."
+    },
+    {
+      "id": "rea-youtube-t-0064",
+      "label": "consistency check",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0063"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0065",
+      "label": "reference data",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0066",
+      "label": "decode failure",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0067",
+      "label": "parse failure",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0068",
+      "label": "validation outcome",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0069",
+      "label": "client attestation",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0070"
+      ],
+      "definition": "A mechanism providing evidence about a client or execution environment to a verifier; interface observations do not prove the verifier's trust guarantees."
+    },
+    {
+      "id": "rea-youtube-t-0070",
+      "label": "challenge-response",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0069"
+      ],
+      "definition": "An exchange in which a challenge is answered by a computation or observation; its actual security properties depend on the implementation."
+    },
+    {
+      "id": "rea-youtube-t-0071",
+      "label": "integrity token",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0072",
+      "label": "capability negotiation",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0073",
+      "label": "VM lifecycle",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0074"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0074",
+      "label": "bounded timeout",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0073"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0075",
+      "label": "trust boundary",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0076",
+      "label": "differential testing",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0077"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0077",
+      "label": "control observation",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0076"
+      ],
+      "definition": "A comparison measurement designed to isolate the variable of interest."
+    },
+    {
+      "id": "rea-youtube-t-0078",
+      "label": "repeatability",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0079"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0079",
+      "label": "inconclusive result",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": [
+        "rea-youtube-t-0078"
+      ],
+      "definition": "A trial that cannot support either a positive or negative conclusion."
+    },
+    {
+      "id": "rea-youtube-t-0080",
+      "label": "classification uncertainty",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0081",
+      "label": "resource timing",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0082",
+      "label": "diagnostic aggregation",
+      "aliases": [],
+      "category": "Playback integrity and client attestation",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0083",
+      "label": "error provenance",
+      "aliases": [],
+      "category": "Diagnosing failures at YouTube scale",
+      "related_ids": [
+        "rea-youtube-t-0085"
+      ],
+      "definition": "Attribute an error to the code or subsystem from which it originated."
+    },
+    {
+      "id": "rea-youtube-t-0084",
+      "label": "weighted error sampling",
+      "aliases": [],
+      "category": "Diagnosing failures at YouTube scale",
+      "related_ids": [
+        "rea-youtube-t-0089"
+      ],
+      "definition": "Select diagnostic events using classes or weights rather than treating every event identically."
+    },
+    {
+      "id": "rea-youtube-t-0085",
+      "label": "stack trace",
+      "aliases": [],
+      "category": "Diagnosing failures at YouTube scale",
+      "related_ids": [
+        "rea-youtube-t-0083"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0086",
+      "label": "third-party script",
+      "aliases": [],
+      "category": "Diagnosing failures at YouTube scale",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0087",
+      "label": "browser compatibility",
+      "aliases": [],
+      "category": "Diagnosing failures at YouTube scale",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0088",
+      "label": "error suppression",
+      "aliases": [],
+      "category": "Diagnosing failures at YouTube scale",
+      "related_ids": []
+    },
+    {
+      "id": "rea-youtube-t-0089",
+      "label": "diagnostic noise",
+      "aliases": [],
+      "category": "Diagnosing failures at YouTube scale",
+      "related_ids": [
+        "rea-youtube-t-0084"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0090",
+      "label": "server-driven UI",
+      "aliases": [],
+      "category": "Server-driven navigation and recommendations",
+      "related_ids": [
+        "rea-youtube-t-0093"
+      ],
+      "definition": "Interface data or commands represented in server responses, interpreted by a client."
+    },
+    {
+      "id": "rea-youtube-t-0091",
+      "label": "InnerTube command",
+      "aliases": [],
+      "category": "Server-driven navigation and recommendations",
+      "related_ids": [
+        "rea-youtube-t-0092"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0092",
+      "label": "navigation endpoint",
+      "aliases": [],
+      "category": "Server-driven navigation and recommendations",
+      "related_ids": [
+        "rea-youtube-t-0091"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0093",
+      "label": "renderer data",
+      "aliases": [],
+      "category": "Server-driven navigation and recommendations",
+      "related_ids": [
+        "rea-youtube-t-0090"
+      ],
+      "definition": "Structured response fields describing display content; distinct from executed rendering logic."
+    },
+    {
+      "id": "rea-youtube-t-0094",
+      "label": "optimistic update",
+      "aliases": [],
+      "category": "Server-driven navigation and recommendations",
+      "related_ids": [],
+      "definition": "Show an intended state change before authoritative acknowledgment."
+    },
+    {
+      "id": "rea-youtube-t-0095",
+      "label": "playlist state",
+      "aliases": [],
+      "category": "Server-driven navigation and recommendations",
+      "related_ids": [
+        "rea-youtube-t-0096"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0096",
+      "label": "autoplay",
+      "aliases": [],
+      "category": "Server-driven navigation and recommendations",
+      "related_ids": [
+        "rea-youtube-t-0095"
+      ]
+    }
+  ],
+  "redirects": {}
+}
