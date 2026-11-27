@@ -1,0 +1,1174 @@
+{
+  "schema": "rea-evidence/v1",
+  "origin": "https://chatgpt.com",
+  "export": {
+    "schema": "ai_pill_os.recent_runs.v1",
+    "version": "0.4.34",
+    "exportedAt": "2026-11-27T09:36:12.843Z",
+    "count": 9,
+    "order": "newest first",
+    "scope": "Retained recent runs; no acquisition receipt in this batch."
+  },
+  "sources": [
+    {
+      "id": "G-src-copy",
+      "file": "464146.5d4546dfcd.js",
+      "title": "464146.5d4546dfcd.js",
+      "sha256": "9a15b2db8c0e8a0d8f17d5bd0914d9fc7c466ff6f0617483d17ac0f8be0c5e23",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/464146.5d4546dfcd.js",
+      "ranges": [
+        {
+          "start": 63500,
+          "end": 75500,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "G-copy"
+        }
+      ]
+    },
+    {
+      "id": "G-src-selection",
+      "file": "681678.28a09074e0.js",
+      "title": "681678.28a09074e0.js",
+      "sha256": "4381384857222116de31ef13cdb0e5ba26981fc9d304c4046bb4a91184295108",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/681678.28a09074e0.js",
+      "ranges": [
+        {
+          "start": 19900,
+          "end": 26400,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "G-copy"
+        }
+      ]
+    },
+    {
+      "id": "G-src-recover",
+      "file": "420899.fa79bc2158.js",
+      "title": "420899.fa79bc2158.js",
+      "sha256": "0112529555af4562605c7f30fdca15eb0dd566bc54b31e130e4774238c55b6f6",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/420899.fa79bc2158.js",
+      "ranges": [
+        {
+          "start": 11232,
+          "end": 18385,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "G-continuity"
+        }
+      ]
+    },
+    {
+      "id": "G-src-home",
+      "file": "7078.55b4a92118.js",
+      "title": "7078.55b4a92118.js",
+      "sha256": "a3dad5823fcef5854479ff69c0804efd44c91d6d0e1dc12c79bc9b517bc2c19f",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/7078.55b4a92118.js",
+      "ranges": [
+        {
+          "start": 686000,
+          "end": 693200,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "G-continuity"
+        }
+      ]
+    },
+    {
+      "id": "G-src-composer",
+      "file": "646436.55f1254c7f.js",
+      "title": "646436.55f1254c7f.js",
+      "sha256": "fc68805e04f00c9a5353d37d3757d93859c92191b53811b43a13d82b201c34c1",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/646436.55f1254c7f.js",
+      "ranges": [
+        {
+          "start": 185000,
+          "end": 195000,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "G-continuity"
+        },
+        {
+          "start": 194500,
+          "end": 204500,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "G-continuity"
+        },
+        {
+          "start": 698000,
+          "end": 710000,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "G-continuity"
+        }
+      ]
+    },
+    {
+      "id": "G-src-draft",
+      "file": "453940.5f37051ce9.js",
+      "title": "453940.5f37051ce9.js",
+      "sha256": "de991bc1579fb7270284058d1fce3b10c87a7747502e2445751fc35821df77e9",
+      "origin": "https://chatgpt.com",
+      "url": "https://chatgpt.com/cdn/assets/453940.5f37051ce9.js",
+      "ranges": [
+        {
+          "start": 128000,
+          "end": 134500,
+          "unit": "UTF-16",
+          "end_exclusive": true,
+          "run_id": "G-continuity"
+        }
+      ]
+    },
+    {
+      "id": "G-src-storage",
+      "file": "717351.2ca6861a56.js",
+      "title": "717351.2ca6861a56.js",
+      "sha256": "918db4d02a5ca08786fcd3fe0d2c08fe8b5fe6b53b997f692c69a3eba95350ab",
+      "origin": "https://chatgpt.com",
+      "ranges": []
+    },
+    {
+      "id": "G-src-audio",
+      "file": "112332.486135f5c3.js",
+      "title": "112332.486135f5c3.js",
+      "sha256": "477d5be6d31f8ca15dd6a94622cf19f72b9942eeea4e3cb69b7ab6b21e69d61b",
+      "origin": "https://chatgpt.com",
+      "ranges": []
+    },
+    {
+      "id": "G-src-events",
+      "file": "418851.4535c67f63.js",
+      "title": "418851.4535c67f63.js",
+      "sha256": "c766d76e8c8803907bd8e99bc8dd83c592be5d92fc54148ad24f5424a57e8d9f",
+      "origin": "https://chatgpt.com",
+      "ranges": []
+    },
+    {
+      "id": "G-src-editor",
+      "file": "200429.0df43ecbf7.js",
+      "title": "200429.0df43ecbf7.js",
+      "sha256": "329133bc12ac088bc6b363031a2d4afdc751eccc380b514982cbea0615f51b74",
+      "origin": "https://chatgpt.com",
+      "ranges": []
+    },
+    {
+      "id": "G-src-clipboard",
+      "file": "76629.d1877612e5.js",
+      "title": "76629.d1877612e5.js",
+      "sha256": "707cadde8ec106df4270c61a851c34e4d1803255cff20374447ca2967f98a7f0",
+      "origin": "https://chatgpt.com",
+      "ranges": []
+    },
+    {
+      "id": "G-src-media",
+      "file": "653143.bce956a316.js",
+      "title": "653143.bce956a316.js",
+      "sha256": "b631fbd778c2c8dd89a30bdc450065f84387bd688705c87b894ced463e69efe4",
+      "origin": "https://chatgpt.com",
+      "ranges": []
+    },
+    {
+      "id": "G-src-network",
+      "file": "155568.92a58aa405.js",
+      "title": "155568.92a58aa405.js",
+      "sha256": "3a4800837656afd37c25935d38e10f7b7c11404d2bfad16a5104ecefdf2c8319",
+      "origin": "https://chatgpt.com",
+      "ranges": []
+    }
+  ],
+  "runs": [
+    {
+      "id": "G-copy",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Reconstructed G-copy",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "464146.5d4546dfcd.js",
+            "sha256": "9a15b2db8c0e8a0d8f17d5bd0914d9fc7c466ff6f0617483d17ac0f8be0c5e23",
+            "start": 63500,
+            "length": 12000
+          },
+          {
+            "op": "readSource",
+            "file": "681678.28a09074e0.js",
+            "sha256": "4381384857222116de31ef13cdb0e5ba26981fc9d304c4046bb4a91184295108",
+            "start": 19900,
+            "length": 6500
+          },
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [
+              "clipboard"
+            ],
+            "any": [
+              "markdown",
+              "writeText",
+              "copyMessage"
+            ],
+            "not": []
+          },
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [
+              "requestSubmitWhenReady"
+            ],
+            "any": [],
+            "not": []
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned search parameters and read windows; original limits and optional expectations were not retained.",
+      "receipt": {
+        "run_id": "e43e163f-9613-496e-be7a-c2dd9cbcaa12",
+        "version": "0.4.25",
+        "at": "2026-11-27T06:18:56.835Z",
+        "elapsed_ms": 681,
+        "passed": 4,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "operations": [
+          {
+            "index": 0,
+            "op": "readSource",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          },
+          {
+            "index": 1,
+            "op": "readSource",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          },
+          {
+            "index": 2,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 25,
+            "observation": "available"
+          },
+          {
+            "index": 3,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 7,
+            "observation": "available"
+          }
+        ],
+        "archive_id": "dfdd578d-f84d-4584-ada9-8280d378320c"
+      },
+      "interpretation": "Copy-event analytics, successful-copy feedback and selection listener behavior were inspected. The actual whole-turn Markdown serialization function was not recovered."
+    },
+    {
+      "id": "G-continuity",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Reconstructed G-continuity",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "420899.fa79bc2158.js",
+            "sha256": "0112529555af4562605c7f30fdca15eb0dd566bc54b31e130e4774238c55b6f6",
+            "start": 11232,
+            "length": 7153
+          },
+          {
+            "op": "readSource",
+            "file": "7078.55b4a92118.js",
+            "sha256": "a3dad5823fcef5854479ff69c0804efd44c91d6d0e1dc12c79bc9b517bc2c19f",
+            "start": 686000,
+            "length": 7200
+          },
+          {
+            "op": "readSource",
+            "file": "646436.55f1254c7f.js",
+            "sha256": "fc68805e04f00c9a5353d37d3757d93859c92191b53811b43a13d82b201c34c1",
+            "start": 185000,
+            "length": 10000
+          },
+          {
+            "op": "readSource",
+            "file": "646436.55f1254c7f.js",
+            "sha256": "fc68805e04f00c9a5353d37d3757d93859c92191b53811b43a13d82b201c34c1",
+            "start": 194500,
+            "length": 10000
+          },
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [],
+            "any": [
+              "copyTurnToClipboard",
+              "suppressCopyTurnToClipboardAnalytics",
+              "copyWritingBlockMessageIds",
+              "serializeMessage"
+            ],
+            "not": []
+          },
+          {
+            "op": "readSource",
+            "file": "453940.5f37051ce9.js",
+            "sha256": "de991bc1579fb7270284058d1fce3b10c87a7747502e2445751fc35821df77e9",
+            "start": 128000,
+            "length": 6500
+          },
+          {
+            "op": "readSource",
+            "file": "646436.55f1254c7f.js",
+            "sha256": "fc68805e04f00c9a5353d37d3757d93859c92191b53811b43a13d82b201c34c1",
+            "start": 698000,
+            "length": 12000
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned search parameters and read windows; original limits and optional expectations were not retained.",
+      "receipt": {
+        "run_id": "c8743403-38b8-4063-bbcf-21549d13576c",
+        "version": "0.4.25",
+        "at": "2026-11-27T06:17:54.303Z",
+        "elapsed_ms": 317,
+        "passed": 7,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "operations": [
+          {
+            "index": 0,
+            "op": "readSource",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          },
+          {
+            "index": 1,
+            "op": "readSource",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          },
+          {
+            "index": 2,
+            "op": "readSource",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          },
+          {
+            "index": 3,
+            "op": "readSource",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          },
+          {
+            "index": 4,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 25,
+            "observation": "available"
+          },
+          {
+            "index": 5,
+            "op": "readSource",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          },
+          {
+            "index": 6,
+            "op": "readSource",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          }
+        ],
+        "archive_id": "dfdd578d-f84d-4584-ada9-8280d378320c"
+      },
+      "interpretation": "Observed bounded background recovery, guarded deferred submission, attachment readiness and identity checks, prefill ownership, and message-to-view conversion with memoized results. Exact server semantics and the final clipboard serializer remain unverified."
+    },
+    {
+      "id": "G-discover",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Reconstructed G-discover",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [],
+            "any": [
+              "addTurnCompletedListener",
+              "conversationStateCallbacks",
+              "streamingConversations"
+            ],
+            "not": []
+          },
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [],
+            "any": [
+              "data-talvt-turn-state",
+              "data-response-body",
+              "data-turn-key"
+            ],
+            "not": []
+          },
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [],
+            "any": [
+              "composerController",
+              "submittedEditorDocument",
+              "submittedPromptForRestoration"
+            ],
+            "not": []
+          },
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [
+              "attachment"
+            ],
+            "any": [
+              "upload",
+              "pending",
+              "ready"
+            ],
+            "not": []
+          },
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [],
+            "any": [
+              "contentParts",
+              "messageParts",
+              "structuredContent",
+              "contentReferences",
+              "messageMapping",
+              "exportMarkdown"
+            ],
+            "not": []
+          },
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [
+              "visibilitychange"
+            ],
+            "any": [
+              "resume",
+              "streaming",
+              "reconnect"
+            ],
+            "not": []
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned search parameters and read windows; original limits and optional expectations were not retained.",
+      "receipt": {
+        "run_id": "50e88e55-b728-4108-9290-e9a8e786ac5b",
+        "version": "0.4.25",
+        "at": "2026-11-27T06:15:54.065Z",
+        "elapsed_ms": 2854,
+        "passed": 6,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "operations": [
+          {
+            "index": 0,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 2,
+            "observation": "available"
+          },
+          {
+            "index": 1,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 0,
+            "observation": "empty"
+          },
+          {
+            "index": 2,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 60,
+            "observation": "available"
+          },
+          {
+            "index": 3,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 172,
+            "observation": "available"
+          },
+          {
+            "index": 4,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 116,
+            "observation": "available"
+          },
+          {
+            "index": 5,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 28,
+            "observation": "available"
+          }
+        ],
+        "archive_id": "dfdd578d-f84d-4584-ada9-8280d378320c"
+      },
+      "interpretation": "Module scope recognized 172 of 178 files, 10,115 units; region scope searched 178 files and 22,357 regions. Several result lists were truncated. Empty DOM-marker search does not establish absence in runtime DOM."
+    },
+    {
+      "id": "G-initial",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Reconstructed G-initial",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [],
+            "any": [
+              "addTurnCompletedListener",
+              "conversationStateCallbacks",
+              "streamingConversations"
+            ],
+            "not": []
+          },
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [],
+            "any": [
+              "composerController",
+              "submittedEditorDocument",
+              "submittedPromptForRestoration"
+            ],
+            "not": []
+          },
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [
+              "attachment"
+            ],
+            "any": [
+              "upload",
+              "pending",
+              "ready",
+              "submission"
+            ],
+            "not": []
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned search parameters and read windows; original limits and optional expectations were not retained.",
+      "receipt": {
+        "run_id": "cfe87e95-09c3-4aa5-8d3b-572013ede552",
+        "version": "0.4.23",
+        "at": "2026-11-27T05:57:37.026Z",
+        "elapsed_ms": 40847,
+        "passed": 3,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "operations": [
+          {
+            "index": 0,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 2,
+            "observation": "available"
+          },
+          {
+            "index": 1,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 60,
+            "observation": "available"
+          },
+          {
+            "index": 2,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 179,
+            "observation": "available"
+          }
+        ],
+        "archive_id": "dfdd578d-f84d-4584-ada9-8280d378320c"
+      },
+      "interpretation": "Initial source discovery found event listeners, composer state and upload lifecycle leads. Elapsed time is a run observation, not a controlled performance comparison."
+    },
+    {
+      "id": "G-boundary-fixed",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Reconstructed G-boundary-fixed",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [
+              "indexedDB",
+              "visibilitychange"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "717351.2ca6861a56.js"
+            ]
+          },
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [
+              "AudioWorkletNode"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "112332.486135f5c3.js"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned search parameters and read windows; original limits and optional expectations were not retained.",
+      "receipt": {
+        "run_id": "a664a845-15f0-44bc-8b5f-ea2dede2fe04",
+        "version": "0.4.20",
+        "at": "2026-11-27T05:18:52.414Z",
+        "elapsed_ms": 9821,
+        "passed": 2,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "operations": [
+          {
+            "index": 0,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          },
+          {
+            "index": 1,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          }
+        ]
+      },
+      "interpretation": "Corrected module S6TD span [14875,22814) contains both visibility and IndexedDB matches; audio construction candidate remains discoverable. This is an indexer regression observation, not proof of application storage behavior."
+    },
+    {
+      "id": "G-boundary-retry",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Reconstructed G-boundary-retry",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [
+              "indexedDB",
+              "visibilitychange"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "717351.2ca6861a56.js"
+            ]
+          },
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [
+              "AudioWorkletNode"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "112332.486135f5c3.js"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned search parameters and read windows; original limits and optional expectations were not retained.",
+      "receipt": {
+        "run_id": "584ed76f-7ffb-4c1d-9df1-1c7a11f342b0",
+        "version": "0.4.19",
+        "at": "2026-11-27T05:13:08.644Z",
+        "elapsed_ms": 32,
+        "passed": 1,
+        "partial": 1,
+        "failed": 0,
+        "skipped": 0,
+        "operations": [
+          {
+            "index": 0,
+            "op": "searchIndex",
+            "status": "partial",
+            "items": 0,
+            "observation": "empty"
+          },
+          {
+            "index": 1,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          }
+        ]
+      },
+      "interpretation": "Conjunction still missed; audio control remained positive."
+    },
+    {
+      "id": "G-boundary-localize",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Reconstructed G-boundary-localize",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [
+              "visibilitychange"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "717351.2ca6861a56.js"
+            ]
+          },
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [
+              "indexedDB"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "717351.2ca6861a56.js"
+            ]
+          },
+          {
+            "op": "searchIndex",
+            "scope": "file",
+            "all": [
+              "indexedDB",
+              "visibilitychange"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "717351.2ca6861a56.js"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned search parameters and read windows; original limits and optional expectations were not retained.",
+      "receipt": {
+        "run_id": "bf796d55-6aaa-4278-be26-bcbba15c2dc4",
+        "version": "0.4.19",
+        "at": "2026-11-27T05:12:06.838Z",
+        "elapsed_ms": 40,
+        "passed": 3,
+        "partial": 0,
+        "failed": 0,
+        "skipped": 0,
+        "operations": [
+          {
+            "index": 0,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          },
+          {
+            "index": 1,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          },
+          {
+            "index": 2,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          }
+        ]
+      },
+      "interpretation": "Individual matches separated into S6TD [14875,20285) and apparent mark [20285,22815); file scope recovered all three occurrences. Diagnoses a module segmentation problem rather than absence of terms."
+    },
+    {
+      "id": "G-boundary-repeat",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Reconstructed G-boundary-repeat",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [
+              "indexedDB",
+              "visibilitychange"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "717351.2ca6861a56.js"
+            ]
+          },
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [
+              "indexedDB",
+              "visibilitychange"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "717351.2ca6861a56.js"
+            ]
+          },
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [
+              "AudioWorkletNode"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "112332.486135f5c3.js"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned search parameters and read windows; original limits and optional expectations were not retained.",
+      "receipt": {
+        "run_id": "dca5ee3e-afde-4248-b050-a6433db16bf5",
+        "version": "0.4.19",
+        "at": "2026-11-27T05:10:33.932Z",
+        "elapsed_ms": 32,
+        "passed": 2,
+        "partial": 1,
+        "failed": 0,
+        "skipped": 0,
+        "operations": [
+          {
+            "index": 0,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 0,
+            "observation": "empty"
+          },
+          {
+            "index": 1,
+            "op": "searchIndex",
+            "status": "partial",
+            "items": 0,
+            "observation": "empty"
+          },
+          {
+            "index": 2,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          }
+        ]
+      },
+      "interpretation": "Repeat reproduced the module conjunction miss, with audio positive control."
+    },
+    {
+      "id": "G-boundary-first",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Reconstructed G-boundary-first",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [
+              "indexedDB",
+              "visibilitychange"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "717351.2ca6861a56.js"
+            ]
+          },
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [
+              "indexedDB",
+              "visibilitychange"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "717351.2ca6861a56.js"
+            ]
+          },
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [
+              "AudioWorkletNode"
+            ],
+            "any": [],
+            "not": [],
+            "files": [
+              "112332.486135f5c3.js"
+            ]
+          }
+        ]
+      },
+      "plan_status": "Reconstructed from returned search parameters and read windows; original limits and optional expectations were not retained.",
+      "receipt": {
+        "run_id": "988b44bc-ded7-4d40-b889-b47c934cfd65",
+        "version": "0.4.19",
+        "at": "2026-11-27T05:09:33.464Z",
+        "elapsed_ms": 38,
+        "passed": 2,
+        "partial": 1,
+        "failed": 0,
+        "skipped": 0,
+        "operations": [
+          {
+            "index": 0,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 0,
+            "observation": "empty"
+          },
+          {
+            "index": 1,
+            "op": "searchIndex",
+            "status": "partial",
+            "items": 0,
+            "observation": "empty"
+          },
+          {
+            "index": 2,
+            "op": "searchIndex",
+            "status": "passed",
+            "items": 1,
+            "observation": "available"
+          }
+        ]
+      },
+      "interpretation": "Initial counterexample: file-local occurrences do not guarantee region-local co-occurrence; module expectation was unmet."
+    },
+    {
+      "id": "G-next-events",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Investigate events",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "module",
+            "all": [],
+            "any": [
+              "addTurnCompletedListener",
+              "conversationStateCallbacks",
+              "streamingConversations"
+            ],
+            "not": []
+          }
+        ]
+      },
+      "interpretation": "Locate definitions and separate public client behavior from unsupported internal callback assumptions."
+    },
+    {
+      "id": "G-next-storage",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Investigate storage",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "717351.2ca6861a56.js",
+            "sha256": "918db4d02a5ca08786fcd3fe0d2c08fe8b5fe6b53b997f692c69a3eba95350ab",
+            "start": 14875,
+            "length": 7939
+          }
+        ]
+      },
+      "interpretation": "Read the corrected module to distinguish IndexedDB and page lifecycle behavior; no causal claim yet."
+    },
+    {
+      "id": "G-next-formats",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Investigate formats",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [
+              "clipboard"
+            ],
+            "any": [
+              "markdown",
+              "writeText",
+              "copyMessage"
+            ],
+            "not": []
+          },
+          {
+            "op": "readSource",
+            "file": "76629.d1877612e5.js",
+            "sha256": "707cadde8ec106df4270c61a851c34e4d1803255cff20374447ca2967f98a7f0",
+            "start": 468267,
+            "length": 2743
+          }
+        ]
+      },
+      "interpretation": "Recover ordinary clipboard format handling and fallback; distinguish message-copy serialization from generic delivery helpers."
+    },
+    {
+      "id": "G-next-audio",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Investigate audio",
+        "operations": [
+          {
+            "op": "readSource",
+            "file": "112332.486135f5c3.js",
+            "sha256": "477d5be6d31f8ca15dd6a94622cf19f72b9942eeea4e3cb69b7ab6b21e69d61b",
+            "start": 73,
+            "length": 4283
+          }
+        ]
+      },
+      "interpretation": "Inspect the public browser audio API usage, not a live capture or background-microphone workaround."
+    },
+    {
+      "id": "G-next-resources",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Investigate resources",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [],
+            "any": [
+              "resourceTemplates",
+              "resource_link",
+              "sourceName"
+            ],
+            "not": []
+          }
+        ]
+      },
+      "interpretation": "Find candidate client resource reference boundaries; no authorization claim."
+    },
+    {
+      "id": "G-next-network",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://chatgpt.com",
+        "description": "Investigate network",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "scope": "region",
+            "all": [],
+            "any": [
+              "serviceRestartDisconnectCount",
+              "recordNetworkEvent",
+              "lastStateChangedAt"
+            ],
+            "not": [],
+            "files": [
+              "155568.92a58aa405.js"
+            ]
+          }
+        ]
+      },
+      "interpretation": "Relocate diagnostic observations, then read relevant code."
+    }
+  ],
+  "instrument_observations": {
+    "scope": "AI Pill index quality; separate from product behavior",
+    "file": "717351.2ca6861a56.js",
+    "sha256": "918db4d02a5ca08786fcd3fe0d2c08fe8b5fe6b53b997f692c69a3eba95350ab",
+    "offsets": [
+      19589,
+      19719,
+      21779
+    ],
+    "before": {
+      "version": "0.4.19",
+      "module_spans": [
+        [
+          14875,
+          20285
+        ],
+        [
+          20285,
+          22815
+        ]
+      ],
+      "conjunction": 0
+    },
+    "after": {
+      "version": "0.4.20",
+      "module_id": "S6TD",
+      "span": [
+        14875,
+        22814
+      ],
+      "conjunction": 1
+    },
+    "control": {
+      "file": "112332.486135f5c3.js",
+      "sha256": "477d5be6d31f8ca15dd6a94622cf19f72b9942eeea4e3cb69b7ab6b21e69d61b",
+      "offset": 1975,
+      "module_id": "X9s7"
+    },
+    "lesson": "Use independent file-scope evidence and a positive control to diagnose a missing module-scope match; preserve failed expectations. This is not a full parser-correctness proof."
+  }
+}
