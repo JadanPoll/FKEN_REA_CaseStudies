@@ -21,7 +21,8 @@
         "observed": 371,
         "excluded": 1,
         "failed": 0,
-        "bytes": 23315443
+        "bytes": 23315443,
+        "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
       },
       "interpretation": "All eligible assets collected; one CDN script excluded. Earlier v0.4.31 excluded all 384 assets because of origin policy. v0.4.33 adds local approval; not tested by this run."
     },
@@ -117,7 +118,8 @@
           3,
           1,
           12
-        ]
+        ],
+        "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
       },
       "interpretation": "Full worker recovered; seven region searches locate candidate mechanisms. Search results are lexical, not implementation proofs."
     },
@@ -183,9 +185,531 @@
         "elapsed_ms": 116,
         "passed": 8,
         "source_characters": 49000,
-        "new_bytes": 0
+        "new_bytes": 0,
+        "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
       },
       "interpretation": "Static implementation evidence for guarded parsing, iOS deferred scroll correction, asynchronous draft persistence, optimistic mutation reconciliation, provisional session IDs and latency attribution. Runtime behavior not independently tested."
+    },
+    {
+      "id": "C-atlas",
+      "kind": "discovery_context",
+      "receipt": {
+        "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f",
+        "version": "0.4.33",
+        "observed": 371,
+        "collected": 370,
+        "bytes": 23315443,
+        "tiles": 996,
+        "distinct_identifiers": 43896,
+        "displayed_file_rows": 77,
+        "async_guard_motifs": 561,
+        "event_cleanup_motifs": 391,
+        "async_cancellation_motifs": 219,
+        "stream_decoding_motifs": 61
+      },
+      "interpretation": "AI Pill context export, not a new executed plan. Motifs and region names are lexical leads. The archive is cumulative; the displayed sample is incomplete. Full retained index remains browser-local."
+    },
+    {
+      "id": "C-next-branches",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Investigate Conversation tree and selected message",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "current_leaf_message_uuid",
+              "LATEST_ASSISTANT_OUTPUT_KIND_",
+              "ReadLatestAssistantOutput"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-22-CcK0_IAI.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-22-CcK0_IAI.js",
+            "sha256": "9d14b22941c97298b78ba1bb97246342d2d040cb5f9415681ccab0c12450630e",
+            "start": 32768,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "current_leaf_message_uuid and LATEST_ASSISTANT_OUTPUT_KIND_ occur in the discovery atlas. Investigate identity, parent/child relationships, editing and regeneration; the representation itself has not been inspected.",
+      "locators": [
+        {
+          "file": "shared-22-CcK0_IAI.js",
+          "sha256": "9d14b22941c97298b78ba1bb97246342d2d040cb5f9415681ccab0c12450630e",
+          "start": 32768,
+          "unit": "UTF-16",
+          "signatures": [
+            "current_leaf_message_uuid",
+            "LATEST_ASSISTANT_OUTPUT_KIND_",
+            "ReadLatestAssistantOutput"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "C-next-network",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Investigate Connection recovery and request cancellation",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "first_online_change_after_failure_type",
+              "first_online_change_after_failure_ms",
+              "AbortController"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-l-p-m-w-4-DGaFS2sw.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-l-p-m-w-4-DGaFS2sw.js",
+            "sha256": "1c4581ae68b20a3cf56a0f63f272c7b369e50f13f2828b56572c152414a3a321",
+            "start": 98304,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "The atlas contains first_online_change_after_failure_type, first_online_change_after_failure_ms and AbortController near fetch. These are clues to client-side failure classification, cancellation and recovery—not a proven streaming resume protocol.",
+      "locators": [
+        {
+          "file": "shared-l-p-m-w-4-DGaFS2sw.js",
+          "sha256": "1c4581ae68b20a3cf56a0f63f272c7b369e50f13f2828b56572c152414a3a321",
+          "start": 98304,
+          "unit": "UTF-16",
+          "signatures": [
+            "first_online_change_after_failure_type",
+            "first_online_change_after_failure_ms",
+            "AbortController"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "C-next-voice",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Investigate Microphone readiness and WebRTC recovery",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "voice_web_no_mic_preconnect_bail",
+              "webRtcRedialAfterSilence",
+              "webRtcSessionRolloverOff",
+              "webRtcMediaSilenceLimitMs"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-100-BPBydDLA.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-100-BPBydDLA.js",
+            "sha256": "ef3e1c5634390724396c9903b3148d227f16a289b33051e32c21f0dbd16af1e1",
+            "start": 29184,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "Search found voice_web_no_mic_preconnect_bail alongside webRtcRedialAfterSilence, webRtcSessionRolloverOff and media/socket silence limits. Distinguish microphone permission/track readiness, transport setup and media liveness before interpreting these names.",
+      "locators": [
+        {
+          "file": "shared-100-BPBydDLA.js",
+          "sha256": "ef3e1c5634390724396c9903b3148d227f16a289b33051e32c21f0dbd16af1e1",
+          "start": 29184,
+          "unit": "UTF-16",
+          "signatures": [
+            "voice_web_no_mic_preconnect_bail",
+            "webRtcRedialAfterSilence",
+            "webRtcSessionRolloverOff",
+            "webRtcMediaSilenceLimitMs"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "C-next-audio-clock",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Investigate Audio clocks, capture and playback diagnostics",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "capture_clock_mismatch_deliveries_per_sec",
+              "capture_playback_underrun_events",
+              "capture_frame_sample_rate_changed"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-m-10-Nr75je2I.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-m-10-Nr75je2I.js",
+            "sha256": "a92e4dba05485df73f99a327779d53df087cfb1abdcaefd0700e2d3a51d4d094",
+            "start": 84480,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "Search found capture_clock_mismatch_deliveries_per_sec, sample-rate changes, frames per delivery, output latency and playback underrun metrics. The actual clock model and corrective policy remain open.",
+      "locators": [
+        {
+          "file": "shared-m-10-Nr75je2I.js",
+          "sha256": "a92e4dba05485df73f99a327779d53df087cfb1abdcaefd0700e2d3a51d4d094",
+          "start": 84480,
+          "unit": "UTF-16",
+          "signatures": [
+            "capture_clock_mismatch_deliveries_per_sec",
+            "capture_playback_underrun_events",
+            "capture_frame_sample_rate_changed"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "C-next-attachments",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Investigate Attachment limits and conversion",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "file_kept_over_page_limit_direct",
+              "file_kept_after_conversion_page_limit",
+              "file_kept_after_blank_text"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-3-fop4DWOk.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-3-fop4DWOk.js",
+            "sha256": "eecbb16e2b7c5f5876fc58d917dfc1911c3cbe0b6b4cdd74ea5dcc7fe24f339b",
+            "start": 131072,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "The discovery atlas exposes file_kept_over_page_limit_direct, file_kept_after_conversion_page_limit and file_kept_after_blank_text. These are clues to admission/conversion decisions; inspect their callers and distinguish local policy from server validation.",
+      "locators": [
+        {
+          "file": "shared-3-fop4DWOk.js",
+          "sha256": "eecbb16e2b7c5f5876fc58d917dfc1911c3cbe0b6b4cdd74ea5dcc7fe24f339b",
+          "start": 131072,
+          "unit": "UTF-16",
+          "signatures": [
+            "file_kept_over_page_limit_direct",
+            "file_kept_after_conversion_page_limit",
+            "file_kept_after_blank_text"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "C-next-tool-consent",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Investigate Tool invocation and consent",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "toolUseResultPresent",
+              "preceding_tool_use_ids"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-12-BRV-ODbY.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-12-BRV-ODbY.js",
+            "sha256": "db23eb3ee8c9a97b37a3e875e4ed00de6b4a5ec78b314573b668743324ccf4d1",
+            "start": 131072,
+            "length": 6000
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "sensitive_mcps_per_call_consent",
+              "tool_approval_default_always_allow"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-36-BGCbBDsB.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-36-BGCbBDsB.js",
+            "sha256": "0150466491d0b89ebebbbd76eb806b4a45f31a9f040eeb56210f6d5944cc3a21",
+            "start": 98304,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "Atlas identifiers include toolUseResultPresent, preceding_tool_use_ids, submitToolApproval, sensitive_mcps_per_call_consent and tool_approval_default_always_allow. Inspect the presentation of tool lifecycle and the approval boundary; no server-side enforcement claim.",
+      "locators": [
+        {
+          "file": "shared-12-BRV-ODbY.js",
+          "sha256": "db23eb3ee8c9a97b37a3e875e4ed00de6b4a5ec78b314573b668743324ccf4d1",
+          "start": 131072,
+          "unit": "UTF-16",
+          "signatures": [
+            "toolUseResultPresent",
+            "preceding_tool_use_ids"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        },
+        {
+          "file": "shared-36-BGCbBDsB.js",
+          "sha256": "0150466491d0b89ebebbbd76eb806b4a45f31a9f040eeb56210f6d5944cc3a21",
+          "start": 98304,
+          "unit": "UTF-16",
+          "signatures": [
+            "sensitive_mcps_per_call_consent",
+            "tool_approval_default_always_allow"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "C-next-artifacts",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Investigate Artifact and MCP app presentation",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "McpAppViewAskPrompt",
+              "anyConsentPromptLive",
+              "tool_cell_artifact_designed_approval"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-12-BRV-ODbY.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-12-BRV-ODbY.js",
+            "sha256": "db23eb3ee8c9a97b37a3e875e4ed00de6b4a5ec78b314573b668743324ccf4d1",
+            "start": 622592,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "Atlas contains tool_cell_artifact_designed_approval, McpAppViewAskPrompt and anyConsentPromptLive. These indicate candidate UI boundaries, not a verified sandbox contract. Investigate how content is handed off and how interaction/permission state is represented.",
+      "locators": [
+        {
+          "file": "shared-12-BRV-ODbY.js",
+          "sha256": "db23eb3ee8c9a97b37a3e875e4ed00de6b4a5ec78b314573b668743324ccf4d1",
+          "start": 622592,
+          "unit": "UTF-16",
+          "signatures": [
+            "McpAppViewAskPrompt",
+            "anyConsentPromptLive",
+            "tool_cell_artifact_designed_approval"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "C-next-account",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Investigate Account transitions and draft isolation",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "draftHeldForSessionMismatch",
+              "isIncognitoDraftIsolated",
+              "accountSwitchGen"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-37-D_gdwzN7.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-37-D_gdwzN7.js",
+            "sha256": "1757fac25f79bcff76c6a7e3419575bb81d6fa6402b6770ef99f2a9404a3cd5c",
+            "start": 105984,
+            "length": 6000
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "disableWritesUntilReload",
+              "bootstrap_eager_stale_identity"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-l-p-m-w-8-CFELbFb2.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-l-p-m-w-8-CFELbFb2.js",
+            "sha256": "f7d3b6fb4596775f3011d71ec12a94ac437fb07d361782ee550e520ad0de2dfd",
+            "start": 32768,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "Search found draftHeldForSessionMismatch with accountSwitchGen, crossedAccount and isIncognitoDraftIsolated. The atlas additionally exposes disableWritesUntilReload and bootstrap_eager_stale_identity. Determine what data is cleared, retained or write-blocked; do not infer actual privacy guarantees from names.",
+      "locators": [
+        {
+          "file": "shared-37-D_gdwzN7.js",
+          "sha256": "1757fac25f79bcff76c6a7e3419575bb81d6fa6402b6770ef99f2a9404a3cd5c",
+          "start": 105984,
+          "unit": "UTF-16",
+          "signatures": [
+            "draftHeldForSessionMismatch",
+            "isIncognitoDraftIsolated",
+            "accountSwitchGen"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        },
+        {
+          "file": "shared-l-p-m-w-8-CFELbFb2.js",
+          "sha256": "f7d3b6fb4596775f3011d71ec12a94ac437fb07d361782ee550e520ad0de2dfd",
+          "start": 32768,
+          "unit": "UTF-16",
+          "signatures": [
+            "disableWritesUntilReload",
+            "bootstrap_eager_stale_identity"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
+    },
+    {
+      "id": "C-next-billing",
+      "kind": "proposed",
+      "plan_status": "Proposed continuation; NOT executed.",
+      "plan": {
+        "origin": "https://claude.ai",
+        "description": "Investigate Credit, spend limits and model access",
+        "operations": [
+          {
+            "op": "searchIndex",
+            "any": [
+              "claudified_extra_usage_no_default_spend_limit",
+              "MobileOveragesPaymentSetupModal"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-38-DpZI2bXF.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-38-DpZI2bXF.js",
+            "sha256": "a8807f306bf0bbc86da30b7e4545ff308dc70fe761c6c1c71f479a833eecdeb1",
+            "start": 32768,
+            "length": 6000
+          },
+          {
+            "op": "searchIndex",
+            "any": [
+              "creditsOnlyModelOff",
+              "askAdminHigherLimit"
+            ],
+            "scope": "region",
+            "files": [
+              "shared-3-fop4DWOk.js"
+            ],
+            "limit": 5
+          },
+          {
+            "op": "readSource",
+            "file": "shared-3-fop4DWOk.js",
+            "sha256": "eecbb16e2b7c5f5876fc58d917dfc1911c3cbe0b6b4cdd74ea5dcc7fe24f339b",
+            "start": 655360,
+            "length": 6000
+          }
+        ]
+      },
+      "interpretation": "The atlas contains claudified_extra_usage_no_default_spend_limit, creditsOnlyModelOff, askAdminHigherLimit and MobileOveragesPaymentSetupModal. These are leads to UI and policy distinctions, not a statement of pricing, current entitlement, or billing enforcement.",
+      "locators": [
+        {
+          "file": "shared-38-DpZI2bXF.js",
+          "sha256": "a8807f306bf0bbc86da30b7e4545ff308dc70fe761c6c1c71f479a833eecdeb1",
+          "start": 32768,
+          "unit": "UTF-16",
+          "signatures": [
+            "claudified_extra_usage_no_default_spend_limit",
+            "MobileOveragesPaymentSetupModal"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        },
+        {
+          "file": "shared-3-fop4DWOk.js",
+          "sha256": "eecbb16e2b7c5f5876fc58d917dfc1911c3cbe0b6b4cdd74ea5dcc7fe24f339b",
+          "start": 655360,
+          "unit": "UTF-16",
+          "signatures": [
+            "creditsOnlyModelOff",
+            "askAdminHigherLimit"
+          ],
+          "scope": "Discovery region start; search signatures to locate exact offsets. The read window is a starting probe, not an inspected excerpt."
+        }
+      ]
     }
   ],
   "sources": [
@@ -202,7 +726,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/completionGzipWorker-Q_JtDKxH.js",
+      "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
     },
     {
       "id": "C-markdown",
@@ -223,7 +749,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-31-k46qfpBX.js",
+      "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
     },
     {
       "id": "C-scroll",
@@ -238,7 +766,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-frame-BVlhyxBh.js",
+      "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
     },
     {
       "id": "C-store",
@@ -259,7 +789,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-8-CFELbFb2.js",
+      "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
     },
     {
       "id": "C-settings",
@@ -280,7 +812,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-3-Ba6-SV97.js",
+      "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
     },
     {
       "id": "C-perf",
@@ -295,7 +829,9 @@
           "unit": "UTF-16",
           "end_exclusive": true
         }
-      ]
+      ],
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cca471d3a-C4dKEi_-.js",
+      "archive_id": "5f5b20e9-974a-4ea8-859c-1ffc52c7a22f"
     }
   ]
 }
