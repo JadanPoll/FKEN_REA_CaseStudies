@@ -9,13 +9,17 @@
       "aliases": [
         "viewport anchor"
       ],
-      "category": "Rendering",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0002",
         "rea-discord-t-0003",
         "rea-discord-t-0004",
         "rea-discord-t-0023",
-        "rea-discord-t-0027"
+        "rea-discord-t-0027",
+        "rea-discord-t-0031",
+        "rea-discord-t-0032",
+        "rea-discord-t-0033",
+        "rea-discord-t-0034"
       ]
     },
     {
@@ -24,7 +28,7 @@
       "aliases": [
         "message pagination"
       ],
-      "category": "Rendering",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0001",
         "rea-discord-t-0024",
@@ -37,7 +41,7 @@
       "aliases": [
         "history frontier"
       ],
-      "category": "Rendering",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0001"
       ]
@@ -48,7 +52,7 @@
       "aliases": [
         "virtualized list"
       ],
-      "category": "Rendering",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0001"
       ]
@@ -59,11 +63,15 @@
       "aliases": [
         "beforeinput event"
       ],
-      "category": "Input",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0006",
         "rea-discord-t-0007",
-        "rea-discord-t-0008"
+        "rea-discord-t-0008",
+        "rea-discord-t-0035",
+        "rea-discord-t-0036",
+        "rea-discord-t-0037",
+        "rea-discord-t-0038"
       ]
     },
     {
@@ -72,7 +80,7 @@
       "aliases": [
         "IME"
       ],
-      "category": "Input",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0005",
         "rea-discord-t-0030"
@@ -82,7 +90,7 @@
       "id": "rea-discord-t-0007",
       "label": "selection reconciliation",
       "aliases": [],
-      "category": "Input",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0005",
         "rea-discord-t-0008"
@@ -92,7 +100,7 @@
       "id": "rea-discord-t-0008",
       "label": "native input fast path",
       "aliases": [],
-      "category": "Input",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0005",
         "rea-discord-t-0007"
@@ -102,7 +110,7 @@
       "id": "rea-discord-t-0009",
       "label": "exponential backoff",
       "aliases": [],
-      "category": "Recovery",
+      "category": "Collectibles, subscriptions and checkout",
       "related_ids": [
         "rea-discord-t-0010",
         "rea-discord-t-0011"
@@ -112,18 +120,22 @@
       "id": "rea-discord-t-0010",
       "label": "per-key retry state",
       "aliases": [],
-      "category": "Recovery",
+      "category": "Collectibles, subscriptions and checkout",
       "related_ids": [
         "rea-discord-t-0009",
         "rea-discord-t-0011",
-        "rea-discord-t-0028"
+        "rea-discord-t-0028",
+        "rea-discord-t-0039",
+        "rea-discord-t-0040",
+        "rea-discord-t-0041",
+        "rea-discord-t-0042"
       ]
     },
     {
       "id": "rea-discord-t-0011",
       "label": "retry budget",
       "aliases": [],
-      "category": "Recovery",
+      "category": "Collectibles, subscriptions and checkout",
       "related_ids": [
         "rea-discord-t-0009",
         "rea-discord-t-0010"
@@ -135,10 +147,14 @@
       "aliases": [
         "request coalescing"
       ],
-      "category": "Execution",
+      "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0013",
-        "rea-discord-t-0014"
+        "rea-discord-t-0014",
+        "rea-discord-t-0043",
+        "rea-discord-t-0044",
+        "rea-discord-t-0045",
+        "rea-discord-t-0046"
       ]
     },
     {
@@ -147,7 +163,7 @@
       "aliases": [
         "deferred loading"
       ],
-      "category": "Execution",
+      "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0012",
         "rea-discord-t-0014",
@@ -158,7 +174,7 @@
       "id": "rea-discord-t-0014",
       "label": "readiness barrier",
       "aliases": [],
-      "category": "Execution",
+      "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0012",
         "rea-discord-t-0013"
@@ -168,7 +184,7 @@
       "id": "rea-discord-t-0015",
       "label": "locale fallback",
       "aliases": [],
-      "category": "Localization",
+      "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0016"
       ]
@@ -177,7 +193,7 @@
       "id": "rea-discord-t-0016",
       "label": "cycle detection",
       "aliases": [],
-      "category": "Localization",
+      "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0015"
       ]
@@ -186,18 +202,22 @@
       "id": "rea-discord-t-0017",
       "label": "error provenance",
       "aliases": [],
-      "category": "Observability",
+      "category": "Diagnostics and operational reliability",
       "related_ids": [
         "rea-discord-t-0018",
         "rea-discord-t-0019",
-        "rea-discord-t-0029"
+        "rea-discord-t-0029",
+        "rea-discord-t-0047",
+        "rea-discord-t-0048",
+        "rea-discord-t-0049",
+        "rea-discord-t-0050"
       ]
     },
     {
       "id": "rea-discord-t-0018",
       "label": "stack frame metadata",
       "aliases": [],
-      "category": "Observability",
+      "category": "Diagnostics and operational reliability",
       "related_ids": [
         "rea-discord-t-0017"
       ]
@@ -206,7 +226,7 @@
       "id": "rea-discord-t-0019",
       "label": "third-party error filtering",
       "aliases": [],
-      "category": "Observability",
+      "category": "Diagnostics and operational reliability",
       "related_ids": [
         "rea-discord-t-0017"
       ]
@@ -215,17 +235,18 @@
       "id": "rea-discord-t-0020",
       "label": "Webpack module registry",
       "aliases": [],
-      "category": "Packaging",
+      "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0021",
-        "rea-discord-t-0022"
+        "rea-discord-t-0022",
+        "rea-discord-t-0098"
       ]
     },
     {
       "id": "rea-discord-t-0021",
       "label": "dynamic import",
       "aliases": [],
-      "category": "Packaging",
+      "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0013",
         "rea-discord-t-0020",
@@ -236,7 +257,7 @@
       "id": "rea-discord-t-0022",
       "label": "chunk loading",
       "aliases": [],
-      "category": "Packaging",
+      "category": "Client architecture and resource loading",
       "related_ids": [
         "rea-discord-t-0020",
         "rea-discord-t-0021"
@@ -246,7 +267,7 @@
       "id": "rea-discord-t-0023",
       "label": "keyed reconciliation",
       "aliases": [],
-      "category": "Rendering",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0001"
       ]
@@ -255,7 +276,7 @@
       "id": "rea-discord-t-0024",
       "label": "message identity",
       "aliases": [],
-      "category": "Rendering",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0002"
       ]
@@ -264,14 +285,14 @@
       "id": "rea-discord-t-0025",
       "label": "event cleanup",
       "aliases": [],
-      "category": "Execution",
+      "category": "Client architecture and resource loading",
       "related_ids": []
     },
     {
       "id": "rea-discord-t-0026",
       "label": "debouncing",
       "aliases": [],
-      "category": "Execution",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0002"
       ]
@@ -280,7 +301,7 @@
       "id": "rea-discord-t-0027",
       "label": "scroll restoration",
       "aliases": [],
-      "category": "Rendering",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0001"
       ]
@@ -289,7 +310,7 @@
       "id": "rea-discord-t-0028",
       "label": "rate limiting",
       "aliases": [],
-      "category": "Recovery",
+      "category": "Collectibles, subscriptions and checkout",
       "related_ids": [
         "rea-discord-t-0010"
       ]
@@ -298,7 +319,7 @@
       "id": "rea-discord-t-0029",
       "label": "error attribution",
       "aliases": [],
-      "category": "Observability",
+      "category": "Diagnostics and operational reliability",
       "related_ids": [
         "rea-discord-t-0017"
       ]
@@ -307,10 +328,589 @@
       "id": "rea-discord-t-0030",
       "label": "composition event",
       "aliases": [],
-      "category": "Input",
+      "category": "Message history and rich-text composition",
       "related_ids": [
         "rea-discord-t-0006"
       ]
+    },
+    {
+      "id": "rea-discord-t-0031",
+      "label": "pinned scroll position",
+      "aliases": [],
+      "category": "Message history and rich-text composition",
+      "related_ids": [
+        "rea-discord-t-0001"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0032",
+      "label": "fetch anchor",
+      "aliases": [],
+      "category": "Message history and rich-text composition",
+      "related_ids": [
+        "rea-discord-t-0001"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0033",
+      "label": "message pagination cursor",
+      "aliases": [],
+      "category": "Message history and rich-text composition",
+      "related_ids": [
+        "rea-discord-t-0001"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0034",
+      "label": "scroll height snapshot",
+      "aliases": [],
+      "category": "Message history and rich-text composition",
+      "related_ids": [
+        "rea-discord-t-0001"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0035",
+      "label": "DOM target range",
+      "aliases": [],
+      "category": "Message history and rich-text composition",
+      "related_ids": [
+        "rea-discord-t-0005"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0036",
+      "label": "pending edit diff",
+      "aliases": [],
+      "category": "Message history and rich-text composition",
+      "related_ids": [
+        "rea-discord-t-0005"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0037",
+      "label": "logical selection",
+      "aliases": [],
+      "category": "Message history and rich-text composition",
+      "related_ids": [
+        "rea-discord-t-0005"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0038",
+      "label": "composition lifecycle",
+      "aliases": [],
+      "category": "Message history and rich-text composition",
+      "related_ids": [
+        "rea-discord-t-0005"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0039",
+      "label": "collectibles store",
+      "aliases": [],
+      "category": "Collectibles, subscriptions and checkout",
+      "related_ids": [
+        "rea-discord-t-0010"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0040",
+      "label": "product SKU",
+      "aliases": [],
+      "category": "Collectibles, subscriptions and checkout",
+      "related_ids": [
+        "rea-discord-t-0010"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0041",
+      "label": "fetch state",
+      "aliases": [],
+      "category": "Collectibles, subscriptions and checkout",
+      "related_ids": [
+        "rea-discord-t-0010"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0042",
+      "label": "backoff expiry",
+      "aliases": [],
+      "category": "Collectibles, subscriptions and checkout",
+      "related_ids": [
+        "rea-discord-t-0010"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0043",
+      "label": "message loader",
+      "aliases": [],
+      "category": "Client architecture and resource loading",
+      "related_ids": [
+        "rea-discord-t-0012"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0044",
+      "label": "locale subscription",
+      "aliases": [],
+      "category": "Client architecture and resource loading",
+      "related_ids": [
+        "rea-discord-t-0012"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0045",
+      "label": "locale promise cache",
+      "aliases": [],
+      "category": "Client architecture and resource loading",
+      "related_ids": [
+        "rea-discord-t-0012"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0046",
+      "label": "message proxy",
+      "aliases": [],
+      "category": "Client architecture and resource loading",
+      "related_ids": [
+        "rea-discord-t-0012"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0047",
+      "label": "build-time app key",
+      "aliases": [],
+      "category": "Diagnostics and operational reliability",
+      "related_ids": [
+        "rea-discord-t-0017"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0048",
+      "label": "stack frame provenance",
+      "aliases": [],
+      "category": "Diagnostics and operational reliability",
+      "related_ids": [
+        "rea-discord-t-0017"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0049",
+      "label": "error tagging",
+      "aliases": [],
+      "category": "Diagnostics and operational reliability",
+      "related_ids": [
+        "rea-discord-t-0017"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0050",
+      "label": "telemetry envelope",
+      "aliases": [],
+      "category": "Diagnostics and operational reliability",
+      "related_ids": [
+        "rea-discord-t-0017"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0051",
+      "label": "gateway event",
+      "aliases": [],
+      "category": "Real-time state and connection recovery",
+      "related_ids": [
+        "rea-discord-t-0052"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0052",
+      "label": "WebSocket",
+      "aliases": [],
+      "category": "Real-time state and connection recovery",
+      "related_ids": [
+        "rea-discord-t-0051"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0053",
+      "label": "heartbeat",
+      "aliases": [],
+      "category": "Real-time state and connection recovery",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0054",
+      "label": "sequence number",
+      "aliases": [],
+      "category": "Real-time state and connection recovery",
+      "related_ids": [
+        "rea-discord-t-0055"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0055",
+      "label": "session resume",
+      "aliases": [],
+      "category": "Real-time state and connection recovery",
+      "related_ids": [
+        "rea-discord-t-0054"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0056",
+      "label": "REST reconciliation",
+      "aliases": [],
+      "category": "Real-time state and connection recovery",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0057",
+      "label": "event ordering",
+      "aliases": [],
+      "category": "Real-time state and connection recovery",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0058",
+      "label": "media decoding",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": [
+        "rea-discord-t-0063"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0059",
+      "label": "WebAssembly codec",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0060",
+      "label": "frame decode time",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0061",
+      "label": "audio sample rate",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0062",
+      "label": "media fallback",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0063",
+      "label": "codec support",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": [
+        "rea-discord-t-0058"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0064",
+      "label": "WebRTC",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": [
+        "rea-discord-t-0065"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0065",
+      "label": "voice signaling",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": [
+        "rea-discord-t-0064"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0066",
+      "label": "media transport",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0067",
+      "label": "screen sharing",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0068",
+      "label": "jitter buffer",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": [
+        "rea-discord-t-0069"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0069",
+      "label": "packet loss",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": [
+        "rea-discord-t-0068"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0070",
+      "label": "media capture",
+      "aliases": [],
+      "category": "Voice, video and media playback",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0071",
+      "label": "AutoMod",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": [
+        "rea-discord-t-0072"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0072",
+      "label": "quarantined nickname",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": [
+        "rea-discord-t-0071"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0073",
+      "label": "guild membership",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": [
+        "rea-discord-t-0074"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0074",
+      "label": "join request",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": [
+        "rea-discord-t-0073"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0075",
+      "label": "role permission",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0076",
+      "label": "moderation state",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0077",
+      "label": "thread auto-archive",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0078",
+      "label": "channel following",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0079",
+      "label": "channel identity",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0080",
+      "label": "channel lifecycle",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0081",
+      "label": "activity statistics",
+      "aliases": [],
+      "category": "Servers, communities and safety",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0082",
+      "label": "embedded activity",
+      "aliases": [],
+      "category": "Embedded activities and interactive experiences",
+      "related_ids": [
+        "rea-discord-t-0083"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0083",
+      "label": "activity location",
+      "aliases": [],
+      "category": "Embedded activities and interactive experiences",
+      "related_ids": [
+        "rea-discord-t-0082"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0084",
+      "label": "app channel",
+      "aliases": [],
+      "category": "Embedded activities and interactive experiences",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0085",
+      "label": "activity pop-out",
+      "aliases": [],
+      "category": "Embedded activities and interactive experiences",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0086",
+      "label": "shared interactive session",
+      "aliases": [],
+      "category": "Embedded activities and interactive experiences",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0087",
+      "label": "animation frame scheduling",
+      "aliases": [],
+      "category": "Embedded activities and interactive experiences",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0088",
+      "label": "font readiness",
+      "aliases": [],
+      "category": "Embedded activities and interactive experiences",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0089",
+      "label": "animation worker",
+      "aliases": [],
+      "category": "Embedded activities and interactive experiences",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0090",
+      "label": "vector animation",
+      "aliases": [],
+      "category": "Embedded activities and interactive experiences",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0091",
+      "label": "animation configuration",
+      "aliases": [],
+      "category": "Embedded activities and interactive experiences",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0092",
+      "label": "checkout state",
+      "aliases": [],
+      "category": "Collectibles, subscriptions and checkout",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0093",
+      "label": "payment source",
+      "aliases": [],
+      "category": "Collectibles, subscriptions and checkout",
+      "related_ids": [
+        "rea-discord-t-0094"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0094",
+      "label": "payment method selection",
+      "aliases": [],
+      "category": "Collectibles, subscriptions and checkout",
+      "related_ids": [
+        "rea-discord-t-0093"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0095",
+      "label": "subscription",
+      "aliases": [],
+      "category": "Collectibles, subscriptions and checkout",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0096",
+      "label": "billing history",
+      "aliases": [],
+      "category": "Collectibles, subscriptions and checkout",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0097",
+      "label": "transaction status",
+      "aliases": [],
+      "category": "Collectibles, subscriptions and checkout",
+      "related_ids": []
+    },
+    {
+      "id": "rea-discord-t-0098",
+      "label": "module factory",
+      "aliases": [],
+      "category": "Client architecture and resource loading",
+      "related_ids": [
+        "rea-discord-t-0020"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0099",
+      "label": "module ID",
+      "aliases": [],
+      "category": "Client architecture and resource loading",
+      "related_ids": [
+        "rea-discord-t-0100"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0100",
+      "label": "dependency graph",
+      "aliases": [],
+      "category": "Client architecture and resource loading",
+      "related_ids": [
+        "rea-discord-t-0099"
+      ]
+    },
+    {
+      "id": "rea-discord-t-0101",
+      "label": "code splitting",
+      "aliases": [],
+      "category": "Client architecture and resource loading",
+      "related_ids": []
     }
   ],
   "redirects": {}
