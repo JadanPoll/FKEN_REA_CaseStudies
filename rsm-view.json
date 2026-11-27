@@ -32,6 +32,17 @@
       },
       "glossary_file": "glossary.json",
       "shared_reader_id": "REA-discord"
+    },
+    {
+      "id": "youtube",
+      "title": "YouTube — Anatomy of a video platform",
+      "short_title": "YouTube",
+      "file": "Software/YouTube/investigation.json",
+      "projection": {
+        "shape": "curiosities"
+      },
+      "glossary_file": "glossary.json",
+      "shared_reader_id": "REA-youtube"
     }
   ]
 }
