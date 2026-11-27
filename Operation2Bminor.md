@@ -6,6 +6,32 @@ Suppose I've read a chapter of our investigative problem book and can now recogn
 
 This is what I mean by tacit here. Think of it as a more technical aspect of the problem book, where the hypothetical situation basically becomes the question. We can assume I can at the very least recognize the key terms or ideas already. What I want to develop is the ability to work with them in actuality.
 
+## The landscape of applied challenges
+
+Think of the tacits as a set of **big picture applied problem book challenges whose solutions compose the underlying topical, subtopical and subsectional machinery**. Their key purpose is to holistically expose how that machinery is relevant and how we actually work with it given the kinds of situations or challenges we might be shown or given in the real world.
+
+Much like the questions in [Operational2.md](Operational2.md), the tacits should asymptotically endeavor to form a convex dimensional set. But rather than trying to color in every chapter and subchapter with a corresponding exercise, we're interested in the landscape of things we could actually do with the knowledge. When we add the n + 1 challenge to the n-present challenges, what interesting new dimension of applied capability or composition does it expose?
+
+Imagine the tacit problems in a book on RC planes:
+
+- Given a box of cardboard, a motor, a battery and a target flight time, can I work out whether I could make a plane that flies? How would I decide on its mass budget, wing area and propulsion system, and what would I actually measure to find out if my design is viable?
+- My plane flies but keeps pitching up and down. How would I figure out whether the problem is its balance, its aerodynamic behavior or something the controller is doing, and what would I try changing?
+- Could I make a plane that returns to where I launched it even when the wind changes and my GPS measurements are imperfect? How would I get the sensing, estimation, navigation and control to work together?
+
+Notice the variance. The first challenge concerns designing something under competing constraints, the second concerns figuring out why something isn't behaving the way we want it to, and the third concerns composing mechanisms to achieve a richer capability. They may draw upon some of the very same constituent ideas, but they give us quite different experiences working with those ideas.
+
+The appeal of these tacits is that I can already imagine what I'd be trying to do, and I'm curious about how I'd actually go about it. The problem gives me a natural reason to work with the equations, technical details, code, experiments and relationships in its solution.
+
+### Negative case — an exercise for every subsection
+
+Suppose an LLM sees that our book contains sections on lift, drag, battery capacity, motor efficiency and wing loading, and proceeds to create five unrelated plug-and-chug exercises, one for each section. It might have technically covered the topics, but has it exposed how any of these things compose when I actually want to build a plane?
+
+Rather than adding another such exercise, could we go up the tree and find a bigger picture applied challenge in which several of them naturally compose? We might still need to work out the very same calculations, but now they are constituent problems of something I actually care about. We can preserve smaller challenges when they develop a useful constituent capability; they don't all need to be independent entries in the big picture set.
+
+Careful though! Making a problem larger, more technically elaborate or dependent on more topics doesn't necessarily make it better. An artificially constructed challenge that requires me to use ten prescribed equations may be considerably less interesting than a small but natural problem in which I have to figure out which two equations are relevant. The composition should emerge from the actual needs of the challenge, not from an obligation to include particular machinery.
+
+We don't need the same topical breakdown or fill criterion as the glossary. A challenge can draw on several chapters, and several challenges can draw on the same chapter. The important thing is whether the set exposes a rich variance of natural applications, whether each challenge is itself curiosity-led and generative, and whether we can actually work through or recover how its solution comes together. A large open challenge can also be decomposed into tractable constituent problems without losing sight of what we're trying to accomplish.
+
 ## 1. What does it look like to actually use an idea?
 
 Suppose I know what a low-pass filter is, why a capacitor might be useful in a circuit and what a time constant is. Imagine the following problem:
