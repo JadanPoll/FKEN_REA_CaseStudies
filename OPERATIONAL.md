@@ -64,7 +64,7 @@ Again, it should make sense if the folder was a title of the case study book. Th
 
 **A vague, generic question** that could easily appear in a ‘Book’ with a different title is just question-generating slop, in other words asking just to ask. Question like this offer no navigational usefulness or excitement
 
-## A failure mode — generalizing away the curiosity
+## Negative calibration case — generalizing away the curiosity and natural application
 
 Suppose we're developing a book on robotics and have the question **"How does a robot distinguish two identical-looking hallways?"**
 
@@ -81,7 +81,15 @@ We should distinguish **the generality of the territory a question opens up from
 | What demonstration would convince me that I can build a useful robot? | What capabilities and evidence establish robotic autonomy? |
 | Why does a robot arm suddenly need huge joint speeds? | What determines the limits of a robot's achievable motion? |
 
-The questions on the right can be useful descriptions of a technical territory, although some also change the spirit or scope of the question on the left. They aren't necessarily improvements to the questions a person actually reads. In fact, the glossary can help us make precisely these connections without requiring us to sacrifice the original questions.
+This is an actual negative case of an LLM interpreting the earlier criteria. It recognized the larger families of problems and recommended the questions on the right as more generative replacements, even though the questions on the left were already perfectly good questions. The problems with interpretations like this are precisely why we have positive and negative cases in the first place.
+
+**Natural application and situation based recognition.** Suppose I'm building a robot and notice that it gets confused every time it enters one of two similar-looking corridors. If I've previously come across the question on the left, I might immediately recognize that I've encountered that very problem and recall some of the things I learned about it. Even if I haven't learned about it yet, I can recognize why that question is relevant to what I'm doing. Would I necessarily recognize the relevance of "How can robots resolve ambiguity in their observations?" without already having some understanding of observational ambiguity and how it manifests in an actual robot?
+
+The issue isn't simply that the latter question is less exciting. It introduces friction in going from a situation to the recognition of a relevant problem, and from a previously encountered idea to the recognition of a situation where it could be useful. This matters both when we're navigating the book and when we're out in the world actually trying to do something.
+
+Consider also the potential follow-up questions. If I move the robot elsewhere, can it find itself again? What if both hallways really are identical? What if the robot remembers how it got there? What if it could deliberately move somewhere from which it could distinguish the two? We can begin asking these questions without knowing the words localization, perceptual aliasing or active perception. The original situation gives us something to reason about, vary, and play with. A generic question about observational ambiguity offers much less of a starting point to someone who doesn't already understand the field.
+
+The questions on the right can be useful descriptions of a technical territory, although some also change the spirit or scope of the question on the left. As replacements here they are negative examples, not improvements. The glossary and the surrounding structure of the tree can preserve the more general concepts and their relationships without making those abstractions prerequisites for recognizing the problem or its potential solutions.
 
 Consider the RC plane example in RSM. If we replaced "Can I make an RC plane out of cardboard?" with "What are the feasibility constraints of unconventional aircraft materials?", we might have technically generalized the question while making someone considerably less interested in investigating it.
 
@@ -90,6 +98,10 @@ Careful though! A concrete question isn't necessarily a hyperspecific question. 
 **Generalize the underlying landscape, not away from the thing that made us curious in the first place.** If the original question is already readable, distinctive, and generative at its level of the tree, why change it? If we need a larger parent question, can we introduce one that is just as interesting, and preserve the original as a visible constituent question rather than bury it in a search alias?
 
 A useful test is to imagine someone browsing the chapter and subsection titles without the glossary, answers, or technical explanations in front of them. Can they imagine what the questions are about? Do they see why a question might matter before knowing the relevant terminology? Would they want to investigate something they hadn't even thought to ask? Then check whether that curiosity can actually lead to the larger technical landscape and its evidence. Merely having an LLM recognize that two questions are semantically related is not sufficient.
+
+In fact, we can test the same thing in the other direction. After reading the book, imagine encountering a new concrete situation in which one of its ideas might apply. Would we recognize the opportunity ourselves, without an LLM telling us which technical term to look up? A positive case ought to make it easier to recognize problems and possible solutions in the world, and to ask further questions naturally from the situations it exposes us to. A negative case makes us increasingly dependent on already knowing the abstract vocabulary of the field just to recognize what's relevant.
+
+**Don't confuse making a question easier for an LLM to classify with making it easier for a human to recognize, apply, or build upon.** The criteria on the quality of the question set are meant to serve these latter capabilities, not defeat them.
 
 ## Examples — what would applying these criteria actually look like?
 
