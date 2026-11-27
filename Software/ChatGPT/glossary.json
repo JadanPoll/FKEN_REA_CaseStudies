@@ -1,0 +1,745 @@
+{
+  "schema_version": "1.0",
+  "domain_id": "REA-chatgpt",
+  "title": "ChatGPT — Engineering vocabulary",
+  "terms": [
+    {
+      "id": "rea-chatgpt-t-0001",
+      "label": "deferred submission",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0002",
+      "label": "currentness predicate",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": [
+        "rea-chatgpt-t-0051"
+      ],
+      "definition": "A condition checked at execution time to determine whether a previously captured action still represents the user's intent."
+    },
+    {
+      "id": "rea-chatgpt-t-0003",
+      "label": "document identity",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": [
+        "rea-chatgpt-t-0005"
+      ],
+      "definition": "The identity of an editor's current document object; changes can invalidate assumptions captured by earlier work."
+    },
+    {
+      "id": "rea-chatgpt-t-0004",
+      "label": "submission guard",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0005",
+      "label": "stale intent",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": [
+        "rea-chatgpt-t-0003"
+      ],
+      "definition": "An action that was once requested but no longer belongs to the current document, account or interaction."
+    },
+    {
+      "id": "rea-chatgpt-t-0006",
+      "label": "abort signal",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0007",
+      "label": "readiness gate",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0008",
+      "label": "submission snapshot",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": [
+        "rea-chatgpt-t-0010"
+      ],
+      "definition": "The exact content and resource identities intended for one submission, distinct from the live mutable editor."
+    },
+    {
+      "id": "rea-chatgpt-t-0009",
+      "label": "authored prompt",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0010",
+      "label": "draft restoration",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": [
+        "rea-chatgpt-t-0008"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0011",
+      "label": "editor serialization",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0012",
+      "label": "attachment snapshot",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": [
+        "rea-chatgpt-t-0050"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0013",
+      "label": "submission ownership",
+      "aliases": [],
+      "category": "The conversation composer",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0014",
+      "label": "background recovery",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": [
+        "rea-chatgpt-t-0015"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0015",
+      "label": "stream inactivity",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": [
+        "rea-chatgpt-t-0014"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0016",
+      "label": "snapshot reconciliation",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": [],
+      "definition": "Refresh and compare an independently obtained state snapshot with local state after an interruption."
+    },
+    {
+      "id": "rea-chatgpt-t-0017",
+      "label": "retry budget",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": [
+        "rea-chatgpt-t-0018"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0018",
+      "label": "polling deadline",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": [
+        "rea-chatgpt-t-0017"
+      ],
+      "definition": "A time boundary after which the active recovery attempt stops making requests until conditions change."
+    },
+    {
+      "id": "rea-chatgpt-t-0019",
+      "label": "request cancellation",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0020",
+      "label": "session identity",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": [
+        "rea-chatgpt-t-0089"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0021",
+      "label": "turn lifecycle",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": [
+        "rea-chatgpt-t-0022"
+      ],
+      "definition": "The transitions from an authored turn to an accepted, active and eventually completed or failed turn."
+    },
+    {
+      "id": "rea-chatgpt-t-0022",
+      "label": "completion event",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": [
+        "rea-chatgpt-t-0021"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0023",
+      "label": "event listener",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0024",
+      "label": "stream delta",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0025",
+      "label": "history attachment",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0026",
+      "label": "conversation state",
+      "aliases": [],
+      "category": "Conversation delivery and continuity",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0027",
+      "label": "conversation tree",
+      "aliases": [],
+      "category": "From conversation data to readable messages",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0028",
+      "label": "message identity",
+      "aliases": [],
+      "category": "From conversation data to readable messages",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0029",
+      "label": "derived view",
+      "aliases": [],
+      "category": "From conversation data to readable messages",
+      "related_ids": [
+        "rea-chatgpt-t-0030"
+      ],
+      "definition": "A presentation-oriented representation computed from source records rather than an independent canonical copy."
+    },
+    {
+      "id": "rea-chatgpt-t-0030",
+      "label": "message projection",
+      "aliases": [],
+      "category": "From conversation data to readable messages",
+      "related_ids": [
+        "rea-chatgpt-t-0029"
+      ],
+      "definition": "Convert source message data into display-oriented records, including relevant references and status."
+    },
+    {
+      "id": "rea-chatgpt-t-0031",
+      "label": "memoization",
+      "aliases": [],
+      "category": "From conversation data to readable messages",
+      "related_ids": [
+        "rea-chatgpt-t-0033"
+      ],
+      "definition": "Reuse a previously computed result when its meaningful input identities or values are unchanged."
+    },
+    {
+      "id": "rea-chatgpt-t-0032",
+      "label": "WeakMap",
+      "aliases": [],
+      "category": "From conversation data to readable messages",
+      "related_ids": [
+        "rea-chatgpt-t-0087"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0033",
+      "label": "cache invalidation",
+      "aliases": [],
+      "category": "From conversation data to readable messages",
+      "related_ids": [
+        "rea-chatgpt-t-0031"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0034",
+      "label": "content reference",
+      "aliases": [],
+      "category": "From conversation data to readable messages",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0035",
+      "label": "draft ownership",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": [
+        "rea-chatgpt-t-0039"
+      ],
+      "definition": "The relationship between a text contribution and the user, suggestion or conversation that owns it."
+    },
+    {
+      "id": "rea-chatgpt-t-0036",
+      "label": "suggestion retirement",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0037",
+      "label": "one-shot consumption",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": [
+        "rea-chatgpt-t-0088",
+        "rea-chatgpt-t-0041"
+      ],
+      "definition": "Record that a particular input has already been applied so it cannot be reapplied accidentally."
+    },
+    {
+      "id": "rea-chatgpt-t-0038",
+      "label": "editor composition",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": [
+        "rea-chatgpt-t-0086"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0039",
+      "label": "conditional cleanup",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": [
+        "rea-chatgpt-t-0035"
+      ],
+      "definition": "Remove a temporary contribution only if the conditions identifying that contribution remain valid."
+    },
+    {
+      "id": "rea-chatgpt-t-0040",
+      "label": "location key",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0041",
+      "label": "prefill",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": [
+        "rea-chatgpt-t-0037"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0042",
+      "label": "IndexedDB",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": [
+        "rea-chatgpt-t-0046"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0043",
+      "label": "page visibility",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0044",
+      "label": "page lifecycle",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0045",
+      "label": "local persistence",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0046",
+      "label": "hydration",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": [
+        "rea-chatgpt-t-0042"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0047",
+      "label": "storage transaction",
+      "aliases": [],
+      "category": "Drafts, prediction and local persistence",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0048",
+      "label": "upload admission",
+      "aliases": [],
+      "category": "Files, attachments and external resources",
+      "related_ids": [
+        "rea-chatgpt-t-0049"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0049",
+      "label": "attachment readiness",
+      "aliases": [],
+      "category": "Files, attachments and external resources",
+      "related_ids": [
+        "rea-chatgpt-t-0048"
+      ],
+      "definition": "Whether a resource has passed the preparation and admission stages needed for its intended use."
+    },
+    {
+      "id": "rea-chatgpt-t-0050",
+      "label": "resource identity",
+      "aliases": [],
+      "category": "Files, attachments and external resources",
+      "related_ids": [
+        "rea-chatgpt-t-0085",
+        "rea-chatgpt-t-0012",
+        "rea-chatgpt-t-0076"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0051",
+      "label": "post-await validation",
+      "aliases": [],
+      "category": "Files, attachments and external resources",
+      "related_ids": [
+        "rea-chatgpt-t-0002"
+      ],
+      "definition": "Recheck captured identity and validity after asynchronous waiting before taking an irreversible action."
+    },
+    {
+      "id": "rea-chatgpt-t-0052",
+      "label": "upload cancellation",
+      "aliases": [],
+      "category": "Files, attachments and external resources",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0053",
+      "label": "upload limit",
+      "aliases": [],
+      "category": "Files, attachments and external resources",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0054",
+      "label": "pending file drop",
+      "aliases": [],
+      "category": "Files, attachments and external resources",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0055",
+      "label": "clipboard event",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": [
+        "rea-chatgpt-t-0056"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0056",
+      "label": "selection range",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": [
+        "rea-chatgpt-t-0055"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0057",
+      "label": "copy feedback",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": [],
+      "definition": "An observation that a copy action occurred; distinct from clipboard content and formatting."
+    },
+    {
+      "id": "rea-chatgpt-t-0058",
+      "label": "event deduplication",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0059",
+      "label": "listener cleanup",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0060",
+      "label": "selected text length",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0061",
+      "label": "clipboard serialization",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": [
+        "rea-chatgpt-t-0065"
+      ],
+      "definition": "Transform selected or canonical content into one or more transferable clipboard representations."
+    },
+    {
+      "id": "rea-chatgpt-t-0062",
+      "label": "Markdown",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0063",
+      "label": "plain text",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0064",
+      "label": "HTML clipboard",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0065",
+      "label": "rich text fragment",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": [
+        "rea-chatgpt-t-0061"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0066",
+      "label": "clipboard fallback",
+      "aliases": [],
+      "category": "Copying, sharing and interacting with responses",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0067",
+      "label": "AudioWorkletNode",
+      "aliases": [],
+      "category": "Voice and audio processing",
+      "related_ids": [
+        "rea-chatgpt-t-0068"
+      ],
+      "definition": "Browser Web Audio API node associated with processing performed in an audio worklet."
+    },
+    {
+      "id": "rea-chatgpt-t-0068",
+      "label": "audio processing graph",
+      "aliases": [],
+      "category": "Voice and audio processing",
+      "related_ids": [
+        "rea-chatgpt-t-0067"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0069",
+      "label": "microphone capture",
+      "aliases": [],
+      "category": "Voice and audio processing",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0070",
+      "label": "sample rate",
+      "aliases": [],
+      "category": "Voice and audio processing",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0071",
+      "label": "audio buffer",
+      "aliases": [],
+      "category": "Voice and audio processing",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0072",
+      "label": "playback",
+      "aliases": [],
+      "category": "Voice and audio processing",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0073",
+      "label": "media track",
+      "aliases": [],
+      "category": "Voice and audio processing",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0074",
+      "label": "connected resource",
+      "aliases": [],
+      "category": "Connected tools and longer-running work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0075",
+      "label": "file reference",
+      "aliases": [],
+      "category": "Connected tools and longer-running work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0076",
+      "label": "resource provenance",
+      "aliases": [],
+      "category": "Connected tools and longer-running work",
+      "related_ids": [
+        "rea-chatgpt-t-0050"
+      ],
+      "definition": "Where a referenced resource came from and how it is identified, distinct from authorization to access it."
+    },
+    {
+      "id": "rea-chatgpt-t-0077",
+      "label": "context attachment",
+      "aliases": [],
+      "category": "Connected tools and longer-running work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0078",
+      "label": "resource lifecycle",
+      "aliases": [],
+      "category": "Connected tools and longer-running work",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0079",
+      "label": "network state",
+      "aliases": [],
+      "category": "Reliability and operational evidence",
+      "related_ids": [
+        "rea-chatgpt-t-0080"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0080",
+      "label": "connection interruption",
+      "aliases": [],
+      "category": "Reliability and operational evidence",
+      "related_ids": [
+        "rea-chatgpt-t-0079"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0081",
+      "label": "service restart",
+      "aliases": [],
+      "category": "Reliability and operational evidence",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0082",
+      "label": "visibility transition",
+      "aliases": [],
+      "category": "Reliability and operational evidence",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0083",
+      "label": "failure classification",
+      "aliases": [],
+      "category": "Reliability and operational evidence",
+      "related_ids": [],
+      "definition": "Distinguish kinds of unsuccessful operations and uncertainty instead of collapsing all failures into one error."
+    },
+    {
+      "id": "rea-chatgpt-t-0084",
+      "label": "diagnostic event",
+      "aliases": [],
+      "category": "Reliability and operational evidence",
+      "related_ids": []
+    },
+    {
+      "id": "rea-chatgpt-t-0085",
+      "label": "upload identity",
+      "category": "Files, attachments and external resources",
+      "definition": "Identify an upload throughout preparation and submission, even when its visible label is unchanged.",
+      "aliases": [],
+      "related_ids": [
+        "rea-chatgpt-t-0050"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0086",
+      "label": "input method editor",
+      "category": "Drafts, prediction and local persistence",
+      "definition": "Composition-aware text entry, especially when intermediate edits are not final.",
+      "aliases": [],
+      "related_ids": [
+        "rea-chatgpt-t-0038"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0087",
+      "label": "weak ownership cache",
+      "category": "From conversation data to readable messages",
+      "definition": "Cache derived records by object identity without independently keeping keys alive.",
+      "aliases": [],
+      "related_ids": [
+        "rea-chatgpt-t-0032"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0088",
+      "label": "idempotent action",
+      "category": "The conversation composer",
+      "definition": "An operation whose repeated application has the same intended effect; a useful contrast to one-shot intent consumption.",
+      "aliases": [],
+      "related_ids": [
+        "rea-chatgpt-t-0037"
+      ]
+    },
+    {
+      "id": "rea-chatgpt-t-0089",
+      "label": "request correlation",
+      "category": "Conversation delivery and continuity",
+      "definition": "Associate a response or failure with the request that produced it.",
+      "aliases": [],
+      "related_ids": [
+        "rea-chatgpt-t-0020"
+      ]
+    }
+  ],
+  "redirects": {}
+}
