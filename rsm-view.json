@@ -1,0 +1,15 @@
+{
+  "mapping_version": "0.1",
+  "name": "Real-world engineering case studies",
+  "views": [
+    {
+      "id": "software",
+      "title": "Software — Real-world engineering case studies",
+      "short_title": "Software",
+      "file": "Software/investigation.json",
+      "projection": {
+        "shape": "flat"
+      }
+    }
+  ]
+}
