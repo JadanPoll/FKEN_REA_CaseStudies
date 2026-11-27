@@ -635,7 +635,8 @@
       "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0020"
-      ]
+      ],
+      "definition": "Lossless compression format for reducing a response payload or file before transport or storage."
     },
     {
       "id": "rea-claude-t-0058",
@@ -741,7 +742,7 @@
       "aliases": [],
       "category": "Response delivery and recovery",
       "related_ids": [],
-      "definition": "Reestablish communication after a transport interruption; resuming the same application state is a separate question."
+      "definition": "Reconnect after the internet or transport disconnects; determine separately whether an interrupted reply resumes, restarts or fails."
     },
     {
       "id": "rea-claude-t-0070",
@@ -755,7 +756,8 @@
       "label": "stream decoding",
       "aliases": [],
       "category": "Response delivery and recovery",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Incrementally turn incoming response bytes into events or text as a reply arrives."
     },
     {
       "id": "rea-claude-t-0072",
@@ -763,7 +765,7 @@
       "aliases": [],
       "category": "Response delivery and recovery",
       "related_ids": [],
-      "definition": "Avoid issuing equivalent concurrent or retried requests unnecessarily."
+      "definition": "Avoid submitting the same request twice when a connection is interrupted or work is retried."
     },
     {
       "id": "rea-claude-t-0073",
@@ -923,7 +925,7 @@
       "related_ids": [
         "rea-claude-t-0093"
       ],
-      "definition": "Obtain authorization for an individual tool action rather than relying on a blanket approval."
+      "definition": "Ask the user for permission before an individual tool action is performed, rather than granting unrestricted standing authorization."
     },
     {
       "id": "rea-claude-t-0092",
@@ -939,7 +941,8 @@
       "category": "Tools, artifacts and interactive work",
       "related_ids": [
         "rea-claude-t-0091"
-      ]
+      ],
+      "definition": "A boundary on which actions a tool can perform without asking for additional approval."
     },
     {
       "id": "rea-claude-t-0094",
@@ -1058,7 +1061,8 @@
       "label": "model entitlement",
       "aliases": [],
       "category": "Usage limits and billing",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "The set of model capabilities available to an account under its plan or usage policy."
     },
     {
       "id": "rea-claude-t-0109",
