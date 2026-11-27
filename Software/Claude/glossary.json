@@ -20,7 +20,8 @@
         "rea-claude-t-0038",
         "rea-claude-t-0039",
         "rea-claude-t-0040"
-      ]
+      ],
+      "definition": "Reuse already parsed text or structure when a stream or edit changes only part of the document."
     },
     {
       "id": "rea-claude-t-0002",
@@ -32,7 +33,8 @@
       "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0001"
-      ]
+      ],
+      "definition": "A hierarchical representation of parsed Markdown, code or another document, with nodes for its meaningful parts."
     },
     {
       "id": "rea-claude-t-0003",
@@ -41,7 +43,8 @@
       "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0001"
-      ]
+      ],
+      "definition": "The earlier part of an evolving input that is unchanged and can safely be retained."
     },
     {
       "id": "rea-claude-t-0004",
@@ -51,7 +54,8 @@
       "related_ids": [
         "rea-claude-t-0001",
         "rea-claude-t-0005"
-      ]
+      ],
+      "definition": "A cheaper specialized operation that runs only when its assumptions are satisfied."
     },
     {
       "id": "rea-claude-t-0005",
@@ -60,14 +64,13 @@
       "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0004"
-      ]
+      ],
+      "definition": "Rebuild the entire syntax tree when incremental reuse is unsafe."
     },
     {
       "id": "rea-claude-t-0006",
       "label": "scroll anchoring",
-      "aliases": [
-        "viewport anchor"
-      ],
+      "aliases": [],
       "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0007",
@@ -76,7 +79,8 @@
         "rea-claude-t-0042",
         "rea-claude-t-0043",
         "rea-claude-t-0044"
-      ]
+      ],
+      "definition": "Keep a visible item in the same apparent place when items above it grow, shrink or are inserted."
     },
     {
       "id": "rea-claude-t-0007",
@@ -88,7 +92,8 @@
       "related_ids": [
         "rea-claude-t-0006",
         "rea-claude-t-0009"
-      ]
+      ],
+      "definition": "Render only nearby items in a long scrolling list while retaining a model of offscreen sizes."
     },
     {
       "id": "rea-claude-t-0008",
@@ -100,7 +105,8 @@
       "related_ids": [
         "rea-claude-t-0006",
         "rea-claude-t-0010"
-      ]
+      ],
+      "definition": "Continued scrolling after a finger is lifted, driven by native inertial motion."
     },
     {
       "id": "rea-claude-t-0009",
@@ -122,14 +128,13 @@
       "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0008"
-      ]
+      ],
+      "definition": "The temporary rubber-band displacement beyond a scrollable area's normal bounds."
     },
     {
       "id": "rea-claude-t-0011",
       "label": "hydration",
-      "aliases": [
-        "state restoration"
-      ],
+      "aliases": [],
       "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0013",
@@ -138,7 +143,8 @@
         "rea-claude-t-0046",
         "rea-claude-t-0047",
         "rea-claude-t-0048"
-      ]
+      ],
+      "definition": "Restore previously saved application state into a newly initialized interface; the stored state may arrive after user interaction."
     },
     {
       "id": "rea-claude-t-0012",
@@ -150,7 +156,8 @@
         "rea-claude-t-0018",
         "rea-claude-t-0030",
         "rea-claude-t-0035"
-      ]
+      ],
+      "definition": "A version of write authority used to reject operations from an earlier account, session or state lifecycle."
     },
     {
       "id": "rea-claude-t-0013",
@@ -160,7 +167,8 @@
       "related_ids": [
         "rea-claude-t-0011",
         "rea-claude-t-0012"
-      ]
+      ],
+      "definition": "Wait for outstanding reads or establish their outcome before deciding whether a write or deletion is appropriate."
     },
     {
       "id": "rea-claude-t-0014",
@@ -175,7 +183,8 @@
         "rea-claude-t-0049",
         "rea-claude-t-0050",
         "rea-claude-t-0051"
-      ]
+      ],
+      "definition": "Show an intended change immediately before the server acknowledges it."
     },
     {
       "id": "rea-claude-t-0015",
@@ -185,7 +194,8 @@
       "related_ids": [
         "rea-claude-t-0014",
         "rea-claude-t-0016"
-      ]
+      ],
+      "definition": "Undo only the parts of a failed change that have not since been replaced by newer edits."
     },
     {
       "id": "rea-claude-t-0016",
@@ -198,7 +208,8 @@
         "rea-claude-t-0014",
         "rea-claude-t-0015",
         "rea-claude-t-0036"
-      ]
+      ],
+      "definition": "Track versions separately for independent settings instead of assigning one version to the entire record."
     },
     {
       "id": "rea-claude-t-0017",
@@ -213,20 +224,20 @@
         "rea-claude-t-0052",
         "rea-claude-t-0053",
         "rea-claude-t-0054"
-      ]
+      ],
+      "definition": "An identifier remembered or discovered before an authoritative listing confirms it exists."
     },
     {
       "id": "rea-claude-t-0018",
       "label": "generation counter",
-      "aliases": [
-        "generation guard"
-      ],
+      "aliases": [],
       "category": "Account isolation and privacy",
       "related_ids": [
         "rea-claude-t-0012",
         "rea-claude-t-0017",
         "rea-claude-t-0100"
-      ]
+      ],
+      "definition": "A monotonically changing identity used to discard asynchronous results from an obsolete lifecycle."
     },
     {
       "id": "rea-claude-t-0019",
@@ -235,7 +246,8 @@
       "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0017"
-      ]
+      ],
+      "definition": "Different replicas or views may temporarily disagree and later converge; not proof of a particular product's consistency guarantee."
     },
     {
       "id": "rea-claude-t-0020",
@@ -249,7 +261,8 @@
         "rea-claude-t-0055",
         "rea-claude-t-0056",
         "rea-claude-t-0057"
-      ]
+      ],
+      "definition": "Run JavaScript outside the browser's main UI thread and communicate by messages."
     },
     {
       "id": "rea-claude-t-0021",
@@ -258,19 +271,19 @@
       "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0020"
-      ]
+      ],
+      "definition": "Browser API for native streaming compression, such as gzip, without a separate JavaScript codec."
     },
     {
       "id": "rea-claude-t-0022",
       "label": "transferable object",
-      "aliases": [
-        "transferable buffer"
-      ],
+      "aliases": [],
       "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0020",
         "rea-claude-t-0031"
-      ]
+      ],
+      "definition": "An object whose underlying resource ownership can move between message endpoints instead of being cloned."
     },
     {
       "id": "rea-claude-t-0023",
@@ -286,7 +299,8 @@
         "rea-claude-t-0059",
         "rea-claude-t-0060",
         "rea-claude-t-0061"
-      ]
+      ],
+      "definition": "Browser performance entry for a long rendering frame, including script and rendering timing information when available."
     },
     {
       "id": "rea-claude-t-0024",
@@ -297,7 +311,8 @@
       "category": "Performance engineering and observability",
       "related_ids": [
         "rea-claude-t-0023"
-      ]
+      ],
+      "definition": "Responsiveness metric covering interaction delay through the next presented paint."
     },
     {
       "id": "rea-claude-t-0025",
@@ -306,7 +321,8 @@
       "category": "Performance engineering and observability",
       "related_ids": [
         "rea-claude-t-0023"
-      ]
+      ],
+      "definition": "A lengthy main-thread task that can prevent input and rendering from progressing."
     },
     {
       "id": "rea-claude-t-0026",
@@ -316,7 +332,8 @@
       "related_ids": [
         "rea-claude-t-0027",
         "rea-claude-t-0076"
-      ]
+      ],
+      "definition": "Prepare or validate audio capture before establishing a voice connection; exact implementation remains to be inspected."
     },
     {
       "id": "rea-claude-t-0027",
@@ -329,7 +346,8 @@
         "rea-claude-t-0026",
         "rea-claude-t-0028",
         "rea-claude-t-0078"
-      ]
+      ],
+      "definition": "Capture, playback or expected delivery clocks disagree, potentially causing accumulated timing error."
     },
     {
       "id": "rea-claude-t-0028",
@@ -339,7 +357,8 @@
       "related_ids": [
         "rea-claude-t-0027",
         "rea-claude-t-0081"
-      ]
+      ],
+      "definition": "Audio playback needs another block of samples before the producer supplies it, causing a gap or stutter."
     },
     {
       "id": "rea-claude-t-0029",
@@ -364,7 +383,8 @@
       "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0022"
-      ]
+      ],
+      "definition": "The browser's general object-copying mechanism for messages and storage, distinct from transferring ownership."
     },
     {
       "id": "rea-claude-t-0032",
@@ -375,7 +395,8 @@
       "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0020"
-      ]
+      ],
+      "definition": "Associate a returned result or failure with the request that produced it."
     },
     {
       "id": "rea-claude-t-0033",
@@ -420,7 +441,8 @@
       "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0001"
-      ]
+      ],
+      "definition": "Attach newly parsed nodes to an existing syntax tree rather than recreating stable nodes."
     },
     {
       "id": "rea-claude-t-0038",
@@ -429,7 +451,8 @@
       "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0001"
-      ]
+      ],
+      "definition": "Translate local character positions in a reparsed fragment back to positions in the complete document."
     },
     {
       "id": "rea-claude-t-0039",
@@ -456,7 +479,8 @@
       "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0006"
-      ]
+      ],
+      "definition": "Accumulate corrections to scroll position while a finger gesture or native scrolling is active, then apply them after settling."
     },
     {
       "id": "rea-claude-t-0042",
@@ -465,7 +489,8 @@
       "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0006"
-      ]
+      ],
+      "definition": "A short interval after touch release in which scrolling may still be owned by the browser."
     },
     {
       "id": "rea-claude-t-0043",
@@ -474,7 +499,8 @@
       "category": "Rendering streaming responses",
       "related_ids": [
         "rea-claude-t-0006"
-      ]
+      ],
+      "definition": "Mark cached item sizes or positions stale after a layout change."
     },
     {
       "id": "rea-claude-t-0044",
@@ -493,7 +519,8 @@
       "related_ids": [
         "rea-claude-t-0011",
         "rea-claude-t-0101"
-      ]
+      ],
+      "definition": "Associate unsent text with the intended conversation and account, so another tab or identity cannot overwrite it accidentally."
     },
     {
       "id": "rea-claude-t-0046",
@@ -502,7 +529,8 @@
       "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0011"
-      ]
+      ],
+      "definition": "A bounded wait for persisted state to become available, rather than treating a slow read as an empty draft."
     },
     {
       "id": "rea-claude-t-0047",
@@ -511,7 +539,8 @@
       "category": "Account isolation and privacy",
       "related_ids": [
         "rea-claude-t-0011"
-      ]
+      ],
+      "definition": "Temporarily prevent writes when ownership or account state is uncertain."
     },
     {
       "id": "rea-claude-t-0048",
@@ -520,7 +549,8 @@
       "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0011"
-      ]
+      ],
+      "definition": "Check that a failed save is still current before trying it again."
     },
     {
       "id": "rea-claude-t-0049",
@@ -529,7 +559,8 @@
       "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0014"
-      ]
+      ],
+      "definition": "Merge a fresh server response with local pending changes without erasing them."
     },
     {
       "id": "rea-claude-t-0050",
@@ -538,7 +569,8 @@
       "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0014"
-      ]
+      ],
+      "definition": "Determine whether a failed asynchronous write still owns a particular field when its failure arrives."
     },
     {
       "id": "rea-claude-t-0051",
@@ -565,7 +597,8 @@
       "category": "Conversation drafts, settings and session state",
       "related_ids": [
         "rea-claude-t-0017"
-      ]
+      ],
+      "definition": "Evidence that an object is deleted or inaccessible, rather than merely not yet returned by a pending request."
     },
     {
       "id": "rea-claude-t-0054",
@@ -583,7 +616,8 @@
       "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0020"
-      ]
+      ],
+      "definition": "Announce supported operations before a peer attempts to use them."
     },
     {
       "id": "rea-claude-t-0056",
@@ -610,7 +644,8 @@
       "category": "Performance engineering and observability",
       "related_ids": [
         "rea-claude-t-0023"
-      ]
+      ],
+      "definition": "Waiting for a rendering opportunity even after the event handler or other main-thread work has finished."
     },
     {
       "id": "rea-claude-t-0059",
@@ -628,7 +663,8 @@
       "category": "Performance engineering and observability",
       "related_ids": [
         "rea-claude-t-0023"
-      ]
+      ],
+      "definition": "Identify which code or invoker contributed to a measured delay."
     },
     {
       "id": "rea-claude-t-0061",
@@ -644,7 +680,8 @@
       "label": "conversation tree",
       "aliases": [],
       "category": "Conversation structure and navigation",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "A possible representation of message ancestry and alternate branches, useful when editing an earlier prompt or regenerating a reply."
     },
     {
       "id": "rea-claude-t-0063",
@@ -676,7 +713,8 @@
       "label": "selected leaf",
       "aliases": [],
       "category": "Conversation structure and navigation",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "The currently selected endpoint of a branch through a conversation; a candidate representation to verify in the client."
     },
     {
       "id": "rea-claude-t-0067",
@@ -685,7 +723,8 @@
       "category": "Response delivery and recovery",
       "related_ids": [
         "rea-claude-t-0068"
-      ]
+      ],
+      "definition": "Stop an in-progress delivery or consumer when the user cancels or its owning request becomes obsolete."
     },
     {
       "id": "rea-claude-t-0068",
@@ -701,7 +740,8 @@
       "label": "connection recovery",
       "aliases": [],
       "category": "Response delivery and recovery",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Reestablish communication after a transport interruption; resuming the same application state is a separate question."
     },
     {
       "id": "rea-claude-t-0070",
@@ -722,7 +762,8 @@
       "label": "request deduplication",
       "aliases": [],
       "category": "Response delivery and recovery",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Avoid issuing equivalent concurrent or retried requests unnecessarily."
     },
     {
       "id": "rea-claude-t-0073",
@@ -731,7 +772,8 @@
       "category": "Voice and multimodal conversations",
       "related_ids": [
         "rea-claude-t-0074"
-      ]
+      ],
+      "definition": "Replacement or renewal of a WebRTC session; investigate when and why a voice connection changes identity."
     },
     {
       "id": "rea-claude-t-0074",
@@ -740,14 +782,16 @@
       "category": "Voice and multimodal conversations",
       "related_ids": [
         "rea-claude-t-0073"
-      ]
+      ],
+      "definition": "Notice an interval without expected media activity, distinct from loss of transport signaling."
     },
     {
       "id": "rea-claude-t-0075",
       "label": "socket silence detection",
       "aliases": [],
       "category": "Voice and multimodal conversations",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Detect lack of expected messages on a signaling or network connection."
     },
     {
       "id": "rea-claude-t-0076",
@@ -795,7 +839,8 @@
       "category": "Voice and multimodal conversations",
       "related_ids": [
         "rea-claude-t-0028"
-      ]
+      ],
+      "definition": "Hold samples between capture, processing or playback to absorb differences in timing."
     },
     {
       "id": "rea-claude-t-0082",
@@ -804,14 +849,16 @@
       "category": "Voice and multimodal conversations",
       "related_ids": [
         "rea-claude-t-0084"
-      ]
+      ],
+      "definition": "Decide whether a selected file can enter a processing or upload flow given its properties and policy."
     },
     {
       "id": "rea-claude-t-0083",
       "label": "document conversion",
       "aliases": [],
       "category": "Voice and multimodal conversations",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Transform an uploaded file into a representation suitable for extraction, preview or model input."
     },
     {
       "id": "rea-claude-t-0084",
@@ -875,7 +922,8 @@
       "category": "Tools, artifacts and interactive work",
       "related_ids": [
         "rea-claude-t-0093"
-      ]
+      ],
+      "definition": "Obtain authorization for an individual tool action rather than relying on a blanket approval."
     },
     {
       "id": "rea-claude-t-0092",
@@ -898,14 +946,16 @@
       "label": "tool lifecycle",
       "aliases": [],
       "category": "Tools, artifacts and interactive work",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Track a request for a tool, any approval, execution, result and its association with the conversation."
     },
     {
       "id": "rea-claude-t-0095",
       "label": "interactive artifact",
       "aliases": [],
       "category": "Tools, artifacts and interactive work",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "A generated object or interface that can be displayed and interacted with separately from ordinary message text."
     },
     {
       "id": "rea-claude-t-0096",
@@ -951,14 +1001,16 @@
       "category": "Account isolation and privacy",
       "related_ids": [
         "rea-claude-t-0045"
-      ]
+      ],
+      "definition": "Unsent content associated with a private conversation whose persistence boundaries require separate verification."
     },
     {
       "id": "rea-claude-t-0102",
       "label": "account isolation",
       "aliases": [],
       "category": "Account isolation and privacy",
-      "related_ids": []
+      "related_ids": [],
+      "definition": "Keep account- or organization-owned state distinct when identities change; client hints do not establish the full security guarantee."
     },
     {
       "id": "rea-claude-t-0103",
@@ -974,7 +1026,8 @@
       "category": "Usage limits and billing",
       "related_ids": [
         "rea-claude-t-0106"
-      ]
+      ],
+      "definition": "A boundary on allowed usage over a defined period or entitlement."
     },
     {
       "id": "rea-claude-t-0105",
@@ -990,7 +1043,8 @@
       "category": "Usage limits and billing",
       "related_ids": [
         "rea-claude-t-0104"
-      ]
+      ],
+      "definition": "A cap on additional spending, distinct from a model's usage quota."
     },
     {
       "id": "rea-claude-t-0107",
