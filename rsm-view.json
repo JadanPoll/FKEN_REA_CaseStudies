@@ -43,6 +43,17 @@
       },
       "glossary_file": "glossary.json",
       "shared_reader_id": "REA-youtube"
+    },
+    {
+      "id": "chatgpt",
+      "title": "ChatGPT — Anatomy of an AI conversation client",
+      "short_title": "ChatGPT",
+      "file": "Software/ChatGPT/investigation.json",
+      "projection": {
+        "shape": "curiosities"
+      },
+      "glossary_file": "glossary.json",
+      "shared_reader_id": "REA-chatgpt"
     }
   ]
 }
