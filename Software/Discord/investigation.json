@@ -7,25 +7,69 @@
       "id": "REA-discord",
       "parent_id": null,
       "kind": "question",
-      "question": "Discord: client architecture and engineering mechanisms",
-      "why": "An evolving landscape of source-inspected engineering mechanisms and open questions in Discord."
+      "question": "Discord — Anatomy of a real-time social platform",
+      "why": "An evolving book-like map. Source-inspected studies coexist with explicitly marked lexical leads and open questions. Do not infer comprehensive implementation coverage."
     },
     {
       "id": "REA-discord-render",
       "parent_id": "REA-discord",
       "kind": "question",
-      "question": "Message history and rich-text composition"
+      "question": "Message history and rich-text composition",
+      "why": "Reading, paginating, composing and navigating conversations."
+    },
+    {
+      "id": "REA-discord-realtime",
+      "parent_id": "REA-discord",
+      "kind": "question",
+      "question": "Real-time state and connection recovery",
+      "why": "Gateway events, ordering, reconnects and client/server convergence; investigate separately from media."
+    },
+    {
+      "id": "REA-discord-media",
+      "parent_id": "REA-discord",
+      "kind": "question",
+      "question": "Voice, video and media playback",
+      "why": "Media signaling, capture, codecs, decoding and timing."
+    },
+    {
+      "id": "REA-discord-community",
+      "parent_id": "REA-discord",
+      "kind": "question",
+      "question": "Servers, communities and safety",
+      "why": "Channel lifecycle, moderation, membership and server-level state."
+    },
+    {
+      "id": "REA-discord-activities",
+      "parent_id": "REA-discord",
+      "kind": "question",
+      "question": "Embedded activities and interactive experiences",
+      "why": "Shared activities, app channels, animations and rich interactive content."
+    },
+    {
+      "id": "REA-discord-economics",
+      "parent_id": "REA-discord",
+      "kind": "question",
+      "question": "Collectibles, subscriptions and checkout",
+      "why": "Catalog state, item recovery, payment-source selection and subscription interfaces."
+    },
+    {
+      "id": "REA-discord-resources",
+      "parent_id": "REA-discord",
+      "kind": "question",
+      "question": "Client architecture and resource loading",
+      "why": "Bundle structure, localization, demand loading and dependency resolution."
     },
     {
       "id": "REA-discord-work",
       "parent_id": "REA-discord",
       "kind": "question",
-      "question": "Client resource loading and diagnostics"
+      "question": "Diagnostics and operational reliability",
+      "why": "Error provenance and evidence for client-side failures."
     },
     {
       "id": "REA-D-scroll",
       "parent_id": "REA-discord-render",
-      "question": "Message pagination and viewport anchors",
+      "question": "History pagination and viewport continuity",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Tracks first/last message IDs, fetch anchors and pre-fetch scroll height. Pinned dimensions update immediately, unpinned updates are debounced. Focus, automatic anchors and jump-to-present are distinct.",
@@ -58,13 +102,17 @@
         "rea-discord-t-0002",
         "rea-discord-t-0003",
         "rea-discord-t-0024",
-        "rea-discord-t-0026"
+        "rea-discord-t-0026",
+        "rea-discord-t-0031",
+        "rea-discord-t-0032",
+        "rea-discord-t-0033",
+        "rea-discord-t-0034"
       ]
     },
     {
       "id": "REA-D-editor",
       "parent_id": "REA-discord-render",
-      "question": "Native input and editor reconciliation",
+      "question": "Browser input and rich-text reconciliation",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Tracks pending diffs/actions, composition and beforeinput target ranges; falls back to browser/logical selection. A guarded native simple-input path avoids preventDefault; other paths reconcile selection with setBaseAndExtent.",
@@ -108,13 +156,17 @@
         "rea-discord-t-0006",
         "rea-discord-t-0007",
         "rea-discord-t-0008",
-        "rea-discord-t-0030"
+        "rea-discord-t-0030",
+        "rea-discord-t-0035",
+        "rea-discord-t-0036",
+        "rea-discord-t-0037",
+        "rea-discord-t-0038"
       ]
     },
     {
       "id": "REA-D-backoff",
-      "parent_id": "REA-discord-work",
-      "question": "Per-collectible fetch state and backoff",
+      "parent_id": "REA-discord-economics",
+      "question": "Collectibles catalog recovery",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Collectibles store maintains per-SKU backoff and fetch states. Hook guards on already loaded, fetching or backed-off conditions; success clears backoff, failure schedules expiry. Candidate registry chain 674658→590180→158390.",
@@ -151,17 +203,23 @@
         ]
       },
       "evidence_run_ids": [
-        "D-read"
+        "D-read",
+        "D-structure",
+        "D-discover"
       ],
       "term_ids": [
         "rea-discord-t-0010",
-        "rea-discord-t-0011"
+        "rea-discord-t-0011",
+        "rea-discord-t-0039",
+        "rea-discord-t-0040",
+        "rea-discord-t-0041",
+        "rea-discord-t-0042"
       ]
     },
     {
       "id": "REA-D-intl",
-      "parent_id": "REA-discord-work",
-      "question": "Lazy locale loading and readiness",
+      "parent_id": "REA-discord-resources",
+      "question": "Locale resources and readiness",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Locale manager subscribes to changes, rebuilds formatters, uses Promise.all readiness barriers, per-loader import maps and promise/cache maps with fallback cycle checks. Tiny webpack factory demonstrates lazy locale import.",
@@ -207,13 +265,17 @@
         "rea-discord-t-0015",
         "rea-discord-t-0016",
         "rea-discord-t-0020",
-        "rea-discord-t-0022"
+        "rea-discord-t-0022",
+        "rea-discord-t-0043",
+        "rea-discord-t-0044",
+        "rea-discord-t-0045",
+        "rea-discord-t-0046"
       ]
     },
     {
       "id": "REA-D-errors",
       "parent_id": "REA-discord-work",
-      "question": "Error attribution through module metadata",
+      "question": "Classifying external script errors",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Sentry-related filter compares frame module metadata app keys against configured keys; supports drop/tag policies and strips metadata before envelope sending.",
@@ -245,7 +307,207 @@
         "rea-discord-t-0017",
         "rea-discord-t-0018",
         "rea-discord-t-0019",
-        "rea-discord-t-0029"
+        "rea-discord-t-0029",
+        "rea-discord-t-0047",
+        "rea-discord-t-0048",
+        "rea-discord-t-0049",
+        "rea-discord-t-0050"
+      ]
+    },
+    {
+      "id": "REA-D-gateway",
+      "parent_id": "REA-discord-realtime",
+      "kind": "question",
+      "question": "Gateway messages and recovery",
+      "status": "pending_investigation",
+      "why": "Prospective chapter: separate gateway event delivery, resume, REST reconciliation and connection state. No specific gateway implementation recovered in the available discovery excerpts; use candidate lexical queries and official gateway documentation to orient a client-side investigation.",
+      "mechanisms_to_investigate": "Prospective chapter: separate gateway event delivery, resume, REST reconciliation and connection state. No specific gateway implementation recovered in the available discovery excerpts; use candidate lexical queries and official gateway documentation to orient a client-side investigation.",
+      "qualification": "Prospective question. No implementation evidence or completed experiment yet.",
+      "term_ids": [
+        "rea-discord-t-0051",
+        "rea-discord-t-0052",
+        "rea-discord-t-0053",
+        "rea-discord-t-0054",
+        "rea-discord-t-0055",
+        "rea-discord-t-0056",
+        "rea-discord-t-0057"
+      ],
+      "evidence_run_ids": [
+        "D-next-gateway"
+      ]
+    },
+    {
+      "id": "REA-D-decode",
+      "parent_id": "REA-discord-media",
+      "kind": "question",
+      "question": "Media decoding and browser fallback",
+      "status": "pending_investigation",
+      "why": "The explored region exposes ogvjsVideoFrameRate, ogvjsAudioSampleRate, _lastFrameDecodeTime, MEDIA_ERR_SRC_NOT_SUPPORTED and WebAssembly. This is likely media-library code; inspect whether and when Discord invokes it. Do not conflate media playback with live call transport.",
+      "mechanisms_to_investigate": "The explored region exposes ogvjsVideoFrameRate, ogvjsAudioSampleRate, _lastFrameDecodeTime, MEDIA_ERR_SRC_NOT_SUPPORTED and WebAssembly. This is likely media-library code; inspect whether and when Discord invokes it. Do not conflate media playback with live call transport.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-discord-t-0058",
+        "rea-discord-t-0059",
+        "rea-discord-t-0060",
+        "rea-discord-t-0061",
+        "rea-discord-t-0062",
+        "rea-discord-t-0063"
+      ],
+      "evidence_run_ids": [
+        "D-discover",
+        "D-next-decode"
+      ]
+    },
+    {
+      "id": "REA-D-voice",
+      "parent_id": "REA-discord-media",
+      "kind": "question",
+      "question": "Live media transport",
+      "status": "pending_investigation",
+      "why": "Prospective territory, not an inspected implementation. Distinguish microphone and camera capture, signaling, transport, codec negotiation and display capture; do not infer voice behavior from the discovered playback library.",
+      "mechanisms_to_investigate": "Prospective territory, not an inspected implementation. Distinguish microphone and camera capture, signaling, transport, codec negotiation and display capture; do not infer voice behavior from the discovered playback library.",
+      "qualification": "Prospective question. No implementation evidence or completed experiment yet.",
+      "term_ids": [
+        "rea-discord-t-0064",
+        "rea-discord-t-0065",
+        "rea-discord-t-0066",
+        "rea-discord-t-0067",
+        "rea-discord-t-0068",
+        "rea-discord-t-0069",
+        "rea-discord-t-0070"
+      ],
+      "evidence_run_ids": [
+        "D-next-voice"
+      ]
+    },
+    {
+      "id": "REA-D-moderation",
+      "parent_id": "REA-discord-community",
+      "kind": "question",
+      "question": "Moderation and server membership",
+      "status": "pending_investigation",
+      "why": "Discovery found AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME and getSubmittedGuildJoinRequestTotal in separate regions. They are possible moderation and join-request UI/state leads, not evidence of how permissions are enforced.",
+      "mechanisms_to_investigate": "Discovery found AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME and getSubmittedGuildJoinRequestTotal in separate regions. They are possible moderation and join-request UI/state leads, not evidence of how permissions are enforced.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-discord-t-0071",
+        "rea-discord-t-0072",
+        "rea-discord-t-0073",
+        "rea-discord-t-0074",
+        "rea-discord-t-0075",
+        "rea-discord-t-0076"
+      ],
+      "evidence_run_ids": [
+        "D-discover",
+        "D-next-moderation"
+      ]
+    },
+    {
+      "id": "REA-D-channels",
+      "parent_id": "REA-discord-community",
+      "kind": "question",
+      "question": "Thread archiving and channel activity",
+      "status": "pending_investigation",
+      "why": "The discovered autoArchiveDurationHook and CHANNEL_FOLLOWER_STATS_FETCH_* identifiers point toward distinct lifecycle and following mechanisms. Trace actual definitions and separate client controls from server policy.",
+      "mechanisms_to_investigate": "The discovered autoArchiveDurationHook and CHANNEL_FOLLOWER_STATS_FETCH_* identifiers point toward distinct lifecycle and following mechanisms. Trace actual definitions and separate client controls from server policy.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-discord-t-0077",
+        "rea-discord-t-0078",
+        "rea-discord-t-0079",
+        "rea-discord-t-0080",
+        "rea-discord-t-0081"
+      ],
+      "evidence_run_ids": [
+        "D-discover",
+        "D-next-channels"
+      ]
+    },
+    {
+      "id": "REA-D-embedded",
+      "parent_id": "REA-discord-activities",
+      "kind": "question",
+      "question": "Embedded activity discovery and presentation",
+      "status": "pending_investigation",
+      "why": "The atlas reveals getEmbeddedActivitiesForLocationIncludingHidden, getSelfEmbeddedActivityForLocation, ACTIVITY_POPOUT_POP_OUT_BUTTON_CLICKED and getAnyStreamForUser. Explore activity discovery, placement and pop-out behavior, without assuming an authorization or sandbox model.",
+      "mechanisms_to_investigate": "The atlas reveals getEmbeddedActivitiesForLocationIncludingHidden, getSelfEmbeddedActivityForLocation, ACTIVITY_POPOUT_POP_OUT_BUTTON_CLICKED and getAnyStreamForUser. Explore activity discovery, placement and pop-out behavior, without assuming an authorization or sandbox model.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-discord-t-0082",
+        "rea-discord-t-0083",
+        "rea-discord-t-0084",
+        "rea-discord-t-0085",
+        "rea-discord-t-0086"
+      ],
+      "evidence_run_ids": [
+        "D-discover",
+        "D-next-embedded"
+      ]
+    },
+    {
+      "id": "REA-D-animation",
+      "parent_id": "REA-discord-activities",
+      "kind": "question",
+      "question": "Animation scheduling and workers",
+      "status": "pending_investigation",
+      "why": "A discovered region contains setCurrentRawFrameValue, waitForFontsLoaded, _useWebWorker and Worker/Blob lexical motifs. Identify the animation library, rendering scheduler and whether Discord uses worker execution.",
+      "mechanisms_to_investigate": "A discovered region contains setCurrentRawFrameValue, waitForFontsLoaded, _useWebWorker and Worker/Blob lexical motifs. Identify the animation library, rendering scheduler and whether Discord uses worker execution.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-discord-t-0087",
+        "rea-discord-t-0088",
+        "rea-discord-t-0089",
+        "rea-discord-t-0090",
+        "rea-discord-t-0091"
+      ],
+      "evidence_run_ids": [
+        "D-discover",
+        "D-next-animation"
+      ]
+    },
+    {
+      "id": "REA-D-checkout",
+      "parent_id": "REA-discord-economics",
+      "kind": "question",
+      "question": "Checkout state and payment-source selection",
+      "status": "pending_investigation",
+      "why": "The observed region contains hasAddedPaymentSourceThisSession, hasPaymentSourcesFromCheckoutStore, hasCheckedInitialPaymentSourceRef and checkAndResolveInitialPaymentSourceId. Recover the UI state machine, not payment credentials or private account information. Server-side transaction correctness is outside this evidence.",
+      "mechanisms_to_investigate": "The observed region contains hasAddedPaymentSourceThisSession, hasPaymentSourcesFromCheckoutStore, hasCheckedInitialPaymentSourceRef and checkAndResolveInitialPaymentSourceId. Recover the UI state machine, not payment credentials or private account information. Server-side transaction correctness is outside this evidence.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-discord-t-0092",
+        "rea-discord-t-0093",
+        "rea-discord-t-0094",
+        "rea-discord-t-0095",
+        "rea-discord-t-0096",
+        "rea-discord-t-0097"
+      ],
+      "evidence_run_ids": [
+        "D-discover",
+        "D-next-checkout"
+      ]
+    },
+    {
+      "id": "REA-D-bundles",
+      "parent_id": "REA-discord-resources",
+      "kind": "question",
+      "question": "Webpack registries and dependency resolution",
+      "status": "pending_investigation",
+      "why": "AI Pill's parsed registry recovered 13,976 factories across 1,429 retained assets; the observed consumer 674658, store 590180 and backoff 158390 are useful examples of direct module candidates. Distinguish registry recognition, actual imports and runtime execution. The locale chunk is another example.",
+      "mechanisms_to_investigate": "AI Pill's parsed registry recovered 13,976 factories across 1,429 retained assets; the observed consumer 674658, store 590180 and backoff 158390 are useful examples of direct module candidates. Distinguish registry recognition, actual imports and runtime execution. The locale chunk is another example.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-discord-t-0020",
+        "rea-discord-t-0021",
+        "rea-discord-t-0022",
+        "rea-discord-t-0098",
+        "rea-discord-t-0099",
+        "rea-discord-t-0100",
+        "rea-discord-t-0101"
+      ],
+      "evidence_run_ids": [
+        "D-structure",
+        "D-next-bundles"
       ]
     }
   ],
@@ -254,59 +516,96 @@
       "id": "D-intl",
       "title": "698610.174da93ccb01bd4a.js",
       "sha256": "ff7356b39f949d62186c6d2520c3c695373c3757b1c1a7fc234923252e1d7fce",
-      "origin": "https://discord.com"
+      "origin": "https://discord.com",
+      "url": "https://discord.com/assets/698610.174da93ccb01bd4a.js"
     },
     {
       "id": "D-editor",
       "title": "187398.e745b22c0e2a3ce3.js",
       "sha256": "1ffe8f7e7b5d6de55dd348fe71a26fbc7e09fa294de6762277bc666b75c2c10c",
-      "origin": "https://discord.com"
+      "origin": "https://discord.com",
+      "url": "https://discord.com/assets/187398.e745b22c0e2a3ce3.js"
     },
     {
       "id": "D-scroll",
       "title": "a6449ce72c7f8ddd.js",
       "sha256": "efe792da55eb7552d81e337037f96658467970d591561c7cff80452c89ba506c",
-      "origin": "https://discord.com"
+      "origin": "https://discord.com",
+      "url": "https://discord.com/assets/a6449ce72c7f8ddd.js"
     },
     {
       "id": "D-errors",
       "title": "619666.09dd54383afdd816.js",
       "sha256": "27c0712b5105bdd775f6d1aa76f6d73b302fea90e9c78e9e1dc7dbffe3c3a4ae",
-      "origin": "https://discord.com"
+      "origin": "https://discord.com",
+      "url": "https://discord.com/assets/619666.09dd54383afdd816.js"
     },
     {
       "id": "D-main",
       "title": "web.1732a939a32a5e17.js",
       "sha256": "ebe5680031ad0f192b18840b86a5720566984c2f9b4fe28848dc059730d71a47",
-      "origin": "https://discord.com"
+      "origin": "https://discord.com",
+      "url": "https://discord.com/assets/web.1732a939a32a5e17.js"
     },
     {
       "id": "D-hook",
       "title": "d98faba192fc7e37.js",
       "sha256": "d4e50985158bc0099b82f8d9ac4d1830feecbfb0cce66efe74057506dcd7c10b",
-      "origin": "https://discord.com"
+      "origin": "https://discord.com",
+      "url": "https://discord.com/assets/d98faba192fc7e37.js"
     },
     {
       "id": "D-chunk",
       "title": "0867b5a62d48e35b.js",
       "sha256": "5474cb4319e1a32488cab1ae6b7044caa9e8b8d590ffa18ecdbc1809c601bbdb",
-      "origin": "https://discord.com"
+      "origin": "https://discord.com",
+      "url": "https://discord.com/assets/0867b5a62d48e35b.js"
     }
   ],
   "evidence_file": "Software/Discord/evidence.json",
   "connections": [],
   "curiosity_atlas": {
-    "purpose": "Enter through an ordinary question or browse vocabulary independently. Each technical mechanism has one canonical record.",
+    "purpose": "Browse the prospective book by chapter, or locate a concept from a description. Lexical leads and open questions remain explicitly distinct from inspected studies.",
     "families": [
       {
         "id": "render",
-        "label": "Messages and composition",
-        "description": "How Discord loads conversations and reconciles browser text input with its editor model."
+        "label": "Message history and rich-text composition",
+        "description": "Reading, paginating, composing and navigating conversations."
+      },
+      {
+        "id": "realtime",
+        "label": "Real-time state and connection recovery",
+        "description": "Gateway events, ordering, reconnects and client/server convergence; investigate separately from media."
+      },
+      {
+        "id": "media",
+        "label": "Voice, video and media playback",
+        "description": "Media signaling, capture, codecs, decoding and timing."
+      },
+      {
+        "id": "community",
+        "label": "Servers, communities and safety",
+        "description": "Channel lifecycle, moderation, membership and server-level state."
+      },
+      {
+        "id": "activities",
+        "label": "Embedded activities and interactive experiences",
+        "description": "Shared activities, app channels, animations and rich interactive content."
+      },
+      {
+        "id": "economics",
+        "label": "Collectibles, subscriptions and checkout",
+        "description": "Catalog state, item recovery, payment-source selection and subscription interfaces."
+      },
+      {
+        "id": "resources",
+        "label": "Client architecture and resource loading",
+        "description": "Bundle structure, localization, demand loading and dependency resolution."
       },
       {
         "id": "work",
-        "label": "Resource loading and diagnostics",
-        "description": "How the client loads localized resources and collectibles, limits retries and classifies errors."
+        "label": "Diagnostics and operational reliability",
+        "description": "Error provenance and evidence for client-side failures."
       }
     ],
     "entries": [
@@ -319,9 +618,12 @@
           "chat scroll jump",
           "load older messages",
           "How can older chat messages load without making the messages I am reading jump?",
-          "How can chat history load without making visible messages jump?"
+          "How can chat history load without making visible messages jump?",
+          "keep my place when loading history",
+          "older messages jump",
+          "prepend chat history"
         ],
-        "context": "Inspect the separation between message fetch anchors, pinned geometry and viewport intent. Restoration itself is still unexamined.",
+        "context": "When older messages arrive, preserve the reader's location independently of the fetch frontier.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -335,7 +637,11 @@
           "rea-discord-t-0002",
           "rea-discord-t-0003",
           "rea-discord-t-0024",
-          "rea-discord-t-0026"
+          "rea-discord-t-0026",
+          "rea-discord-t-0031",
+          "rea-discord-t-0032",
+          "rea-discord-t-0033",
+          "rea-discord-t-0034"
         ]
       },
       {
@@ -347,9 +653,13 @@
           "IME composition",
           "selection",
           "Why does a rich text editor sometimes allow the browser to type directly and sometimes intercept typing?",
-          "How can an editor retain native input while maintaining a logical document model?"
+          "How can an editor retain native input while maintaining a logical document model?",
+          "Japanese keyboard composition",
+          "Chinese IME",
+          "native text editing",
+          "caret moves during typing"
         ],
-        "context": "Inspect guards on native input and selection reconciliation.",
+        "context": "The editor must preserve a logical model while allowing native input, especially during composed text and caret changes.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -363,21 +673,28 @@
           "rea-discord-t-0006",
           "rea-discord-t-0007",
           "rea-discord-t-0008",
-          "rea-discord-t-0030"
+          "rea-discord-t-0030",
+          "rea-discord-t-0035",
+          "rea-discord-t-0036",
+          "rea-discord-t-0037",
+          "rea-discord-t-0038"
         ]
       },
       {
         "id": "REA-D-CURI-backoff",
-        "family_id": "work",
+        "family_id": "economics",
         "question": "How does Discord handle failed collectible requests?",
         "aliases": [
           "retry storm",
           "per item retries",
           "backoff",
           "How can failing requests avoid repeatedly hammering the network without blocking unrelated requests?",
-          "How can independent failing requests avoid creating network pressure?"
+          "How can independent failing requests avoid creating network pressure?",
+          "one item fails repeatedly",
+          "retry a failed product",
+          "shop catalog unavailable"
         ],
-        "context": "Inspect per-SKU state and caller guards; exact backoff algorithm remains open.",
+        "context": "A failed collectible request should not block unrelated items; caller guards consult per-item state.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -388,21 +705,28 @@
         ],
         "term_ids": [
           "rea-discord-t-0010",
-          "rea-discord-t-0011"
+          "rea-discord-t-0011",
+          "rea-discord-t-0039",
+          "rea-discord-t-0040",
+          "rea-discord-t-0041",
+          "rea-discord-t-0042"
         ]
       },
       {
         "id": "REA-D-CURI-intl",
-        "family_id": "work",
+        "family_id": "resources",
         "question": "How does Discord load translations when languages change?",
         "aliases": [
           "locale change",
           "lazy translation",
           "missing messages",
           "How can changing language load only the needed text without exposing incomplete translations?",
-          "How can a language change load only needed resources without partially ready state?"
+          "How can a language change load only needed resources without partially ready state?",
+          "change language without reload",
+          "translations arrive late",
+          "missing translated text"
         ],
-        "context": "Inspect asynchronous readiness, cache and fallback-cycle checks.",
+        "context": "Locale-specific resources load asynchronously; readiness and fallback must be coordinated before rendering translated text.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -418,7 +742,11 @@
           "rea-discord-t-0015",
           "rea-discord-t-0016",
           "rea-discord-t-0020",
-          "rea-discord-t-0022"
+          "rea-discord-t-0022",
+          "rea-discord-t-0043",
+          "rea-discord-t-0044",
+          "rea-discord-t-0045",
+          "rea-discord-t-0046"
         ]
       },
       {
@@ -430,9 +758,12 @@
           "noisy console",
           "error attribution",
           "How can an app tell which errors were introduced by outside scripts?",
-          "How can software distinguish its own errors from third-party errors?"
+          "How can software distinguish its own errors from third-party errors?",
+          "extension caused error",
+          "browser add-on exception",
+          "third party errors"
         ],
-        "context": "Inspect module metadata filtering rather than relying on exception message text.",
+        "context": "A browser extension can introduce exceptions; stack metadata can distinguish outside code from application frames.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -445,7 +776,262 @@
           "rea-discord-t-0017",
           "rea-discord-t-0018",
           "rea-discord-t-0019",
-          "rea-discord-t-0029"
+          "rea-discord-t-0029",
+          "rea-discord-t-0047",
+          "rea-discord-t-0048",
+          "rea-discord-t-0049",
+          "rea-discord-t-0050"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-gateway",
+        "family_id": "realtime",
+        "question": "How does Discord synchronize real-time client state?",
+        "aliases": [
+          "connection drops",
+          "missed real time messages",
+          "reconnect gateway",
+          "message arrives twice"
+        ],
+        "context": "Prospective chapter: separate gateway event delivery, resume, REST reconciliation and connection state. No specific gateway implementation recovered in the available discovery excerpts; use candidate lexical queries and official gateway documentation to orient a client-side investigation.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-gateway"
+        ],
+        "target_ids": [
+          "REA-D-gateway"
+        ],
+        "term_ids": [
+          "rea-discord-t-0051",
+          "rea-discord-t-0052",
+          "rea-discord-t-0053",
+          "rea-discord-t-0054",
+          "rea-discord-t-0055",
+          "rea-discord-t-0056",
+          "rea-discord-t-0057"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-decode",
+        "family_id": "media",
+        "question": "How does Discord play media across different browsers?",
+        "aliases": [
+          "video will not play",
+          "browser codec",
+          "decode media",
+          "unsupported video"
+        ],
+        "context": "The explored region exposes ogvjsVideoFrameRate, ogvjsAudioSampleRate, _lastFrameDecodeTime, MEDIA_ERR_SRC_NOT_SUPPORTED and WebAssembly. This is likely media-library code; inspect whether and when Discord invokes it. Do not conflate media playback with live call transport.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-decode"
+        ],
+        "target_ids": [
+          "REA-D-decode"
+        ],
+        "term_ids": [
+          "rea-discord-t-0058",
+          "rea-discord-t-0059",
+          "rea-discord-t-0060",
+          "rea-discord-t-0061",
+          "rea-discord-t-0062",
+          "rea-discord-t-0063"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-voice",
+        "family_id": "media",
+        "question": "How does Discord establish voice and screen-sharing sessions?",
+        "aliases": [
+          "voice connection drops",
+          "microphone not working",
+          "share screen",
+          "voice call lag"
+        ],
+        "context": "Prospective territory, not an inspected implementation. Distinguish microphone and camera capture, signaling, transport, codec negotiation and display capture; do not infer voice behavior from the discovered playback library.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-voice"
+        ],
+        "target_ids": [
+          "REA-D-voice"
+        ],
+        "term_ids": [
+          "rea-discord-t-0064",
+          "rea-discord-t-0065",
+          "rea-discord-t-0066",
+          "rea-discord-t-0067",
+          "rea-discord-t-0068",
+          "rea-discord-t-0069",
+          "rea-discord-t-0070"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-moderation",
+        "family_id": "community",
+        "question": "How does Discord represent server moderation and membership state?",
+        "aliases": [
+          "security",
+          "moderate a server",
+          "blocked username",
+          "server join approval",
+          "permissions"
+        ],
+        "context": "Discovery found AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME and getSubmittedGuildJoinRequestTotal in separate regions. They are possible moderation and join-request UI/state leads, not evidence of how permissions are enforced.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-moderation"
+        ],
+        "target_ids": [
+          "REA-D-moderation"
+        ],
+        "term_ids": [
+          "rea-discord-t-0071",
+          "rea-discord-t-0072",
+          "rea-discord-t-0073",
+          "rea-discord-t-0074",
+          "rea-discord-t-0075",
+          "rea-discord-t-0076"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-channels",
+        "family_id": "community",
+        "question": "How does Discord manage channel and thread lifecycles?",
+        "aliases": [
+          "archive a thread",
+          "follow announcement channel",
+          "thread expiration"
+        ],
+        "context": "The discovered autoArchiveDurationHook and CHANNEL_FOLLOWER_STATS_FETCH_* identifiers point toward distinct lifecycle and following mechanisms. Trace actual definitions and separate client controls from server policy.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-channels"
+        ],
+        "target_ids": [
+          "REA-D-channels"
+        ],
+        "term_ids": [
+          "rea-discord-t-0077",
+          "rea-discord-t-0078",
+          "rea-discord-t-0079",
+          "rea-discord-t-0080",
+          "rea-discord-t-0081"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-embedded",
+        "family_id": "activities",
+        "question": "How does Discord host shared activities inside channels?",
+        "aliases": [
+          "play a game together",
+          "embedded game in channel",
+          "pop out activity",
+          "activity discovery"
+        ],
+        "context": "The atlas reveals getEmbeddedActivitiesForLocationIncludingHidden, getSelfEmbeddedActivityForLocation, ACTIVITY_POPOUT_POP_OUT_BUTTON_CLICKED and getAnyStreamForUser. Explore activity discovery, placement and pop-out behavior, without assuming an authorization or sandbox model.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-embedded"
+        ],
+        "target_ids": [
+          "REA-D-embedded"
+        ],
+        "term_ids": [
+          "rea-discord-t-0082",
+          "rea-discord-t-0083",
+          "rea-discord-t-0084",
+          "rea-discord-t-0085",
+          "rea-discord-t-0086"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-animation",
+        "family_id": "activities",
+        "question": "How does Discord render animated interactive content?",
+        "aliases": [
+          "animated sticker",
+          "animation feels slow",
+          "worker draws animation"
+        ],
+        "context": "A discovered region contains setCurrentRawFrameValue, waitForFontsLoaded, _useWebWorker and Worker/Blob lexical motifs. Identify the animation library, rendering scheduler and whether Discord uses worker execution.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-animation"
+        ],
+        "target_ids": [
+          "REA-D-animation"
+        ],
+        "term_ids": [
+          "rea-discord-t-0087",
+          "rea-discord-t-0088",
+          "rea-discord-t-0089",
+          "rea-discord-t-0090",
+          "rea-discord-t-0091"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-checkout",
+        "family_id": "economics",
+        "question": "How does Discord manage payment selection and checkout?",
+        "aliases": [
+          "payment",
+          "billing",
+          "choose a card",
+          "checkout remembers payment method",
+          "subscription purchase"
+        ],
+        "context": "The observed region contains hasAddedPaymentSourceThisSession, hasPaymentSourcesFromCheckoutStore, hasCheckedInitialPaymentSourceRef and checkAndResolveInitialPaymentSourceId. Recover the UI state machine, not payment credentials or private account information. Server-side transaction correctness is outside this evidence.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-checkout"
+        ],
+        "target_ids": [
+          "REA-D-checkout"
+        ],
+        "term_ids": [
+          "rea-discord-t-0092",
+          "rea-discord-t-0093",
+          "rea-discord-t-0094",
+          "rea-discord-t-0095",
+          "rea-discord-t-0096",
+          "rea-discord-t-0097"
+        ]
+      },
+      {
+        "id": "REA-D-CURI-bundles",
+        "family_id": "resources",
+        "question": "How is Discord's web client divided into loadable modules?",
+        "aliases": [
+          "javascript bundles",
+          "find implementation in minified client",
+          "lazy loaded feature"
+        ],
+        "context": "AI Pill's parsed registry recovered 13,976 factories across 1,429 retained assets; the observed consumer 674658, store 590180 and backoff 158390 are useful examples of direct module candidates. Distinguish registry recognition, actual imports and runtime execution. The locale chunk is another example.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-D-BRG-bundles"
+        ],
+        "target_ids": [
+          "REA-D-bundles"
+        ],
+        "term_ids": [
+          "rea-discord-t-0020",
+          "rea-discord-t-0021",
+          "rea-discord-t-0022",
+          "rea-discord-t-0098",
+          "rea-discord-t-0099",
+          "rea-discord-t-0100",
+          "rea-discord-t-0101"
         ]
       }
     ]
@@ -457,7 +1043,7 @@
       "choices": [
         {
           "label": "Fetching older messages versus preserving the reading position",
-          "technical_title": "Message pagination and viewport anchors",
+          "technical_title": "History pagination and viewport continuity",
           "distinguishing_question": "Which message IDs define the fetch frontier, and which visible item should stay in place?",
           "why": "Separate data acquisition frontier from visible logical anchor.",
           "targets": [
@@ -468,7 +1054,11 @@
             "rea-discord-t-0002",
             "rea-discord-t-0003",
             "rea-discord-t-0024",
-            "rea-discord-t-0026"
+            "rea-discord-t-0026",
+            "rea-discord-t-0031",
+            "rea-discord-t-0032",
+            "rea-discord-t-0033",
+            "rea-discord-t-0034"
           ]
         }
       ]
@@ -479,7 +1069,7 @@
       "choices": [
         {
           "label": "Browser input versus the editor's document model",
-          "technical_title": "Native input and editor reconciliation",
+          "technical_title": "Browser input and rich-text reconciliation",
           "distinguishing_question": "When can native text input proceed safely, and when must the editor reconcile composition or selection?",
           "why": "Use native editing when invariants hold; explicitly reconcile exceptions.",
           "targets": [
@@ -490,7 +1080,11 @@
             "rea-discord-t-0006",
             "rea-discord-t-0007",
             "rea-discord-t-0008",
-            "rea-discord-t-0030"
+            "rea-discord-t-0030",
+            "rea-discord-t-0035",
+            "rea-discord-t-0036",
+            "rea-discord-t-0037",
+            "rea-discord-t-0038"
           ]
         }
       ]
@@ -501,7 +1095,7 @@
       "choices": [
         {
           "label": "One failed item versus unrelated requests",
-          "technical_title": "Per-collectible fetch state and backoff",
+          "technical_title": "Collectibles catalog recovery",
           "distinguishing_question": "Is the requested item already loaded, in flight or subject to a backoff?",
           "why": "Tie recovery to affected identity; gate at acquisition boundary.",
           "targets": [
@@ -509,7 +1103,11 @@
           ],
           "term_ids": [
             "rea-discord-t-0010",
-            "rea-discord-t-0011"
+            "rea-discord-t-0011",
+            "rea-discord-t-0039",
+            "rea-discord-t-0040",
+            "rea-discord-t-0041",
+            "rea-discord-t-0042"
           ]
         }
       ]
@@ -520,7 +1118,7 @@
       "choices": [
         {
           "label": "Available translations versus pending language resources",
-          "technical_title": "Lazy locale loading and readiness",
+          "technical_title": "Locale resources and readiness",
           "distinguishing_question": "Which locale resources are ready, and how do deferred imports and fallback chains resolve them?",
           "why": "Deferred acquisition plus per-key deduplication and explicit readiness.",
           "targets": [
@@ -533,7 +1131,11 @@
             "rea-discord-t-0015",
             "rea-discord-t-0016",
             "rea-discord-t-0020",
-            "rea-discord-t-0022"
+            "rea-discord-t-0022",
+            "rea-discord-t-0043",
+            "rea-discord-t-0044",
+            "rea-discord-t-0045",
+            "rea-discord-t-0046"
           ]
         }
       ]
@@ -544,7 +1146,7 @@
       "choices": [
         {
           "label": "Application frames versus external frames",
-          "technical_title": "Error attribution through module metadata",
+          "technical_title": "Classifying external script errors",
           "distinguishing_question": "Do stack frames carry the build-time application key used by the error filter?",
           "why": "Attach provenance at build time; classify with explicit policy.",
           "targets": [
@@ -554,7 +1156,218 @@
             "rea-discord-t-0017",
             "rea-discord-t-0018",
             "rea-discord-t-0019",
-            "rea-discord-t-0029"
+            "rea-discord-t-0029",
+            "rea-discord-t-0047",
+            "rea-discord-t-0048",
+            "rea-discord-t-0049",
+            "rea-discord-t-0050"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-gateway",
+      "question": "How does Discord synchronize real-time client state?",
+      "choices": [
+        {
+          "label": "Gateway messages and recovery",
+          "technical_title": "Gateway messages and recovery",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Start with the proposed discovery plan; no implementation claim.",
+          "targets": [
+            "REA-D-gateway"
+          ],
+          "term_ids": [
+            "rea-discord-t-0051",
+            "rea-discord-t-0052",
+            "rea-discord-t-0053",
+            "rea-discord-t-0054",
+            "rea-discord-t-0055",
+            "rea-discord-t-0056",
+            "rea-discord-t-0057"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-decode",
+      "question": "How does Discord play media across different browsers?",
+      "choices": [
+        {
+          "label": "Media decoding and browser fallback",
+          "technical_title": "Media decoding and browser fallback",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-D-decode"
+          ],
+          "term_ids": [
+            "rea-discord-t-0058",
+            "rea-discord-t-0059",
+            "rea-discord-t-0060",
+            "rea-discord-t-0061",
+            "rea-discord-t-0062",
+            "rea-discord-t-0063"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-voice",
+      "question": "How does Discord establish voice and screen-sharing sessions?",
+      "choices": [
+        {
+          "label": "Live media transport",
+          "technical_title": "Live media transport",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Start with the proposed discovery plan; no implementation claim.",
+          "targets": [
+            "REA-D-voice"
+          ],
+          "term_ids": [
+            "rea-discord-t-0064",
+            "rea-discord-t-0065",
+            "rea-discord-t-0066",
+            "rea-discord-t-0067",
+            "rea-discord-t-0068",
+            "rea-discord-t-0069",
+            "rea-discord-t-0070"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-moderation",
+      "question": "How does Discord represent server moderation and membership state?",
+      "choices": [
+        {
+          "label": "Moderation and server membership",
+          "technical_title": "Moderation and server membership",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-D-moderation"
+          ],
+          "term_ids": [
+            "rea-discord-t-0071",
+            "rea-discord-t-0072",
+            "rea-discord-t-0073",
+            "rea-discord-t-0074",
+            "rea-discord-t-0075",
+            "rea-discord-t-0076"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-channels",
+      "question": "How does Discord manage channel and thread lifecycles?",
+      "choices": [
+        {
+          "label": "Thread archiving and channel activity",
+          "technical_title": "Thread archiving and channel activity",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-D-channels"
+          ],
+          "term_ids": [
+            "rea-discord-t-0077",
+            "rea-discord-t-0078",
+            "rea-discord-t-0079",
+            "rea-discord-t-0080",
+            "rea-discord-t-0081"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-embedded",
+      "question": "How does Discord host shared activities inside channels?",
+      "choices": [
+        {
+          "label": "Embedded activity discovery and presentation",
+          "technical_title": "Embedded activity discovery and presentation",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-D-embedded"
+          ],
+          "term_ids": [
+            "rea-discord-t-0082",
+            "rea-discord-t-0083",
+            "rea-discord-t-0084",
+            "rea-discord-t-0085",
+            "rea-discord-t-0086"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-animation",
+      "question": "How does Discord render animated interactive content?",
+      "choices": [
+        {
+          "label": "Animation scheduling and workers",
+          "technical_title": "Animation scheduling and workers",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-D-animation"
+          ],
+          "term_ids": [
+            "rea-discord-t-0087",
+            "rea-discord-t-0088",
+            "rea-discord-t-0089",
+            "rea-discord-t-0090",
+            "rea-discord-t-0091"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-checkout",
+      "question": "How does Discord manage payment selection and checkout?",
+      "choices": [
+        {
+          "label": "Checkout state and payment-source selection",
+          "technical_title": "Checkout state and payment-source selection",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-D-checkout"
+          ],
+          "term_ids": [
+            "rea-discord-t-0092",
+            "rea-discord-t-0093",
+            "rea-discord-t-0094",
+            "rea-discord-t-0095",
+            "rea-discord-t-0096",
+            "rea-discord-t-0097"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-D-BRG-bundles",
+      "question": "How is Discord's web client divided into loadable modules?",
+      "choices": [
+        {
+          "label": "Webpack registries and dependency resolution",
+          "technical_title": "Webpack registries and dependency resolution",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-D-bundles"
+          ],
+          "term_ids": [
+            "rea-discord-t-0020",
+            "rea-discord-t-0021",
+            "rea-discord-t-0022",
+            "rea-discord-t-0098",
+            "rea-discord-t-0099",
+            "rea-discord-t-0100",
+            "rea-discord-t-0101"
           ]
         }
       ]
@@ -564,7 +1377,7 @@
     {
       "id": "render",
       "title": "Message history and rich-text composition",
-      "short_label": "Messages and composition",
+      "short_label": "Message history and rich-text composition",
       "root_id": "REA-discord-render",
       "node_ids": [
         "REA-discord-render",
@@ -579,45 +1392,208 @@
         "REA-D-CURI-scroll",
         "REA-D-CURI-editor"
       ],
-      "rationale": "How Discord loads conversations and reconciles browser text input with its editor model.",
+      "rationale": "Reading, paginating, composing and navigating conversations.",
       "term_ids": [
         "rea-discord-t-0001",
         "rea-discord-t-0002",
         "rea-discord-t-0003",
         "rea-discord-t-0024",
         "rea-discord-t-0026",
+        "rea-discord-t-0031",
+        "rea-discord-t-0032",
+        "rea-discord-t-0033",
+        "rea-discord-t-0034",
         "rea-discord-t-0005",
         "rea-discord-t-0006",
         "rea-discord-t-0007",
         "rea-discord-t-0008",
-        "rea-discord-t-0030"
+        "rea-discord-t-0030",
+        "rea-discord-t-0035",
+        "rea-discord-t-0036",
+        "rea-discord-t-0037",
+        "rea-discord-t-0038"
       ]
     },
     {
-      "id": "work",
-      "title": "Client resource loading and diagnostics",
-      "short_label": "Resource loading and diagnostics",
-      "root_id": "REA-discord-work",
+      "id": "realtime",
+      "title": "Real-time state and connection recovery",
+      "short_label": "Real-time state and connection recovery",
+      "root_id": "REA-discord-realtime",
       "node_ids": [
-        "REA-discord-work",
-        "REA-D-backoff",
-        "REA-D-intl",
-        "REA-D-errors"
+        "REA-discord-realtime",
+        "REA-D-gateway"
       ],
       "parent_overrides": {
-        "REA-D-backoff": "REA-discord-work",
-        "REA-D-intl": "REA-discord-work",
-        "REA-D-errors": "REA-discord-work"
+        "REA-D-gateway": "REA-discord-realtime"
+      },
+      "entry_ids": [
+        "REA-D-CURI-gateway"
+      ],
+      "rationale": "Gateway events, ordering, reconnects and client/server convergence; investigate separately from media.",
+      "term_ids": [
+        "rea-discord-t-0051",
+        "rea-discord-t-0052",
+        "rea-discord-t-0053",
+        "rea-discord-t-0054",
+        "rea-discord-t-0055",
+        "rea-discord-t-0056",
+        "rea-discord-t-0057"
+      ]
+    },
+    {
+      "id": "media",
+      "title": "Voice, video and media playback",
+      "short_label": "Voice, video and media playback",
+      "root_id": "REA-discord-media",
+      "node_ids": [
+        "REA-discord-media",
+        "REA-D-decode",
+        "REA-D-voice"
+      ],
+      "parent_overrides": {
+        "REA-D-decode": "REA-discord-media",
+        "REA-D-voice": "REA-discord-media"
+      },
+      "entry_ids": [
+        "REA-D-CURI-decode",
+        "REA-D-CURI-voice"
+      ],
+      "rationale": "Media signaling, capture, codecs, decoding and timing.",
+      "term_ids": [
+        "rea-discord-t-0058",
+        "rea-discord-t-0059",
+        "rea-discord-t-0060",
+        "rea-discord-t-0061",
+        "rea-discord-t-0062",
+        "rea-discord-t-0063",
+        "rea-discord-t-0064",
+        "rea-discord-t-0065",
+        "rea-discord-t-0066",
+        "rea-discord-t-0067",
+        "rea-discord-t-0068",
+        "rea-discord-t-0069",
+        "rea-discord-t-0070"
+      ]
+    },
+    {
+      "id": "community",
+      "title": "Servers, communities and safety",
+      "short_label": "Servers, communities and safety",
+      "root_id": "REA-discord-community",
+      "node_ids": [
+        "REA-discord-community",
+        "REA-D-moderation",
+        "REA-D-channels"
+      ],
+      "parent_overrides": {
+        "REA-D-moderation": "REA-discord-community",
+        "REA-D-channels": "REA-discord-community"
+      },
+      "entry_ids": [
+        "REA-D-CURI-moderation",
+        "REA-D-CURI-channels"
+      ],
+      "rationale": "Channel lifecycle, moderation, membership and server-level state.",
+      "term_ids": [
+        "rea-discord-t-0071",
+        "rea-discord-t-0072",
+        "rea-discord-t-0073",
+        "rea-discord-t-0074",
+        "rea-discord-t-0075",
+        "rea-discord-t-0076",
+        "rea-discord-t-0077",
+        "rea-discord-t-0078",
+        "rea-discord-t-0079",
+        "rea-discord-t-0080",
+        "rea-discord-t-0081"
+      ]
+    },
+    {
+      "id": "activities",
+      "title": "Embedded activities and interactive experiences",
+      "short_label": "Embedded activities and interactive experiences",
+      "root_id": "REA-discord-activities",
+      "node_ids": [
+        "REA-discord-activities",
+        "REA-D-embedded",
+        "REA-D-animation"
+      ],
+      "parent_overrides": {
+        "REA-D-embedded": "REA-discord-activities",
+        "REA-D-animation": "REA-discord-activities"
+      },
+      "entry_ids": [
+        "REA-D-CURI-embedded",
+        "REA-D-CURI-animation"
+      ],
+      "rationale": "Shared activities, app channels, animations and rich interactive content.",
+      "term_ids": [
+        "rea-discord-t-0082",
+        "rea-discord-t-0083",
+        "rea-discord-t-0084",
+        "rea-discord-t-0085",
+        "rea-discord-t-0086",
+        "rea-discord-t-0087",
+        "rea-discord-t-0088",
+        "rea-discord-t-0089",
+        "rea-discord-t-0090",
+        "rea-discord-t-0091"
+      ]
+    },
+    {
+      "id": "economics",
+      "title": "Collectibles, subscriptions and checkout",
+      "short_label": "Collectibles, subscriptions and checkout",
+      "root_id": "REA-discord-economics",
+      "node_ids": [
+        "REA-discord-economics",
+        "REA-D-backoff",
+        "REA-D-checkout"
+      ],
+      "parent_overrides": {
+        "REA-D-backoff": "REA-discord-economics",
+        "REA-D-checkout": "REA-discord-economics"
       },
       "entry_ids": [
         "REA-D-CURI-backoff",
-        "REA-D-CURI-intl",
-        "REA-D-CURI-errors"
+        "REA-D-CURI-checkout"
       ],
-      "rationale": "How the client loads localized resources and collectibles, limits retries and classifies errors.",
+      "rationale": "Catalog state, item recovery, payment-source selection and subscription interfaces.",
       "term_ids": [
         "rea-discord-t-0010",
         "rea-discord-t-0011",
+        "rea-discord-t-0039",
+        "rea-discord-t-0040",
+        "rea-discord-t-0041",
+        "rea-discord-t-0042",
+        "rea-discord-t-0092",
+        "rea-discord-t-0093",
+        "rea-discord-t-0094",
+        "rea-discord-t-0095",
+        "rea-discord-t-0096",
+        "rea-discord-t-0097"
+      ]
+    },
+    {
+      "id": "resources",
+      "title": "Client architecture and resource loading",
+      "short_label": "Client architecture and resource loading",
+      "root_id": "REA-discord-resources",
+      "node_ids": [
+        "REA-discord-resources",
+        "REA-D-intl",
+        "REA-D-bundles"
+      ],
+      "parent_overrides": {
+        "REA-D-intl": "REA-discord-resources",
+        "REA-D-bundles": "REA-discord-resources"
+      },
+      "entry_ids": [
+        "REA-D-CURI-intl",
+        "REA-D-CURI-bundles"
+      ],
+      "rationale": "Bundle structure, localization, demand loading and dependency resolution.",
+      "term_ids": [
         "rea-discord-t-0012",
         "rea-discord-t-0013",
         "rea-discord-t-0014",
@@ -625,13 +1601,46 @@
         "rea-discord-t-0016",
         "rea-discord-t-0020",
         "rea-discord-t-0022",
+        "rea-discord-t-0043",
+        "rea-discord-t-0044",
+        "rea-discord-t-0045",
+        "rea-discord-t-0046",
+        "rea-discord-t-0021",
+        "rea-discord-t-0098",
+        "rea-discord-t-0099",
+        "rea-discord-t-0100",
+        "rea-discord-t-0101"
+      ]
+    },
+    {
+      "id": "work",
+      "title": "Diagnostics and operational reliability",
+      "short_label": "Diagnostics and operational reliability",
+      "root_id": "REA-discord-work",
+      "node_ids": [
+        "REA-discord-work",
+        "REA-D-errors"
+      ],
+      "parent_overrides": {
+        "REA-D-errors": "REA-discord-work"
+      },
+      "entry_ids": [
+        "REA-D-CURI-errors"
+      ],
+      "rationale": "Error provenance and evidence for client-side failures.",
+      "term_ids": [
         "rea-discord-t-0017",
         "rea-discord-t-0018",
         "rea-discord-t-0019",
-        "rea-discord-t-0029"
+        "rea-discord-t-0029",
+        "rea-discord-t-0047",
+        "rea-discord-t-0048",
+        "rea-discord-t-0049",
+        "rea-discord-t-0050"
       ]
     }
   ],
   "glossary_path": "glossary.json",
-  "glossary_schema": "1.0"
+  "glossary_schema": "1.0",
+  "search_profile": "descriptive"
 }
