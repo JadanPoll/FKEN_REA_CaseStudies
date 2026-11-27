@@ -7,31 +7,76 @@
       "id": "REA-claude",
       "parent_id": null,
       "kind": "question",
-      "question": "Claude: client architecture and engineering mechanisms",
-      "why": "An evolving landscape of source-inspected engineering mechanisms and open questions in Claude."
+      "question": "Claude — Anatomy of an AI application",
+      "why": "An evolving book-like map. Source-inspected studies coexist with explicitly marked lexical leads and open questions. Do not infer comprehensive implementation coverage."
+    },
+    {
+      "id": "REA-claude-conversation",
+      "parent_id": "REA-claude",
+      "kind": "question",
+      "question": "Conversation structure and navigation",
+      "why": "Message trees, branch selection and the identity of a conversation."
+    },
+    {
+      "id": "REA-claude-delivery",
+      "parent_id": "REA-claude",
+      "kind": "question",
+      "question": "Response delivery and recovery",
+      "why": "Sending, interrupted network requests, streamed responses and completion processing."
     },
     {
       "id": "REA-claude-render",
       "parent_id": "REA-claude",
       "kind": "question",
-      "question": "Rendering streaming responses"
+      "question": "Rendering streaming responses",
+      "why": "Incremental Markdown, scrolling and rendering continuity as the transcript grows."
+    },
+    {
+      "id": "REA-claude-media",
+      "parent_id": "REA-claude",
+      "kind": "question",
+      "question": "Voice and multimodal conversations",
+      "why": "Audio capture, playback, media connection recovery and attachment handling."
+    },
+    {
+      "id": "REA-claude-tools",
+      "parent_id": "REA-claude",
+      "kind": "question",
+      "question": "Tools, artifacts and interactive work",
+      "why": "Tool calls, consent prompts, artifacts, connectors and the boundary between a model and an external capability."
     },
     {
       "id": "REA-claude-state",
       "parent_id": "REA-claude",
       "kind": "question",
-      "question": "Conversation drafts, settings and session state"
+      "question": "Conversation drafts, settings and session state",
+      "why": "Persistence, synchronization and preserving intent through asynchronous operations."
+    },
+    {
+      "id": "REA-claude-identity",
+      "parent_id": "REA-claude",
+      "kind": "question",
+      "question": "Account isolation and privacy",
+      "why": "Account and organization changes, incognito drafts and safe state ownership."
     },
     {
       "id": "REA-claude-work",
       "parent_id": "REA-claude",
       "kind": "question",
-      "question": "Response processing and interaction performance"
+      "question": "Performance engineering and observability",
+      "why": "Attributing latency to concrete phases and balancing browser workloads."
+    },
+    {
+      "id": "REA-claude-economics",
+      "parent_id": "REA-claude",
+      "kind": "question",
+      "question": "Usage limits and billing",
+      "why": "The product's usage boundaries, credit and spend-limit interfaces."
     },
     {
       "id": "REA-C-markdown",
       "parent_id": "REA-claude-render",
-      "question": "Incremental Markdown parsing",
+      "question": "Rendering and incremental syntax",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Cache completed table rows, source offsets, alignment and prefix; validate retained rows, parse newly completed rows and the unstable tail, shift source coordinates and graft nodes. A guarded code-fence path updates the existing AST node directly. General parsing remains the fallback.",
@@ -81,13 +126,17 @@
         "rea-claude-t-0003",
         "rea-claude-t-0004",
         "rea-claude-t-0005",
-        "rea-claude-t-0033"
+        "rea-claude-t-0033",
+        "rea-claude-t-0037",
+        "rea-claude-t-0038",
+        "rea-claude-t-0039",
+        "rea-claude-t-0040"
       ]
     },
     {
       "id": "REA-C-scroll",
       "parent_id": "REA-claude-render",
-      "question": "Scroll anchoring during touch and momentum",
+      "question": "Mobile scroll continuity",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "The virtualizer distinguishes touch, active scrolling and a 150 ms iOS post-touch window. It accumulates corrections during these conditions, refuses to flush outside normal bounds, and reconciles when settled. Numeric measurements are cached and recomputed from the earliest invalidated index.",
@@ -125,13 +174,17 @@
         "rea-claude-t-0007",
         "rea-claude-t-0008",
         "rea-claude-t-0009",
-        "rea-claude-t-0010"
+        "rea-claude-t-0010",
+        "rea-claude-t-0041",
+        "rea-claude-t-0042",
+        "rea-claude-t-0043",
+        "rea-claude-t-0044"
       ]
     },
     {
       "id": "REA-C-persist",
       "parent_id": "REA-claude-state",
-      "question": "Draft restoration and cross-tab writes",
+      "question": "Draft restoration across tabs",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Tracks unsettled reads, write epochs, read barriers and ownership; caller uses 500 ms write debounce and 5 s hydration timeout. Before retrying, rereads the record and rechecks intent and epoch; unchanged writes and deletion have distinct policies.",
@@ -176,13 +229,17 @@
         "rea-claude-t-0013",
         "rea-claude-t-0030",
         "rea-claude-t-0034",
-        "rea-claude-t-0035"
+        "rea-claude-t-0035",
+        "rea-claude-t-0045",
+        "rea-claude-t-0046",
+        "rea-claude-t-0047",
+        "rea-claude-t-0048"
       ]
     },
     {
       "id": "REA-C-optimistic",
       "parent_id": "REA-claude-state",
-      "question": "Optimistic settings updates and selective rollback",
+      "question": "Concurrent settings updates",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Mutations retain prior field sequences and account identity; rollback filters by write sequence. Pending optimistic values can be reapplied over query-cache updates. Settlement reconciles and invalidates stale queries.",
@@ -230,13 +287,16 @@
         "rea-claude-t-0014",
         "rea-claude-t-0015",
         "rea-claude-t-0016",
-        "rea-claude-t-0036"
+        "rea-claude-t-0036",
+        "rea-claude-t-0049",
+        "rea-claude-t-0050",
+        "rea-claude-t-0051"
       ]
     },
     {
       "id": "REA-C-provisional",
       "parent_id": "REA-claude-state",
-      "question": "Provisional session discovery",
+      "question": "Remembered sessions and discovery",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Tracks provisional IDs, listConfirmed and listSettled independently; bounded recovery distinguishes loading, deleted, unreadable and available. Generation checks reject obsolete results; a 10 s timer drops unconfirmed provisional IDs.",
@@ -278,13 +338,16 @@
       "term_ids": [
         "rea-claude-t-0017",
         "rea-claude-t-0018",
-        "rea-claude-t-0019"
+        "rea-claude-t-0019",
+        "rea-claude-t-0052",
+        "rea-claude-t-0053",
+        "rea-claude-t-0054"
       ]
     },
     {
       "id": "REA-C-worker",
-      "parent_id": "REA-claude-work",
-      "question": "Completion compression workers",
+      "parent_id": "REA-claude-delivery",
+      "question": "Completion data compression",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "A 591-character worker receives numeric ID and Uint8Array, streams a Blob through CompressionStream(gzip), returns bytes and duration, transfers the output buffer, and announces availability on startup.",
@@ -317,13 +380,16 @@
         "rea-claude-t-0021",
         "rea-claude-t-0022",
         "rea-claude-t-0031",
-        "rea-claude-t-0032"
+        "rea-claude-t-0032",
+        "rea-claude-t-0055",
+        "rea-claude-t-0056",
+        "rea-claude-t-0057"
       ]
     },
     {
       "id": "REA-C-latency",
       "parent_id": "REA-claude-work",
-      "question": "Interaction latency and paint attribution",
+      "question": "Diagnosing interaction latency",
       "kind": "question",
       "status": "source_inspected",
       "mechanism_explanation": "Correlates Long Animation Frame entries, long tasks and interaction/render probes, estimates script, frame wait, style/layout and post-render contributions, and attributes consequential script activity.",
@@ -354,7 +420,209 @@
       "term_ids": [
         "rea-claude-t-0023",
         "rea-claude-t-0024",
-        "rea-claude-t-0025"
+        "rea-claude-t-0025",
+        "rea-claude-t-0058",
+        "rea-claude-t-0059",
+        "rea-claude-t-0060",
+        "rea-claude-t-0061"
+      ]
+    },
+    {
+      "id": "REA-C-branches",
+      "parent_id": "REA-claude-conversation",
+      "kind": "question",
+      "question": "Conversation tree and selected message",
+      "status": "pending_investigation",
+      "why": "current_leaf_message_uuid and LATEST_ASSISTANT_OUTPUT_KIND_ occur in the discovery atlas. Investigate identity, parent/child relationships, editing and regeneration; the representation itself has not been inspected.",
+      "mechanisms_to_investigate": "current_leaf_message_uuid and LATEST_ASSISTANT_OUTPUT_KIND_ occur in the discovery atlas. Investigate identity, parent/child relationships, editing and regeneration; the representation itself has not been inspected.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-claude-t-0062",
+        "rea-claude-t-0063",
+        "rea-claude-t-0064",
+        "rea-claude-t-0065",
+        "rea-claude-t-0066"
+      ],
+      "evidence_run_ids": [
+        "C-atlas",
+        "C-next-branches"
+      ]
+    },
+    {
+      "id": "REA-C-network",
+      "parent_id": "REA-claude-delivery",
+      "kind": "question",
+      "question": "Connection recovery and request cancellation",
+      "status": "pending_investigation",
+      "why": "The atlas contains first_online_change_after_failure_type, first_online_change_after_failure_ms and AbortController near fetch. These are clues to client-side failure classification, cancellation and recovery—not a proven streaming resume protocol.",
+      "mechanisms_to_investigate": "The atlas contains first_online_change_after_failure_type, first_online_change_after_failure_ms and AbortController near fetch. These are clues to client-side failure classification, cancellation and recovery—not a proven streaming resume protocol.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-claude-t-0067",
+        "rea-claude-t-0068",
+        "rea-claude-t-0069",
+        "rea-claude-t-0070",
+        "rea-claude-t-0071",
+        "rea-claude-t-0072"
+      ],
+      "evidence_run_ids": [
+        "C-atlas",
+        "C-next-network"
+      ]
+    },
+    {
+      "id": "REA-C-voice",
+      "parent_id": "REA-claude-media",
+      "kind": "question",
+      "question": "Microphone readiness and WebRTC recovery",
+      "status": "pending_investigation",
+      "why": "Search found voice_web_no_mic_preconnect_bail alongside webRtcRedialAfterSilence, webRtcSessionRolloverOff and media/socket silence limits. Distinguish microphone permission/track readiness, transport setup and media liveness before interpreting these names.",
+      "mechanisms_to_investigate": "Search found voice_web_no_mic_preconnect_bail alongside webRtcRedialAfterSilence, webRtcSessionRolloverOff and media/socket silence limits. Distinguish microphone permission/track readiness, transport setup and media liveness before interpreting these names.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-claude-t-0026",
+        "rea-claude-t-0073",
+        "rea-claude-t-0074",
+        "rea-claude-t-0075",
+        "rea-claude-t-0076",
+        "rea-claude-t-0077"
+      ],
+      "evidence_run_ids": [
+        "C-discover",
+        "C-next-voice"
+      ]
+    },
+    {
+      "id": "REA-C-audio-clock",
+      "parent_id": "REA-claude-media",
+      "kind": "question",
+      "question": "Audio clocks, capture and playback diagnostics",
+      "status": "pending_investigation",
+      "why": "Search found capture_clock_mismatch_deliveries_per_sec, sample-rate changes, frames per delivery, output latency and playback underrun metrics. The actual clock model and corrective policy remain open.",
+      "mechanisms_to_investigate": "Search found capture_clock_mismatch_deliveries_per_sec, sample-rate changes, frames per delivery, output latency and playback underrun metrics. The actual clock model and corrective policy remain open.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-claude-t-0027",
+        "rea-claude-t-0028",
+        "rea-claude-t-0078",
+        "rea-claude-t-0079",
+        "rea-claude-t-0080",
+        "rea-claude-t-0081"
+      ],
+      "evidence_run_ids": [
+        "C-discover",
+        "C-next-audio-clock"
+      ]
+    },
+    {
+      "id": "REA-C-attachments",
+      "parent_id": "REA-claude-media",
+      "kind": "question",
+      "question": "Attachment limits and conversion",
+      "status": "pending_investigation",
+      "why": "The discovery atlas exposes file_kept_over_page_limit_direct, file_kept_after_conversion_page_limit and file_kept_after_blank_text. These are clues to admission/conversion decisions; inspect their callers and distinguish local policy from server validation.",
+      "mechanisms_to_investigate": "The discovery atlas exposes file_kept_over_page_limit_direct, file_kept_after_conversion_page_limit and file_kept_after_blank_text. These are clues to admission/conversion decisions; inspect their callers and distinguish local policy from server validation.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-claude-t-0082",
+        "rea-claude-t-0083",
+        "rea-claude-t-0084",
+        "rea-claude-t-0085",
+        "rea-claude-t-0086",
+        "rea-claude-t-0087"
+      ],
+      "evidence_run_ids": [
+        "C-atlas",
+        "C-next-attachments"
+      ]
+    },
+    {
+      "id": "REA-C-tool-consent",
+      "parent_id": "REA-claude-tools",
+      "kind": "question",
+      "question": "Tool invocation and consent",
+      "status": "pending_investigation",
+      "why": "Atlas identifiers include toolUseResultPresent, preceding_tool_use_ids, submitToolApproval, sensitive_mcps_per_call_consent and tool_approval_default_always_allow. Inspect the presentation of tool lifecycle and the approval boundary; no server-side enforcement claim.",
+      "mechanisms_to_investigate": "Atlas identifiers include toolUseResultPresent, preceding_tool_use_ids, submitToolApproval, sensitive_mcps_per_call_consent and tool_approval_default_always_allow. Inspect the presentation of tool lifecycle and the approval boundary; no server-side enforcement claim.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-claude-t-0088",
+        "rea-claude-t-0089",
+        "rea-claude-t-0090",
+        "rea-claude-t-0091",
+        "rea-claude-t-0092",
+        "rea-claude-t-0093",
+        "rea-claude-t-0094"
+      ],
+      "evidence_run_ids": [
+        "C-atlas",
+        "C-next-tool-consent"
+      ]
+    },
+    {
+      "id": "REA-C-artifacts",
+      "parent_id": "REA-claude-tools",
+      "kind": "question",
+      "question": "Artifact and MCP app presentation",
+      "status": "pending_investigation",
+      "why": "Atlas contains tool_cell_artifact_designed_approval, McpAppViewAskPrompt and anyConsentPromptLive. These indicate candidate UI boundaries, not a verified sandbox contract. Investigate how content is handed off and how interaction/permission state is represented.",
+      "mechanisms_to_investigate": "Atlas contains tool_cell_artifact_designed_approval, McpAppViewAskPrompt and anyConsentPromptLive. These indicate candidate UI boundaries, not a verified sandbox contract. Investigate how content is handed off and how interaction/permission state is represented.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-claude-t-0095",
+        "rea-claude-t-0096",
+        "rea-claude-t-0097",
+        "rea-claude-t-0098",
+        "rea-claude-t-0099"
+      ],
+      "evidence_run_ids": [
+        "C-atlas",
+        "C-next-artifacts"
+      ]
+    },
+    {
+      "id": "REA-C-account",
+      "parent_id": "REA-claude-identity",
+      "kind": "question",
+      "question": "Account transitions and draft isolation",
+      "status": "pending_investigation",
+      "why": "Search found draftHeldForSessionMismatch with accountSwitchGen, crossedAccount and isIncognitoDraftIsolated. The atlas additionally exposes disableWritesUntilReload and bootstrap_eager_stale_identity. Determine what data is cleared, retained or write-blocked; do not infer actual privacy guarantees from names.",
+      "mechanisms_to_investigate": "Search found draftHeldForSessionMismatch with accountSwitchGen, crossedAccount and isIncognitoDraftIsolated. The atlas additionally exposes disableWritesUntilReload and bootstrap_eager_stale_identity. Determine what data is cleared, retained or write-blocked; do not infer actual privacy guarantees from names.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-claude-t-0100",
+        "rea-claude-t-0101",
+        "rea-claude-t-0102",
+        "rea-claude-t-0045",
+        "rea-claude-t-0018",
+        "rea-claude-t-0103",
+        "rea-claude-t-0047"
+      ],
+      "evidence_run_ids": [
+        "C-discover",
+        "C-next-account"
+      ]
+    },
+    {
+      "id": "REA-C-billing",
+      "parent_id": "REA-claude-economics",
+      "kind": "question",
+      "question": "Credit, spend limits and model access",
+      "status": "pending_investigation",
+      "why": "The atlas contains claudified_extra_usage_no_default_spend_limit, creditsOnlyModelOff, askAdminHigherLimit and MobileOveragesPaymentSetupModal. These are leads to UI and policy distinctions, not a statement of pricing, current entitlement, or billing enforcement.",
+      "mechanisms_to_investigate": "The atlas contains claudified_extra_usage_no_default_spend_limit, creditsOnlyModelOff, askAdminHigherLimit and MobileOveragesPaymentSetupModal. These are leads to UI and policy distinctions, not a statement of pricing, current entitlement, or billing enforcement.",
+      "qualification": "Lexical discovery evidence, not source-inspected behavior. Proposed plan has not been executed.",
+      "term_ids": [
+        "rea-claude-t-0104",
+        "rea-claude-t-0105",
+        "rea-claude-t-0106",
+        "rea-claude-t-0107",
+        "rea-claude-t-0108",
+        "rea-claude-t-0109"
+      ],
+      "evidence_run_ids": [
+        "C-atlas",
+        "C-next-billing"
       ]
     }
   ],
@@ -363,37 +631,43 @@
       "id": "C-worker",
       "title": "completionGzipWorker-Q_JtDKxH.js",
       "sha256": "ae8faf6861cddd9dcf510dce849db404d56ae67a4b9c73d7214e5de6b1236360",
-      "origin": "https://claude.ai"
+      "origin": "https://claude.ai",
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/completionGzipWorker-Q_JtDKxH.js"
     },
     {
       "id": "C-markdown",
       "title": "shared-31-k46qfpBX.js",
       "sha256": "a2c12d89719d78b0ffe3f2618b4faf4170c10db2530198e6fcd9b52536eada96",
-      "origin": "https://claude.ai"
+      "origin": "https://claude.ai",
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-31-k46qfpBX.js"
     },
     {
       "id": "C-scroll",
       "title": "vendor-frame-BVlhyxBh.js",
       "sha256": "a66780ee845c39d753f6494b716d716bfcf9927b289d91996e90a85453b76ae4",
-      "origin": "https://claude.ai"
+      "origin": "https://claude.ai",
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-frame-BVlhyxBh.js"
     },
     {
       "id": "C-store",
       "title": "shared-l-p-m-w-8-CFELbFb2.js",
       "sha256": "f7d3b6fb4596775f3011d71ec12a94ac437fb07d361782ee550e520ad0de2dfd",
-      "origin": "https://claude.ai"
+      "origin": "https://claude.ai",
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-8-CFELbFb2.js"
     },
     {
       "id": "C-settings",
       "title": "shared-l-p-m-w-3-Ba6-SV97.js",
       "sha256": "2009cc979eca1824b489d47d796375c501776ca3e12459dfa6c995b7aa407ab7",
-      "origin": "https://claude.ai"
+      "origin": "https://claude.ai",
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-3-Ba6-SV97.js"
     },
     {
       "id": "C-perf",
       "title": "cca471d3a-C4dKEi_-.js",
       "sha256": "070b5f5794124a4c7f27a5a9c3c4dcd01ddec44f2841b12afba51f466d3cf802",
-      "origin": "https://claude.ai"
+      "origin": "https://claude.ai",
+      "url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cca471d3a-C4dKEi_-.js"
     }
   ],
   "evidence_file": "Software/Claude/evidence.json",
@@ -412,22 +686,52 @@
     }
   ],
   "curiosity_atlas": {
-    "purpose": "Enter through an ordinary question or browse vocabulary independently. Each technical mechanism has one canonical record.",
+    "purpose": "Browse the prospective book by chapter, or locate a concept from a description. Lexical leads and open questions remain explicitly distinct from inspected studies.",
     "families": [
       {
+        "id": "conversation",
+        "label": "Conversation structure and navigation",
+        "description": "Message trees, branch selection and the identity of a conversation."
+      },
+      {
+        "id": "delivery",
+        "label": "Response delivery and recovery",
+        "description": "Sending, interrupted network requests, streamed responses and completion processing."
+      },
+      {
         "id": "render",
-        "label": "Streaming responses",
-        "description": "Markdown parsing and scroll stability as a response grows."
+        "label": "Rendering streaming responses",
+        "description": "Incremental Markdown, scrolling and rendering continuity as the transcript grows."
+      },
+      {
+        "id": "media",
+        "label": "Voice and multimodal conversations",
+        "description": "Audio capture, playback, media connection recovery and attachment handling."
+      },
+      {
+        "id": "tools",
+        "label": "Tools, artifacts and interactive work",
+        "description": "Tool calls, consent prompts, artifacts, connectors and the boundary between a model and an external capability."
       },
       {
         "id": "state",
-        "label": "Drafts and session state",
-        "description": "How the client preserves user intent across storage reads, network responses and session changes."
+        "label": "Conversation drafts, settings and session state",
+        "description": "Persistence, synchronization and preserving intent through asynchronous operations."
+      },
+      {
+        "id": "identity",
+        "label": "Account isolation and privacy",
+        "description": "Account and organization changes, incognito drafts and safe state ownership."
       },
       {
         "id": "work",
-        "label": "Response processing",
-        "description": "How browser workers and performance instrumentation support the chat experience."
+        "label": "Performance engineering and observability",
+        "description": "Attributing latency to concrete phases and balancing browser workloads."
+      },
+      {
+        "id": "economics",
+        "label": "Usage limits and billing",
+        "description": "The product's usage boundaries, credit and spend-limit interfaces."
       }
     ],
     "entries": [
@@ -440,9 +744,13 @@
           "growing code block",
           "markdown rendering",
           "Why does a long streamed response not need to be rendered from scratch every time?",
-          "Can streaming Markdown grow without reparsing everything?"
+          "Can streaming Markdown grow without reparsing everything?",
+          "stable prefix",
+          "partially written table",
+          "unfinished code fence",
+          "reuse parsed rows"
         ],
-        "context": "Earlier syntax may be stable while the last block is not. Inspect the guarded AST reuse path.",
+        "context": "A response arrives one piece at a time; the existing document must remain correct while an incomplete block changes.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -457,7 +765,11 @@
           "rea-claude-t-0003",
           "rea-claude-t-0004",
           "rea-claude-t-0005",
-          "rea-claude-t-0033"
+          "rea-claude-t-0033",
+          "rea-claude-t-0037",
+          "rea-claude-t-0038",
+          "rea-claude-t-0039",
+          "rea-claude-t-0040"
         ]
       },
       {
@@ -469,9 +781,13 @@
           "changing row height",
           "momentum scrolling",
           "Why does my list jump or stop moving when new content arrives during a swipe?",
-          "Why can correcting scroll position during a gesture make scrolling worse?"
+          "Why can correcting scroll position during a gesture make scrolling worse?",
+          "scroll jumps while touching",
+          "finger swipes list",
+          "page moves when reply grows",
+          "scroll position drifts"
         ],
-        "context": "Does the viewport shift because the geometry changed while a gesture owned the position?",
+        "context": "A growing transcript or changing item height can move the viewport during a finger gesture; distinguish momentum from programmatic correction.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -485,7 +801,11 @@
           "rea-claude-t-0007",
           "rea-claude-t-0008",
           "rea-claude-t-0009",
-          "rea-claude-t-0010"
+          "rea-claude-t-0010",
+          "rea-claude-t-0041",
+          "rea-claude-t-0042",
+          "rea-claude-t-0043",
+          "rea-claude-t-0044"
         ]
       },
       {
@@ -497,9 +817,12 @@
           "multiple tabs",
           "failed save retry",
           "How do I stop a late restored draft from overwriting what I just typed?",
-          "What if a delayed storage read arrives after a user has edited a draft?"
+          "What if a delayed storage read arrives after a user has edited a draft?",
+          "old text reappears after reload",
+          "typed draft in two tabs",
+          "draft overwritten after reopening"
         ],
-        "context": "Can an older storage operation finish after newer user intent? Inspect read barriers and write ownership.",
+        "context": "Unsent text may be restored after a reload or edited in another tab; a slow read must not overwrite newer intent.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -514,7 +837,11 @@
           "rea-claude-t-0013",
           "rea-claude-t-0030",
           "rea-claude-t-0034",
-          "rea-claude-t-0035"
+          "rea-claude-t-0035",
+          "rea-claude-t-0045",
+          "rea-claude-t-0046",
+          "rea-claude-t-0047",
+          "rea-claude-t-0048"
         ]
       },
       {
@@ -525,9 +852,11 @@
           "optimistic UI",
           "concurrent saves",
           "How can settings feel instant without a failed save undoing newer changes?",
-          "Can an earlier failed save undo a later successful edit?"
+          "Can an earlier failed save undo a later successful edit?",
+          "failed save erases another setting",
+          "preferences revert after later edit"
         ],
-        "context": "Do failures roll back a whole snapshot or only fields still owned by the failed change?",
+        "context": "An earlier failed save arrives after another setting has succeeded; rollback should not erase the later successful change.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -540,7 +869,10 @@
           "rea-claude-t-0014",
           "rea-claude-t-0015",
           "rea-claude-t-0016",
-          "rea-claude-t-0036"
+          "rea-claude-t-0036",
+          "rea-claude-t-0049",
+          "rea-claude-t-0050",
+          "rea-claude-t-0051"
         ]
       },
       {
@@ -552,9 +884,12 @@
           "session listing",
           "not found",
           "Why might a previously known session temporarily disappear?",
-          "If a remembered session is missing from a listing, does it no longer exist?"
+          "If a remembered session is missing from a listing, does it no longer exist?",
+          "missing local session",
+          "device vanished from list",
+          "session not yet loaded"
         ],
-        "context": "Is absence a confirmed deletion, an incomplete listing, or a stale result?",
+        "context": "A remembered session may be absent from an incomplete listing; distinguish confirmed deletion from loading and temporary unavailability.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -566,20 +901,26 @@
         "term_ids": [
           "rea-claude-t-0017",
           "rea-claude-t-0018",
-          "rea-claude-t-0019"
+          "rea-claude-t-0019",
+          "rea-claude-t-0052",
+          "rea-claude-t-0053",
+          "rea-claude-t-0054"
         ]
       },
       {
         "id": "REA-C-CURI-worker",
-        "family_id": "work",
+        "family_id": "delivery",
         "question": "How does Claude compress completion data in the browser?",
         "aliases": [
           "compress bytes",
           "worker communication",
           "How can I move compression work off the main thread cheaply?",
-          "Can a worker compress bytes without copying its output?"
+          "Can a worker compress bytes without copying its output?",
+          "browser compression off main thread",
+          "gzip worker",
+          "compress bytes without copying"
         ],
-        "context": "Inspect the native compression worker and its minimal message contract.",
+        "context": "Compression can run in a worker using native browser streams, with a request ID, byte transfer and timing result.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -593,7 +934,10 @@
           "rea-claude-t-0021",
           "rea-claude-t-0022",
           "rea-claude-t-0031",
-          "rea-claude-t-0032"
+          "rea-claude-t-0032",
+          "rea-claude-t-0055",
+          "rea-claude-t-0056",
+          "rea-claude-t-0057"
         ]
       },
       {
@@ -605,9 +949,13 @@
           "paint delay",
           "long animation frame",
           "What is actually making a click feel slow?",
-          "How can we distinguish slow JavaScript from waiting for paint?"
+          "How can we distinguish slow JavaScript from waiting for paint?",
+          "click delay",
+          "slow click response",
+          "page feels sluggish",
+          "script versus paint"
         ],
-        "context": "Distinguish script activity, waiting for a frame and rendering delay.",
+        "context": "A click may be slow because of JavaScript, waiting for an animation frame or rendering work; separate these causes.",
         "question_type": "explanation",
         "task_scope": "conceptual",
         "bridge_ids": [
@@ -619,7 +967,261 @@
         "term_ids": [
           "rea-claude-t-0023",
           "rea-claude-t-0024",
-          "rea-claude-t-0025"
+          "rea-claude-t-0025",
+          "rea-claude-t-0058",
+          "rea-claude-t-0059",
+          "rea-claude-t-0060",
+          "rea-claude-t-0061"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-branches",
+        "family_id": "conversation",
+        "question": "How are Claude conversations represented and branched?",
+        "aliases": [
+          "conversation history branches",
+          "edit earlier prompt",
+          "switch generated response"
+        ],
+        "context": "current_leaf_message_uuid and LATEST_ASSISTANT_OUTPUT_KIND_ occur in the discovery atlas. Investigate identity, parent/child relationships, editing and regeneration; the representation itself has not been inspected.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-branches"
+        ],
+        "target_ids": [
+          "REA-C-branches"
+        ],
+        "term_ids": [
+          "rea-claude-t-0062",
+          "rea-claude-t-0063",
+          "rea-claude-t-0064",
+          "rea-claude-t-0065",
+          "rea-claude-t-0066"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-network",
+        "family_id": "delivery",
+        "question": "How does Claude recover interrupted requests and streamed responses?",
+        "aliases": [
+          "reply stops midstream",
+          "connection drops during response",
+          "cancel a request"
+        ],
+        "context": "The atlas contains first_online_change_after_failure_type, first_online_change_after_failure_ms and AbortController near fetch. These are clues to client-side failure classification, cancellation and recovery—not a proven streaming resume protocol.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-network"
+        ],
+        "target_ids": [
+          "REA-C-network"
+        ],
+        "term_ids": [
+          "rea-claude-t-0067",
+          "rea-claude-t-0068",
+          "rea-claude-t-0069",
+          "rea-claude-t-0070",
+          "rea-claude-t-0071",
+          "rea-claude-t-0072"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-voice",
+        "family_id": "media",
+        "question": "How does Claude establish and recover a voice conversation?",
+        "aliases": [
+          "voice reconnect",
+          "mic not ready",
+          "voice call drops",
+          "audio connection silent"
+        ],
+        "context": "Search found voice_web_no_mic_preconnect_bail alongside webRtcRedialAfterSilence, webRtcSessionRolloverOff and media/socket silence limits. Distinguish microphone permission/track readiness, transport setup and media liveness before interpreting these names.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-voice"
+        ],
+        "target_ids": [
+          "REA-C-voice"
+        ],
+        "term_ids": [
+          "rea-claude-t-0026",
+          "rea-claude-t-0073",
+          "rea-claude-t-0074",
+          "rea-claude-t-0075",
+          "rea-claude-t-0076",
+          "rea-claude-t-0077"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-audio-clock",
+        "family_id": "media",
+        "question": "How does Claude detect audio timing problems?",
+        "aliases": [
+          "voice sound stutters",
+          "audio drifts",
+          "playback buffer runs dry",
+          "microphone sample timing"
+        ],
+        "context": "Search found capture_clock_mismatch_deliveries_per_sec, sample-rate changes, frames per delivery, output latency and playback underrun metrics. The actual clock model and corrective policy remain open.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-audio-clock"
+        ],
+        "target_ids": [
+          "REA-C-audio-clock"
+        ],
+        "term_ids": [
+          "rea-claude-t-0027",
+          "rea-claude-t-0028",
+          "rea-claude-t-0078",
+          "rea-claude-t-0079",
+          "rea-claude-t-0080",
+          "rea-claude-t-0081"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-attachments",
+        "family_id": "media",
+        "question": "How does Claude prepare and queue attachments?",
+        "aliases": [
+          "upload pdf",
+          "large document rejected",
+          "file processing"
+        ],
+        "context": "The discovery atlas exposes file_kept_over_page_limit_direct, file_kept_after_conversion_page_limit and file_kept_after_blank_text. These are clues to admission/conversion decisions; inspect their callers and distinguish local policy from server validation.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-attachments"
+        ],
+        "target_ids": [
+          "REA-C-attachments"
+        ],
+        "term_ids": [
+          "rea-claude-t-0082",
+          "rea-claude-t-0083",
+          "rea-claude-t-0084",
+          "rea-claude-t-0085",
+          "rea-claude-t-0086",
+          "rea-claude-t-0087"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-tool-consent",
+        "family_id": "tools",
+        "question": "How does Claude manage tool calls and user approval?",
+        "aliases": [
+          "allow a tool",
+          "connector asks permission",
+          "tool execution security",
+          "tool call results"
+        ],
+        "context": "Atlas identifiers include toolUseResultPresent, preceding_tool_use_ids, submitToolApproval, sensitive_mcps_per_call_consent and tool_approval_default_always_allow. Inspect the presentation of tool lifecycle and the approval boundary; no server-side enforcement claim.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-tool-consent"
+        ],
+        "target_ids": [
+          "REA-C-tool-consent"
+        ],
+        "term_ids": [
+          "rea-claude-t-0088",
+          "rea-claude-t-0089",
+          "rea-claude-t-0090",
+          "rea-claude-t-0091",
+          "rea-claude-t-0092",
+          "rea-claude-t-0093",
+          "rea-claude-t-0094"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-artifacts",
+        "family_id": "tools",
+        "question": "How does Claude present interactive artifacts and tool interfaces?",
+        "aliases": [
+          "generated interactive app",
+          "tool renders interface",
+          "artifact permissions"
+        ],
+        "context": "Atlas contains tool_cell_artifact_designed_approval, McpAppViewAskPrompt and anyConsentPromptLive. These indicate candidate UI boundaries, not a verified sandbox contract. Investigate how content is handed off and how interaction/permission state is represented.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-artifacts"
+        ],
+        "target_ids": [
+          "REA-C-artifacts"
+        ],
+        "term_ids": [
+          "rea-claude-t-0095",
+          "rea-claude-t-0096",
+          "rea-claude-t-0097",
+          "rea-claude-t-0098",
+          "rea-claude-t-0099"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-account",
+        "family_id": "identity",
+        "question": "How does Claude keep drafts separate across accounts and private conversations?",
+        "aliases": [
+          "security",
+          "privacy",
+          "switch accounts",
+          "private conversation draft",
+          "old account data appears"
+        ],
+        "context": "Search found draftHeldForSessionMismatch with accountSwitchGen, crossedAccount and isIncognitoDraftIsolated. The atlas additionally exposes disableWritesUntilReload and bootstrap_eager_stale_identity. Determine what data is cleared, retained or write-blocked; do not infer actual privacy guarantees from names.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-account"
+        ],
+        "target_ids": [
+          "REA-C-account"
+        ],
+        "term_ids": [
+          "rea-claude-t-0100",
+          "rea-claude-t-0101",
+          "rea-claude-t-0102",
+          "rea-claude-t-0045",
+          "rea-claude-t-0018",
+          "rea-claude-t-0103",
+          "rea-claude-t-0047"
+        ]
+      },
+      {
+        "id": "REA-C-CURI-billing",
+        "family_id": "economics",
+        "question": "How does Claude expose usage limits and additional spending?",
+        "aliases": [
+          "payment",
+          "billing",
+          "run out of usage",
+          "spending cap",
+          "credits"
+        ],
+        "context": "The atlas contains claudified_extra_usage_no_default_spend_limit, creditsOnlyModelOff, askAdminHigherLimit and MobileOveragesPaymentSetupModal. These are leads to UI and policy distinctions, not a statement of pricing, current entitlement, or billing enforcement.",
+        "question_type": "explanation",
+        "task_scope": "conceptual",
+        "bridge_ids": [
+          "REA-C-BRG-billing"
+        ],
+        "target_ids": [
+          "REA-C-billing"
+        ],
+        "term_ids": [
+          "rea-claude-t-0104",
+          "rea-claude-t-0105",
+          "rea-claude-t-0106",
+          "rea-claude-t-0107",
+          "rea-claude-t-0108",
+          "rea-claude-t-0109"
         ]
       }
     ]
@@ -631,7 +1233,7 @@
       "choices": [
         {
           "label": "Stable document blocks versus an unfinished tail",
-          "technical_title": "Incremental Markdown parsing",
+          "technical_title": "Rendering and incremental syntax",
           "distinguishing_question": "Which Markdown structures can be reused as the response grows, and which require a full parse?",
           "why": "Guarded fast paths preserve stable constituents without replacing the general parser.",
           "targets": [
@@ -643,7 +1245,11 @@
             "rea-claude-t-0003",
             "rea-claude-t-0004",
             "rea-claude-t-0005",
-            "rea-claude-t-0033"
+            "rea-claude-t-0033",
+            "rea-claude-t-0037",
+            "rea-claude-t-0038",
+            "rea-claude-t-0039",
+            "rea-claude-t-0040"
           ]
         }
       ]
@@ -654,7 +1260,7 @@
       "choices": [
         {
           "label": "User scrolling versus automatic position correction",
-          "technical_title": "Scroll anchoring during touch and momentum",
+          "technical_title": "Mobile scroll continuity",
           "distinguishing_question": "Does the correction occur while the user is touching, scrolling or overscrolling?",
           "why": "A gesture temporarily owns scroll state; defer conflicting mutations and reconcile afterwards.",
           "targets": [
@@ -665,7 +1271,11 @@
             "rea-claude-t-0007",
             "rea-claude-t-0008",
             "rea-claude-t-0009",
-            "rea-claude-t-0010"
+            "rea-claude-t-0010",
+            "rea-claude-t-0041",
+            "rea-claude-t-0042",
+            "rea-claude-t-0043",
+            "rea-claude-t-0044"
           ]
         }
       ]
@@ -676,7 +1286,7 @@
       "choices": [
         {
           "label": "Restored content versus newer user edits",
-          "technical_title": "Draft restoration and cross-tab writes",
+          "technical_title": "Draft restoration across tabs",
           "distinguishing_question": "Can a delayed read or retry act on a draft after its ownership or write epoch changes?",
           "why": "Unknown is not empty; a failed write does not imply its original intent remains valid.",
           "targets": [
@@ -688,7 +1298,11 @@
             "rea-claude-t-0013",
             "rea-claude-t-0030",
             "rea-claude-t-0034",
-            "rea-claude-t-0035"
+            "rea-claude-t-0035",
+            "rea-claude-t-0045",
+            "rea-claude-t-0046",
+            "rea-claude-t-0047",
+            "rea-claude-t-0048"
           ]
         }
       ]
@@ -699,7 +1313,7 @@
       "choices": [
         {
           "label": "Independent edits versus whole-record rollback",
-          "technical_title": "Optimistic settings updates and selective rollback",
+          "technical_title": "Concurrent settings updates",
           "distinguishing_question": "Which fields still belong to a failed mutation when another save has already succeeded?",
           "why": "Consistency granularity need not equal storage granularity.",
           "targets": [
@@ -709,7 +1323,10 @@
             "rea-claude-t-0014",
             "rea-claude-t-0015",
             "rea-claude-t-0016",
-            "rea-claude-t-0036"
+            "rea-claude-t-0036",
+            "rea-claude-t-0049",
+            "rea-claude-t-0050",
+            "rea-claude-t-0051"
           ]
         }
       ]
@@ -720,7 +1337,7 @@
       "choices": [
         {
           "label": "Incomplete listings versus confirmed absence",
-          "technical_title": "Provisional session discovery",
+          "technical_title": "Remembered sessions and discovery",
           "distinguishing_question": "Is a missing session still loading, unavailable, or actually deleted?",
           "why": "Represent evidence about existence rather than a Boolean.",
           "targets": [
@@ -729,7 +1346,10 @@
           "term_ids": [
             "rea-claude-t-0017",
             "rea-claude-t-0018",
-            "rea-claude-t-0019"
+            "rea-claude-t-0019",
+            "rea-claude-t-0052",
+            "rea-claude-t-0053",
+            "rea-claude-t-0054"
           ]
         }
       ]
@@ -740,7 +1360,7 @@
       "choices": [
         {
           "label": "Native compression and buffer transfer",
-          "technical_title": "Completion compression workers",
+          "technical_title": "Completion data compression",
           "distinguishing_question": "Can compression run independently of the main thread, and how is the result returned?",
           "why": "Capability handshake, correlation ID, transferable ownership and intrinsic timing.",
           "targets": [
@@ -751,7 +1371,10 @@
             "rea-claude-t-0021",
             "rea-claude-t-0022",
             "rea-claude-t-0031",
-            "rea-claude-t-0032"
+            "rea-claude-t-0032",
+            "rea-claude-t-0055",
+            "rea-claude-t-0056",
+            "rea-claude-t-0057"
           ]
         }
       ]
@@ -762,7 +1385,7 @@
       "choices": [
         {
           "label": "Script work versus rendering delay",
-          "technical_title": "Interaction latency and paint attribution",
+          "technical_title": "Diagnosing interaction latency",
           "distinguishing_question": "Is the interaction delayed by a task, frame scheduling, style/layout or later paint activity?",
           "why": "Measure actionable contributing phases rather than total latency alone.",
           "targets": [
@@ -771,7 +1394,218 @@
           "term_ids": [
             "rea-claude-t-0023",
             "rea-claude-t-0024",
-            "rea-claude-t-0025"
+            "rea-claude-t-0025",
+            "rea-claude-t-0058",
+            "rea-claude-t-0059",
+            "rea-claude-t-0060",
+            "rea-claude-t-0061"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-branches",
+      "question": "How are Claude conversations represented and branched?",
+      "choices": [
+        {
+          "label": "Conversation tree and selected message",
+          "technical_title": "Conversation tree and selected message",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-C-branches"
+          ],
+          "term_ids": [
+            "rea-claude-t-0062",
+            "rea-claude-t-0063",
+            "rea-claude-t-0064",
+            "rea-claude-t-0065",
+            "rea-claude-t-0066"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-network",
+      "question": "How does Claude recover interrupted requests and streamed responses?",
+      "choices": [
+        {
+          "label": "Connection recovery and request cancellation",
+          "technical_title": "Connection recovery and request cancellation",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-C-network"
+          ],
+          "term_ids": [
+            "rea-claude-t-0067",
+            "rea-claude-t-0068",
+            "rea-claude-t-0069",
+            "rea-claude-t-0070",
+            "rea-claude-t-0071",
+            "rea-claude-t-0072"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-voice",
+      "question": "How does Claude establish and recover a voice conversation?",
+      "choices": [
+        {
+          "label": "Microphone readiness and WebRTC recovery",
+          "technical_title": "Microphone readiness and WebRTC recovery",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-C-voice"
+          ],
+          "term_ids": [
+            "rea-claude-t-0026",
+            "rea-claude-t-0073",
+            "rea-claude-t-0074",
+            "rea-claude-t-0075",
+            "rea-claude-t-0076",
+            "rea-claude-t-0077"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-audio-clock",
+      "question": "How does Claude detect audio timing problems?",
+      "choices": [
+        {
+          "label": "Audio clocks, capture and playback diagnostics",
+          "technical_title": "Audio clocks, capture and playback diagnostics",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-C-audio-clock"
+          ],
+          "term_ids": [
+            "rea-claude-t-0027",
+            "rea-claude-t-0028",
+            "rea-claude-t-0078",
+            "rea-claude-t-0079",
+            "rea-claude-t-0080",
+            "rea-claude-t-0081"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-attachments",
+      "question": "How does Claude prepare and queue attachments?",
+      "choices": [
+        {
+          "label": "Attachment limits and conversion",
+          "technical_title": "Attachment limits and conversion",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-C-attachments"
+          ],
+          "term_ids": [
+            "rea-claude-t-0082",
+            "rea-claude-t-0083",
+            "rea-claude-t-0084",
+            "rea-claude-t-0085",
+            "rea-claude-t-0086",
+            "rea-claude-t-0087"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-tool-consent",
+      "question": "How does Claude manage tool calls and user approval?",
+      "choices": [
+        {
+          "label": "Tool invocation and consent",
+          "technical_title": "Tool invocation and consent",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-C-tool-consent"
+          ],
+          "term_ids": [
+            "rea-claude-t-0088",
+            "rea-claude-t-0089",
+            "rea-claude-t-0090",
+            "rea-claude-t-0091",
+            "rea-claude-t-0092",
+            "rea-claude-t-0093",
+            "rea-claude-t-0094"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-artifacts",
+      "question": "How does Claude present interactive artifacts and tool interfaces?",
+      "choices": [
+        {
+          "label": "Artifact and MCP app presentation",
+          "technical_title": "Artifact and MCP app presentation",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-C-artifacts"
+          ],
+          "term_ids": [
+            "rea-claude-t-0095",
+            "rea-claude-t-0096",
+            "rea-claude-t-0097",
+            "rea-claude-t-0098",
+            "rea-claude-t-0099"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-account",
+      "question": "How does Claude keep drafts separate across accounts and private conversations?",
+      "choices": [
+        {
+          "label": "Account transitions and draft isolation",
+          "technical_title": "Account transitions and draft isolation",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-C-account"
+          ],
+          "term_ids": [
+            "rea-claude-t-0100",
+            "rea-claude-t-0101",
+            "rea-claude-t-0102",
+            "rea-claude-t-0045",
+            "rea-claude-t-0018",
+            "rea-claude-t-0103",
+            "rea-claude-t-0047"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REA-C-BRG-billing",
+      "question": "How does Claude expose usage limits and additional spending?",
+      "choices": [
+        {
+          "label": "Credit, spend limits and model access",
+          "technical_title": "Credit, spend limits and model access",
+          "distinguishing_question": "What is the client actually responsible for, and which parts remain outside the observed source?",
+          "why": "Follow recorded lexical landmarks; implementation remains unverified.",
+          "targets": [
+            "REA-C-billing"
+          ],
+          "term_ids": [
+            "rea-claude-t-0104",
+            "rea-claude-t-0105",
+            "rea-claude-t-0106",
+            "rea-claude-t-0107",
+            "rea-claude-t-0108",
+            "rea-claude-t-0109"
           ]
         }
       ]
@@ -779,9 +1613,69 @@
   ],
   "landscape_views": [
     {
+      "id": "conversation",
+      "title": "Conversation structure and navigation",
+      "short_label": "Conversation structure and navigation",
+      "root_id": "REA-claude-conversation",
+      "node_ids": [
+        "REA-claude-conversation",
+        "REA-C-branches"
+      ],
+      "parent_overrides": {
+        "REA-C-branches": "REA-claude-conversation"
+      },
+      "entry_ids": [
+        "REA-C-CURI-branches"
+      ],
+      "rationale": "Message trees, branch selection and the identity of a conversation.",
+      "term_ids": [
+        "rea-claude-t-0062",
+        "rea-claude-t-0063",
+        "rea-claude-t-0064",
+        "rea-claude-t-0065",
+        "rea-claude-t-0066"
+      ]
+    },
+    {
+      "id": "delivery",
+      "title": "Response delivery and recovery",
+      "short_label": "Response delivery and recovery",
+      "root_id": "REA-claude-delivery",
+      "node_ids": [
+        "REA-claude-delivery",
+        "REA-C-worker",
+        "REA-C-network"
+      ],
+      "parent_overrides": {
+        "REA-C-worker": "REA-claude-delivery",
+        "REA-C-network": "REA-claude-delivery"
+      },
+      "entry_ids": [
+        "REA-C-CURI-worker",
+        "REA-C-CURI-network"
+      ],
+      "rationale": "Sending, interrupted network requests, streamed responses and completion processing.",
+      "term_ids": [
+        "rea-claude-t-0020",
+        "rea-claude-t-0021",
+        "rea-claude-t-0022",
+        "rea-claude-t-0031",
+        "rea-claude-t-0032",
+        "rea-claude-t-0055",
+        "rea-claude-t-0056",
+        "rea-claude-t-0057",
+        "rea-claude-t-0067",
+        "rea-claude-t-0068",
+        "rea-claude-t-0069",
+        "rea-claude-t-0070",
+        "rea-claude-t-0071",
+        "rea-claude-t-0072"
+      ]
+    },
+    {
       "id": "render",
       "title": "Rendering streaming responses",
-      "short_label": "Streaming responses",
+      "short_label": "Rendering streaming responses",
       "root_id": "REA-claude-render",
       "node_ids": [
         "REA-claude-render",
@@ -796,7 +1690,7 @@
         "REA-C-CURI-markdown",
         "REA-C-CURI-scroll"
       ],
-      "rationale": "Markdown parsing and scroll stability as a response grows.",
+      "rationale": "Incremental Markdown, scrolling and rendering continuity as the transcript grows.",
       "term_ids": [
         "rea-claude-t-0001",
         "rea-claude-t-0002",
@@ -804,17 +1698,102 @@
         "rea-claude-t-0004",
         "rea-claude-t-0005",
         "rea-claude-t-0033",
+        "rea-claude-t-0037",
+        "rea-claude-t-0038",
+        "rea-claude-t-0039",
+        "rea-claude-t-0040",
         "rea-claude-t-0006",
         "rea-claude-t-0007",
         "rea-claude-t-0008",
         "rea-claude-t-0009",
-        "rea-claude-t-0010"
+        "rea-claude-t-0010",
+        "rea-claude-t-0041",
+        "rea-claude-t-0042",
+        "rea-claude-t-0043",
+        "rea-claude-t-0044"
+      ]
+    },
+    {
+      "id": "media",
+      "title": "Voice and multimodal conversations",
+      "short_label": "Voice and multimodal conversations",
+      "root_id": "REA-claude-media",
+      "node_ids": [
+        "REA-claude-media",
+        "REA-C-voice",
+        "REA-C-audio-clock",
+        "REA-C-attachments"
+      ],
+      "parent_overrides": {
+        "REA-C-voice": "REA-claude-media",
+        "REA-C-audio-clock": "REA-claude-media",
+        "REA-C-attachments": "REA-claude-media"
+      },
+      "entry_ids": [
+        "REA-C-CURI-voice",
+        "REA-C-CURI-audio-clock",
+        "REA-C-CURI-attachments"
+      ],
+      "rationale": "Audio capture, playback, media connection recovery and attachment handling.",
+      "term_ids": [
+        "rea-claude-t-0026",
+        "rea-claude-t-0073",
+        "rea-claude-t-0074",
+        "rea-claude-t-0075",
+        "rea-claude-t-0076",
+        "rea-claude-t-0077",
+        "rea-claude-t-0027",
+        "rea-claude-t-0028",
+        "rea-claude-t-0078",
+        "rea-claude-t-0079",
+        "rea-claude-t-0080",
+        "rea-claude-t-0081",
+        "rea-claude-t-0082",
+        "rea-claude-t-0083",
+        "rea-claude-t-0084",
+        "rea-claude-t-0085",
+        "rea-claude-t-0086",
+        "rea-claude-t-0087"
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Tools, artifacts and interactive work",
+      "short_label": "Tools, artifacts and interactive work",
+      "root_id": "REA-claude-tools",
+      "node_ids": [
+        "REA-claude-tools",
+        "REA-C-tool-consent",
+        "REA-C-artifacts"
+      ],
+      "parent_overrides": {
+        "REA-C-tool-consent": "REA-claude-tools",
+        "REA-C-artifacts": "REA-claude-tools"
+      },
+      "entry_ids": [
+        "REA-C-CURI-tool-consent",
+        "REA-C-CURI-artifacts"
+      ],
+      "rationale": "Tool calls, consent prompts, artifacts, connectors and the boundary between a model and an external capability.",
+      "term_ids": [
+        "rea-claude-t-0088",
+        "rea-claude-t-0089",
+        "rea-claude-t-0090",
+        "rea-claude-t-0091",
+        "rea-claude-t-0092",
+        "rea-claude-t-0093",
+        "rea-claude-t-0094",
+        "rea-claude-t-0095",
+        "rea-claude-t-0096",
+        "rea-claude-t-0097",
+        "rea-claude-t-0098",
+        "rea-claude-t-0099"
       ]
     },
     {
       "id": "state",
       "title": "Conversation drafts, settings and session state",
-      "short_label": "Drafts and session state",
+      "short_label": "Conversation drafts, settings and session state",
       "root_id": "REA-claude-state",
       "node_ids": [
         "REA-claude-state",
@@ -832,7 +1811,7 @@
         "REA-C-CURI-optimistic",
         "REA-C-CURI-provisional"
       ],
-      "rationale": "How the client preserves user intent across storage reads, network responses and session changes.",
+      "rationale": "Persistence, synchronization and preserving intent through asynchronous operations.",
       "term_ids": [
         "rea-claude-t-0011",
         "rea-claude-t-0012",
@@ -840,46 +1819,104 @@
         "rea-claude-t-0030",
         "rea-claude-t-0034",
         "rea-claude-t-0035",
+        "rea-claude-t-0045",
+        "rea-claude-t-0046",
+        "rea-claude-t-0047",
+        "rea-claude-t-0048",
         "rea-claude-t-0014",
         "rea-claude-t-0015",
         "rea-claude-t-0016",
         "rea-claude-t-0036",
+        "rea-claude-t-0049",
+        "rea-claude-t-0050",
+        "rea-claude-t-0051",
         "rea-claude-t-0017",
         "rea-claude-t-0018",
-        "rea-claude-t-0019"
+        "rea-claude-t-0019",
+        "rea-claude-t-0052",
+        "rea-claude-t-0053",
+        "rea-claude-t-0054"
+      ]
+    },
+    {
+      "id": "identity",
+      "title": "Account isolation and privacy",
+      "short_label": "Account isolation and privacy",
+      "root_id": "REA-claude-identity",
+      "node_ids": [
+        "REA-claude-identity",
+        "REA-C-account"
+      ],
+      "parent_overrides": {
+        "REA-C-account": "REA-claude-identity"
+      },
+      "entry_ids": [
+        "REA-C-CURI-account"
+      ],
+      "rationale": "Account and organization changes, incognito drafts and safe state ownership.",
+      "term_ids": [
+        "rea-claude-t-0100",
+        "rea-claude-t-0101",
+        "rea-claude-t-0102",
+        "rea-claude-t-0045",
+        "rea-claude-t-0018",
+        "rea-claude-t-0103",
+        "rea-claude-t-0047"
       ]
     },
     {
       "id": "work",
-      "title": "Response processing and interaction performance",
-      "short_label": "Response processing",
+      "title": "Performance engineering and observability",
+      "short_label": "Performance engineering and observability",
       "root_id": "REA-claude-work",
       "node_ids": [
         "REA-claude-work",
-        "REA-C-worker",
         "REA-C-latency"
       ],
       "parent_overrides": {
-        "REA-C-worker": "REA-claude-work",
         "REA-C-latency": "REA-claude-work"
       },
       "entry_ids": [
-        "REA-C-CURI-worker",
         "REA-C-CURI-latency"
       ],
-      "rationale": "How browser workers and performance instrumentation support the chat experience.",
+      "rationale": "Attributing latency to concrete phases and balancing browser workloads.",
       "term_ids": [
-        "rea-claude-t-0020",
-        "rea-claude-t-0021",
-        "rea-claude-t-0022",
-        "rea-claude-t-0031",
-        "rea-claude-t-0032",
         "rea-claude-t-0023",
         "rea-claude-t-0024",
-        "rea-claude-t-0025"
+        "rea-claude-t-0025",
+        "rea-claude-t-0058",
+        "rea-claude-t-0059",
+        "rea-claude-t-0060",
+        "rea-claude-t-0061"
+      ]
+    },
+    {
+      "id": "economics",
+      "title": "Usage limits and billing",
+      "short_label": "Usage limits and billing",
+      "root_id": "REA-claude-economics",
+      "node_ids": [
+        "REA-claude-economics",
+        "REA-C-billing"
+      ],
+      "parent_overrides": {
+        "REA-C-billing": "REA-claude-economics"
+      },
+      "entry_ids": [
+        "REA-C-CURI-billing"
+      ],
+      "rationale": "The product's usage boundaries, credit and spend-limit interfaces.",
+      "term_ids": [
+        "rea-claude-t-0104",
+        "rea-claude-t-0105",
+        "rea-claude-t-0106",
+        "rea-claude-t-0107",
+        "rea-claude-t-0108",
+        "rea-claude-t-0109"
       ]
     }
   ],
   "glossary_path": "glossary.json",
-  "glossary_schema": "1.0"
+  "glossary_schema": "1.0",
+  "search_profile": "descriptive"
 }
