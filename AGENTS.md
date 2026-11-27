@@ -1,5 +1,7 @@
 # Authoring discipline
 
+Read [OPERATIONAL.md](OPERATIONAL.md) first. Its forward recoverability, book-heading specificity and inverse generative-curiosity criteria govern educational quality. Put implementation particulars below readable product-relevant headings; keep genuine search aliases. Review the question landscape as a coherent prospective table of contents, not an inventory of isolated facts.
+
 Read [Software/README.md](Software/README.md) before changing software case studies. Reuse the established [Kami authoring contract](https://github.com/JadanPoll/Kami_Uploads_RSM_Tree/blob/main/AGENTS.md), [glossary schema](https://github.com/JadanPoll/Kami_Uploads_RSM_Tree/blob/main/GLOSSARY_SCHEMA.md), and [question types](https://github.com/JadanPoll/Kami_Uploads_RSM_Tree/blob/main/QUESTION_TYPES.md), adapting book-specific references to real-world engineering evidence.
 
 - Each product owns its canonical investigation, independent glossary and replay/evidence records. The parent index and viewer manifest are projections only.
