@@ -1,6 +1,6 @@
  Teams of highly motivated brilliant engineers work year round on the most interesting apps that millions use everyday.
  Thus is a real world education on techniques and thinking used for robustness, quality, optimizations and the most eccentric algorithms and 
- uniquely specific algorithms out there that you will never find in a book. 
+ uniquely specific algorithms out there that you will never find in a book. Learning critical engineering solutions from being placed in the real world with people with years of actual experience and far and reaching brilliance.
 
  It’s built in similar style to our FKEN question landscapes however in this we will be adding the idea of hamlets to visually present simple
  concepts, htmlets should be perceive as enhanced markdowns in the education, answer and exploration of various relevant questions,
