@@ -91,7 +91,8 @@
       "aliases": [],
       "category": "How YouTube delivers video",
       "related_ids": [
-        "rea-youtube-t-0008"
+        "rea-youtube-t-0008",
+        "rea-youtube-t-0100"
       ]
     },
     {
@@ -155,7 +156,9 @@
       "label": "WebM",
       "aliases": [],
       "category": "The video player's media timeline",
-      "related_ids": []
+      "related_ids": [
+        "rea-youtube-t-0101"
+      ]
     },
     {
       "id": "rea-youtube-t-0019",
@@ -226,7 +229,8 @@
       "category": "YouTube's modular web client",
       "related_ids": [
         "rea-youtube-t-0024",
-        "rea-youtube-t-0034"
+        "rea-youtube-t-0034",
+        "rea-youtube-t-0097"
       ],
       "definition": "Evidence that required module code has actually initialized, distinct from fetching a script successfully."
     },
@@ -235,7 +239,9 @@
       "label": "request partitioning",
       "aliases": [],
       "category": "YouTube's modular web client",
-      "related_ids": []
+      "related_ids": [
+        "rea-youtube-t-0098"
+      ]
     },
     {
       "id": "rea-youtube-t-0028",
@@ -772,7 +778,8 @@
       "aliases": [],
       "category": "Server-driven navigation and recommendations",
       "related_ids": [
-        "rea-youtube-t-0091"
+        "rea-youtube-t-0091",
+        "rea-youtube-t-0099"
       ]
     },
     {
@@ -799,7 +806,8 @@
       "aliases": [],
       "category": "Server-driven navigation and recommendations",
       "related_ids": [
-        "rea-youtube-t-0096"
+        "rea-youtube-t-0096",
+        "rea-youtube-t-0102"
       ]
     },
     {
@@ -807,6 +815,66 @@
       "label": "autoplay",
       "aliases": [],
       "category": "Server-driven navigation and recommendations",
+      "related_ids": [
+        "rea-youtube-t-0095"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0097",
+      "label": "module initialization",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "definition": "Initialization or registration of a loaded module, which must be checked separately from a successful network response.",
+      "related_ids": [
+        "rea-youtube-t-0026"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0098",
+      "label": "resource scheduler",
+      "aliases": [],
+      "category": "YouTube's modular web client",
+      "definition": "Coordinate when browser tasks or resources should run. A scheduler.js asset was collected, but its internals were not read.",
+      "related_ids": [
+        "rea-youtube-t-0027"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0099",
+      "label": "fragment navigation",
+      "aliases": [],
+      "category": "Server-driven navigation and recommendations",
+      "definition": "Prospective study of changing part of a page while retaining the broader application context. The collected spf.js is a lead, not proof of current routing behavior.",
+      "related_ids": [
+        "rea-youtube-t-0092"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0100",
+      "label": "network availability",
+      "aliases": [],
+      "category": "How YouTube delivers video",
+      "definition": "A client's observation of network connectivity; the captured source includes a network-status manager, but its internals remain uninspected.",
+      "related_ids": [
+        "rea-youtube-t-0010"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0101",
+      "label": "media playback capabilities",
+      "aliases": [],
+      "category": "The video player's media timeline",
+      "definition": "The browser/player capabilities reported when building a playback request, distinct from actual performance.",
+      "related_ids": [
+        "rea-youtube-t-0018"
+      ]
+    },
+    {
+      "id": "rea-youtube-t-0102",
+      "label": "playlist index offset",
+      "aliases": [],
+      "category": "Server-driven navigation and recommendations",
+      "definition": "A difference between global and local playlist indices, observed in response extraction code.",
       "related_ids": [
         "rea-youtube-t-0095"
       ]
