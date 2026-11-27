@@ -25,6 +25,14 @@
       "question": "Discord",
       "why": "Eight evolving chapters, five inspected studies and nine open directions, with a chapter-aligned glossary and recoverable source evidence.",
       "url": "https://github.com/JadanPoll/FKEN_REA_CaseStudies/blob/main/Software/Discord/investigation.json"
+    },
+    {
+      "id": "REA-catalog-youtube",
+      "parent_id": "REA-software",
+      "kind": "subdomain",
+      "question": "YouTube",
+      "why": "Eight prospective chapters with eleven inspected studies and three open directions; nine bulk-exported run receipts.",
+      "url": "https://github.com/JadanPoll/FKEN_REA_CaseStudies/blob/main/Software/YouTube/investigation.json"
     }
   ],
   "connections": [],
@@ -36,6 +44,22 @@
       "why": "Viewport continuity",
       "from_file": "Software/Claude/investigation.json",
       "to_file": "Software/Discord/investigation.json"
+    },
+    {
+      "from": "REA-Y-errors",
+      "to": "REA-D-errors",
+      "type": "related",
+      "why": "Heuristic exception provenance versus build-time metadata attribution",
+      "from_file": "Software/YouTube/investigation.json",
+      "to_file": "Software/Discord/investigation.json"
+    },
+    {
+      "from": "REA-Y-gzip",
+      "to": "REA-C-worker",
+      "type": "related",
+      "why": "Native compression APIs and alternative execution paths",
+      "from_file": "Software/YouTube/investigation.json",
+      "to_file": "Software/Claude/investigation.json"
     }
   ]
 }
